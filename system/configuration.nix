@@ -79,6 +79,7 @@
       firefox
       kate
       chromium
+      vlc
     #  thunderbird
     ];
   };

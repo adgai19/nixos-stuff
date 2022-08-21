@@ -30,4 +30,7 @@
     userEmail = "gaitondeaditya@gmail.com";
     userName = "Aditya Gaitonde";
   };
+  programs.kitty = {
+  enable = true;
+  };
 }
