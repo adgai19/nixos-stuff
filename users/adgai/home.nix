@@ -19,6 +19,7 @@ let
 # paths it should manage.
   home.username = "adgai";
   home.homeDirectory = "/home/adgai";
+  imports = [./alacritty.nix];
 
 # This value determines the Home Manager release that your
 # configuration is compatible with. This helps avoid breakage
