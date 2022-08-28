@@ -19,7 +19,7 @@ let
 # paths it should manage.
   home.username = "adgai";
   home.homeDirectory = "/home/adgai";
-  imports = [./alacritty.nix];
+  imports = [./alacritty.nix ./starship.nix ./zsh.nix];
 
 # This value determines the Home Manager release that your
 # configuration is compatible with. This helps avoid breakage
@@ -33,7 +33,7 @@ let
 
 # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  home.packages = with pkgs; [bottom tree ripgrep];
+  home.packages = with pkgs; [bottom tree ripgrep pavucontrol];
   services.dunst.enable = true;
   programs.neovim = {
     enable = true;

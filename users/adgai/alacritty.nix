@@ -45,9 +45,9 @@
 
       cursor.style = "Block";
 
-      font = { size = 12; };
+      font = { size = 8; };
 
-      window = { opacity = 0.85; };
+      window = { opacity = 0.95; };
     };
   };
 
