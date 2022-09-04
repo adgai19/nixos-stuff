@@ -16,14 +16,14 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   networking.hostName = "nixos"; # Define your hostname.
-# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
 # Configure network proxy if necessary
 # networking.proxy.default = "http://user:password@proxy:port/";
 # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
 # Enable networking
-    networking.networkmanager.enable = true;
+    #networking.networkmanager.enable = true;
 
 # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -47,7 +47,7 @@
     layout = "us";
     xkbVariant = "workman";
     xkbOptions = "caps:swapescape,ctrl:swap_lalt_lctl";
-    videoDrivers = ["nvidia"];
+    #videoDrivers = ["nvidia"];
   };
 
 # Enable CUPS to print documents.
@@ -71,7 +71,8 @@
   };
 
 # Enable touchpad support (enabled default in most desktopManager).
-# services.xserver.libinput.enable = true;
+ services.xserver.libinput.enable = true;
+ services.xserver.libinput.touchpad.tapping = true;
   system.autoUpgrade = {
     enable = true;
   };
@@ -94,6 +95,9 @@
 
     ];
   };
+  programs.zsh.promptInit = ''
+    any-nix-shell zsh --info-right | source /dev/stdin
+  '';
 
 # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
@@ -108,7 +112,8 @@
     pinentry-curses
       git
       rofi
-
+ any-nix-shell
+ pamixer
       vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       xorg.xmodmap
@@ -123,6 +128,8 @@
     enableSSHSupport = true;
     pinentryFlavor  = "qt";
   };
+  services.picom.enable = true;
+  fonts.fonts = with pkgs;[fira-code fira-code-symbols];
 
 # List services that you want to enable:
   nix = {

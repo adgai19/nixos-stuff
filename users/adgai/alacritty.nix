@@ -47,7 +47,7 @@
 
       font = { size = 8; };
 
-      window = { opacity = 0.95; };
+      window = { opacity = 0.90; };
     };
   };
 
