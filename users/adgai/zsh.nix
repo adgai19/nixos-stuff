@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   programs.zsh = {
     enable = true;
@@ -6,10 +6,15 @@
       ls = "exa";
       la = "exa -la";
       l = "exa -l";
+      cat = "bat";
+      pg = "ping google.com";
+      gs = "git status";
     };
     initExtra = ''
       eval "$(starship init zsh)"
-      '';
+      $I3SOCK = $(i3 --get-socket)
+      xmodmap -e "keycode 108 = Alt_R"
+    '';
   };
   programs.fzf = {
     enable = true;

@@ -1,0 +1,50 @@
+{
+    "bumblebee-status": {
+        "branch": "main",
+        "description": "bumblebee-status is a modular, theme-able status line generator for the i3 window manager.",
+        "homepage": "https://bumblebee-status.readthedocs.io/en/main/",
+        "owner": "tobi-wan-kenobi",
+        "repo": "bumblebee-status",
+        "rev": "f4bd0fba0b7f0b4a0dc3a9b7715471d05ccf9ac0",
+        "sha256": "0yrggffywmajz7js1wx4hr7ir3w14f8j1fajm1l694b70japabfy",
+        "type": "tarball",
+        "url": "https://github.com/tobi-wan-kenobi/bumblebee-status/archive/f4bd0fba0b7f0b4a0dc3a9b7715471d05ccf9ac0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "gitsigns.nvim": {
+        "branch": "main",
+        "description": "Git integration for buffers",
+        "homepage": "",
+        "owner": "lewis6991",
+        "repo": "gitsigns.nvim",
+        "rev": "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a",
+        "sha256": "1h4gxyamynwygxpqfib2a7sd1xbi6sh8ixg85j6qiaqqpahr0a4k",
+        "type": "tarball",
+        "url": "https://github.com/lewis6991/gitsigns.nvim/archive/d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "release-21.05",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5f244caea76105b63d826911b2a1563d33ff1cdc",
+        "sha256": "1xlgynfw9svy7nvh9nkxsxdzncv9hg99gbvbwv3gmrhmzc3sar75",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/5f244caea76105b63d826911b2a1563d33ff1cdc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tokyo-night-tmux": {
+        "branch": "master",
+        "description": "A clean, dark Tmux theme that celebrates the lights of Downtown Tokyo at night.",
+        "homepage": "",
+        "owner": "janoamaral",
+        "repo": "tokyo-night-tmux",
+        "rev": "5c9163260543be2258eef77cd4f3c626efdd93c2",
+        "sha256": "052xqkmaq6a002x1pc5nyncsy509qx1jyazn1abkcmrj1w6ss7i2",
+        "type": "tarball",
+        "url": "https://github.com/janoamaral/tokyo-night-tmux/archive/5c9163260543be2258eef77cd4f3c626efdd93c2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/adgai/projects/hello-world/src/posts'
+let g:netrw_dirhist_2='/home/adgai/projects/hello-world/src'
+let g:netrw_dirhist_1='/home/adgai/projects/hello-world/src/components'
