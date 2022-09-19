@@ -20,11 +20,6 @@ vim.api.nvim_create_autocmd(
 	{ command = "setlocal spell", pattern = "*.tex", group = texSpell }
 )
 
-local packerSync = vim.api.nvim_create_augroup("packerSync", { clear = true })
-vim.api.nvim_create_autocmd(
-	"BufWritePost",
-	{ pattern = "packages.lua", command = "source <afile>|PackerSync", group = packerSync }
-)
 
 local tmux = vim.api.nvim_create_augroup("tmux", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", { pattern = "tmux", command = "set filetype=tmux", group = tmux })

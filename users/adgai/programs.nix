@@ -16,7 +16,12 @@ in
     nodejs-18_x
     gopls
     stylua
+    iw
+    pulseaudio
+    xsettingsd
     python310
+    python310Packages.netifaces
+    python310Packages.tkinter
     python310Packages.jedi-language-server
     nodePackages."@prisma/language-server"
     nodePackages."bash-language-server"

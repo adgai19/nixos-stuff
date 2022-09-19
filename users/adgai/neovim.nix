@@ -153,6 +153,7 @@ in
       vimPlugins.neorg
       vimPlugins.vim-qf
       vimPlugins.ansible-vim
+      vimPlugins.git-blame-nvim
       #vimPlugins.neogit
       lspcontainers-nvim
       tsplayground
