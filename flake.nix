@@ -32,7 +32,13 @@ stylix = {
 
     in
     {
-      devShell."${system}".default = import ./shell.nix ;
+      # devShell."${system}".default = import ./shell.nix ;
+      devShells."${system}".default = pkgs.mkShellNoCC{
+        packages = with pkgs;[git zsh nixpkgs-fmt];
+        shellHook = ''echo Inside nix dev shell'';
+
+      };
+      
       nixosConfigurations = {
         adgai = nixpkgs.lib.nixosSystem {
           inherit system ;
