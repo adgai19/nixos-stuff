@@ -1,8 +1,7 @@
 { pkgs, ... }:
 let
   tmux-sessionizer = pkgs.writeShellScriptBin "tmux-sessionizer" ''
-    echo "Hello world"
-    selected=$({find ~/  ~/Documents/ /mnt/data/ ~/github/ ~/learn -mindepth 1 -maxdepth 1 -type d & echo "/home/adgai/"  }| fzf)
+    selected=$((find ~/  ~/Documents/ /mnt/data/  /home/ -mindepth 1 -maxdepth 1 -type d )| fzf)
 
     if [[ -z $selected ]]; then
         exit 0
@@ -25,7 +24,7 @@ let
         tmux switch-client -t $selected_name
     fi
     exit
-  '';
+      '';
   test-script = pkgs.writeShellScriptBin "test-script" ''
     echo "test"
   '';

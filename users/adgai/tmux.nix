@@ -101,6 +101,7 @@ in
               bind-key c-l select-pane -L 
               bind-key c-k select-pane -U 
               bind-key c-j select-pane -D 
+              bind-key c-c send-keys Enter
 
               # move better bw panes
               bind -n M-` select-window -t 0

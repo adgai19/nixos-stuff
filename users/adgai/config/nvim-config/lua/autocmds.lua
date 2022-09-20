@@ -20,7 +20,6 @@ vim.api.nvim_create_autocmd(
 	{ command = "setlocal spell", pattern = "*.tex", group = texSpell }
 )
 
-
 local tmux = vim.api.nvim_create_augroup("tmux", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", { pattern = "tmux", command = "set filetype=tmux", group = tmux })
 
@@ -35,8 +34,17 @@ vim.api.nvim_create_autocmd("BufLeave", {
 			require("adgai.cyclekeymaps").change_mode_qf()
 		end
 	end,
+	group = vim.api.nvim_create_augroup("qflist", { clear = true }),
 })
+vim.api.nvim_create_autocmd(
+	"BufWritePre",
+	{ pattern = "nix", command = "!nixpkgs-fmt %", group = vim.api.nvim_create_augroup("nix-fmt", { clear = true }) }
+)
 
+vim.api.nvim_create_autocmd(
+	"BufWritePre",
+	{ pattern = "lua", command = "!stylua %", group = vim.api.nvim_create_augroup("lua-fmt", { clear = true }) }
+)
 -- local linters = vim.api.nvim_create_augroup("linters", { clear = true })
 -- vim.api.nvim_create_autocmd("BufWritePost", { callback = vim.diagnostic.setloclist, group = linters })
 -- vim.api.nvim_create_autocmd("BufWritePost", { callback = require("adgai.cyclekeymaps").change_mode, group = linters })
