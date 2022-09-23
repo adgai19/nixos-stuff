@@ -1,5 +1,4 @@
 require("todo-comments").setup({})
-
 require("trouble").setup({})
 require("inc_rename").setup()
 require("Comment").setup()

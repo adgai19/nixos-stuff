@@ -1,4 +1,4 @@
-{ config, pkgs, lib,   ... }:
+{ config, pkgs, lib, ... }:
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -14,9 +14,9 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.05";
-  nixpkgs.overlays = [import ./overlays.nix];
+  nixpkgs.overlays = [ import ./overlays.nix ];
 
-  imports = [ ./alacritty.nix ./starship.nix ./zsh.nix ./neovim.nix ./programs.nix ./tmux.nix ./customPkgs/shell-scripts ./kitty.nix];
+  imports = [ ./modules/alacritty.nix ./modules/starship.nix ./modules/zsh.nix ./modules/neovim.nix ./modules/programs.nix ./modules/tmux.nix ./customPkgs/shell-scripts ./modules/kitty.nix ./modules/direnv.nix ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   home.packages = with pkgs; [ bottom tree ripgrep pavucontrol cachix arandr ];

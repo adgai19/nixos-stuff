@@ -120,7 +120,7 @@ in
               # simpler window to show only sessions
               bind s choose-session -swZ
               # terminal session management
-              #bind -n C-s display-popup -E "tmux-sessionizer"
+              #bind -n C-s display-popup -E "~/script/tmux-sessionizer"
               bind C-g popup -E -c "#{pane_current_path}" #"zsh"
 
               set-window-option -g automatic-rename

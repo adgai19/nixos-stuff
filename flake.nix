@@ -10,14 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
-stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-    # stylix.url = "github:danth/stylix";
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, stylix,   ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -33,20 +27,20 @@ stylix = {
     in
     {
       # devShell."${system}".default = import ./shell.nix ;
-      devShells."${system}".default = pkgs.mkShellNoCC{
-        packages = with pkgs;[git zsh nixpkgs-fmt];
+      devShells."${system}".default = pkgs.mkShellNoCC {
+        packages = with pkgs;[ git zsh nixpkgs-fmt ];
         shellHook = ''echo Inside nix dev shell'';
 
+
       };
-      
+
       nixosConfigurations = {
         adgai = nixpkgs.lib.nixosSystem {
-          inherit system ;
-        
+          inherit system;
+
           modules = [
             ./system/configuration.nix
 
-          # stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               nixpkgs.overlays = overlays;

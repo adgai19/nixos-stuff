@@ -1,7 +1,4 @@
 { pkgs, lib,  ... }:
-let
-  sources = ../../nix/sources.nix;
-in
 {
   home.packages = with pkgs; [
  poetry
@@ -18,8 +15,12 @@ in
     stylua
     iw
     pulseaudio
+    gh
     xsettingsd
     python310
+    scrot
+    feh
+    filezilla
     python310Packages.netifaces
     python310Packages.tkinter
     python310Packages.jedi-language-server

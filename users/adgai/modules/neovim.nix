@@ -1,6 +1,5 @@
 { pkgs, ... }:
 let
-  sources = ../../nix/sources.nix;
   lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "lspcontainers.nvim";
     src = pkgs.fetchFromGitHub {
@@ -156,7 +155,8 @@ in
       vimPlugins.git-blame-nvim
       #vimPlugins.neogit
       lspcontainers-nvim
-      tsplayground
+      # tsplayground
+      vimPlugins.playground
       cyclist-nvim
       typescript-nvim
 
@@ -176,13 +176,13 @@ in
     '';
   };
   home.file."nvim-lua" = {
-    source = ./config/nvim-config/lua;
+    source = ../config/nvim-config/lua;
     recursive = true;
     target = "/home/adgai/.config/nvim/lua";
   };
 
   home.file."nvim-after" = {
-    source = ./config/nvim-config/after;
+    source = ../config/nvim-config/after;
     recursive = true;
     target = "/home/adgai/.config/nvim/after";
   };

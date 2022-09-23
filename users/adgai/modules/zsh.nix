@@ -13,8 +13,11 @@
     defaultKeymap = "viins";
     initExtra = ''
       eval "$(starship init zsh)"
-      export I3SOCK = $(i3 --get-socket)
+      I3SOCK=$(i3 --get-socket)
       xmodmap -e "keycode 108 = Alt_R"
+      bindkey "^P" up-line-or-search
+      bindkey "^N" down-line-or-search
+      bindkey -s "^o" "tmux-sessionizer^M"
     '';
 
         enableAutosuggestions = true;

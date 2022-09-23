@@ -35,7 +35,17 @@ in
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
+  networking.wireless = {
+    enable = true;
+    networks = {
+    "ADDN-20" = {
+      psk = "gowest123";
+    };
+      
+    };
+
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -148,7 +158,10 @@ in
 
   # List services that you want to enable:
   nix = {
-    # substituters = "https://danth.cachix.org";
+   extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';   # substituters = "https://danth.cachix.org";
     # trusted-public-keys = "danth.cachix.org-1:wpodfSL7suXRc/rJDZZUptMa1t4MJ795hemRN0q84vI=";
     settings = {
       auto-optimise-store = true;

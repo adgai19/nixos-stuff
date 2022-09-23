@@ -18,6 +18,7 @@ local serverlist = {
 	"cssls",
 	"emmet_ls",
 	"jedi_language_server",
+  "nil_ls",
 	"eslint", --[[ "gopls"  ]]
 }
 for _, server in ipairs(serverlist) do
