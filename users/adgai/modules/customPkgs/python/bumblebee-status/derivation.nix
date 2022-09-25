@@ -1,4 +1,4 @@
-{ lib,  fetchFromGitHub, pytestCheckHook, pytest-freezegun, psutil,  pytest-mock, glibcLocales, killall, python3Packages,netifaces}:
+{ lib, fetchFromGitHub, pytestCheckHook, pytest-freezegun, psutil, pytest-mock, glibcLocales, killall, python3Packages, netifaces }:
 python3Packages.buildPythonApplication rec {
   pname = "bumblebee-status";
   version = "2.1.5";
@@ -12,12 +12,12 @@ python3Packages.buildPythonApplication rec {
 
   checkInputs = [
     glibcLocales
-      pytestCheckHook
-      pytest-freezegun
-      psutil
-      netifaces
-      pytest-mock
-      killall
+    pytestCheckHook
+    pytest-freezegun
+    psutil
+    netifaces
+    pytest-mock
+    killall
   ];
 
   meta = with lib; {

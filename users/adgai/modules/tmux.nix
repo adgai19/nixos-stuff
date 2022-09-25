@@ -1,17 +1,17 @@
 { pkgs, lib, ... }:
 let
   sources = ../../nix/sources.nix;
-    tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin {
-      name = "tokyo-night-tmux";
-      pluginName = "tokyo-night-tmux";
-      rtpFilePath = "tokyo-night.tmux";
-      src = pkgs.fetchFromGitHub{
-        owner = "janoamaral";
-        repo = "tokyo-night-tmux";
-        sha256 = "sha256-Ih6tDQ8yVzaXCvYrL0PHCRSvmfW2sBu6AEAZrOrEXRQ=";
-        rev = "5c9163260543be2258eef77cd4f3c626efdd93c2";
-      };
+  tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin {
+    name = "tokyo-night-tmux";
+    pluginName = "tokyo-night-tmux";
+    rtpFilePath = "tokyo-night.tmux";
+    src = pkgs.fetchFromGitHub {
+      owner = "janoamaral";
+      repo = "tokyo-night-tmux";
+      sha256 = "sha256-Ih6tDQ8yVzaXCvYrL0PHCRSvmfW2sBu6AEAZrOrEXRQ=";
+      rev = "5c9163260543be2258eef77cd4f3c626efdd93c2";
     };
+  };
   tmuxPlugin = with pkgs; [
     tokyonight
     tmuxPlugins.cpu

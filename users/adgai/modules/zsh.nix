@@ -20,7 +20,7 @@
       bindkey -s "^o" "tmux-sessionizer^M"
     '';
 
-        enableAutosuggestions = true;
+    enableAutosuggestions = true;
   };
   programs.fzf = {
     enable = true;

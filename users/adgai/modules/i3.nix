@@ -1,3 +1,3 @@
-{config, pkgs, ...}:{
-  home.packages = with pkgs; [i3];
+{ config, pkgs, ... }: {
+  home.packages = with pkgs; [ i3 ];
 }

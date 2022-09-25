@@ -4,7 +4,7 @@
 
 { config, pkgs, stylix, ... }:
 let
- base16-schemes =
+  base16-schemes =
     pkgs.fetchFromGitHub {
       owner = "base16-project";
       repo = "base16-schemes";
@@ -39,10 +39,10 @@ in
   networking.wireless = {
     enable = true;
     networks = {
-    "ADDN-20" = {
-      psk = "gowest123";
-    };
-      
+      "ADDN-20" = {
+        psk = "gowest123";
+      };
+
     };
 
   };
@@ -154,14 +154,14 @@ in
     pinentryFlavor = "qt";
   };
   services.picom.enable = true;
-  fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome];
+  fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome ];
 
   # List services that you want to enable:
   nix = {
-   extraOptions = ''
-    keep-outputs = true
-    keep-derivations = true
-  '';   # substituters = "https://danth.cachix.org";
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+    ''; # substituters = "https://danth.cachix.org";
     # trusted-public-keys = "danth.cachix.org-1:wpodfSL7suXRc/rJDZZUptMa1t4MJ795hemRN0q84vI=";
     settings = {
       auto-optimise-store = true;

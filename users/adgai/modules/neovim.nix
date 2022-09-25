@@ -9,7 +9,8 @@ let
       rev = "ea430ff6e155dc26f971573eb21422d77cf9d8f0";
     };
   };
-  cyclist-nvim = pkgs.vimUtils.buildVimPlugin{
+
+  cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "cyclist.vim";
     src = pkgs.fetchFromGitHub {
       owner = "tjdevries";
@@ -20,16 +21,15 @@ let
     };
   };
 
-
-    gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix{
-      name = "gitsigns.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "lewis6991";
-        repo = "gitsigns.nvim";
-        rev = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a";
-        sha256 = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
-      };
+  gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "gitsigns.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "lewis6991";
+      repo = "gitsigns.nvim";
+      rev = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a";
+      sha256 = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
     };
+  };
   typescript-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "typescript.nvim";
     doCheck = false;
@@ -42,15 +42,6 @@ let
     };
   };
 
-  tsplayground = pkgs.vimUtils.buildVimPlugin {
-    name = "treesitter-playground";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-treesitter";
-      repo = "playground";
-      sha256 = "sha256-aXx6pUFEYnzrq53wEWG9Z7Dt55EIIVfhh8iVQ2a+Y2c=";
-      rev = "bcfab84f98a33f2ad34dda6c842046dca70aabf6";
-    };
-  };
 in
 {
   programs.neovim = {

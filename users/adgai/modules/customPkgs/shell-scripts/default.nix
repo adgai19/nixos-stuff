@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
-  imports =[./tmux-sessionizer.nix ./fzfp.nix];
+  imports = [ ./tmux-sessionizer.nix ./fzfp.nix ];
 }

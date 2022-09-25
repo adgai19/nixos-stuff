@@ -1,7 +1,7 @@
-{ pkgs, lib,  ... }:
+{ pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
- poetry
+    poetry
     gcc
     discord
     htop
