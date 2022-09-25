@@ -7,6 +7,7 @@
     htop
     lazydocker
     nixpkgs-fmt
+    flameshot
     rnix-lsp
     xclip
     lazygit

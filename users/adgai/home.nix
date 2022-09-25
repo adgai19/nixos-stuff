@@ -16,7 +16,7 @@
   home.stateVersion = "22.05";
   nixpkgs.overlays = [ import ./overlays.nix ];
 
-  imports = [ ./modules/alacritty.nix ./modules/starship.nix ./modules/zsh.nix ./modules/neovim.nix ./modules/programs.nix ./modules/tmux.nix ./customPkgs/shell-scripts ./modules/kitty.nix ./modules/direnv.nix ];
+  imports = [ ./modules];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   home.packages = with pkgs; [ bottom tree ripgrep pavucontrol cachix arandr ];
