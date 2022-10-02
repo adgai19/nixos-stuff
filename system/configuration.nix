@@ -172,7 +172,7 @@ in
       dates = "weekly";
       options = "--delete-older-than 4d";
     };
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 

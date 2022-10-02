@@ -93,7 +93,7 @@ in
       vimPlugins.rust-tools-nvim
       vimPlugins.symbols-outline-nvim
       vimPlugins.nvim-lint
-      vimPlugins.surround-nvim
+      vimPlugins.nvim-surround
       #vimPlugins.neogit
       vimPlugins.vim-scriptease
       vimPlugins.comment-nvim
@@ -109,6 +109,8 @@ in
 
       # Treesitter
       #vimPlugins.nvim-treesitter
+
+      vimPlugins.nvim-treesitter
       #(vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins;[tree-sitter-lua tree-sitter-typescript]))
       #(vimPlugins.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
       #(pkgs.nvim-treesitter.withPlugins (_: allGrammars))

@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     poetry
+    firefox-devedition-bin
     gcc
     discord
     htop
@@ -10,6 +11,8 @@
     flameshot
     rnix-lsp
     xclip
+    hyp
+    # hyperbeam
     lazygit
     nodejs-18_x
     gopls

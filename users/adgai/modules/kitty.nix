@@ -82,7 +82,6 @@
         mark1_foreground black
         mark2_foreground black
         mark3_foreground black
-      shell tmux-sessionizer
         editor nvim
         close_on_child_death no
         allow_remote_control no
@@ -247,7 +246,6 @@
         mark1_foreground black
         mark2_foreground black
         mark3_foreground black
-      shell tmux-sessionizer
         editor nvim
         close_on_child_death no
         allow_remote_control no
