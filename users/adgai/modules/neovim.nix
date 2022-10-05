@@ -41,12 +41,32 @@ let
       rev = "5a92e7658e693b2ba6e14e851b8795ae3d727f23";
     };
   };
+  autosave-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "autosave.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "Pocco81";
+      repo = "auto-save.nvim";
+      rev = "2c7a2943340ee2a36c6a61db812418fca1f57866";
+      sha256 = "sha256-keK+IAnHTTA5uFkMivViMMAkYaBvouYqcR+wNPgN3n0=";
+    };
+  };
+
+  noice-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "noice.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "folke";
+      repo = "noice.nvim";
+      rev = "31ba270344e5255a67204d52ca99f60ba4f332ac";
+      sha256 = "sha256-LAn07AALbCoyLGhW8gQ0fSsCyvZXDm/k677Djj7jB/k=";
+    };
+  };
 
 in
 {
   programs.neovim = {
     enable = true;
     viAlias = true;
+    package = pkgs.neovim-nightly;
     vimAlias = true;
     plugins = with pkgs; [
       vimPlugins.vim-nix
@@ -60,7 +80,6 @@ in
       vimPlugins.cmp-tabnine
       vimPlugins.luasnip
       vimPlugins.cmp_luasnip
-      vimPlugins.cmp-cmdline
       vimPlugins.cmp-nvim-lua
       vimPlugins.cmp-nvim-lsp
       vimPlugins.cmp-nvim-lsp
@@ -108,15 +127,10 @@ in
       #use("rcarriga/nvim-dap-ui")
 
       # Treesitter
-      #vimPlugins.nvim-treesitter
-
+      # (vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       vimPlugins.nvim-treesitter
-      #(vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins;[tree-sitter-lua tree-sitter-typescript]))
-      #(vimPlugins.nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
-      #(pkgs.nvim-treesitter.withPlugins (_: allGrammars))
 
-      #vimPlugins.nvim-treesitter
-      #vimPlugins.cmp-treesitter
+      vimPlugins.cmp-treesitter
       vimPlugins.nvim-treesitter-textobjects
       vimPlugins.nvim-treesitter-context
 
@@ -150,8 +164,6 @@ in
       lspcontainers-nvim
       # tsplayground
       vimPlugins.playground
-      cyclist-nvim
-      typescript-nvim
 
       vimPlugins.tokyonight-nvim
       vimExtraPlugins.inc-rename-nvim
@@ -159,7 +171,11 @@ in
       vimExtraPlugins.guihua-lua
       vimExtraPlugins.hydra-nvim
 
+      cyclist-nvim
+      typescript-nvim
+      autosave-nvim
       gitsigns-nvim
+      noice-nvim
     ];
     extraConfig = ''
       luafile $HOME/.config/nvim/lua/general.lua
@@ -167,6 +183,23 @@ in
       luafile $HOME/.config/nvim/lua/keymaps/init.lua
       luafile $HOME/.config/nvim/lua/adgai/init.lua
     '';
+    extraPackages = with pkgs; [
+    rnix-lsp
+    gopls
+    python310Packages.jedi-language-server
+    nodePackages."@prisma/language-server"
+    nodePackages."bash-language-server"
+    nodePackages."dockerfile-language-server-nodejs"
+    # nodePackages."graphql-language-service-cli"
+    nodePackages."pyright"
+    nodePackages."typescript"
+    nodePackages."typescript-language-server"
+    nodePackages."vscode-langservers-extracted"
+    nodePackages."yaml-language-server"
+    rust-analyzer
+    sumneko-lua-language-server
+    terraform-ls
+    ];
   };
   home.file."nvim-lua" = {
     source = ../config/nvim-config/lua;

@@ -68,23 +68,6 @@ cmp.setup({
 	},
 })
 
-require("cmp").setup.cmdline(":", {
-	completion = { autocomplete = false },
-	sources = {
-		{ name = "cmdline" },
-	},
-	mapping = cmp.mapping.preset.cmdline({}),
-})
-
-require("cmp").setup.cmdline("/", {
-	completion = { autocomplete = false },
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp_document_symbol" },
-	}, {
-		{ name = "buffer" },
-	}),
-})
-
 cmp.setup.filetype("gitcommit", {
 	mapping = cmp.mapping.preset.cmdline({}),
 	sources = cmp.config.sources({

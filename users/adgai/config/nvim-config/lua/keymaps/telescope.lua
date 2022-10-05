@@ -1,4 +1,5 @@
 local nnoremap = require("keymaps.helpers").nnoremap
+print('inside telescope keymaps')
 
 nnoremap("<leader>ff", require("telescope.builtin").find_files)
 nnoremap("<leader>fg", require("telescope.builtin").live_grep)

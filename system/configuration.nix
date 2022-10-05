@@ -109,6 +109,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
+        networkmanager
       kate
       chromium
       vlc
@@ -180,8 +181,8 @@ in
   #   # image = /home/adgai/background-image;
   #   base16Schemes = "${base16-schemes}/tokyo-night-storm.yaml";
   # };
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
+  # programs.neovim.enable = true;
+  # programs.neovim.defaultEditor = true;
   services.logind = {
     lidSwitch = "suspend";
     lidSwitchDocked = "hibernate";
