@@ -32,7 +32,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = false
 vim.opt.smartcase = true
 
-vim.opt.lazyredraw = true
+-- vim.opt.lazyredraw = true
 vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
 vim.opt.swapfile = false
 vim.opt.ignorecase = false

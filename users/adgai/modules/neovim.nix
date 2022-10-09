@@ -56,8 +56,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "31ba270344e5255a67204d52ca99f60ba4f332ac";
-      sha256 = "sha256-LAn07AALbCoyLGhW8gQ0fSsCyvZXDm/k677Djj7jB/k=";
+      rev = "3a23308e205f35fc2b80b93790fd3a92587d68e7";
+      sha256 = "sha256-H3y1rWDyeYOr6no1/CZPoshEoaGIrMia8y9QfeGMdEc=";
     };
   };
 
@@ -66,7 +66,8 @@ in
   programs.neovim = {
     enable = true;
     viAlias = true;
-    package = pkgs.neovim-nightly;
+    # package = pkgs.neovim-nightly;
+    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     plugins = with pkgs; [
       vimPlugins.vim-nix

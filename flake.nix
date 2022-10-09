@@ -10,8 +10,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    poetry2nix.url = "github:nix-community/poetry2nix";
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -22,11 +23,10 @@
         url = "https://github.com/InternetUnexplorer/discord-overlay/archive/main.tar.gz";
       }));
 
-      overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default discord-overlay ];
+      overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default discord-overlay inputs.poetry2nix.overlay ];
 
     in
     {
-      # devShell."${system}".default = import ./shell.nix ;
       devShells."${system}".default = pkgs.mkShellNoCC {
         packages = with pkgs;[ git zsh nixpkgs-fmt ];
         shellHook = ''echo Inside nix dev shell'';
