@@ -30,6 +30,10 @@ let
       sha256 = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
     };
   };
+  # gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  #   name = "gitsigns.nvim";
+  #   src = gitsigns-nvim-flake;
+  # };
   typescript-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "typescript.nvim";
     doCheck = false;

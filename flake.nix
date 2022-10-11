@@ -11,8 +11,12 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     poetry2nix.url = "github:nix-community/poetry2nix";
+    gitsigns-nvim-flake = {
+      url = "github:lewis6991/gitsigns.nvim";
+      flake = false;
+    };
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly,gitsigns-nvim-flake, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
