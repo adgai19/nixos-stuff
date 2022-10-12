@@ -89,14 +89,10 @@ local config = {
 		lualine_x = {},
 	},
 	winbar = {
-		lualine_a = { "diagnostics" },
+		lualine_a = {},
 		lualine_b = {},
 		lualine_c = {},
-		lualine_x = {
-			function()
-				return "%#WinBarSeparator#" .. "%=" .. "%*" .. get_modified() .. "%#WinBarSeparator#" .. "%*"
-			end,
-		},
+		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
 	},

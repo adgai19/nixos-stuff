@@ -28,14 +28,11 @@
     LC_CTYPE = "en_US.UTF-8";
   };
 
-
-
   programs.git = {
     enable = true;
     userEmail = "gaitondeaditya@gmail.com";
     userName = "Aditya Gaitonde";
   };
-
 
   programs.bat = {
     enable = true;

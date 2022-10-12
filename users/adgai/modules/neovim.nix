@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs,inputs, ... }:
 let
   lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "lspcontainers.nvim";
@@ -12,57 +12,23 @@ let
 
   cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "cyclist.vim";
-    src = pkgs.fetchFromGitHub {
-      owner = "tjdevries";
-      repo = "cyclist.vim";
-      sha256 = "sha256-CpfY2luD59p4FM9cvGsn6pyEFMAUv1vi2+WL27e6Pjk=";
-      rev = "d611ea3a21365f90d512dd024874e070e864309e";
-
-    };
+    src = inputs.cyclist-nvim-flake;
   };
 
-  gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "gitsigns.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "lewis6991";
-      repo = "gitsigns.nvim";
-      rev = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a";
-      sha256 = "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=";
-    };
-  };
-  # gitsigns-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "gitsigns.nvim";
-  #   src = gitsigns-nvim-flake;
-  # };
   typescript-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "typescript.nvim";
     doCheck = false;
     doInstallCheck = false;
-    src = pkgs.fetchFromGitHub {
-      owner = "jose-elias-alvarez";
-      repo = "typescript.nvim";
-      sha256 = "sha256-ElRJOWxiuCZaKv8agpm9UxgJ0Zj4SBARWGggLxEn4+I=";
-      rev = "5a92e7658e693b2ba6e14e851b8795ae3d727f23";
-    };
+    src = inputs.typescript-nvim;
   };
   autosave-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "autosave.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "Pocco81";
-      repo = "auto-save.nvim";
-      rev = "2c7a2943340ee2a36c6a61db812418fca1f57866";
-      sha256 = "sha256-keK+IAnHTTA5uFkMivViMMAkYaBvouYqcR+wNPgN3n0=";
-    };
+    src = inputs.autosave-nvim;
   };
 
   noice-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "noice.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "folke";
-      repo = "noice.nvim";
-      rev = "3a23308e205f35fc2b80b93790fd3a92587d68e7";
-      sha256 = "sha256-H3y1rWDyeYOr6no1/CZPoshEoaGIrMia8y9QfeGMdEc=";
-    };
+    src = inputs.noice-nvim;
   };
 
 in
@@ -71,7 +37,7 @@ in
     enable = true;
     viAlias = true;
     # package = pkgs.neovim-nightly;
-    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
+    package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     plugins = with pkgs; [
       vimPlugins.vim-nix
@@ -165,6 +131,7 @@ in
       vimPlugins.vim-qf
       vimPlugins.ansible-vim
       vimPlugins.git-blame-nvim
+      vimPlugins.gitsigns-nvim
       #vimPlugins.neogit
       lspcontainers-nvim
       # tsplayground
@@ -179,7 +146,7 @@ in
       cyclist-nvim
       typescript-nvim
       autosave-nvim
-      gitsigns-nvim
+      # gitsigns-nvim
       noice-nvim
     ];
     extraConfig = ''
@@ -191,6 +158,7 @@ in
     extraPackages = with pkgs; [
     rnix-lsp
     gopls
+    shellcheck
     python310Packages.jedi-language-server
     nodePackages."@prisma/language-server"
     nodePackages."bash-language-server"

@@ -11,12 +11,28 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     poetry2nix.url = "github:nix-community/poetry2nix";
-    gitsigns-nvim-flake = {
-      url = "github:lewis6991/gitsigns.nvim";
+    # some plugins that I track outside of nixpkgs and vim-extra-plugins
+
+    cyclist-nvim-flake = {
+      url = "github:tjdevries/cyclist.vim";
       flake = false;
     };
+
+    autosave-nvim = {
+      url = "github:Pocco81/auto-save.nvim";
+      flake = false;
+    };
+    noice-nvim = {
+      url = "github:folke/noice.nvim";
+      flake = false;
+    };
+    typescript-nvim = {
+      url = "github:jose-elias-alvarez/typescript.nvim";
+      flake = false;
+    };
+
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly,gitsigns-nvim-flake, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -25,6 +41,7 @@
       };
       discord-overlay = (import (builtins.fetchTarball {
         url = "https://github.com/InternetUnexplorer/discord-overlay/archive/main.tar.gz";
+        sha256 = "sha256:0gwlgjijqr23w2g2pnif8dz0a8df4jv88hga0am3c6cch4h4s05m";
       }));
 
       overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default discord-overlay inputs.poetry2nix.overlay ];
@@ -50,6 +67,8 @@
               nixpkgs.overlays = overlays;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              # the magic keywords LUL
+              home-manager.extraSpecialArgs = { inherit system inputs; };
               home-manager.users.adgai = import ./users/adgai/home.nix;
             }
           ];
