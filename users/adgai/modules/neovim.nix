@@ -12,7 +12,7 @@ let
 
   cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "cyclist.vim";
-    src = inputs.cyclist-nvim-flake;
+    src = inputs.cyclist-nvim;
   };
 
   typescript-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -46,6 +46,7 @@ in
       vimPlugins.popup-nvim
       vimPlugins.nui-nvim
       vimPlugins.vim-rooter
+
       # completion
       vimPlugins.nvim-cmp
       vimPlugins.cmp-tabnine
@@ -84,7 +85,7 @@ in
       vimPlugins.symbols-outline-nvim
       vimPlugins.nvim-lint
       vimPlugins.nvim-surround
-      #vimPlugins.neogit
+      vimPlugins.neogit
       vimPlugins.vim-scriptease
       vimPlugins.comment-nvim
       vimPlugins.nvim-ts-context-commentstring
@@ -132,6 +133,7 @@ in
       vimPlugins.ansible-vim
       vimPlugins.git-blame-nvim
       vimPlugins.gitsigns-nvim
+      vimPlugins.noice-nvim
       #vimPlugins.neogit
       lspcontainers-nvim
       # tsplayground
@@ -147,7 +149,7 @@ in
       typescript-nvim
       autosave-nvim
       # gitsigns-nvim
-      noice-nvim
+      # noice-nvim
     ];
     extraConfig = ''
       luafile $HOME/.config/nvim/lua/general.lua

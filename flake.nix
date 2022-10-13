@@ -13,7 +13,7 @@
     poetry2nix.url = "github:nix-community/poetry2nix";
     # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
-    cyclist-nvim-flake = {
+    cyclist-nvim = {
       url = "github:tjdevries/cyclist.vim";
       flake = false;
     };
