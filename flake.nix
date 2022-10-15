@@ -30,6 +30,10 @@
       url = "github:jose-elias-alvarez/typescript.nvim";
       flake = false;
     };
+    lspcontainers-nvim = {
+      url = "github:lspcontainers/lspcontainers.nvim";
+      flake = false;
+    };
 
   };
   outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:

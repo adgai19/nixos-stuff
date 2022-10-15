@@ -1,6 +1,7 @@
 local root_markers = { "gradlew", ".git", "mvnw" }
 local lsp = require("lspconfig")
 local jdtls = require("jdtls")
+local on_attach = require("adgai.lsp.on_attach").on_attach
 local function mk_config()
 	local capabilities = lsp.protocol.make_client_capabilities()
 	capabilities.workspace.configuration = true

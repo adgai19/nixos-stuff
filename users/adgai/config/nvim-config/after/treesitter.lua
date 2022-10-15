@@ -22,21 +22,22 @@ local parser_install_directory =  "/home/adgai/.local/share/nvim/parsers"
 require("nvim-treesitter.configs").setup({
 	-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   parser_install_dir =parser_install_directory,
-	ensure_installed = {
-		"lua",
-		"javascript",
-		"typescript",
-		"html",
-		"css",
-		"dockerfile",
-		"go",
-		"gomod",
-		"hcl",
-		"json",
-		"tsx",
-		"vue",
-		"yaml",
-	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all",
+	-- ensure_installed = {
+	-- 	"lua",
+	-- 	"javascript",
+	-- 	"typescript",
+	-- 	"html",
+	-- 	"css",
+	-- 	"dockerfile",
+	-- 	"go",
+	-- 	"gomod",
+	-- 	"hcl",
+	-- 	"json",
+	-- 	"tsx",
+	-- 	"vue",
+	-- 	"yaml",
+	-- }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	highlight = {
 		enable = true, -- false will disable the whole extension
 	},

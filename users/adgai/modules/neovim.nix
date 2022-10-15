@@ -2,12 +2,13 @@
 let
   lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "lspcontainers.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "lspcontainers";
-      repo = "lspcontainers.nvim";
-      sha256 = "sha256-aXx6pUFEYnzrq53wEWG9Z7Dt55EIIVfhh8iVQ2a+Y2c=";
-      rev = "ea430ff6e155dc26f971573eb21422d77cf9d8f0";
-    };
+    src = inputs.lspcontainers-nvim;
+    # src = pkgs.fetchFromGitHub {
+    #   owner = "lspcontainers";
+    #   repo = "lspcontainers.nvim";
+    #   sha256 = "sha256-aXx6pUFEYnzrq53wEWG9Z7Dt55EIIVfhh8iVQ2a+Y2c=";
+    #   rev = "ea430ff6e155dc26f971573eb21422d77cf9d8f0";
+    # };
   };
 
   cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -36,9 +37,10 @@ in
   programs.neovim = {
     enable = true;
     viAlias = true;
-    # package = pkgs.neovim-nightly;
     package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
+    withNodeJs = true;
+    withPython3 = true;
     plugins = with pkgs; [
       vimPlugins.vim-nix
       vimPlugins.vim-tmux
@@ -138,6 +140,7 @@ in
       lspcontainers-nvim
       # tsplayground
       vimPlugins.playground
+      vimPlugins.impatient-nvim
 
       vimPlugins.tokyonight-nvim
       vimExtraPlugins.inc-rename-nvim
@@ -161,6 +164,8 @@ in
     rnix-lsp
     gopls
     shellcheck
+    ansible-lint
+    fd
     python310Packages.jedi-language-server
     nodePackages."@prisma/language-server"
     nodePackages."bash-language-server"
