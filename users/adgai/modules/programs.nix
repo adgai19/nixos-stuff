@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     poetry
     firefox-devedition-bin
+    fd
     gcc
     discord
     htop

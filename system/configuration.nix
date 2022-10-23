@@ -42,6 +42,9 @@ in
       "ADDN-20" = {
         psk = "gowest123";
       };
+      "Adgai" = {
+        psk = "12345678";
+      };
 
     };
 
@@ -69,8 +72,11 @@ in
     layout = "us";
     xkbVariant = "workman";
     xkbOptions = "caps:swapescape,ctrl:swap_lalt_lctl";
-    #videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
+
+  hardware.opengl.enable = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -93,8 +99,13 @@ in
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.tapping = true;
+  services.xserver.libinput = {
+    enable = true;
+    touchpad.tapping = true;
+  };
+
+  services.xserver.dpi = 96;
+
   system.autoUpgrade = {
     enable = true;
   };
@@ -109,7 +120,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
-        networkmanager
+      networkmanager
       kate
       chromium
       vlc
@@ -187,8 +198,14 @@ in
     lidSwitch = "suspend";
     lidSwitchDocked = "hibernate";
   };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

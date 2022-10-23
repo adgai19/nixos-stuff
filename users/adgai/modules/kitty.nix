@@ -6,7 +6,7 @@
         bold_font        auto
         italic_font      auto
         bold_italic_font auto
-        font_size 10.0
+        font_size 8.0
         force_ltr no
         adjust_line_height  0
         adjust_column_width 0

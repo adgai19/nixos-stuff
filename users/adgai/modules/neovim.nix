@@ -1,14 +1,8 @@
-{ pkgs,inputs, ... }:
+{ pkgs, inputs, ... }:
 let
   lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "lspcontainers.nvim";
     src = inputs.lspcontainers-nvim;
-    # src = pkgs.fetchFromGitHub {
-    #   owner = "lspcontainers";
-    #   repo = "lspcontainers.nvim";
-    #   sha256 = "sha256-aXx6pUFEYnzrq53wEWG9Z7Dt55EIIVfhh8iVQ2a+Y2c=";
-    #   rev = "ea430ff6e155dc26f971573eb21422d77cf9d8f0";
-    # };
   };
 
   cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -127,7 +121,6 @@ in
       vimPlugins.numb-nvim
       vimPlugins.null-ls-nvim
       vimPlugins.i3config-vim
-      #vimPlugins.gitsigns-nvim
       vimPlugins.nvim-ts-autotag
       vimPlugins.fidget-nvim
       vimPlugins.neorg
@@ -136,7 +129,6 @@ in
       vimPlugins.git-blame-nvim
       vimPlugins.gitsigns-nvim
       vimPlugins.noice-nvim
-      #vimPlugins.neogit
       lspcontainers-nvim
       # tsplayground
       vimPlugins.playground
@@ -151,7 +143,6 @@ in
       cyclist-nvim
       typescript-nvim
       autosave-nvim
-      # gitsigns-nvim
       # noice-nvim
     ];
     extraConfig = ''
@@ -161,24 +152,24 @@ in
       luafile $HOME/.config/nvim/lua/adgai/init.lua
     '';
     extraPackages = with pkgs; [
-    rnix-lsp
-    gopls
-    shellcheck
-    ansible-lint
-    fd
-    python310Packages.jedi-language-server
-    nodePackages."@prisma/language-server"
-    nodePackages."bash-language-server"
-    nodePackages."dockerfile-language-server-nodejs"
-    # nodePackages."graphql-language-service-cli"
-    nodePackages."pyright"
-    nodePackages."typescript"
-    nodePackages."typescript-language-server"
-    nodePackages."vscode-langservers-extracted"
-    nodePackages."yaml-language-server"
-    rust-analyzer
-    sumneko-lua-language-server
-    terraform-ls
+      rnix-lsp
+      gopls
+      shellcheck
+      ansible-lint
+      fd
+      python310Packages.jedi-language-server
+      nodePackages."@prisma/language-server"
+      nodePackages."bash-language-server"
+      nodePackages."dockerfile-language-server-nodejs"
+      # nodePackages."graphql-language-service-cli"
+      nodePackages."pyright"
+      nodePackages."typescript"
+      nodePackages."typescript-language-server"
+      nodePackages."vscode-langservers-extracted"
+      nodePackages."yaml-language-server"
+      rust-analyzer
+      sumneko-lua-language-server
+      terraform-ls
     ];
   };
   home.file."nvim-lua" = {
