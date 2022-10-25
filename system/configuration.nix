@@ -35,20 +35,20 @@ in
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  # networking.networkmanager.enable = true;
-  networking.wireless = {
-    enable = true;
-    networks = {
-      "ADDN-20" = {
-        psk = "gowest123";
-      };
-      "Adgai" = {
-        psk = "12345678";
-      };
-
-    };
-
-  };
+  networking.networkmanager.enable = true;
+  # networking.wireless = {
+  #   enable = true;
+  #   networks = {
+  #     "ADDN-20" = {
+  #       psk = "gowest123";
+  #     };
+  #     "Adgai" = {
+  #       psk = "12345678";
+  #     };
+  #
+  #   };
+  #
+  # };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";

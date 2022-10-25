@@ -45,7 +45,7 @@
       };
       discord-overlay = (import (builtins.fetchTarball {
         url = "https://github.com/InternetUnexplorer/discord-overlay/archive/main.tar.gz";
-        sha256 = "sha256:0gwlgjijqr23w2g2pnif8dz0a8df4jv88hga0am3c6cch4h4s05m";
+        sha256 = "sha256:1b7dz1v2vz3zzi46fmjaf5vy9a3cjnz3h40iiakmg7dl310pg59z";
       }));
 
       overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default discord-overlay inputs.poetry2nix.overlay ];

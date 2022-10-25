@@ -2,7 +2,7 @@ require("go").setup({
 	go = "go", -- go command, can be go[default] or go1.18beta1
 	goimport = "gopls", -- goimport command, can be gopls[default] or goimport
 	fillstruct = "gopls", -- can be nil (use fillstruct, slower) and gopls
-	gofmt = "gofumpt", --gofmt cmd,
+	gofmt = "gofmt", --gofmt cmd,
 	max_line_len = 120, -- max line length in goline format
 	tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
 	gotests_template = "", -- sets gotests -template parameter (check gotests for details)
@@ -35,7 +35,7 @@ require("go").setup({
 	gopls_cmd = nil, -- if you need to specify gopls path and cmd, e.g {"/home/user/lsp/gopls", "-logfile","/var/log/gopls.log" }
 	gopls_remote_auto = true, -- add -remote=auto to gopls
 	dap_debug = true, -- set to false to disable dap
-	dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
+	dap_debug_keymap = false, -- true: use keymap for debugger defined in go/dap.lua
 	-- false: do not use keymap in go/dap.lua.  you must define your own.
 	dap_debug_gui = true, -- set to true to enable dap gui, highly recommand
 	dap_debug_vt = true, -- set to true to enable dap virtual text
@@ -49,6 +49,10 @@ require("go").setup({
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.go",
-	callback = require("go.format").goimport,
+	callback = function ()
+    require('go.format').goimport()
+
+	 -- require("go.format").goimport(),
+	end,
 	group = vim.api.nvim_create_augroup("golua", { clear = true }),
 })

@@ -88,11 +88,11 @@ in
 
       #DAP
 
-      #use("mfussenegger/nvim-dap")
+      vimPlugins.nvim-dap
       #use("mfussenegger/nvim-dap-python")
-      #use("theHamsta/nvim-dap-virtual-text")
+      vimPlugins.nvim-dap-virtual-text
       #use("David-Kunz/jester")
-      #use("rcarriga/nvim-dap-ui")
+      vimPlugins.nvim-dap-ui
 
       # Treesitter
       # (vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
