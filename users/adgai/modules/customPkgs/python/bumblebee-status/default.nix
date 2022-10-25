@@ -1,24 +1,15 @@
-{ lib, buildPythonPackage, fetchFromGitHub, pytestCheckHook, pytest-freezegun, psutil, netifaces, pytest-mock, glibcLocales, killall }:
-
-buildPythonPackage rec {
-  pname = "bumblebee-status";
-  version = "2.1.5";
-
-  src = fetchFromGitHub {
-    owner = "tobi-wan-kenobi";
-    repo = "bumblebee-status";
-    rev = "v${version}";
-    sha256 = "M3onP+5YEB2CaUqU1g4g9iutbwmGtYKrFcE7jvxNfL0=";
+{lib, pkgs,  ... }:
+let 
+  bumblebee-status = pkgs.pythonPackages.buildPythonPackage rec {
+    pname = "bumblebee-status";
+    version = "2.1.5";
+  src = pkgs.pythonPackages.fetchPypi {
+    inherit pname version;
+    sha256 = "sha256-hbU/S+i431Uvxar7bN2TEKLodn3hNZAY/ZE0Y28PfaQ=";
   };
+  doCheck = false;
 
-  checkInputs = [
-    glibcLocales
-    pytestCheckHook
-    pytest-freezegun
-    psutil
-    netifaces
-    pytest-mock
-    killall
-  ];
-
+  };
+in {
+  home.packages = [bumblebee-status];
 }

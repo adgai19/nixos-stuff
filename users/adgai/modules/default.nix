@@ -10,6 +10,7 @@
     ./starship.nix
     ./tmux.nix
     ./zsh.nix
+    ./customPkgs/python/bumblebee-status
     ./customPkgs/shell-scripts
     ./rofi.nix
   ];
