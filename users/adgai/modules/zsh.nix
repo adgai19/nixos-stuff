@@ -13,6 +13,7 @@
     defaultKeymap = "viins";
     initExtra = ''
       eval "$(starship init zsh)"
+      export DIRENV_LOG_FORMAT=
       I3SOCK=$(i3 --get-socket)
       xmodmap -e "keycode 108 = Alt_R"
       bindkey "^P" up-line-or-search

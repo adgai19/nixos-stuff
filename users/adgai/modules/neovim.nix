@@ -21,9 +21,13 @@ let
     src = inputs.autosave-nvim;
   };
 
-  noice-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "noice.nvim";
-    src = inputs.noice-nvim;
+  astro-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "vim-astro";
+    src = inputs.astro-vim;
+  };
+  drop-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "drop.nvim";
+    src = inputs.drop-nvim;
   };
 
 in
@@ -96,11 +100,12 @@ in
 
       # Treesitter
       # (vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-      vimPlugins.nvim-treesitter
+      # vimPlugins.nvim-treesitter
+      # (pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
 
-      vimPlugins.cmp-treesitter
-      vimPlugins.nvim-treesitter-textobjects
-      vimPlugins.nvim-treesitter-context
+      # vimPlugins.cmp-treesitter
+      # vimPlugins.nvim-treesitter-textobjects
+      # vimPlugins.nvim-treesitter-context
 
       #Prime stuff
       vimPlugins.harpoon
@@ -110,7 +115,7 @@ in
       vimPlugins.rainbow_parentheses-vim
       #should move to format.nvim
       vimPlugins.neoformat
-      vimPlugins.vim-startify
+      # vimPlugins.vim-startify
       vimPlugins.lualine-nvim
       vimPlugins.lualine-lsp-progress
       vimPlugins.nvim-notify
@@ -129,6 +134,8 @@ in
       vimPlugins.git-blame-nvim
       vimPlugins.gitsigns-nvim
       vimPlugins.noice-nvim
+
+      vimPlugins.live-command-nvim
       lspcontainers-nvim
       # tsplayground
       vimPlugins.playground
@@ -143,7 +150,8 @@ in
       cyclist-nvim
       typescript-nvim
       autosave-nvim
-      # noice-nvim
+      astro-vim
+      # drop-nvim
     ];
     extraConfig = ''
       luafile $HOME/.config/nvim/lua/general.lua
@@ -152,6 +160,7 @@ in
       luafile $HOME/.config/nvim/lua/adgai/init.lua
     '';
     extraPackages = with pkgs; [
+      # treesitter
       rnix-lsp
       gopls
       shellcheck
@@ -166,6 +175,7 @@ in
       nodePackages."typescript"
       nodePackages."typescript-language-server"
       nodePackages."vscode-langservers-extracted"
+      nodePackages.write-good
       nodePackages."yaml-language-server"
       rust-analyzer
       sumneko-lua-language-server

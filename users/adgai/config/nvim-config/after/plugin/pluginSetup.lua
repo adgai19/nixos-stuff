@@ -12,3 +12,6 @@ require("gitsigns").setup()
 require("nvim-surround").setup()
 require("auto-save").setup()
 require("noice").setup()
+-- require('drop').setup({
+--   screensaver = 1000 * 5, -- show after 5 minutes. Set to false, to disable
+-- })

@@ -13,6 +13,14 @@
     poetry2nix.url = "github:nix-community/poetry2nix";
     # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
+    drop-nvim = {
+      url = "github:folke/drop.nvim";
+      flake = false;
+    };
+    astro-vim = {
+      url = "github:wuelnerdotexe/vim-astro";
+      flake = false;
+    };
     cyclist-nvim = {
       url = "github:tjdevries/cyclist.vim";
       flake = false;
@@ -45,10 +53,10 @@
       };
       discord-overlay = (import (builtins.fetchTarball {
         url = "https://github.com/InternetUnexplorer/discord-overlay/archive/main.tar.gz";
-        sha256 = "sha256:1b7dz1v2vz3zzi46fmjaf5vy9a3cjnz3h40iiakmg7dl310pg59z";
+        sha256 = "sha256:0phjnsckdmgbd6wi4ig92d8h1d8ix05dr2b2x728p4vw5kzklf1x";
       }));
 
-      overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default discord-overlay inputs.poetry2nix.overlay ];
+      overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default inputs.poetry2nix.overlay ];
 
     in
     {
