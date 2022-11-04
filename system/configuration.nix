@@ -206,6 +206,8 @@ in
   };
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  # for qmk
+  services.udev.packages = [ pkgs.qmk-udev-rules ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

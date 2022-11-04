@@ -13,6 +13,7 @@
     ./customPkgs/python/bumblebee-status
     ./customPkgs/shell-scripts
     ./rofi.nix
+    ./qmk.nix
   ];
 }
 
