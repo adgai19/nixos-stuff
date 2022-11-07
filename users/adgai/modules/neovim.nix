@@ -29,6 +29,10 @@ let
     name = "drop.nvim";
     src = inputs.drop-nvim;
   };
+  nvim-dap-go = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-dap-go";
+    src = inputs.nvim-dap-go;
+  };
 
 in
 {
@@ -103,9 +107,9 @@ in
       # vimPlugins.nvim-treesitter
       # (pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
 
-      # vimPlugins.cmp-treesitter
-      # vimPlugins.nvim-treesitter-textobjects
-      # vimPlugins.nvim-treesitter-context
+      vimPlugins.cmp-treesitter
+      vimPlugins.nvim-treesitter-textobjects
+      vimPlugins.nvim-treesitter-context
 
       #Prime stuff
       vimPlugins.harpoon
@@ -150,6 +154,7 @@ in
       cyclist-nvim
       typescript-nvim
       autosave-nvim
+      nvim-dap-go
       astro-vim
       # drop-nvim
     ];
@@ -180,6 +185,7 @@ in
       rust-analyzer
       sumneko-lua-language-server
       terraform-ls
+      ccls
     ];
   };
   home.file."nvim-lua" = {

@@ -18,7 +18,7 @@ parser_configs.norg_table = {
 	},
 }
 -- Defines a read-write directory for treesitters in nvim's cache dir
-local parser_install_dir = vim.fn.stdpath("cache") .. "/treesitters"
+local parser_install_dir = vim.fn.stdpath("data") .. "/treesitters"
 vim.fn.mkdir(parser_install_dir, "p")
 
 -- In your treesitter config,
@@ -27,7 +27,7 @@ require("nvim-treesitter.configs").setup({
 	-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   parser_install_dir =parser_install_dir,
   -- ensure_installed = {},
-  -- ensure_installed = "all",
+  ensure_installed = "all",
 	-- ensure_installed = {
 	-- 	"lua",
 	-- 	"javascript",

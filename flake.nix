@@ -42,6 +42,10 @@
       url = "github:lspcontainers/lspcontainers.nvim";
       flake = false;
     };
+    nvim-dap-go = {
+      url = "github:leoluz/nvim-dap-go";
+      flake = false;
+    };
 
   };
   outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
@@ -51,10 +55,6 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-      discord-overlay = (import (builtins.fetchTarball {
-        url = "https://github.com/InternetUnexplorer/discord-overlay/archive/main.tar.gz";
-        sha256 = "sha256:0phjnsckdmgbd6wi4ig92d8h1d8ix05dr2b2x728p4vw5kzklf1x";
-      }));
 
       overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default inputs.poetry2nix.overlay ];
 

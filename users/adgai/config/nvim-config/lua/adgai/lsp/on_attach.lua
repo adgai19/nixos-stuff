@@ -31,6 +31,7 @@ end
 local make_client_capabilities = function()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
+  capabilities.offsetEncoding = { "utf-16" }
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 	capabilities.textDocument.completion.completionItem.resolveSupport = {
 		properties = { "documentation", "detail", "additionalTextEdits" },

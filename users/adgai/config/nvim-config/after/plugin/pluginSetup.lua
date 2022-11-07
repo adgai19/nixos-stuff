@@ -15,3 +15,5 @@ require("noice").setup()
 -- require('drop').setup({
 --   screensaver = 1000 * 5, -- show after 5 minutes. Set to false, to disable
 -- })
+--
+require('dap-go').setup()
