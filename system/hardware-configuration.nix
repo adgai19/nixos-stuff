@@ -13,7 +13,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_0.virtualbox ];
 
   fileSystems."/" =
     {

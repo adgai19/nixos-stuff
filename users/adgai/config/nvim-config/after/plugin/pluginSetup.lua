@@ -1,6 +1,6 @@
 require("todo-comments").setup({})
 require("trouble").setup({})
-require("inc_rename").setup()
+-- require("inc_rename").setup()
 require("Comment").setup()
 require("notify").setup({
 background_colour = "#000000",

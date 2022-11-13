@@ -109,7 +109,6 @@ in
   system.autoUpgrade = {
     enable = true;
   };
-  virtualisation.docker.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -130,6 +129,13 @@ in
 
     ];
   };
+
+  virtualisation.docker.enable = true;
+
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  users.extraGroups.vboxusers.members = [ "adgai" ];
+
   programs.zsh.promptInit = ''
     any-nix-shell zsh --info-right | source /dev/stdin
   '';

@@ -28,6 +28,7 @@
     brave
     python310Packages.adblock
     python310Packages.tkinter
+    newsboat
 
   ];
 }

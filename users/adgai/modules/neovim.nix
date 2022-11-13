@@ -92,7 +92,7 @@ in
       vimPlugins.neogit
       vimPlugins.vim-scriptease
       vimPlugins.comment-nvim
-      vimPlugins.nvim-ts-context-commentstring
+      #vimPlugins.nvim-ts-context-commentstring
 
       #DAP
 
@@ -107,9 +107,9 @@ in
       # vimPlugins.nvim-treesitter
       # (pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
 
-      vimPlugins.cmp-treesitter
-      vimPlugins.nvim-treesitter-textobjects
-      vimPlugins.nvim-treesitter-context
+      # vimPlugins.cmp-treesitter
+      # vimPlugins.nvim-treesitter-textobjects
+      # vimPlugins.nvim-treesitter-context
 
       #Prime stuff
       vimPlugins.harpoon
@@ -119,7 +119,7 @@ in
       vimPlugins.rainbow_parentheses-vim
       #should move to format.nvim
       vimPlugins.neoformat
-      # vimPlugins.vim-startify
+      vimPlugins.vim-startify
       vimPlugins.lualine-nvim
       vimPlugins.lualine-lsp-progress
       vimPlugins.nvim-notify
@@ -130,7 +130,7 @@ in
       vimPlugins.numb-nvim
       vimPlugins.null-ls-nvim
       vimPlugins.i3config-vim
-      vimPlugins.nvim-ts-autotag
+      # vimPlugins.nvim-ts-autotag
       vimPlugins.fidget-nvim
       vimPlugins.neorg
       vimPlugins.vim-qf
@@ -142,14 +142,14 @@ in
       vimPlugins.live-command-nvim
       lspcontainers-nvim
       # tsplayground
-      vimPlugins.playground
+      # vimPlugins.playground
       vimPlugins.impatient-nvim
 
       vimPlugins.tokyonight-nvim
-      vimExtraPlugins.inc-rename-nvim
-      vimExtraPlugins.go-nvim
-      vimExtraPlugins.guihua-lua
-      vimExtraPlugins.hydra-nvim
+      # vimExtraPlugins.inc-rename-nvim
+      # vimExtraPlugins.go-nvim
+      # vimExtraPlugins.guihua-lua
+      # vimExtraPlugins.hydra-nvim
 
       cyclist-nvim
       typescript-nvim
