@@ -9,6 +9,7 @@
       cat = "bat";
       pg = "ping google.com";
       gs = "git status";
+      nb = "newsboat";
     };
     defaultKeymap = "viins";
     initExtra = ''

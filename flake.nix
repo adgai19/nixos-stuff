@@ -4,7 +4,6 @@
   inputs = {
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    vim-extra-plugins.url = "github:m15a/nixpkgs-vim-extra-plugins";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +12,19 @@
     poetry2nix.url = "github:nix-community/poetry2nix";
     # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
+    inc-rename = {
+      url= "github:smjonas/inc-rename.nvim";
+      flake = false;
+    };
+    go-nvim = {
+      url= "github:ray-x/go.nvim";
+      flake = false;
+    };
+
+    guihua-nvim = {
+      url= "github:ray-x/guihua.lua";
+      flake = false;
+    };
     drop-nvim = {
       url = "github:folke/drop.nvim";
       flake = false;
@@ -56,7 +68,11 @@
         config = { allowUnfree = true; };
       };
 
-      overlays = [ inputs.neovim-nightly.overlay inputs.vim-extra-plugins.overlays.default inputs.poetry2nix.overlay ];
+      overlays = [ 
+        inputs.neovim-nightly.overlay
+        inputs.poetry2nix.overlay
+        (import ./users/adgai/overlays.nix inputs)
+      ];
 
     in
     {

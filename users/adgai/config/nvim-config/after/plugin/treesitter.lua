@@ -18,31 +18,10 @@ parser_configs.norg_table = {
 	},
 }
 -- Defines a read-write directory for treesitters in nvim's cache dir
-local parser_install_dir = vim.fn.stdpath("data") .. "/treesitters"
-vim.fn.mkdir(parser_install_dir, "p")
 
 -- In your treesitter config,
 
 require("nvim-treesitter.configs").setup({
-	-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  parser_install_dir =parser_install_dir,
-  -- ensure_installed = {},
-  ensure_installed = "all",
-	-- ensure_installed = {
-	-- 	"lua",
-	-- 	"javascript",
-	-- 	"typescript",
-	-- 	"html",
-	-- 	"css",
-	-- 	"dockerfile",
-	-- 	"go",
-	-- 	"gomod",
-	-- 	"hcl",
-	-- 	"json",
-	-- 	"tsx",
-	-- 	"vue",
-	-- 	"yaml",
-	-- }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	highlight = {
 		enable = true, -- false will disable the whole extension
 	},
@@ -158,8 +137,6 @@ require("nvim-treesitter.configs").setup({
 	-- },
 })
 
- vim.opt.runtimepath:append(parser_install_directory)
-  --
   --
 require("treesitter-context").setup({
 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)

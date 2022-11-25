@@ -14,7 +14,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.05";
-  nixpkgs.overlays = [ import ./overlays.nix ];
+  # nixpkgs.overlays = [(import ./overlays.nix )];
 
   imports = [ ./modules ];
   # Let Home Manager install and manage itself.

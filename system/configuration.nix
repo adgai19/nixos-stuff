@@ -71,7 +71,8 @@ in
   services.xserver = {
     layout = "us";
     xkbVariant = "workman";
-    xkbOptions = "caps:swapescape,ctrl:swap_lalt_lctl";
+    # xkbOptions = "caps:swapescape,ctrl:swap_lalt_lctl";
+    xkbOptions = "caps:capslock";
     videoDrivers = [ "nvidia" ];
   };
 
