@@ -1,16 +1,3 @@
--- local bnr = vim.fn.bufnr('%')
--- local ns_id = vim.api.nvim_create_namespace('demo')
---
--- local line_num = 0
--- local col_num = 0
---
--- local opts = {
---   id = 1,
---   virt_text = {{"demo", "IncSearch"}},
---   virt_text_pos = 'right_align',
--- }
---
--- local mark_id = vim.api.nvim_buf_set_extmark(bnr, ns_id, line_num, col_num, opts)
 function P(items)
 	print(vim.inspect(items))
 end

@@ -13,16 +13,16 @@
     # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
     inc-rename = {
-      url= "github:smjonas/inc-rename.nvim";
+      url = "github:smjonas/inc-rename.nvim";
       flake = false;
     };
     go-nvim = {
-      url= "github:ray-x/go.nvim";
+      url = "github:ray-x/go.nvim";
       flake = false;
     };
 
     guihua-nvim = {
-      url= "github:ray-x/guihua.lua";
+      url = "github:ray-x/guihua.lua";
       flake = false;
     };
     drop-nvim = {
@@ -68,7 +68,7 @@
         config = { allowUnfree = true; };
       };
 
-      overlays = [ 
+      overlays = [
         inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
         (import ./users/adgai/overlays.nix inputs)
@@ -79,17 +79,13 @@
       devShells."${system}".default = pkgs.mkShellNoCC {
         packages = with pkgs;[ git zsh nixpkgs-fmt ];
         shellHook = ''echo Inside nix dev shell'';
-
-
       };
 
       nixosConfigurations = {
-        adgai = nixpkgs.lib.nixosSystem {
+        legion = nixpkgs.lib.nixosSystem {
           inherit system;
-
           modules = [
-            ./system/configuration.nix
-
+            ./system/legion/configuration.nix
             home-manager.nixosModules.home-manager
             {
               nixpkgs.overlays = overlays;
@@ -101,6 +97,9 @@
             }
           ];
 
+        };
+        vms = nixpkgs.lib.nixosSystem{
+          inherit system;
         };
       };
     };

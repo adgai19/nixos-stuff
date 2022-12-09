@@ -16,6 +16,7 @@ local serverlist = {
 	"ccls",
 	"rnix",
 	"cssls",
+  "nil_ls",
 	"emmet_ls",
 	"jedi_language_server",
 	-- "nil_ls",
