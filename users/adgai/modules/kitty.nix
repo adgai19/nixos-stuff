@@ -73,7 +73,7 @@
         active_tab_font_style   bold-italic
         inactive_tab_font_style normal
         tab_bar_background none
-        background_opacity 0.99
+        background_opacity 0.95
         background_image_layout tiled
         background_image_linear no
         dynamic_background_opacity no

@@ -98,7 +98,7 @@
           ];
 
         };
-        vms = nixpkgs.lib.nixosSystem{
+        vms = nixpkgs.lib.nixosSystem {
           inherit system;
         };
       };

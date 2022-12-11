@@ -1,6 +1,6 @@
-{pkgs,
-  ...
-}:{
+{ pkgs
+, ...
+}: {
 
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -78,6 +78,8 @@
   services.picom.enable = true;
   fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome ];
 
+
+  security.sudo.wheelNeedsPassword = false;
   # List services that you want to enable:
 
   nix = {
@@ -86,9 +88,21 @@
       keep-derivations = true
     ''; # substituters = "https://danth.cachix.org";
     # trusted-public-keys = "danth.cachix.org-1:wpodfSL7suXRc/rJDZZUptMa1t4MJ795hemRN0q84vI=";
+
     settings = {
       auto-optimise-store = true;
       trusted-users = [ "root" "adgai" ];
+
+      extra-substituters = [
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+
+      extra-trusted-public-keys  = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+
+      ];
     };
     gc = {
       automatic = true;
