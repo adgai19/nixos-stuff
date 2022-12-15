@@ -16,6 +16,11 @@
       url = "github:smjonas/inc-rename.nvim";
       flake = false;
     };
+
+    regexplainer = {
+      url = "github:bennypowers/nvim-regexplainer";
+      flake = false;
+    };
     go-nvim = {
       url = "github:ray-x/go.nvim";
       flake = false;
@@ -58,11 +63,19 @@
       url = "github:leoluz/nvim-dap-go";
       flake = false;
     };
+    firefox-overlay={
+      url = "github:mozilla/nixpkgs-mozilla";
+    };
+    tokyonight-tmux = {
+      url = "github:janoamaral/tokyo-night-tmux";
+      flake = false;
+    };
 
   };
   outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
     let
       system = "x86_64-linux";
+      # Change this to a rev sha to pin
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
@@ -71,6 +84,7 @@
       overlays = [
         inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
+        inputs.firefox-overlay.overlay
         (import ./users/adgai/overlays.nix inputs)
       ];
 

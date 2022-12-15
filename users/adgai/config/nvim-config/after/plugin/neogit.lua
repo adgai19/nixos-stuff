@@ -75,7 +75,7 @@ neogit.setup({
 	},
 })
 
-local nnoremap = require("keymaps.helpers").nnoremap
+local nnoremap = require("adgai.keymaps.helpers").nnoremap
 nnoremap("<leader>gs", function()
 	neogit.open()
 end)

@@ -17,3 +17,5 @@ require("noice").setup()
 -- })
 --
 require('dap-go').setup()
+require('regexplainer').setup()
+

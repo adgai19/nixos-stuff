@@ -1,38 +1,5 @@
 { pkgs, inputs, ... }:
 let
-
-  # typescript-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "typescript.nvim";
-  #   doCheck = false;
-  #   doInstallCheck = false;
-  #   src = inputs.typescript-nvim;
-  # };
-  # autosave-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "autosave.nvim";
-  #   src = inputs.autosave-nvim;
-  # };
-  #
-  # astro-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "vim-astro";
-  #   src = inputs.astro-vim;
-  # };
-  # drop-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "drop.nvim";
-  #   src = inputs.drop-nvim;
-  # };
-  # go-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "go-nvim";
-  #   src = inputs.go-nvim;
-  # };
-  #
-  # guihua-lua = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "guihua-lua";
-  #   src = inputs.guihua-nvim;
-  # };
-  # nvim-dap-go = pkgs.vimUtils.buildVimPluginFrom2Nix {
-  #   name = "nvim-dap-go";
-  #   src = inputs.nvim-dap-go;
-  # };
   vimPlugins = with pkgs.vimPlugins; [
     vim-nix
     vim-tmux
@@ -129,7 +96,7 @@ let
     live-command-nvim
     playground
     impatient-nvim
-
+catppuccin-nvim
     hydra-nvim
     tokyonight-nvim
   ];
@@ -138,11 +105,13 @@ let
     guihua-lua
     inc-rename-nvim
     lspcontainers-nvim
+
     cyclist-nvim
     typescript-nvim
     # autosave-nvim
     nvim-dap-go
     astro-vim
+    regexplainer
     # drop-nvim
   ];
 
@@ -162,13 +131,9 @@ in
       nvim-treesitter.withAllGrammars
     ]);
     extraConfig = ''
-      luafile $HOME/.config/nvim/lua/general.lua
-      luafile $HOME/.config/nvim/lua/autocmds.lua
-      luafile $HOME/.config/nvim/lua/keymaps/init.lua
       luafile $HOME/.config/nvim/lua/adgai/init.lua
     '';
     extraPackages = with pkgs; [
-      # treesitter
       rnix-lsp
       gopls
       shellcheck
@@ -178,9 +143,10 @@ in
       nodePackages."@prisma/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
-      # nodePackages."graphql-language-service-cli"
+  nodePackages.graphql-language-service-cli
       nodePackages."pyright"
       nodePackages."typescript"
+      nodePackages_latest.vim-language-server
       nodePackages."typescript-language-server"
       nodePackages."vscode-langservers-extracted"
       nodePackages.write-good

@@ -24,7 +24,7 @@ require("nvim-dap-virtual-text").setup({
 
 require("dapui").setup()
 
-local nnoremap = require("keymaps.helpers").nnoremap
+local nnoremap = require("adgai.keymaps.helpers").nnoremap
 -- nnoremap("<leader>dn", dap.continue)
 -- nnoremap("<leader>db", dap.toggle_breakpoint)
 -- nnoremap("<leader>di", dap.step_in)

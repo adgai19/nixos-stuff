@@ -1,8 +1,8 @@
-local nnoremap = require("keymaps.helpers").nnoremap
-local vnoremap = require("keymaps.helpers").vnoremap
-local inoremap = require("keymaps.helpers").inoremap
-local xnoremap = require("keymaps.helpers").xnoremap
-local tnoremap = require("keymaps.helpers").tnoremap
+local nnoremap = require("adgai.keymaps.helpers").nnoremap
+local vnoremap = require("adgai.keymaps.helpers").vnoremap
+local inoremap = require("adgai.keymaps.helpers").inoremap
+local xnoremap = require("adgai.keymaps.helpers").xnoremap
+local tnoremap = require("adgai.keymaps.helpers").tnoremap
 
 -- packer
 nnoremap("<leader>ps", "<cmd>PackerSync<cr>")

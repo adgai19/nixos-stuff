@@ -1,34 +1,35 @@
 { pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
-    poetry
-    firefox-devedition-bin
-    fd
-    gcc
-    discord
-    htop
-    lazydocker
-    nixpkgs-fmt
-    flameshot
-    xclip
-    hyp
     # hyperbeam
-    lazygit
-    nodejs-18_x
-    stylua
-    iw
-    pulseaudio
-    gh
-    xsettingsd
-    python310
-    scrot
+    brave
+    discord
+    evince
+    fd
     feh
     filezilla
-    python310Packages.netifaces
-    brave
-    python310Packages.adblock
-    python310Packages.tkinter
+    firefox-devedition-bin
+    flameshot
+    gcc
+    gh
+    htop
+    hyp
+    iw
+    lazydocker
+    lazygit
     newsboat
+    nixpkgs-fmt
+    nodejs-18_x
+    poetry
+    pulseaudio
+    python310
+    python310Packages.adblock
+    python310Packages.netifaces
+    python310Packages.tkinter
+    scrot
+    stylua
+    xclip
+    xsettingsd
 
   ];
 }

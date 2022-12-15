@@ -1,4 +1,4 @@
-local nnoremap = require("keymaps.helpers").nnoremap
+local nnoremap = require("adgai.keymaps.helpers").nnoremap
 
 nnoremap("<leader>na", require("harpoon.mark").add_file)
 nnoremap("<leader>ni", require("harpoon.ui").toggle_quick_menu)

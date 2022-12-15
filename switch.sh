@@ -2,6 +2,6 @@
 #
 set -o errexit
 #nixos-rebuild build --flake .#adgai --impure
-sudo nixos-rebuild switch --flake .#legion 
+sudo nixos-rebuild switch --flake .#legion --impure
 
 

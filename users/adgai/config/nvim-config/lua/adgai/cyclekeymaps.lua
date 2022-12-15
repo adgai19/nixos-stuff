@@ -1,4 +1,4 @@
-local nnoremap = require("keymaps.helpers").nnoremap
+local nnoremap = require("adgai.keymaps.helpers").nnoremap
 
 local M = {}
 M.mode = "normal"

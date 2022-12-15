@@ -1,4 +1,4 @@
-local nnoremap = require("keymaps.helpers").nnoremap
+local nnoremap = require("adgai.keymaps.helpers").nnoremap
 
 nnoremap("<leader>ff", require("telescope.builtin").find_files)
 nnoremap("<leader>fg", require("telescope.builtin").live_grep)
