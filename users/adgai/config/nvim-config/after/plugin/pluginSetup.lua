@@ -3,7 +3,7 @@ require("trouble").setup({})
 -- require("inc_rename").setup()
 require("Comment").setup()
 require("notify").setup({
-background_colour = "#000000",
+	background_colour = "#000000",
 })
 vim.notify = require("notify")
 require("which-key").setup({})
@@ -16,6 +16,5 @@ require("noice").setup()
 --   screensaver = 1000 * 5, -- show after 5 minutes. Set to false, to disable
 -- })
 --
-require('dap-go').setup()
-require('regexplainer').setup()
-
+require("dap-go").setup()
+require("regexplainer").setup()

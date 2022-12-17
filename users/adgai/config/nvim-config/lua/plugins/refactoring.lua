@@ -9,16 +9,18 @@ local function refactor(prompt_bufnr)
 end
 local M = {}
 M.refactors = function()
-	require("telescope.pickers").new({}, {
-		prompt_title = "refactors",
-		finder = require("telescope.finders").new_table({ results = require("refactoring").get_refactors() }),
-		sorter = require("telescope.config").values.generic_sorter({}),
-		attach_mappings = function(_, map)
-			map("i", "<CR>", refactor)
-			map("n", "<CR>", refactor)
-			return true
-		end,
-	}):find()
+	require("telescope.pickers")
+		.new({}, {
+			prompt_title = "refactors",
+			finder = require("telescope.finders").new_table({ results = require("refactoring").get_refactors() }),
+			sorter = require("telescope.config").values.generic_sorter({}),
+			attach_mappings = function(_, map)
+				map("i", "<CR>", refactor)
+				map("n", "<CR>", refactor)
+				return true
+			end,
+		})
+		:find()
 end
 
 return M

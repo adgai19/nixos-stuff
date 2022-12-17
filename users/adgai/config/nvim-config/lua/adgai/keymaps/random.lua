@@ -58,7 +58,4 @@ vnoremap(">", " >gv")
 
 tnoremap([[<Esc>]], [[<C-\><C-n>]])
 nnoremap([[\]], ":Rg<space>")
-nnoremap([[<leader><leader>]],":nohl")
-
-
-
+nnoremap([[<leader><leader>]], ":nohl")

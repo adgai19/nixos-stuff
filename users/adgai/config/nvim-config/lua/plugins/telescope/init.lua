@@ -76,12 +76,14 @@ M.multi_rg = function(opts)
 		cwd = opts.cwd,
 	})
 
-	pickers.new(opts, {
-		debounce = 100,
-		prompt_title = "Live Grep (with shortcuts)",
-		finder = custom_grep,
-		previewer = conf.grep_previewer(opts),
-		sorter = require("telescope.sorters").empty(),
-	}):find()
+	pickers
+		.new(opts, {
+			debounce = 100,
+			prompt_title = "Live Grep (with shortcuts)",
+			finder = custom_grep,
+			previewer = conf.grep_previewer(opts),
+			sorter = require("telescope.sorters").empty(),
+		})
+		:find()
 end
 return M
