@@ -63,7 +63,7 @@
       url = "github:leoluz/nvim-dap-go";
       flake = false;
     };
-    firefox-overlay={
+    firefox-overlay = {
       url = "github:mozilla/nixpkgs-mozilla";
     };
     tokyonight-tmux = {

@@ -96,9 +96,10 @@ let
     live-command-nvim
     playground
     impatient-nvim
-catppuccin-nvim
+    catppuccin-nvim
     hydra-nvim
     tokyonight-nvim
+    indent-blankline-nvim
   ];
   customVimPlugins = with pkgs.customVimPlugins;[
     go-nvim
@@ -143,7 +144,7 @@ in
       nodePackages."@prisma/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
-  nodePackages.graphql-language-service-cli
+      nodePackages.graphql-language-service-cli
       nodePackages."pyright"
       nodePackages."typescript"
       nodePackages_latest.vim-language-server

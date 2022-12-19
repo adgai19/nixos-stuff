@@ -25,7 +25,7 @@ let
     tmuxPlugins.tmux-fzf
     tmuxPlugins.fzf-tmux-url
     tmuxPlugins.yank
-   customTmuxPlugins.tokyonight 
+    customTmuxPlugins.tokyonight
   ];
 in
 {

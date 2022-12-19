@@ -2,11 +2,11 @@ inputs: self: super:
 {
 
   customTmuxPlugins = with self ;{
-  tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin {
-    name = "tokyo-night-tmux";
-    pluginName = "tokyo-night-tmux";
-    rtpFilePath = "tokyo-night.tmux";
-    src = inputs.tokyonight-tmux;
+    tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin {
+      name = "tokyo-night-tmux";
+      pluginName = "tokyo-night-tmux";
+      rtpFilePath = "tokyo-night.tmux";
+      src = inputs.tokyonight-tmux;
     };
   };
   customVimPlugins = with self;{
@@ -60,7 +60,7 @@ inputs: self: super:
       name = "nvim-dap-go";
       src = inputs.nvim-dap-go;
     };
-    adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix{
+    adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";
       src = ./config/nvim-config;
     };

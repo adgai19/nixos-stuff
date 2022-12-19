@@ -10,8 +10,8 @@
     keybindings = {
       x = "$$f";
       "<enter>" = "shell";
-      o ="&mimeopen $f";
-      O ="$mimeopen --ask $f";
+      o = "&mimeopen $f";
+      O = "$mimeopen --ask $f";
       r = "push :rename<space>";
       md = "push :mkdir<space>";
       mf = "push :mkfile<space>";
@@ -20,26 +20,27 @@
       c = "cut";
       y = "copy";
       D = "$rm -rf $fx";
-      "<c-n>"= "down";
-      "<c-p>"= "up";
+      "<c-n>" = "down";
+      "<c-p>" = "up";
+      "<esc>" = "quit";
       m = null;
     };
     commands = {
       rename = "%[ -e $1 ] && printf 'file exists' || mv $f $1";
-      mkdir ="%[ -e $1 ] && printf 'dir exists' || mkdir $1";
-      mkfile ="%[ -e $1 ] && printf 'file exists' || touch $1";
+      mkdir = "%[ -e $1 ] && printf 'dir exists' || mkdir $1";
+      mkfile = "%[ -e $1 ] && printf 'file exists' || touch $1";
       delete = "rm -rf $f";
 
 
     };
   };
 
-home.file."lf-config"=
-  {
-    source = ../config/lf/icons;
-    target = "/home/adgai/.config/lf/icons";
+  home.file."lf-config" =
+    {
+      source = ../config/lf/icons;
+      target = "/home/adgai/.config/lf/icons";
 
-  };
+    };
 
 
 
