@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.lf = {
     enable = true;
     settings = {
@@ -34,6 +34,7 @@
 
     };
   };
+  home.packages = with pkgs;[ ueberzug ffmpegthumbnailer imagemagick poppler wkhtmltopdf ];
 
   home.file."lf-config" =
     {
@@ -42,6 +43,18 @@
 
     };
 
+  home.file."/home/adgai/.config/lf/cleaner".text = ''
+
+# #!/bin/sh
+# if [ -n "$FIFO_UEBERZUG" ]; then
+# 	printf '{"action": "remove", "identifier": "PREVIEW"}\n' > "$FIFO_UEBERZUG"
+# fi
+'';
+
+  home.file."/home/adgai/.config/lf/preview" = {
+    source = ../config/lf/preview;
+    target = "/home/adgai/.config/lf/preview";
+  };
 
 
 }
