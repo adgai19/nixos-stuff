@@ -18,14 +18,6 @@
     ./customPkgs/python/bumblebee-status
     ./customPkgs/shell-scripts
   ];
+
+  services.dunst.enable = true;
 }
-
-
-
-
-
-
-
-
-
-
