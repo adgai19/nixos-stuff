@@ -53,9 +53,9 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
 
-         nixpkgs.config.permittedInsecurePackages = [
-                "qtwebkit-5.212.0-alpha4"
-              ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "qtwebkit-5.212.0-alpha4"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

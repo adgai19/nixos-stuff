@@ -19,8 +19,6 @@
   imports = [ ./modules ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  home.packages = with pkgs; [ bottom tree ripgrep pavucontrol cachix arandr ];
-  services.dunst.enable = true;
   home.sessionVariables = {
     EDITOR = "nvim";
     LANG = "en_US.UTF-8";
@@ -28,19 +26,6 @@
     LC_CTYPE = "en_US.UTF-8";
   };
 
-  programs.git = {
-    enable = true;
-    userEmail = "gaitondeaditya@gmail.com";
-    userName = "Aditya Gaitonde";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
-    };
-  };
 
-  programs.bat = {
-    enable = true;
-  };
 
 }

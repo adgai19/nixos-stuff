@@ -75,7 +75,6 @@
   outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
     let
       system = "x86_64-linux";
-      # Change this to a rev sha to pin
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
@@ -95,6 +94,7 @@
         shellHook = ''echo Inside nix dev shell'';
       };
 
+      packages."${system}" = import ./packages inputs;
       nixosConfigurations = {
         legion = nixpkgs.lib.nixosSystem {
           inherit system;

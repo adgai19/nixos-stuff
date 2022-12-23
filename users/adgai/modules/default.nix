@@ -3,6 +3,7 @@
   imports = [
     ./alacritty.nix
     ./direnv.nix
+    ./git.nix
     ./i3.nix
     ./kitty.nix
     ./lf.nix

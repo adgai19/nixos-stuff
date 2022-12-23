@@ -112,6 +112,7 @@ let
     # autosave-nvim
     nvim-dap-go
     astro-vim
+    adgai-config
     regexplainer
     # drop-nvim
   ];
@@ -132,7 +133,7 @@ in
       nvim-treesitter.withAllGrammars
     ]);
     extraConfig = ''
-      luafile $HOME/.config/nvim/lua/adgai/init.lua
+      lua require('adgai').init()
     '';
     extraPackages = with pkgs; [
       rnix-lsp
@@ -140,6 +141,8 @@ in
       shellcheck
       ansible-lint
       fd
+      git
+      lua51Packages.sqlite
       python310Packages.jedi-language-server
       nodePackages."@prisma/language-server"
       nodePackages."bash-language-server"
@@ -157,16 +160,5 @@ in
       terraform-ls
       ccls
     ];
-  };
-  home.file."nvim-lua" = {
-    source = ../config/nvim-config/lua;
-    recursive = true;
-    target = "/home/adgai/.config/nvim/lua";
-  };
-
-  home.file."nvim-after" = {
-    source = ../config/nvim-config/after;
-    recursive = true;
-    target = "/home/adgai/.config/nvim/after";
   };
 }
