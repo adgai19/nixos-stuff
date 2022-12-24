@@ -159,6 +159,7 @@ in
       sumneko-lua-language-server
       terraform-ls
       ccls
+      nil
     ];
   };
 }

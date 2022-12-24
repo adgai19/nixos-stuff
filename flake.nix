@@ -10,6 +10,11 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     poetry2nix.url = "github:nix-community/poetry2nix";
+    agenix={
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+
+    };
     # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
     inc-rename = {

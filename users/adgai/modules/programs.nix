@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib,inputs, ... }:
 {
   home.packages = with pkgs; [
     # hyperbeam
     arandr
+    inputs.agenix.defaultPackage.x86_64-linux 
     bottom
     brave
     cachix
