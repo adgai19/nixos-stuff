@@ -100,6 +100,12 @@
       };
 
       packages."${system}" = import ./packages inputs;
+      homeConfigurations = {
+        ubuntu-vm = home-manager.lib.homeManagerConfiguration{
+          inherit pkgs;
+          modules = [./users/adgaU/home.nix];
+        };
+      };
       nixosConfigurations = {
         legion = nixpkgs.lib.nixosSystem {
           inherit system;
