@@ -10,7 +10,10 @@ require("which-key").setup({})
 require("nvim-autopairs").setup({})
 require("gitsigns").setup()
 require("nvim-surround").setup()
--- require("auto-save").setup()
+require("auto-save").setup({
+	debounce_delay = 3000, -- saves the file at most every `debounce_delay` milliseconds
+  trigger_events={"CursorHold"}
+})
 -- require('drop').setup({
 --   screensaver = 1000 * 5, -- show after 5 minutes. Set to false, to disable
 -- })

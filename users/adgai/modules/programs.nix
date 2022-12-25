@@ -1,9 +1,9 @@
-{ pkgs, lib,inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   home.packages = with pkgs; [
     # hyperbeam
+
     arandr
-    inputs.agenix.defaultPackage.x86_64-linux 
     bottom
     brave
     cachix
@@ -18,7 +18,9 @@
     gh
     htop
     hyp
+    inputs.agenix.defaultPackage.x86_64-linux
     iw
+    jq
     lazydocker
     lazygit
     newsboat
@@ -37,6 +39,5 @@
     tree
     xclip
     xsettingsd
-
   ];
 }

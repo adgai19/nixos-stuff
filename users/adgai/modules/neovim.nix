@@ -73,6 +73,7 @@ let
     rainbow_parentheses-vim
     #should move to format.nvim
     neoformat
+    formatter-nvim
     vim-startify
     lualine-nvim
     lualine-lsp-progress
@@ -109,7 +110,7 @@ let
 
     cyclist-nvim
     typescript-nvim
-    # autosave-nvim
+    autosave-nvim
     nvim-dap-go
     astro-vim
     adgai-config

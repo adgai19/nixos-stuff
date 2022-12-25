@@ -10,7 +10,7 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     poetry2nix.url = "github:nix-community/poetry2nix";
-    agenix={
+    agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
 
@@ -77,7 +77,7 @@
     };
 
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, agenix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -105,6 +105,7 @@
           inherit system;
           modules = [
             ./system/legion/configuration.nix
+            agenix.nixosModule
             home-manager.nixosModules.home-manager
             {
               nixpkgs.overlays = overlays;

@@ -45,7 +45,7 @@ in
               bind -n C-Left  previous-window
               bind -n C-Right next-window
               bind  e switch-client -l
-      	      bind Tab last-window
+              bind Tab last-window
               # tmux statusline config
               set -g status-interval 1
               # terminal color config
