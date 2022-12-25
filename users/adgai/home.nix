@@ -13,18 +13,11 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
   # nixpkgs.overlays = [(import ./overlays.nix )];
 
-  imports = [ ./modules ];
+  imports = [ ./modules ../common];
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    LANG = "en_US.UTF-8";
-    LC_ALL = "en_US.UTF-8";
-    LC_CTYPE = "en_US.UTF-8";
-  };
+
 
 
 

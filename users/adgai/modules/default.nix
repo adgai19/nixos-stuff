@@ -2,19 +2,13 @@
 {
   imports = [
     ./alacritty.nix
-    ./direnv.nix
     ./git.nix
     ./i3.nix
     ./kitty.nix
-    ./lf.nix
-    ./neovim.nix
     ./polybar.nix
     ./programs.nix
     ./qmk.nix
     ./rofi.nix
-    ./starship.nix
-    ./tmux.nix
-    ./zsh.nix
 
     ./customPkgs/python/bumblebee-status
     ./customPkgs/shell-scripts

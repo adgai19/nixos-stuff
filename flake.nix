@@ -89,7 +89,7 @@
         inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
         inputs.firefox-overlay.overlay
-        (import ./users/adgai/overlays.nix inputs)
+        (import ./users/common/overlays.nix inputs)
       ];
 
     in
