@@ -12,7 +12,6 @@ in
 
   nixpkgs.overlays = overlays;
 
-
   imports = [ ./modules ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
