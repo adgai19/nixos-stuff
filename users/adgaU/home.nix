@@ -1,10 +1,11 @@
 { config, pkgs, lib, inputs, ... }:
 {
+  imports = [../common];
   home={
     username="adgai";
   homeDirectory = "/home/adgai";
 stateVersion = "22.05";
- }; 
+ };
 
 
   programs.git = {
