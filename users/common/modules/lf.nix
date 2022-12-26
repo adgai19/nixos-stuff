@@ -34,7 +34,7 @@
 
     };
   };
-  home.packages = with pkgs;[ ueberzug ffmpegthumbnailer imagemagick poppler wkhtmltopdf ];
+  home.packages = with pkgs;[ ueberzug ffmpegthumbnailer imagemagick poppler ];
 
   home.file."lf-config" =
     {

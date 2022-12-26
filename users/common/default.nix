@@ -1,4 +1,16 @@
-{ config, pkgs, lib, inputs, ... }: {
+{ config, pkgs, lib, inputs, ... }:
+let
+
+  overlays = [
+    inputs.neovim-nightly.overlay
+    inputs.poetry2nix.overlay
+    inputs.firefox-overlay.overlay
+    (import ./overlays.nix inputs)
+  ];
+in
+{
+
+  nixpkgs.overlays = overlays;
 
 
   imports = [ ./modules ];

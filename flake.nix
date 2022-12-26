@@ -76,7 +76,7 @@
     };
 
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly,sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -103,6 +103,7 @@
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./users/adgaU/home.nix ];
+          extraSpecialArgs = { inherit system inputs; };
         };
       };
       nixosConfigurations = {
