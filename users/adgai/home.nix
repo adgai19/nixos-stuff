@@ -1,5 +1,4 @@
 { config, pkgs, lib, inputs, ... }:
-let
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -16,7 +15,7 @@ let
   # changes in each release.
   # nixpkgs.overlays = [(import ./overlays.nix )];
 
-  imports = [ ./modules ../common];
+  imports = [ ./modules ../common ];
   # Let Home Manager install and manage itself.
 
 

@@ -1,4 +1,4 @@
-{...}:{
+{ ... }: {
 
   imports = [
 
@@ -9,7 +9,7 @@
     ./starship.nix
     ./zsh.nix
   ];
-  programs.nnn.enable=false;
+  programs.nnn.enable = false;
 
 
 } 

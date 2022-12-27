@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "agenix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1665870395,
-        "narHash": "sha256-Tsbqb27LDNxOoPLh0gw2hIb6L/6Ow/6lIBvqcHzEKBI=",
-        "owner": "ryantm",
-        "repo": "agenix",
-        "rev": "a630400067c6d03c9b3e0455347dc8559db14288",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ryantm",
-        "repo": "agenix",
-        "type": "github"
-      }
-    },
     "astro-vim": {
       "flake": false,
       "locked": {
@@ -305,6 +285,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1671923641,
+        "narHash": "sha256-flPauiL5UrfRJD+1oAcEefpEIUqTqnyKScWe/UUU+lE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "939c05a176b8485971463c18c44f48e56a7801c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1671359686,
@@ -405,7 +401,6 @@
     },
     "root": {
       "inputs": {
-        "agenix": "agenix",
         "astro-vim": "astro-vim",
         "autosave-nvim": "autosave-nvim",
         "cyclist-nvim": "cyclist-nvim",
@@ -423,8 +418,30 @@
         "nvim-dap-go": "nvim-dap-go",
         "poetry2nix": "poetry2nix",
         "regexplainer": "regexplainer",
+        "sops-nix": "sops-nix",
         "tokyonight-tmux": "tokyonight-tmux",
         "typescript-nvim": "typescript-nvim"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1671937829,
+        "narHash": "sha256-YtaNB+mLw0d67JFYNjRWM+/AL3JCXuD/DGlnTlyX1tY=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "855b8d51fc3991bd817978f0f093aa6ae0fae738",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "tokyonight-tmux": {

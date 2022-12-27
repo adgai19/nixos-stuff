@@ -1,11 +1,11 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  imports = [../common];
-  home={
-    username="adgai";
-  homeDirectory = "/home/adgai";
-stateVersion = "22.05";
- };
+  imports = [ ../common ];
+  home = {
+    username = "adgai";
+    homeDirectory = "/home/adgai";
+    stateVersion = "22.05";
+  };
 
 
   programs.git = {
@@ -18,7 +18,7 @@ stateVersion = "22.05";
       };
     };
   };
- programs.home-manager.enable = true;
- programs.exa.enable=true;
- programs.bat.enable=true;
+  programs.home-manager.enable = true;
+  programs.exa.enable = true;
+  programs.bat.enable = true;
 }

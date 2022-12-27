@@ -18,8 +18,8 @@
     gh
     htop
     hyp
-    inputs.agenix.defaultPackage.x86_64-linux
     iw
+    age
     jq
     lazydocker
     lazygit

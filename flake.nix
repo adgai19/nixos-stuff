@@ -10,11 +10,6 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     poetry2nix.url = "github:nix-community/poetry2nix";
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-
-    };
     # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
     inc-rename = {
@@ -75,9 +70,13 @@
       url = "github:janoamaral/tokyo-night-tmux";
       flake = false;
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, agenix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly,sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -101,9 +100,9 @@
 
       packages."${system}" = import ./packages inputs;
       homeConfigurations = {
-        ubuntu-vm = home-manager.lib.homeManagerConfiguration{
+        ubuntu-vm = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [./users/adgaU/home.nix];
+          modules = [ ./users/adgaU/home.nix ];
         };
       };
       nixosConfigurations = {
@@ -111,7 +110,7 @@
           inherit system;
           modules = [
             ./system/legion/configuration.nix
-            agenix.nixosModule
+            sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
               nixpkgs.overlays = overlays;
