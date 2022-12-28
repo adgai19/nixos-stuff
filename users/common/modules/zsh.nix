@@ -1,4 +1,4 @@
-{ ... }:
+{pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -15,6 +15,7 @@
     initExtra = ''
 
 source    /home/adgai/.nix-profile/etc/profile.d/nix.sh
+any-nix-shell zsh --info-right | source /dev/stdin
 
             eval "$(starship init zsh)"
             export DIRENV_LOG_FORMAT=
@@ -69,6 +70,7 @@ source    /home/adgai/.nix-profile/etc/profile.d/nix.sh
   programs.exa = {
     enable = true;
   };
+  home.packages = with pkgs; [any-nix-shell];
 
   programs.bat = {
     enable = true;
