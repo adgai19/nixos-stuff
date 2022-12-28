@@ -110,7 +110,7 @@ let
 
     cyclist-nvim
     typescript-nvim
-    autosave-nvim
+    # autosave-nvim
     nvim-dap-go
     astro-vim
     adgai-config

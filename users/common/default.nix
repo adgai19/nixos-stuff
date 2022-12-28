@@ -9,7 +9,6 @@ let
   ];
 in
 {
-
   nixpkgs.overlays = overlays;
 
   imports = [ ./modules ];

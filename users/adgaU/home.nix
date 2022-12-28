@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  imports = [ ../common ];
+  imports = [ ../common ./programs.nix ];
   home = {
     username = "adgai";
     homeDirectory = "/home/adgai";

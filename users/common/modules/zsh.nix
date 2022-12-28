@@ -13,10 +13,18 @@
     };
     defaultKeymap = "viins";
     initExtra = ''
+
+source    /home/adgai/.nix-profile/etc/profile.d/nix.sh
+
             eval "$(starship init zsh)"
             export DIRENV_LOG_FORMAT=
+
+           if [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ]; then
+
             I3SOCK=$(i3 --get-socket)
             xmodmap -e "keycode 108 = Alt_R"
+            fi
+
             bindkey "^P" up-line-or-search
             bindkey "^N" down-line-or-search
             bindkey -s "^o" "tmux-sessionizer^M"
@@ -30,9 +38,6 @@
       rm "$FIFO_UEBERZUG"
       }
 
-      if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-      lf "$@"
-      else
       [ ! -d "$HOME/.cache/lf" ] && mkdir --parents "$HOME/.cache/lf"
       export FIFO_UEBERZUG="$HOME/.cache/lf/ueberzug-$$"
       mkfifo "$FIFO_UEBERZUG"
@@ -50,7 +55,6 @@
                  fi
              fi
 
-      fi
            }
 
             bindkey -s "^F" "f^M"
@@ -70,5 +74,3 @@
     enable = true;
   };
 }
-
-
