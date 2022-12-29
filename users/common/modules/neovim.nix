@@ -115,6 +115,8 @@ let
     astro-vim
     adgai-config
     regexplainer
+    vim-just
+    treesitter-just
     # drop-nvim
   ];
 

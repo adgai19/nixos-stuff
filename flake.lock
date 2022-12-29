@@ -420,7 +420,9 @@
         "regexplainer": "regexplainer",
         "sops-nix": "sops-nix",
         "tokyonight-tmux": "tokyonight-tmux",
-        "typescript-nvim": "typescript-nvim"
+        "treesitter-just": "treesitter-just",
+        "typescript-nvim": "typescript-nvim",
+        "vim-just": "vim-just"
       }
     },
     "sops-nix": {
@@ -460,6 +462,22 @@
         "type": "github"
       }
     },
+    "treesitter-just": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1635857607,
+        "narHash": "sha256-hYKFidN3LHJg2NLM1EiJFki+0nqi1URnoLLPknUbFJY=",
+        "owner": "IndianBoy42",
+        "repo": "tree-sitter-just",
+        "rev": "8af0aab79854aaf25b620a52c39485849922f766",
+        "type": "github"
+      },
+      "original": {
+        "owner": "IndianBoy42",
+        "repo": "tree-sitter-just",
+        "type": "github"
+      }
+    },
     "typescript-nvim": {
       "flake": false,
       "locked": {
@@ -488,6 +506,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "vim-just": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667421278,
+        "narHash": "sha256-DSC47z2wOEXvo2kGO5JtmR3hyHPiYXrkX7MgtagV5h4=",
+        "owner": "NoahTheDuke",
+        "repo": "vim-just",
+        "rev": "838c9096d4c5d64d1000a6442a358746324c2123",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NoahTheDuke",
+        "repo": "vim-just",
         "type": "github"
       }
     }

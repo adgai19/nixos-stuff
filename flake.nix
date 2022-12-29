@@ -17,6 +17,17 @@
       flake = false;
     };
 
+    vim-just = {
+      url = "github:NoahTheDuke/vim-just";
+      flake = false;
+    };
+
+    treesitter-just = {
+      url = "github:IndianBoy42/tree-sitter-just";
+      flake = false;
+    };
+# NoahTheDuke/vim-just
+# IndianBoy42/tree-sitter-just
     regexplainer = {
       url = "github:bennypowers/nvim-regexplainer";
       flake = false;

@@ -60,6 +60,16 @@ inputs: self: super:
       name = "nvim-dap-go";
       src = inputs.nvim-dap-go;
     };
+
+    vim-just = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "vim-just";
+      src = inputs.vim-just;
+    };
+
+     treesitter-just = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "treesitter-just";
+      src = inputs.treesitter-just;
+    };
     adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";
       src = ./config/nvim-config;

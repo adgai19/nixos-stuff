@@ -20,6 +20,7 @@
     iw
     age
     jq
+    just
     lazydocker
     lazygit
     newsboat

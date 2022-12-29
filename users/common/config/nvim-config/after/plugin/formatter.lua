@@ -9,7 +9,7 @@ require("formatter").setup({
 		["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
 	},
 })
-vim.api.nvim_create_autocmd(
-	"BufWritePost",
-	{ pattern = "*", command = "FormatWrite", group = vim.api.nvim_create_augroup("Formatter", { clear = true }) }
-)
+-- vim.api.nvim_create_autocmd(
+-- 	"BufWritePost",
+-- 	{ pattern = "*", command = "FormatWrite", group = vim.api.nvim_create_augroup("Formatter", { clear = true }) }
+-- )
