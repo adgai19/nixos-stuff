@@ -7,6 +7,7 @@
     stateVersion = "22.05";
   };
 
+targets.genericLinux.enable= true;
 
   programs.git = {
     enable = true;

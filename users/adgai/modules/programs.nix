@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     # hyperbeam
-
     arandr
     bottom
     brave
@@ -29,15 +28,16 @@
     pavucontrol
     poetry
     pulseaudio
-    python310
-    python310Packages.adblock
-    python310Packages.netifaces
-    python310Packages.tkinter
     ripgrep
     scrot
     stylua
     tree
     xclip
     xsettingsd
+
+    python310
+    python310Packages.adblock
+    python310Packages.netifaces
+    python310Packages.tkinter
   ];
 }
