@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -20,11 +20,6 @@ any-nix-shell zsh --info-right | source /dev/stdin
             eval "$(starship init zsh)"
             export DIRENV_LOG_FORMAT=
 
-           if [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ]; then
-
-            I3SOCK=$(i3 --get-socket)
-            xmodmap -e "keycode 108 = Alt_R"
-            fi
 
             bindkey "^P" up-line-or-search
             bindkey "^N" down-line-or-search
@@ -70,7 +65,7 @@ any-nix-shell zsh --info-right | source /dev/stdin
   programs.exa = {
     enable = true;
   };
-  home.packages = with pkgs; [any-nix-shell];
+  home.packages = with pkgs; [ any-nix-shell ];
 
   programs.bat = {
     enable = true;
