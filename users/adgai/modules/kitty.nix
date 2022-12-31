@@ -237,7 +237,6 @@
         inactive_tab_font_style normal
         tab_bar_background none
         background_opacity 0.85
-        background_image ~/wallpapers/Hotel-del-luna.jpg
         background_image_layout tiled
         background_image_linear no
         dynamic_background_opacity yes

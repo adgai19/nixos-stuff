@@ -32,6 +32,7 @@
     ripgrep
     scrot
     stylua
+    transmission-gtk
     tree
     xclip
     xsettingsd
