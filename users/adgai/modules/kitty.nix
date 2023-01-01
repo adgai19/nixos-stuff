@@ -25,13 +25,10 @@
         touch_scroll_multiplier 1.0
       mouse_hide_wait 3.0
         url_style curly
-        open_url_modifiers kitty_mod
         open_url_with default
         url_prefixes http https file ftp
         copy_on_select no
         strip_trailing_spaces never
-        rectangle_select_modifiers ctrl+alt
-        terminal_select_modifiers shift
         click_interval -1.0
         focus_follows_mouse no
         pointer_shape_when_grabbed arrow
@@ -163,7 +160,6 @@
         map kitty_mod+a>1    set_background_opacity 1
         map kitty_mod+a>d    set_background_opacity default
         map kitty_mod+delete clear_terminal reset active
-        include kitty_tokyonight_night.conf
       font_family      FiraCode Nerd Font
         bold_font        auto
         italic_font      auto
@@ -188,13 +184,10 @@
         touch_scroll_multiplier 1.0
       mouse_hide_wait 3.0
         url_style curly
-        open_url_modifiers kitty_mod
         open_url_with default
         url_prefixes http https file ftp
         copy_on_select no
         strip_trailing_spaces never
-        rectangle_select_modifiers ctrl+alt
-        terminal_select_modifiers shift
         click_interval -1.0
         focus_follows_mouse no
         pointer_shape_when_grabbed arrow
