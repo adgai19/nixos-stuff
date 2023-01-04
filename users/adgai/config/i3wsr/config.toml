@@ -20,7 +20,6 @@ TelegramDesktop = "Telegram"
 "Org\\.gnome\\.Nautilus" = "Nautilus"
 
 [general]
-separator = "  "
 wm_property = "class"
 
 [options]

@@ -41,5 +41,7 @@
     python310Packages.adblock
     python310Packages.netifaces
     python310Packages.tkinter
+
+    nodePackages.aws-cdk
   ];
 }
