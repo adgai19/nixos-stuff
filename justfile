@@ -6,3 +6,5 @@ ubuntu-vm:
 
 update:
   nix flake update
+  git add flake.lock
+  git commit -m "update dep"

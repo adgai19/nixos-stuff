@@ -1,0 +1,29 @@
+[icons]
+# font awesome
+TelegramDesktop = ""
+firefox = ""
+Chromium-browser = ""
+firefox-nightly = ""
+Alacritty = ""
+kitty = ""
+Termite = ""
+Thunderbird = ""
+Gpick = ""
+Nautilus = "📘"
+Evince = ""
+discord = ""
+Pavucontrol = ""
+# smile emoji
+
+[aliases]
+TelegramDesktop = "Telegram"
+"Org\\.gnome\\.Nautilus" = "Nautilus"
+
+[general]
+separator = "  "
+wm_property = "class"
+
+[options]
+remove_duplicates = false
+no_names = false
+no_icon_names = true
