@@ -10,6 +10,7 @@
       pg = "ping google.com";
       gs = "git status";
       nb = "newsboat";
+      j = "just --choose";
     };
     defaultKeymap = "viins";
     initExtra = ''

@@ -26,8 +26,6 @@
       url = "github:IndianBoy42/tree-sitter-just";
       flake = false;
     };
-# NoahTheDuke/vim-just
-# IndianBoy42/tree-sitter-just
     regexplainer = {
       url = "github:bennypowers/nvim-regexplainer";
       flake = false;
@@ -87,7 +85,7 @@
     };
 
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly,sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

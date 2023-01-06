@@ -25,6 +25,10 @@ local on_attach = function(client, bufnr)
 	nnoremap("]d", vim.diagnostic.goto_next, opts)
 	nnoremap("<space>q", vim.diagnostic.setloclist, opts)
 	nnoremap("<space>bf", vim.lsp.buf.format, opts)
+
+  vim.cmd[[
+    nnoremenu PopUp.Goto\ definition :lua vim.lsp.buf.definition()<cr>
+  ]]
 end
 
 local make_client_capabilities = function()
