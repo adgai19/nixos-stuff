@@ -15,7 +15,7 @@
   # changes in each release.
   # nixpkgs.overlays = [(import ./overlays.nix )];
 
-  imports = [ ./modules ../common ];
+  imports = [ ./modules ../../users/common ];
   # Let Home Manager install and manage itself.
 
 

@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     # hyperbeam
+    age
     arandr
     bottom
     brave
@@ -18,7 +19,6 @@
     htop
     hyp
     iw
-    age
     jq
     just
     lazydocker
@@ -36,6 +36,7 @@
     tree
     xclip
     xsettingsd
+    yubikey-manager
 
     python310
     python310Packages.adblock

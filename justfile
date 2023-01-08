@@ -13,4 +13,6 @@ update:
 format:
   fd --extension nix -x nixpkgs-fmt
 
+stylua:
+  fd --extension lua -x stylua
 

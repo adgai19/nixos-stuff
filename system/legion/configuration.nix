@@ -81,6 +81,7 @@
   };
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.pcscd.enable = true;
   # for qmk
   services.udev.packages = [ pkgs.qmk-udev-rules ];
 

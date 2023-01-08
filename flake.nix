@@ -108,12 +108,14 @@
       };
 
       packages."${system}" = import ./packages inputs;
+
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./users/adgaU/home.nix ];
+          modules = [ ./hosts/ubunbu-vm/home.nix ];
         };
       };
+
       nixosConfigurations = {
         legion = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -127,14 +129,16 @@
               home-manager.useUserPackages = true;
               # the magic keywords LUL
               home-manager.extraSpecialArgs = { inherit system inputs; };
-              home-manager.users.adgai = import ./users/adgai/home.nix;
+              home-manager.users.adgai = import ./hosts/legion/home.nix;
             }
           ];
 
         };
+
         vms = nixpkgs.lib.nixosSystem {
           inherit system;
         };
+
       };
     };
 }

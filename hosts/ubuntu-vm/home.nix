@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  imports = [ ../common ];
+  imports = [ ../../users/common ];
   home = {
     username = "adgai";
     homeDirectory = "/home/adgai";
