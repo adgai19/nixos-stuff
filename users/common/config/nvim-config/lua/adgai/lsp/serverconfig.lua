@@ -12,16 +12,17 @@ end
 
 local serverlist = {
 	"ansiblels",
-	"vimls",
 	"ccls",
-	"rnix",
 	"cssls",
-	"nil_ls",
 	"emmet_ls",
-	"jedi_language_server",
-	-- "nil_ls",
 	"eslint",
 	"gopls",
+	"jedi_language_server",
+	"nil_ls",
+	-- "tsserver",
+	"rnix",
+	"vimls",
+	-- "nil_ls",
 }
 for _, server in ipairs(serverlist) do
 	serverSetup(server)
@@ -47,7 +48,7 @@ for _, server in ipairs(normalServerContainerList) do
 end
 
 -- lspcontainer servers with beforeInit
-local beforeInitServers = { "html", "yamlls", "dockerls", "vuels", "tsserver" }
+local beforeInitServers = { "html", "yamlls", "dockerls", "vuels" }
 local beforeInitOptions = {
 	before_init = function(params)
 		params.processId = vim.NIL

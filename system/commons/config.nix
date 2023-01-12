@@ -2,7 +2,6 @@
 , ...
 }: {
 
-  networking.hostName = "nixos"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -60,15 +59,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pinentry-curses
-    git
-    rofi
-    niv
     any-nix-shell
+    git
+    niv
     pamixer
+    pinentry-curses
+    rofi
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     xorg.xmodmap
+    yubioath-flutter
   ];
   programs.zsh.enable = true;
 

@@ -23,11 +23,6 @@ cmp.setup({
 				entry1_under = entry1_under or 0
 				entry2_under = entry2_under or 0
 				return entry1_under < entry2_under
-				-- if entry1_under > entry2_under then
-				--   return false
-				-- elseif entry1_under < entry2_under then
-				--   return true
-				-- end
 			end,
 			cmp.config.compare.kind,
 			cmp.config.compare.sort_text,

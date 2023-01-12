@@ -10,7 +10,7 @@
     ./qmk.nix
     ./rofi.nix
 
-    ./customPkgs/python/bumblebee-status
+    # ./customPkgs/python/bumblebee-status
     ./customPkgs/shell-scripts
   ];
 

@@ -5,5 +5,6 @@ mkShell {
     git
     zsh
     nixpkgs-fmt
+    just
   ];
 }

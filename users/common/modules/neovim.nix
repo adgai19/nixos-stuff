@@ -60,7 +60,6 @@ let
     nvim-dap-ui
 
     # Treesitter
-
     cmp-treesitter
     nvim-treesitter-textobjects
     nvim-treesitter-context
@@ -102,6 +101,7 @@ let
     tokyonight-nvim
     indent-blankline-nvim
   ];
+
   customVimPlugins = with pkgs.customVimPlugins;[
     go-nvim
     guihua-lua
@@ -110,7 +110,7 @@ let
 
     cyclist-nvim
     typescript-nvim
-    autosave-nvim
+    # autosave-nvim
     nvim-dap-go
     astro-vim
     adgai-config
@@ -120,13 +120,28 @@ let
     # drop-nvim
   ];
 
-
 in
 {
   programs.neovim = {
     enable = true;
     viAlias = true;
     package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
+    # package = pkgs.neovim-unwrapped;
+    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim.overrideAttrs (
+    #   oa: {
+    #     # patches = ;
+    #     patches = builtins.filter
+    #       (p:
+    #         let
+    #           patch =
+    #             if builtins.typeOf p == "set"
+    #             then baseNameOf p.name
+    #             else baseNameOf p;
+    #         in
+    #         patch != "neovim-build-make-generated-source-files-reproducible.patch")
+    #       oa.patches;
+    #   }
+    # );
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;
@@ -151,10 +166,8 @@ in
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages.graphql-language-service-cli
-      nodePackages."pyright"
-      nodePackages."typescript"
+      nodePackages.pyright
       nodePackages_latest.vim-language-server
-      nodePackages."typescript-language-server"
       nodePackages."vscode-langservers-extracted"
       nodePackages.write-good
       nodePackages."yaml-language-server"
@@ -163,6 +176,9 @@ in
       terraform-ls
       ccls
       nil
+
+      nodePackages.typescript
+      nodePackages.typescript-language-server
     ];
   };
 }

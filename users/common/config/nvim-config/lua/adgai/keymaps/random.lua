@@ -50,12 +50,13 @@ nnoremap("<leader>cf", "<cmd>Explore<cr>")
 nnoremap("Q", "@q")
 nnoremap("J", "mzJ`z")
 
-nnoremap("<C-up>", " gt")
-nnoremap("<C-down>", " gT")
+nnoremap("<C-up>", "<cmd>tabnext<cr>")
+nnoremap("<C-down>", "<cmd>tabprevious<cr>")
 
 vnoremap("<", " <gv")
 vnoremap(">", " >gv")
 
 tnoremap([[<Esc>]], [[<C-\><C-n>]])
 nnoremap([[\]], ":Rg<space>")
-nnoremap([[<leader><leader>]], ":nohl")
+nnoremap([[<leader><leader>]], ":nohl<cr>")
+nnoremap([[<Esc>]], [[<cmd>w<cr>]])

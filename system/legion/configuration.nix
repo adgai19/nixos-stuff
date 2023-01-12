@@ -83,7 +83,9 @@
   services.openssh.enable = true;
   services.pcscd.enable = true;
   # for qmk
-  services.udev.packages = [ pkgs.qmk-udev-rules ];
+  services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
+
+  networking.hostName = "legion"; # Define your hostname
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

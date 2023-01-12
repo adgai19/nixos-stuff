@@ -1,5 +1,4 @@
 local M = {}
-print("hello")
 M.init = function()
 	require("adgai.dap")
 	require("adgai.cyclekeymaps")

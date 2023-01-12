@@ -1,8 +1,10 @@
-nixos:
+legion:
   sudo nixos-rebuild switch --flake .#legion --impure 
+  rm -rf result
 
 ubuntu-vm: 
   home-manager switch --flake .#ubuntu-vm
+  rm -rf result
 
 update:
   nix flake update
@@ -16,3 +18,5 @@ format:
 stylua:
   fd --extension lua -x stylua
 
+neovim:
+  nix run .#neovim

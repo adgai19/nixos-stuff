@@ -44,5 +44,8 @@
     python310Packages.tkinter
 
     nodePackages.aws-cdk
+
+    nodePackages_latest.typescript
+    nodePackages_latest.typescript-language-server
   ];
 }

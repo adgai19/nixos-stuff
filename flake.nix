@@ -2,7 +2,10 @@
   description = "My nix config";
 
   inputs = {
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.url = "github:nixos/nixpkgs?rev=fad51abd42ca17a60fc1d4cb9382e2d79ae31836";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -56,29 +59,31 @@
       url = "github:Pocco81/auto-save.nvim";
       flake = false;
     };
-    noice-nvim = {
-      url = "github:folke/noice.nvim";
-      flake = false;
-    };
+
     typescript-nvim = {
       url = "github:jose-elias-alvarez/typescript.nvim";
       flake = false;
     };
+
     lspcontainers-nvim = {
       url = "github:lspcontainers/lspcontainers.nvim";
       flake = false;
     };
+
     nvim-dap-go = {
       url = "github:leoluz/nvim-dap-go";
       flake = false;
     };
+
     firefox-overlay = {
       url = "github:mozilla/nixpkgs-mozilla";
     };
+
     tokyonight-tmux = {
       url = "github:janoamaral/tokyo-night-tmux";
       flake = false;
     };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -102,6 +107,7 @@
 
     in
     {
+
       devShells."${system}".default = pkgs.mkShellNoCC {
         packages = with pkgs;[ git zsh nixpkgs-fmt ];
         shellHook = ''echo Inside nix dev shell'';
