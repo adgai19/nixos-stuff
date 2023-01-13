@@ -6,15 +6,37 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.url = "github:nixos/nixpkgs?rev=fad51abd42ca17a60fc1d4cb9382e2d79ae31836";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-utils.url = "github:numtide/flake-utils";
-    poetry2nix.url = "github:nix-community/poetry2nix";
-    # some plugins that I track outside of nixpkgs and vim-extra-plugins
 
+    poetry2nix = {
+      url = "github:nix-community/poetry2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-overlay = {
+      url = "github:mozilla/nixpkgs-mozilla";
+    };
+
+    tokyonight-tmux = {
+      url = "github:janoamaral/tokyo-night-tmux";
+      flake = false;
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # some plugins that I track outside of nixpkgs and vim-extra-plugins
     inc-rename = {
       url = "github:smjonas/inc-rename.nvim";
       flake = false;
@@ -75,22 +97,9 @@
       flake = false;
     };
 
-    firefox-overlay = {
-      url = "github:mozilla/nixpkgs-mozilla";
-    };
-
-    tokyonight-tmux = {
-      url = "github:janoamaral/tokyo-night-tmux";
-      flake = false;
-    };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
   };
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, neovim-nightly, sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -109,7 +118,7 @@
     {
 
       devShells."${system}".default = pkgs.mkShellNoCC {
-        packages = with pkgs;[ git zsh nixpkgs-fmt ];
+        packages = with pkgs;[ git zsh nixpkgs-fmt just ];
         shellHook = ''echo Inside nix dev shell'';
       };
 
