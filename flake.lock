@@ -302,6 +302,22 @@
         "type": "github"
       }
     },
+    "noice-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673617141,
+        "narHash": "sha256-esq7eXCToexqRLeVSSvkmJBslqyeD3xHThw5YOk1Vms=",
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "rev": "10c01dac9adfbe12f23c2cb879b3de794a0b0d03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "type": "github"
+      }
+    },
     "nvim-dap-go": {
       "flake": false,
       "locked": {
@@ -369,6 +385,7 @@
         "lspcontainers-nvim": "lspcontainers-nvim",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_2",
+        "noice-nvim": "noice-nvim",
         "nvim-dap-go": "nvim-dap-go",
         "poetry2nix": "poetry2nix",
         "regexplainer": "regexplainer",

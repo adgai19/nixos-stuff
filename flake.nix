@@ -92,6 +92,11 @@
       flake = false;
     };
 
+    noice-nvim = {
+      url = "github:folke/noice.nvim";
+      flake = false;
+    };
+
     nvim-dap-go = {
       url = "github:leoluz/nvim-dap-go";
       flake = false;

@@ -4,6 +4,7 @@
     # hyperbeam
     age
     arandr
+    awscli2
     bottom
     brave
     cachix

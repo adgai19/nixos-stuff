@@ -20,3 +20,4 @@ stylua:
 
 neovim:
   nix run .#neovim
+

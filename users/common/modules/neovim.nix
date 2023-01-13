@@ -32,7 +32,7 @@ let
     todo-comments-nvim
     lsp-colors-nvim
     trouble-nvim
-    which-key-nvim
+     which-key-nvim
 
     # Lsp
     nvim-lsp-ts-utils
