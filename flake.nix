@@ -102,6 +102,10 @@
       flake = false;
     };
 
+    statuscol-nvim = {
+      url = "github:luukvbaal/statuscol.nvim";
+      flake = false;
+    };
 
   };
   outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:

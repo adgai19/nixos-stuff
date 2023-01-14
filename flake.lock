@@ -390,6 +390,7 @@
         "poetry2nix": "poetry2nix",
         "regexplainer": "regexplainer",
         "sops-nix": "sops-nix",
+        "statuscol-nvim": "statuscol-nvim",
         "tokyonight-tmux": "tokyonight-tmux",
         "treesitter-just": "treesitter-just",
         "typescript-nvim": "typescript-nvim",
@@ -414,6 +415,22 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "statuscol-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673364441,
+        "narHash": "sha256-RKo736W7cegE+bIUIUBcnt5SA/aIUaEPVmT1GsHECwI=",
+        "owner": "luukvbaal",
+        "repo": "statuscol.nvim",
+        "rev": "77c9f3794b4a0b64697111ccdd962a76fa4c80b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "luukvbaal",
+        "repo": "statuscol.nvim",
         "type": "github"
       }
     },

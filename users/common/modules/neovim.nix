@@ -32,7 +32,6 @@ let
     todo-comments-nvim
     lsp-colors-nvim
     trouble-nvim
-     which-key-nvim
 
     # Lsp
     nvim-lsp-ts-utils
@@ -91,7 +90,7 @@ let
     ansible-vim
     git-blame-nvim
     gitsigns-nvim
-    noice-nvim
+    # noice-nvim
 
     live-command-nvim
     playground
@@ -100,6 +99,7 @@ let
     hydra-nvim
     tokyonight-nvim
     indent-blankline-nvim
+    nvim-web-devicons
   ];
 
   customVimPlugins = with pkgs.customVimPlugins;[
@@ -107,6 +107,7 @@ let
     guihua-lua
     inc-rename-nvim
     lspcontainers-nvim
+    # noice-nvim
 
     cyclist-nvim
     typescript-nvim
@@ -117,6 +118,7 @@ let
     regexplainer
     vim-just
     treesitter-just
+    statuscol-nvim
     # drop-nvim
   ];
 

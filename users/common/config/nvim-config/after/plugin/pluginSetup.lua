@@ -21,3 +21,6 @@ require("nvim-surround").setup()
 --
 require("dap-go").setup()
 require("regexplainer").setup()
+require("statuscol").setup({
+	setopt = true,
+})

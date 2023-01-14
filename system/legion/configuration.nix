@@ -25,7 +25,6 @@
     enable = true;
   };
 
-  # Configure keymap in X11
   services.xserver = {
     layout = "us";
     videoDrivers = [ "nvidia" ];
@@ -82,7 +81,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.pcscd.enable = true;
-  # for qmk
+  # for qmk and yubikey
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
 
   networking.hostName = "legion"; # Define your hostname

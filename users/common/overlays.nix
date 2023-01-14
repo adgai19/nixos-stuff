@@ -66,6 +66,16 @@ inputs: self: super:
       src = inputs.vim-just;
     };
 
+    noice-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "noice-nvim";
+      src = inputs.noice-nvim;
+    };
+
+    statuscol-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "statuscol-nvim";
+      src = inputs.statuscol-nvim;
+    };
+
     treesitter-just = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "treesitter-just";
       src = inputs.treesitter-just;
