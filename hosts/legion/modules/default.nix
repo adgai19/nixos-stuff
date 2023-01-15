@@ -5,7 +5,6 @@
     ./git.nix
     ./i3.nix
     ./kitty.nix
-    ./polybar.nix
     ./programs.nix
     ./qmk.nix
     ./rofi.nix

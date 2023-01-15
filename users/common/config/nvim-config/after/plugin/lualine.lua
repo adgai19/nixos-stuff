@@ -31,21 +31,6 @@ local conditions = {
 		return gitdir and #gitdir > 0 and #gitdir < #filepath
 	end,
 }
-local function get_buf_option(opt)
-	local status_ok, buf_option = pcall(vim.api.nvim_buf_get_option, 0, opt)
-	if not status_ok then
-		return nil
-	else
-		return buf_option
-	end
-end
-local function get_modified()
-	if get_buf_option("mod") then
-		local mod = " "
-		return "%#WinBarFilename#" .. mod .. " " .. "%t" .. "%*"
-	end
-	return "%#WinBarFilename#" .. "%t" .. "%*"
-end
 -- Config
 local config = {
 	options = {

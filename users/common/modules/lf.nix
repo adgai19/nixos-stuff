@@ -30,6 +30,7 @@
       mkdir = "%[ -e $1 ] && printf 'dir exists' || mkdir $1";
       mkfile = "%[ -e $1 ] && printf 'file exists' || touch $1";
       delete = "rm -rf $f";
+      gitmv = "";
 
 
     };

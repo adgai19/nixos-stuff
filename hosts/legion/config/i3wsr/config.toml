@@ -1,11 +1,11 @@
 [icons]
-# font awesome
 TelegramDesktop = ""
 firefox = ""
 vlc = ""
 Chromium-browser = ""
 firefox-nightly = ""
 Alacritty = ""
+wezterm = ""
 kitty = ""
 Termite = ""
 Thunderbird = ""
@@ -14,16 +14,16 @@ Nautilus = "📘"
 Evince = ""
 discord = ""
 Pavucontrol = ""
-# smile emoji
 
 [aliases]
 TelegramDesktop = "Telegram"
 "Org\\.gnome\\.Nautilus" = "Nautilus"
+"org.wezfurlong.wezterm" = "wezterm"
 
 [general]
 wm_property = "class"
 
 [options]
-remove_duplicates = false
+remove_duplicates = true
 no_names = false
 no_icon_names = true

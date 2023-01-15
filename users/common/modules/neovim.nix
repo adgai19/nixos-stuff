@@ -107,7 +107,7 @@ let
     guihua-lua
     inc-rename-nvim
     lspcontainers-nvim
-    # noice-nvim
+    noice-nvim
 
     cyclist-nvim
     typescript-nvim
@@ -128,22 +128,6 @@ in
     enable = true;
     viAlias = true;
     package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
-    # package = pkgs.neovim-unwrapped;
-    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim.overrideAttrs (
-    #   oa: {
-    #     # patches = ;
-    #     patches = builtins.filter
-    #       (p:
-    #         let
-    #           patch =
-    #             if builtins.typeOf p == "set"
-    #             then baseNameOf p.name
-    #             else baseNameOf p;
-    #         in
-    #         patch != "neovim-build-make-generated-source-files-reproducible.patch")
-    #       oa.patches;
-    #   }
-    # );
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;

@@ -51,6 +51,7 @@ in
               # terminal color config
               set-option -g default-terminal "screen-256color"
               set-option -gw xterm-keys on
+              set-option -g status-position top
 
                 set-option -sa terminal-overrides ',alacritty:RGB'
                 set-option -ga terminal-overrides ',alacritty:Tc'
