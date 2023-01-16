@@ -178,6 +178,22 @@
         "type": "github"
       }
     },
+    "hover-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673524285,
+        "narHash": "sha256-Qkf7rgM3EGiYxbw54nuSxyGRHYvsDf0/2YBvGkhANW0=",
+        "owner": "lewis6991",
+        "repo": "hover.nvim",
+        "rev": "3ff39c31ca6ea2a64e3a8c65dfe63aa3f5ea117b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lewis6991",
+        "repo": "hover.nvim",
+        "type": "github"
+      }
+    },
     "inc-rename": {
       "flake": false,
       "locked": {
@@ -381,6 +397,7 @@
         "go-nvim": "go-nvim",
         "guihua-nvim": "guihua-nvim",
         "home-manager": "home-manager",
+        "hover-nvim": "hover-nvim",
         "inc-rename": "inc-rename",
         "lspcontainers-nvim": "lspcontainers-nvim",
         "neovim-nightly": "neovim-nightly",

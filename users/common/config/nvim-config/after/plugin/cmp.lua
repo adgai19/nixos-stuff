@@ -56,10 +56,10 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		-- { name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lua", keyword_length = 6, max_item_count = 10 },
-		{ name = "buffer", keyword_length = 6, max_item_count = 3 },
+		{ name = "nvim_lua", keyword_length = 2, max_item_count = 10 },
+		{ name = "buffer", keyword_length = 2, max_item_count = 3 },
 		-- { name = "cmp_tabnine", max_item_count = 6, keyword_length = 3 },
-		{ name = "path", keyword_length = 6, max_item_count = 3 },
+		{ name = "path", keyword_length = 2, max_item_count = 3 },
 	},
 })
 

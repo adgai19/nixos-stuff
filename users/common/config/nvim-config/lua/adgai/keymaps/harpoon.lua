@@ -14,21 +14,22 @@ nnoremap("<M-l>", require("harpoon.ui").toggle_quick_menu)
 nnoremap("<M-c>", require("harpoon.ui").nav_file)
 
 nnoremap(
-	"<silent> <leader>ns",
+	"<M-w>",
 	'<cmd>lua require("harpoon.term").sendCommand(1, 1)<CR>:lua require("harpoon.term").gotoTerminal(1)<CR>a<CR>'
 )
 nnoremap(
-	"<silent> <leader>no",
+	"<M-r>",
 	'<cmd>lua require("harpoon.term").sendCommand(2, 2)<CR>:lua require("harpoon.term").gotoTerminal(4)<CR>a<CR>'
 )
 nnoremap(
-	"<silent> <leader>nw",
+	"<M-f>",
 	'<cmd>lua require("harpoon.term").sendCommand(1, 3)<CR>:lua require("harpoon.term").gotoTerminal(4)<CR>a<CR>'
 )
 nnoremap(
-	"<silent> <leader>nf",
+	"<M-u>",
 	'<cmd>lua require("harpoon.term").sendCommand(2, 4)<CR>:lua require("harpoon.term").gotoTerminal(4)<CR>a<CR>'
 )
 
-nnoremap("<silent> <leader>nc", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>a<CR>')
-nnoremap("<silent> <leader>nk", '<cmd>lua require("harpoon.term").gotoTerminal(2)<CR>a<CR>')
+nnoremap("<M-,>", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>a<CR>')
+nnoremap("<M-m>", '<cmd>lua require("harpoon.term").gotoTerminal(2)<CR>a<CR>')
+print("foo")

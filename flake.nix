@@ -55,6 +55,7 @@
       url = "github:bennypowers/nvim-regexplainer";
       flake = false;
     };
+
     go-nvim = {
       url = "github:ray-x/go.nvim";
       flake = false;
@@ -107,6 +108,10 @@
       flake = false;
     };
 
+    hover-nvim = {
+      url = "github:lewis6991/hover.nvim";
+      flake = false;
+    };
   };
   outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
     let

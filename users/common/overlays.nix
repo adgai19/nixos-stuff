@@ -80,6 +80,12 @@ inputs: self: super:
       name = "treesitter-just";
       src = inputs.treesitter-just;
     };
+
+    hover-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "hover-nvim";
+      src = inputs.hover-nvim;
+    };
+
     adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";
       src = ./config/nvim-config;

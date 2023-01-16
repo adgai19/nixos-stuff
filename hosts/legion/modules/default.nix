@@ -4,7 +4,7 @@
     ./alacritty.nix
     ./git.nix
     ./i3.nix
-    ./kitty.nix
+    ./wezterm.nix
     ./programs.nix
     ./qmk.nix
     ./rofi.nix

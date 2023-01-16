@@ -1,54 +1,54 @@
 { pkgs, inputs, ... }:
 let
   vimPlugins = with pkgs.vimPlugins; [
-    vim-nix
-    vim-tmux
+    nui-nvim
     plenary-nvim
     popup-nvim
-    nui-nvim
+    vim-nix
     vim-rooter
+    vim-tmux
 
     # completion
-    nvim-cmp
-    cmp-tabnine
-    luasnip
-    cmp_luasnip
-    cmp-nvim-lua
-    cmp-nvim-lsp
-    cmp-nvim-lsp
     cmp-buffer
+    cmp-nvim-lsp
+    cmp-nvim-lsp
+    cmp-nvim-lua
     cmp-path
+    cmp-tabnine
+    cmp_luasnip
     lspkind-nvim
+    luasnip
+    nvim-cmp
 
     #Telescope
-    telescope-nvim
-    telescope-fzf-native-nvim
-    telescope-ui-select-nvim
-    telescope-project-nvim
-    telescope-frecency-nvim
     telescope-dap-nvim
+    telescope-frecency-nvim
+    telescope-fzf-native-nvim
+    telescope-nvim
+    telescope-project-nvim
+    telescope-ui-select-nvim
 
     # Folke stuff
-    todo-comments-nvim
     lsp-colors-nvim
+    todo-comments-nvim
     trouble-nvim
 
     # Lsp
+    SchemaStore-nvim
+    comment-nvim
+    neogit
+    nvim-jdtls
+    nvim-lint
     nvim-lsp-ts-utils
     nvim-lspconfig
-    SchemaStore-nvim
-    nvim-jdtls
-    vim-signature
-    popfix
     nvim-lsputils
+    nvim-surround
+    nvim-ts-context-commentstring
+    popfix
     rust-tools-nvim
     symbols-outline-nvim
-    nvim-lint
-    nvim-surround
-    neogit
     vim-scriptease
-    comment-nvim
-    nvim-ts-context-commentstring
+    vim-signature
 
     #DAP
 
@@ -60,65 +60,63 @@ let
 
     # Treesitter
     cmp-treesitter
-    nvim-treesitter-textobjects
     nvim-treesitter-context
+    nvim-treesitter-textobjects
 
     #Prime stuff
     harpoon
     git-worktree-nvim
 
     #Other stuff
-    rainbow_parentheses-vim
     #should move to format.nvim
-    neoformat
-    formatter-nvim
-    vim-startify
-    lualine-nvim
-    lualine-lsp-progress
-    nvim-notify
-    nvim-autopairs
-    lightspeed-nvim
-    vim-numbertoggle
-    diffview-nvim
-    numb-nvim
-    null-ls-nvim
-    i3config-vim
-    nvim-ts-autotag
-    fidget-nvim
-    neorg
-    vim-qf
     ansible-vim
+    catppuccin-nvim
+    diffview-nvim
+    fidget-nvim
+    formatter-nvim
     git-blame-nvim
     gitsigns-nvim
-    # noice-nvim
-
-    live-command-nvim
-    playground
-    impatient-nvim
-    catppuccin-nvim
     hydra-nvim
-    tokyonight-nvim
+    i3config-vim
+    impatient-nvim
     indent-blankline-nvim
+    lightspeed-nvim
+    live-command-nvim
+    lualine-lsp-progress
+    lualine-nvim
+    neoformat
+    neorg
+    null-ls-nvim
+    numb-nvim
+    nvim-autopairs
+    nvim-notify
+    nvim-ts-autotag
     nvim-web-devicons
+    playground
+    rainbow_parentheses-vim
+    tokyonight-nvim
+    vim-numbertoggle
+    vim-qf
+    vim-startify
   ];
 
   customVimPlugins = with pkgs.customVimPlugins;[
+    # autosave-nvim
+    adgai-config
+    astro-vim
+    cyclist-nvim
     go-nvim
     guihua-lua
+    hover-nvim
     inc-rename-nvim
     lspcontainers-nvim
     noice-nvim
-
-    cyclist-nvim
-    typescript-nvim
-    # autosave-nvim
     nvim-dap-go
-    astro-vim
-    adgai-config
     regexplainer
-    vim-just
-    treesitter-just
     statuscol-nvim
+    treesitter-just
+    typescript-nvim
+    vim-just
     # drop-nvim
   ];
 
