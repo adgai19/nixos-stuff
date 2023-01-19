@@ -1,4 +1,5 @@
 {
+
   description = "My nix config";
 
   nixConfig = {
@@ -15,7 +16,6 @@
 
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {

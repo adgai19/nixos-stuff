@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ qmk via ];
+  home.packages = with pkgs; [ qmk ];
 }

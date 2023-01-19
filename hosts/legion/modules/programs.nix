@@ -39,10 +39,10 @@
     xsettingsd
     yubikey-manager
 
-    python310
-    python310Packages.adblock
-    python310Packages.netifaces
-    python310Packages.tkinter
+    # python310
+    # python310Packages.adblock
+    # python310Packages.netifaces
+    # python310Packages.tkinter
 
     nodePackages.aws-cdk
 

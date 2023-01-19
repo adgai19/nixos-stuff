@@ -128,7 +128,7 @@ in
     package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     withNodeJs = true;
-    withPython3 = true;
+    # withPython3 = true;
     plugins = (vimPlugins)
       ++ (customVimPlugins)
       ++ (with pkgs.vimPlugins; [
@@ -141,11 +141,11 @@ in
       rnix-lsp
       gopls
       shellcheck
-      ansible-lint
+      # ansible-lint
       fd
       git
       lua51Packages.sqlite
-      python310Packages.jedi-language-server
+      # python310Packages.jedi-language-server
       nodePackages."@prisma/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
