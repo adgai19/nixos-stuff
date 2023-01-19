@@ -128,11 +128,11 @@
     "go-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1674000566,
-        "narHash": "sha256-jYApew8B1oBsiHwViL/qDAXwR9jOQ7NVtpnQBD93Ey0=",
+        "lastModified": 1674091574,
+        "narHash": "sha256-J4SVr/hADXbFEjsgGvJcbinkmV6VQ61yUkHturRjOv4=",
         "owner": "ray-x",
         "repo": "go.nvim",
-        "rev": "4030487864e90255bfbab12fa2f9b5ca13b5bef4",
+        "rev": "adc24af96ca22c8d109d31fc6cbfe5919fb9751b",
         "type": "github"
       },
       "original": {
@@ -144,11 +144,11 @@
     "guihua-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1673350028,
-        "narHash": "sha256-NmCFuzjpNc6tV3JXOE7MJRQdCq/vAHq7OnfzWr38oaM=",
+        "lastModified": 1674094666,
+        "narHash": "sha256-xS2ZjmuOS9g5wCONlFjFMQ2XXJnS5gzk+BnJeaTUEZM=",
         "owner": "ray-x",
         "repo": "guihua.lua",
-        "rev": "a55e30a8d5a44683eaeffbf3d06c39699a173954",
+        "rev": "fbce2f18b36ac809edbda0a60cb872209632e5d2",
         "type": "github"
       },
       "original": {
@@ -165,11 +165,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1674041176,
-        "narHash": "sha256-cMf1BQzI39nHQ0H/mOatthbbI3392qLmJ9gU0u520P4=",
+        "lastModified": 1674082145,
+        "narHash": "sha256-4IpEt5Jc6VrNcpIcrKMCZAyeJMLXaaHk+yOV9HusO/A=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2c29ae48f9a149151bdd82f429ac61d4412c312a",
+        "rev": "7026e1a934abfa02623c9870378dbcdac3cd7f80",
         "type": "github"
       },
       "original": {
