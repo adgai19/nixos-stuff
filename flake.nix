@@ -1,6 +1,6 @@
 {
 
-  description = "My nix config";
+  description = "Random nix stuff. Nixos+home-manager+neovim";
 
   nixConfig = {
     extra-substituters = "https://cache.nixos.org https://cache.nixos.org/ https://nix-community.cachix.org https://adgai19.cachix.org";
@@ -71,14 +71,17 @@
       url = "github:ray-x/guihua.lua";
       flake = false;
     };
+
     drop-nvim = {
       url = "github:folke/drop.nvim";
       flake = false;
     };
+
     astro-vim = {
       url = "github:wuelnerdotexe/vim-astro";
       flake = false;
     };
+
     cyclist-nvim = {
       url = "github:tjdevries/cyclist.vim";
       flake = false;
@@ -143,6 +146,8 @@
       };
 
       packages."${system}" = import ./packages inputs;
+
+      overlays.default = final: prev: (import ./users/common/overlays.nix inputs) final prev;
 
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {

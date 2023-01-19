@@ -128,7 +128,7 @@ in
     package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     withNodeJs = true;
-    # withPython3 = true;
+    withPython3 = true;
     plugins = (vimPlugins)
       ++ (customVimPlugins)
       ++ (with pkgs.vimPlugins; [

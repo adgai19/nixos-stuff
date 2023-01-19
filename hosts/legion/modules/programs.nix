@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # hyperbeam
     age
+    age-plugin-yubikey
     arandr
     awscli2
     bottom

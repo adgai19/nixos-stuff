@@ -57,6 +57,11 @@
   services.xserver.libinput = {
     enable = true;
     touchpad.tapping = true;
+    mouse = {
+      scrollButton = 7;
+      scrollMethod = "button";
+      horizontalScrolling = false;
+    };
   };
 
   services.xserver.dpi = 96;
