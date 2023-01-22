@@ -1,9 +1,6 @@
 { pkgs
 , ...
 }: {
-
-
-  # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
@@ -12,8 +9,10 @@
   system.autoUpgrade = {
     enable = true;
   };
+
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.adgai = {
     isNormalUser = true;
@@ -28,9 +27,6 @@
       chromium
       vlc
       gpg-tui
-
-      #  thunderbird
-
     ];
   };
 
@@ -91,8 +87,7 @@
     extraOptions = ''
       keep-outputs = true
       keep-derivations = true
-    ''; # substituters = "https://danth.cachix.org";
-    # trusted-public-keys = "danth.cachix.org-1:wpodfSL7suXRc/rJDZZUptMa1t4MJ795hemRN0q84vI=";
+    ''; 
 
     settings = {
       auto-optimise-store = true;
@@ -109,15 +104,19 @@
 
       ];
     };
+
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 4d";
     };
+
     package = pkgs.nixVersions.stable;
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
+
   services.cachix-agent.enable = true;
 
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "22.05"; 
 }
+
