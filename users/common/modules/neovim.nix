@@ -57,6 +57,7 @@ let
     nvim-dap-virtual-text
     #use("David-Kunz/jester")
     nvim-dap-ui
+    nvim-dap-go
 
     # Treesitter
     cmp-treesitter
@@ -104,6 +105,7 @@ let
     # autosave-nvim
     adgai-config
     astro-vim
+    codeium-vim
     cyclist-nvim
     go-nvim
     guihua-lua
@@ -111,7 +113,6 @@ let
     inc-rename-nvim
     lspcontainers-nvim
     noice-nvim
-    nvim-dap-go
     regexplainer
     statuscol-nvim
     treesitter-just

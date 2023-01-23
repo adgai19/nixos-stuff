@@ -70,6 +70,9 @@
   programs.bat = {
     enable = true;
   };
+  programs.zoxide = {
+    enable = true;
+  };
 }
 
 

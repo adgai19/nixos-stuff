@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }: {
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
@@ -87,7 +85,7 @@
     extraOptions = ''
       keep-outputs = true
       keep-derivations = true
-    ''; 
+    '';
 
     settings = {
       auto-optimise-store = true;
@@ -117,6 +115,6 @@
 
   services.cachix-agent.enable = true;
 
-  system.stateVersion = "22.05"; 
+  system.stateVersion = "22.05";
 }
 

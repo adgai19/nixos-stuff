@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "codeium-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1674290471,
+        "narHash": "sha256-BjZX7/Y4bpk21bnZ0aLWpGLd1LB5ppWaOtmlIjchcyU=",
+        "owner": "Exafunction",
+        "repo": "codeium.vim",
+        "rev": "fe0349a7f01d373d3811bd820588f3883a7ca03a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Exafunction",
+        "repo": "codeium.vim",
+        "type": "github"
+      }
+    },
     "cyclist-nvim": {
       "flake": false,
       "locked": {
@@ -391,6 +407,7 @@
       "inputs": {
         "astro-vim": "astro-vim",
         "autosave-nvim": "autosave-nvim",
+        "codeium-vim": "codeium-vim",
         "cyclist-nvim": "cyclist-nvim",
         "drop-nvim": "drop-nvim",
         "firefox-overlay": "firefox-overlay",

@@ -3,8 +3,8 @@
   description = "Random nix stuff. Nixos+home-manager+neovim";
 
   nixConfig = {
-    extra-substituters = "https://cache.nixos.org https://cache.nixos.org/ https://nix-community.cachix.org https://adgai19.cachix.org";
-    extra-trusted-public-keys = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= adgai19.cachix.org-1:AkyyWarR6y2bfy3YPYLrKjjoLlzUvyKNhvflZ+eW3tk=";
+    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org";
+    extra-trusted-public-keys = " nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= adgai19.cachix.org-1:AkyyWarR6y2bfy3YPYLrKjjoLlzUvyKNhvflZ+eW3tk=";
     extra-experimental-features = "nix-command flakes";
   };
 
@@ -119,6 +119,11 @@
 
     hover-nvim = {
       url = "github:lewis6991/hover.nvim";
+      flake = false;
+    };
+
+    codeium-vim = {
+      url = "github:Exafunction/codeium.vim";
       flake = false;
     };
   };
