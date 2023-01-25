@@ -5,7 +5,6 @@ local xnoremap = require("adgai.keymaps.helpers").xnoremap
 local tnoremap = require("adgai.keymaps.helpers").tnoremap
 
 -- packer
-nnoremap("<leader>ps", "<cmd>PackerSync<cr>")
 
 nnoremap(";", ":")
 nnoremap(":", ";")
@@ -61,6 +60,6 @@ nnoremap([[\]], ":Rg<space>")
 nnoremap([[<leader><leader>]], ":nohl<cr>")
 nnoremap([[<Esc>]], [[<cmd>w<cr>]])
 
-vim.keymap.set('i', '<C-g>', function ()
-      return vim.fn['codeium#Accept']()
-    end, { expr = true })
+-- vim.keymap.set('i', '<C-g>', function ()
+--       return vim.fn['codeium#Accept']()
+--     end, { expr = true })

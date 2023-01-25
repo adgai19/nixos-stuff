@@ -1,8 +1,17 @@
 legion:
-  cachix watch-exec adgai19 -- sudo nixos-rebuild switch --flake .#legion --impure
+  sudo nixos-rebuild switch --flake .#legion --impure
   rm -rf result
 
 ubuntu-vm: 
+  home-manager switch --flake .#ubuntu-vm
+  rm -rf result
+
+
+legion-push:
+  cachix watch-exec adgai19 -- sudo nixos-rebuild switch --flake .#legion --impure
+  rm -rf result
+
+ubuntu-vm-push: 
   cachix watch-exec adgai19 -- home-manager switch --flake .#ubuntu-vm
   rm -rf result
 

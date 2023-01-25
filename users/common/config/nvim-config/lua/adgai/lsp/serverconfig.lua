@@ -12,7 +12,7 @@ end
 
 local serverlist = {
 	"ansiblels",
-	"ccls",
+	-- "ccls",
 	"cssls",
 	"emmet_ls",
 	"eslint",
