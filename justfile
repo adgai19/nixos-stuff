@@ -27,8 +27,11 @@ nixfmt:
 stylua:
   fd --extension lua -x stylua
 
-neovim:
+neovim-push:
   cachix watch-exec adgai19 -- nix run .#neovim
+
+neovim:
+  nix run .#neovim
 
 neovim-cachix:
   nix build --json .#neovim\
