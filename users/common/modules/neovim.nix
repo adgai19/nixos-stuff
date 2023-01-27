@@ -99,13 +99,14 @@ let
     vim-numbertoggle
     vim-qf
     vim-startify
+    neo-tree-nvim
   ];
 
   customVimPlugins = with pkgs.customVimPlugins;[
     # autosave-nvim
     adgai-config
     astro-vim
-    codeium-vim
+    # codeium-vim
     cyclist-nvim
     go-nvim
     guihua-lua

@@ -4,8 +4,6 @@ local inoremap = require("adgai.keymaps.helpers").inoremap
 local xnoremap = require("adgai.keymaps.helpers").xnoremap
 local tnoremap = require("adgai.keymaps.helpers").tnoremap
 
--- packer
-
 nnoremap(";", ":")
 nnoremap(":", ";")
 

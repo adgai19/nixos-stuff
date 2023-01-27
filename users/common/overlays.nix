@@ -85,10 +85,10 @@ inputs: self: super:
       name = "hover-nvim";
       src = inputs.hover-nvim;
     };
-    codeium-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "codeium-vim";
-      src = inputs.codeium-vim;
-    };
+    # codeium-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    #   name = "codeium-vim";
+    #   src = inputs.codeium-vim;
+    # };
     adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";
       src = ./config/nvim-config;

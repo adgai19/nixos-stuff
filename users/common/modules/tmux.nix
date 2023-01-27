@@ -52,6 +52,7 @@ in
               set-option -g default-terminal "screen-256color"
               set-option -gw xterm-keys on
               set-option -g status-position top
+              set-option -g display-panes-time 1500
 
                 set-option -sa terminal-overrides ',alacritty:RGB'
                 set-option -ga terminal-overrides ',alacritty:Tc'
@@ -116,6 +117,9 @@ in
               bind -n M-8 select-window -t 8
               bind -n M-9 select-window -t 9
 
+              #bind-key -n M-g display-popup -E "tmux new-session -A -s scratch"
+
+              bind -n M-g display-popup -E "tmux new-session -A -s scratch"
               bind S choose-tree -swZ
               # simpler window to show only sessions
               bind s choose-session -swZ
@@ -127,10 +131,7 @@ in
               set -g history-limit 10000
               set-option -sa terminal-overrides 'screen-256color:RGB'
               set -g @net_speed_format "D:%4s U:%4s"
-              #set -g @continuum-restore 'on'
-      #
               set -g @fpp-key 'k'
-      #
               ${lib.concatStrings (map (x: "run-shell ${x.rtp}\n") tmuxPlugin)}
     '';
 

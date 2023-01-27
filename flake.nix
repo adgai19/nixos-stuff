@@ -122,10 +122,10 @@
       flake = false;
     };
 
-    codeium-vim = {
-      url = "github:Exafunction/codeium.vim";
-      flake = false;
-    };
+    # codeium-vim = {
+    #   url = "github:Exafunction/codeium.vim";
+    #   flake = false;
+    # };
   };
   outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
     let
