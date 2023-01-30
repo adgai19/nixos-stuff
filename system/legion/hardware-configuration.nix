@@ -15,6 +15,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_1.virtualbox ];
 
+  hardware.nvidia.modesetting.enable = true;
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/fe4a2218-d9df-440a-92cd-57d272a5b501";

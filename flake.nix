@@ -3,8 +3,8 @@
   description = "Random nix stuff. Nixos+home-manager+neovim";
 
   nixConfig = {
-    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org";
-    extra-trusted-public-keys = " nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= adgai19.cachix.org-1:AkyyWarR6y2bfy3YPYLrKjjoLlzUvyKNhvflZ+eW3tk=";
+    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org https://hyprland.cachix.org";
+    extra-trusted-public-keys = " nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= adgai19.cachix.org-1:AkyyWarR6y2bfy3YPYLrKjjoLlzUvyKNhvflZ+eW3tk= hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=";
     extra-experimental-features = "nix-command flakes";
   };
 
@@ -36,6 +36,9 @@
       url = "github:janoamaral/tokyo-night-tmux";
       flake = false;
     };
+
+
+    hyprland.url = "github:hyprwm/Hyprland";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -127,7 +130,7 @@
     #   flake = false;
     # };
   };
-  outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, hyprland, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -167,8 +170,10 @@
           modules = [
             ./system/legion/configuration.nix
             sops-nix.nixosModules.sops
+            hyprland.nixosModules.default
             home-manager.nixosModules.home-manager
             {
+
               nixpkgs.overlays = overlays;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

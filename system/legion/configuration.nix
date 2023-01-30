@@ -65,6 +65,15 @@
   };
 
   services.xserver.dpi = 96;
+  programs.hyprland = {
+    enable = true;
+    xwayland = {
+      enable = true;
+    };
+
+    nvidiaPatches = true;
+  };
+  # programs.xwayland.enable = true;
 
 
   # stylix = {

@@ -44,6 +44,7 @@ let
     nvim-lsputils
     nvim-surround
     nvim-ts-context-commentstring
+    lsp-zero-nvim
     popfix
     rust-tools-nvim
     symbols-outline-nvim
@@ -98,7 +99,7 @@ let
     tokyonight-nvim
     vim-numbertoggle
     vim-qf
-    vim-startify
+    # vim-startify
     neo-tree-nvim
   ];
 

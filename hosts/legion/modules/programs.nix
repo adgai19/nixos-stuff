@@ -10,6 +10,7 @@
     brave
     cachix
     discord
+eww-wayland
     evince
     fd
     feh
@@ -25,6 +26,7 @@
     just
     lazydocker
     lazygit
+    librewolf
     newsboat
     nixpkgs-fmt
     nodejs-18_x
@@ -36,6 +38,7 @@
     stylua
     transmission-gtk
     tree
+    # wofi
     xclip
     xsettingsd
     yubikey-manager

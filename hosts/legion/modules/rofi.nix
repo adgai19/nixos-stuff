@@ -3,6 +3,10 @@ let inherit (config.lib.formats.rasi) mkLiteral;
 in
 {
   programs.rofi = {
+    package = pkgs.rofi-wayland;
+    extraConfig = {
+      modi = "window,run,drun,ssh,combi";
+    };
     enable = true;
     theme = {
       "*" = {
