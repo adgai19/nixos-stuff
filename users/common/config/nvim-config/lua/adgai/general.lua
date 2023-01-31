@@ -72,4 +72,5 @@ augroup END
 vim.opt.updatetime = 2000
 
 vim.g.grepprog = "rg"
+vim.opt.signcolumn = "yes"
 -- vim.opt.colorcolumn = 80

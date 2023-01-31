@@ -3,5 +3,5 @@
     enable = true;
     nvidiaPatches = true;
   };
-  home.packages = with pkgs; [ rofi-wayland waybar];
+  home.packages = with pkgs; [ rofi-wayland waybar ];
 }

@@ -10,7 +10,7 @@
     brave
     cachix
     discord
-eww-wayland
+    eww-wayland
     evince
     fd
     feh

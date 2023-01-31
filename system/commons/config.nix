@@ -10,8 +10,8 @@
 
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-  environment.variables ={
-    WLR_NO_HARDWARE_CURSORS = 1;
+  environment.variables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
     LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";

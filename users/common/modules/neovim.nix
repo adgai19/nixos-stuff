@@ -105,9 +105,10 @@ let
 
   customVimPlugins = with pkgs.customVimPlugins;[
     # autosave-nvim
+    # codeium-vim
+    # drop-nvim
     adgai-config
     astro-vim
-    # codeium-vim
     cyclist-nvim
     go-nvim
     guihua-lua
@@ -120,7 +121,6 @@ let
     treesitter-just
     typescript-nvim
     vim-just
-    # drop-nvim
   ];
 
 in
@@ -141,31 +141,39 @@ in
       lua require('adgai').init()
     '';
     extraPackages = with pkgs; [
-      rnix-lsp
-      gopls
-      shellcheck
+
       # ansible-lint
+      # python310Packages.jedi-language-server
+      ansible-language-server
+      ccls
+      clang-tools
       fd
       git
+      gopls
+      nil
+      rnix-lsp
+      rust-analyzer
+      shellcheck
+      sumneko-lua-language-server
+      terraform-ls
+
       lua51Packages.sqlite
-      # python310Packages.jedi-language-server
+
       nodePackages."@prisma/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
+      nodePackages."vscode-langservers-extracted"
+      nodePackages."yaml-language-server"
+      nodePackages.eslint
       nodePackages.graphql-language-service-cli
       nodePackages.pyright
-      nodePackages_latest.vim-language-server
-      nodePackages."vscode-langservers-extracted"
-      nodePackages.write-good
-      nodePackages."yaml-language-server"
-      rust-analyzer
-      sumneko-lua-language-server
-      terraform-ls
-      ccls
-      nil
-
       nodePackages.typescript
       nodePackages.typescript-language-server
+      nodePackages.write-good
+      nodePackages_latest.vim-language-server
+      nodePackages_latest.vue-language-server
+
+      # python311Packages.python-lsp-server
     ];
   };
 }
