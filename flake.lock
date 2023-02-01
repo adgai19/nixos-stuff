@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "dap-vscode": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668288583,
+        "narHash": "sha256-lZABpKpztX3NpuN4Y4+E8bvJZVV5ka7h8x9vL4r9Pjk=",
+        "owner": "mxsdev",
+        "repo": "nvim-dap-vscode-js",
+        "rev": "e7c05495934a658c8aa10afd995dacd796f76091",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mxsdev",
+        "repo": "nvim-dap-vscode-js",
+        "type": "github"
+      }
+    },
     "drop-nvim": {
       "flake": false,
       "locked": {
@@ -252,6 +268,22 @@
         "type": "github"
       }
     },
+    "jester": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1666963820,
+        "narHash": "sha256-7bw7Y3KrvCmLpuLfLfUhpUXwpHAZE1kifG2IA1lRO1s=",
+        "owner": "David-Kunz",
+        "repo": "jester",
+        "rev": "3065b2139c4cc26b4cea1bdab98016c60b4f48de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "David-Kunz",
+        "repo": "jester",
+        "type": "github"
+      }
+    },
     "lspcontainers-nvim": {
       "flake": false,
       "locked": {
@@ -265,6 +297,22 @@
       "original": {
         "owner": "lspcontainers",
         "repo": "lspcontainers.nvim",
+        "type": "github"
+      }
+    },
+    "neotest-jest": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1674773707,
+        "narHash": "sha256-d/4at6M13DYK1igWo3mF2/3Tw14+0MTyCUz9S11SEX4=",
+        "owner": "haydenmeade",
+        "repo": "neotest-jest",
+        "rev": "821bb227e31259307db30c88671a1c3724f78637",
+        "type": "github"
+      },
+      "original": {
+        "owner": "haydenmeade",
+        "repo": "neotest-jest",
         "type": "github"
       }
     },
@@ -450,6 +498,7 @@
         "astro-vim": "astro-vim",
         "autosave-nvim": "autosave-nvim",
         "cyclist-nvim": "cyclist-nvim",
+        "dap-vscode": "dap-vscode",
         "drop-nvim": "drop-nvim",
         "firefox-overlay": "firefox-overlay",
         "go-nvim": "go-nvim",
@@ -458,7 +507,9 @@
         "hover-nvim": "hover-nvim",
         "hyprland": "hyprland",
         "inc-rename": "inc-rename",
+        "jester": "jester",
         "lspcontainers-nvim": "lspcontainers-nvim",
+        "neotest-jest": "neotest-jest",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_3",
         "noice-nvim": "noice-nvim",

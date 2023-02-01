@@ -85,6 +85,21 @@ inputs: self: super:
       name = "hover-nvim";
       src = inputs.hover-nvim;
     };
+
+    jester = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "jester";
+      src = inputs.jester;
+    };
+
+    neotest-jest = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "neotest-jest";
+      src = inputs.neotest-jest;
+    };
+
+    dap-vscode = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "dap-vscode";
+      src = inputs.dap-vscode;
+    };
     # codeium-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     #   name = "codeium-vim";
     #   src = inputs.codeium-vim;

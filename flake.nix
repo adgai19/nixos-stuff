@@ -125,6 +125,21 @@
       flake = false;
     };
 
+    jester = {
+      url = "github:David-Kunz/jester";
+      flake = false;
+    };
+
+    neotest-jest = {
+      url = "github:haydenmeade/neotest-jest";
+      flake = false;
+    };
+    dap-vscode = {
+      url = "github:mxsdev/nvim-dap-vscode-js";
+      flake = false;
+    };
+
+
     # codeium-vim = {
     #   url = "github:Exafunction/codeium.vim";
     #   flake = false;

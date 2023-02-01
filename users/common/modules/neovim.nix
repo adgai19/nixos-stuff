@@ -54,9 +54,10 @@ let
     #DAP
 
     nvim-dap
+
+    neotest
     #use("mfussenegger/nvim-dap-python")
     nvim-dap-virtual-text
-    #use("David-Kunz/jester")
     nvim-dap-ui
     nvim-dap-go
 
@@ -114,6 +115,7 @@ let
     guihua-lua
     hover-nvim
     inc-rename-nvim
+    jester
     lspcontainers-nvim
     noice-nvim
     regexplainer
@@ -121,6 +123,9 @@ let
     treesitter-just
     typescript-nvim
     vim-just
+    neotest-jest
+    dap-vscode
+
   ];
 
 in
