@@ -161,6 +161,7 @@ in
       shellcheck
       sumneko-lua-language-server
       terraform-ls
+      haskell-language-server
 
       lua51Packages.sqlite
 

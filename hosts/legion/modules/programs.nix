@@ -19,6 +19,7 @@
     flameshot
     gcc
     gh
+    ghc
     htop
     hyp
     iw

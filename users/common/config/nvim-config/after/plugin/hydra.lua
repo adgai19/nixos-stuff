@@ -2,14 +2,14 @@ local Hydra = require("hydra")
 Hydra({
 	name = "window move",
 	mode = "n",
-  config = {
-    on_enter = function ()
-      vim.notify('inside hydra')
-    end,
-    on_exit = function ()
-      vim.notify('out of hydra')
-    end
-  },
+	config = {
+		on_enter = function()
+			vim.notify("inside hydra")
+		end,
+		on_exit = function()
+			vim.notify("out of hydra")
+		end,
+	},
 	body = "<c-w>",
 	heads = {
 		{ "h", "<c-w>h", {} },
@@ -24,4 +24,3 @@ Hydra({
 		{ "v", "<cmd>vsp<cr>", {} },
 	},
 })
-

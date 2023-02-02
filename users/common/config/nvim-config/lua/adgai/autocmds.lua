@@ -45,27 +45,26 @@ vim.api.nvim_create_autocmd(
 	"BufWritePre",
 	{ pattern = "lua", command = "!stylua %", group = vim.api.nvim_create_augroup("lua-fmt", { clear = true }) }
 )
-vim.api.nvim_create_autocmd({"BufReadPost","BufNewFile"},{
-  once = true,
-  callback=function ()
-  if vim.fn.has "wsl"==1 then
-    vim.g.clipboard = {
-      copy = {
-        ["+"]="win32yank.exe -i --crlf",
-        ["*"]="win32yank.exe -i --crlf",
-      },
-      paste ={
-        ["+"]="win32yank.exe -o --crlf",
-        ["*"]="win32yank.exe -o --crlf",
-
-      }
-    }
-  end
-  end
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		if vim.fn.has("wsl") == 1 then
+			vim.g.clipboard = {
+				copy = {
+					["+"] = "win32yank.exe -i --crlf",
+					["*"] = "win32yank.exe -i --crlf",
+				},
+				paste = {
+					["+"] = "win32yank.exe -o --crlf",
+					["*"] = "win32yank.exe -o --crlf",
+				},
+			}
+		end
+	end,
 })
-vim.api.nvim_create_autocmd("VimResized",{
-  command="wincmd =",
-  group = vim.api.nvim_create_augroup("resizeSplit",{clear=true})
+vim.api.nvim_create_autocmd("VimResized", {
+	command = "wincmd =",
+	group = vim.api.nvim_create_augroup("resizeSplit", { clear = true }),
 })
 -- local linters = vim.api.nvim_create_augroup("linters", { clear = true })
 -- vim.api.nvim_create_autocmd("BufWritePost", { callback = vim.diagnostic.setloclist, group = linters })
