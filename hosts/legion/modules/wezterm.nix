@@ -7,7 +7,7 @@
       color_scheme = "TokyoNight (Gogh)",
       enable_wayland = false;
       window_background_opacity = 0.85,
-      font = wezterm.font('Operator mono'),
+      font = wezterm.font('Fira Code'),
       enable_tab_bar = false,
       font_size = 9,
       keys = {
