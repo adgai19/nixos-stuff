@@ -186,6 +186,17 @@
             ./system/legion/configuration.nix
             sops-nix.nixosModules.sops
             hyprland.nixosModules.default
+            {
+
+              programs.hyprland = {
+                enable = true;
+                xwayland = {
+                  enable = true;
+                };
+
+                nvidiaPatches = true;
+              };
+            }
             home-manager.nixosModules.home-manager
             {
 

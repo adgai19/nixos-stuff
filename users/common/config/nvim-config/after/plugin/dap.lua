@@ -66,9 +66,9 @@ local dapHydra = Hydra({
 		end,
 		foreign_keys = "run",
 	},
-  hint = [[
+	hint = [[
   dap mode
-  ]]
+  ]],
 })
 local dapui = require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
