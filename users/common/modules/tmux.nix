@@ -32,6 +32,12 @@ in
   programs.tmux = {
     enable = true;
     plugins = tmuxPlugin;
+    aggressiveResize = true;
+    baseIndex = 0;
+    escapeTime = 10;
+    historyLimit = 10000;
+    keyMode = "vi";
+    prefix = "C-t";
     extraConfig = ''
       unbind C-b
       set -g prefix C-t
@@ -98,8 +104,8 @@ in
       bind-key h split-window -v -c "#{pane_current_path}"
       bind-key + split-window -h -p 20 -c "#{pane_current_path}"
       bind-key = split-window -v -p 20 -c "#{pane_current_path}"
-      bind-key c-h select-pane -R 
-      bind-key c-l select-pane -L 
+      bind-key c-h select-pane -L 
+      bind-key c-l select-pane -R 
       bind-key c-k select-pane -U 
       bind-key c-j select-pane -D 
       bind-key c-c send-keys Enter

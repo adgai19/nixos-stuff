@@ -83,7 +83,10 @@ let
     i3config-vim
     impatient-nvim
     indent-blankline-nvim
-    lightspeed-nvim
+    # lightspeed-nvim
+
+    flit-nvim
+    leap-nvim
     live-command-nvim
     lualine-lsp-progress
     lualine-nvim

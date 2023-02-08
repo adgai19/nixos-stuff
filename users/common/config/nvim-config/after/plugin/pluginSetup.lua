@@ -19,3 +19,6 @@ require("regexplainer").setup()
 require("statuscol").setup({
 	setopt = true,
 })
+
+require('leap').add_default_mappings()
+require('flit').setup()

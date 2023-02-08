@@ -9,6 +9,7 @@
     bottom
     brave
     cachix
+    diff-so-fancy
     discord
     eww-wayland
     evince
