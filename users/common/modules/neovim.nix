@@ -98,7 +98,7 @@ let
     git-blame-nvim
     {
       plugin = gitsigns-nvim;
-      config = "require(" gitsigns ").setup()";
+      config = "require(' gitsigns ').setup()";
       type = "lua";
     }
     hydra-nvim
@@ -127,7 +127,7 @@ let
     numb-nvim
     {
       plugin = nvim-autopairs;
-      config = "require(" nvim-autopairs ").setup({})";
+      config = "require('nvim-autopairs').setup({})";
       type = "lua";
     }
     {
