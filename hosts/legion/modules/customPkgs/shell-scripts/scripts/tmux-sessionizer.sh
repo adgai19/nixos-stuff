@@ -1,8 +1,8 @@
 #/bin/env bash
-    selected=$((find ~/  ~/Documents/ /mnt/data/  /home/ -mindepth 1 -maxdepth 1 -type d )| fzfp)
+    selected=$((find ~/  ~/Documents/ /mnt/data/  /home/ -mindepth 1 -maxdepth 1 -type d )| fzf-tmux -p 80%)
 
     if [[ -z $selected ]]; then
-        exit 0
+        exit 
     fi
 
     selected_name=$(basename "$selected" | tr . _)

@@ -39,12 +39,9 @@ in
     keyMode = "vi";
     prefix = "C-t";
     extraConfig = ''
-      unbind C-b
-      set -g prefix C-t
       bind C-t send-prefix
       bind -n C-g send-prefix
 
-      setw -g aggressive-resize on
       set -g status-right-length 180
       set -s set-clipboard on
 
@@ -98,7 +95,6 @@ in
 
        #Mouse mode
       setw -g mouse on
-      set-option -sg escape-time 10
       # Set easier window split keys
       bind-key v split-window -h  -c "#{pane_current_path}"
       bind-key h split-window -v -c "#{pane_current_path}"
@@ -131,10 +127,10 @@ in
       bind s choose-session -swZ
       # terminal session management
       bind C-g popup -E -c "#{pane_current_path}" #"zsh"
+      bind -n C-s neww "tmux-sessionizer" 
 
       set-window-option -g automatic-rename
       set -g default-terminal 'screen-256color'
-      set -g history-limit 10000
       set-option -sa terminal-overrides 'screen-256color:RGB'
       set -g @net_speed_format "D:%4s U:%4s"
       set -g @fpp-key 'k'

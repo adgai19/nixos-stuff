@@ -30,19 +30,35 @@ let
 
     # Folke stuff
     lsp-colors-nvim
-    todo-comments-nvim
-    trouble-nvim
+    {
+      plugin = todo-comments-nvim;
+      config = " require('todo-comments').setup()";
+      type = "lua";
+    }
+    {
+      plugin = trouble-nvim;
+      config = " require('trouble').setup()";
+      type = "lua";
+    }
 
     # Lsp
     SchemaStore-nvim
-    comment-nvim
+    {
+      plugin = comment-nvim;
+      config = " require('Comment').setup()";
+      type = "lua";
+    }
     neogit
     nvim-jdtls
     nvim-lint
     nvim-lsp-ts-utils
     nvim-lspconfig
     nvim-lsputils
-    nvim-surround
+    {
+      plugin = nvim-surround;
+      config = "require('nvim-surround').setup()";
+      type = "lua";
+    }
     nvim-ts-context-commentstring
     lsp-zero-nvim
     popfix
@@ -74,19 +90,34 @@ let
     #should move to format.nvim
     ansible-vim
     catppuccin-nvim
+
+    kanagawa-nvim
     diffview-nvim
     fidget-nvim
     formatter-nvim
     git-blame-nvim
-    gitsigns-nvim
+    {
+      plugin = gitsigns-nvim;
+      config = "require(" gitsigns ").setup()";
+      type = "lua";
+    }
     hydra-nvim
     i3config-vim
     impatient-nvim
     indent-blankline-nvim
     # lightspeed-nvim
 
-    flit-nvim
-    leap-nvim
+    {
+      plugin = flit-nvim;
+      type = "lua";
+      config = "require('flit').setup()";
+
+    }
+    {
+      plugin = leap-nvim;
+      config = "require('statuscol').setup({ setopt = true })";
+      type = "lua";
+    }
     live-command-nvim
     lualine-lsp-progress
     lualine-nvim
@@ -94,8 +125,16 @@ let
     neorg
     null-ls-nvim
     numb-nvim
-    nvim-autopairs
-    nvim-notify
+    {
+      plugin = nvim-autopairs;
+      config = "require(" nvim-autopairs ").setup({})";
+      type = "lua";
+    }
+    {
+      plugin = nvim-notify;
+      config = " require('notify').setup({ background_colour = '#000000'}) ";
+      type = "lua";
+    }
     nvim-ts-autotag
     nvim-web-devicons
     playground
@@ -108,10 +147,10 @@ let
   ];
 
   customVimPlugins = with pkgs.customVimPlugins;[
-    # autosave-nvim
-    # codeium-vim
-    # drop-nvim
-    adgai-config
+    {
+      plugin = adgai-config;
+      config = "lua require('adgai').init()";
+    }
     astro-vim
     cyclist-nvim
     go-nvim
@@ -121,13 +160,23 @@ let
     jester
     lspcontainers-nvim
     noice-nvim
-    regexplainer
-    statuscol-nvim
+    {
+      plugin = regexplainer;
+      config = "require('regexplainer').setup()";
+      type = "lua";
+    }
+    {
+      plugin = statuscol-nvim;
+      config = "require('statuscol').setup({ setopt = true })";
+      type = "lua";
+
+    }
     treesitter-just
     typescript-nvim
     vim-just
     neotest-jest
     dap-vscode
+
 
   ];
 
@@ -145,9 +194,6 @@ in
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
     ]);
-    extraConfig = ''
-      lua require('adgai').init()
-    '';
     extraPackages = with pkgs; [
 
       # ansible-lint

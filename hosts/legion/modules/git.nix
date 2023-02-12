@@ -4,7 +4,7 @@
     enable = true;
     userEmail = "gaitondeaditya@gmail.com";
     userName = "Aditya Gaitonde";
-    diff-so-fancy ={
+    diff-so-fancy = {
       enable = true;
     };
     extraConfig = {
