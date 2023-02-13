@@ -218,11 +218,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1676198317,
-        "narHash": "sha256-i5Er/KA5E9CNxs4XFdwJEOsiCyXS3X3KKuu04gRSJD4=",
+        "lastModified": 1676240687,
+        "narHash": "sha256-Qzgd87UF64k4Es8SFY/IOKDGKD1DlFT60+TAke8qV7Q=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "7d914cd427b36d5ec8acb06e415cdf2b846f1648",
+        "rev": "6b7e409f05536e45baa3dabeab0df77d05c9a96f",
         "type": "github"
       },
       "original": {
@@ -347,11 +347,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1676189625,
-        "narHash": "sha256-Zz951X+JkohWSQnwth7c+nSvjcRAQ8NXfYI+pS6Regw=",
+        "lastModified": 1676234956,
+        "narHash": "sha256-T9YgPMgos3N/2uOtJjnrcj6Q1EZMnB48DPXNGWJ53+c=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "9af9a36cd4b8eab497886a43019205db3240b37a",
+        "rev": "00dbc7537c2012fabd1e414e2ca3314ce5281959",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
     "regexplainer": {
       "flake": false,
       "locked": {
-        "lastModified": 1669918142,
-        "narHash": "sha256-olTx+CzxR4+RNzCREL1JJm1t76387rsVVlYT3gWPzbY=",
+        "lastModified": 1676219455,
+        "narHash": "sha256-TynBzoc2XxOOQZDj4wjoffC2gwvNaeJr57F1Wt9tZBs=",
         "owner": "bennypowers",
         "repo": "nvim-regexplainer",
-        "rev": "dddc9ff5f9837b02c3e07ee30b833bc39a0b6759",
+        "rev": "8af9a846644982ab1e11cc99b6e4831e12479207",
         "type": "github"
       },
       "original": {
