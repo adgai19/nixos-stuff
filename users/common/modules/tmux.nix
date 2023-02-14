@@ -25,7 +25,8 @@ let
     tmuxPlugins.tmux-fzf
     tmuxPlugins.fzf-tmux-url
     tmuxPlugins.yank
-    customTmuxPlugins.tokyonight
+    # customTmuxPlugins.tokyonight
+    customTmuxPlugins.base16-tmux
   ];
 in
 {
@@ -39,6 +40,7 @@ in
     keyMode = "vi";
     prefix = "C-t";
     extraConfig = ''
+      set -g @colors-base16 'kanagawa'
       bind C-t send-prefix
       bind -n C-g send-prefix
 

@@ -14,6 +14,11 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_1.virtualbox ];
+  boot.extraModprobeConfig = ''
+    options kvm_intel nested=1
+    options kvm_intel emulate_invalid_guest_state=0
+    options kvm ignore_msrs=1
+  '';
 
   hardware.nvidia.modesetting.enable = true;
   fileSystems."/" =

@@ -41,6 +41,9 @@
   virtualisation.virtualbox.host.enableExtensionPack = true;
   users.extraGroups.vboxusers.members = [ "adgai" ];
 
+  virtualisation.libvirtd.enable = true;
+  users.extraUsers.adgai.extraGroups = [ "libvirtd" ];
+
   programs.zsh.promptInit = ''
     any-nix-shell zsh --info-right | source /dev/stdin
   '';

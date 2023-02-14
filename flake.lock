@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "base16-tmux": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1671324556,
+        "narHash": "sha256-HcJwx1tucRP0XKkEIaP831xJCW8wwKvbiksDl9r9zNw=",
+        "owner": "tinted-theming",
+        "repo": "base16-tmux",
+        "rev": "3312bb2cbb26db7eeb2d2235ae17d4ffaef5e59b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tinted-theming",
+        "repo": "base16-tmux",
+        "type": "github"
+      }
+    },
     "cyclist-nvim": {
       "flake": false,
       "locked": {
@@ -497,6 +513,7 @@
       "inputs": {
         "astro-vim": "astro-vim",
         "autosave-nvim": "autosave-nvim",
+        "base16-tmux": "base16-tmux",
         "cyclist-nvim": "cyclist-nvim",
         "dap-vscode": "dap-vscode",
         "drop-nvim": "drop-nvim",

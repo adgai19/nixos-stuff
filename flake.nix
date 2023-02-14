@@ -37,6 +37,10 @@
       flake = false;
     };
 
+    base16-tmux = {
+      url ="github:tinted-theming/base16-tmux";
+      flake = false;
+    };
 
     hyprland.url = "github:hyprwm/Hyprland";
 
