@@ -37,9 +37,9 @@
 
   virtualisation.docker.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  users.extraGroups.vboxusers.members = [ "adgai" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # users.extraGroups.vboxusers.members = [ "adgai" ];
 
   virtualisation.libvirtd.enable = true;
   users.extraUsers.adgai.extraGroups = [ "libvirtd" ];

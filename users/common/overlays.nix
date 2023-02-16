@@ -8,7 +8,7 @@ inputs: self: super:
       rtpFilePath = "tokyo-night.tmux";
       src = inputs.tokyonight-tmux;
     };
-    base16-tmux = pkgs.tmuxPlugins.mkTmuxPlugin{
+    base16-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
       name = "base16-tmux";
       pluginName = "base16-tmux";
       rtpFilePath = "base16-tmux";

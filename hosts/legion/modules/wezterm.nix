@@ -1,9 +1,23 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, system, ... }:
+let
+  pkgs-stable = import inputs.nixpkgs-stable {
+
+    inherit system;
+    config = { allowUnfree = true; };
+  };
+in
+{
   programs.wezterm.enable = true;
   programs.kitty.enable = true;
+  programs.wezterm.package = pkgs-stable.wezterm;
   programs.wezterm.extraConfig = ''
     local wezterm = require 'wezterm'
     return {
+     set_environment_variables = {
+        TERMINFO_DIRS = '/home/user/.nix-profile/share/terminfo',
+        WSLENV = 'TERMINFO_DIRS',
+      },
+      term = 'wezterm',
       force_reverse_video_cursor = true,
       colors = {
         foreground = "#dcd7ba",

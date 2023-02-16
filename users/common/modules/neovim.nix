@@ -32,21 +32,18 @@ let
     lsp-colors-nvim
     {
       plugin = todo-comments-nvim;
-      config = " require('todo-comments').setup()";
-      type = "lua";
+      config = "lua require('todo-comments').setup()";
     }
     {
       plugin = trouble-nvim;
-      config = " require('trouble').setup()";
-      type = "lua";
+      config = "lua require('trouble').setup()";
     }
 
     # Lsp
     SchemaStore-nvim
     {
       plugin = comment-nvim;
-      config = " require('Comment').setup()";
-      type = "lua";
+      config = "lua require('Comment').setup()";
     }
     neogit
     nvim-jdtls
@@ -56,8 +53,7 @@ let
     nvim-lsputils
     {
       plugin = nvim-surround;
-      config = "require('nvim-surround').setup()";
-      type = "lua";
+      config = "lua require('nvim-surround').setup()";
     }
     nvim-ts-context-commentstring
     lsp-zero-nvim
@@ -68,11 +64,8 @@ let
     vim-signature
 
     #DAP
-
     nvim-dap
-
     neotest
-    #use("mfussenegger/nvim-dap-python")
     nvim-dap-virtual-text
     nvim-dap-ui
     nvim-dap-go
@@ -98,8 +91,7 @@ let
     git-blame-nvim
     {
       plugin = gitsigns-nvim;
-      config = "require(' gitsigns ').setup()";
-      type = "lua";
+      config = "lua require('gitsigns').setup()";
     }
     hydra-nvim
     i3config-vim
@@ -109,14 +101,12 @@ let
 
     {
       plugin = flit-nvim;
-      type = "lua";
-      config = "require('flit').setup()";
+      config = "lua require('flit').setup()";
 
     }
     {
       plugin = leap-nvim;
-      config = "require('statuscol').setup({ setopt = true })";
-      type = "lua";
+      config = "lua require('statuscol').setup({ setopt = true })";
     }
     live-command-nvim
     lualine-lsp-progress
@@ -127,13 +117,11 @@ let
     numb-nvim
     {
       plugin = nvim-autopairs;
-      config = "require('nvim-autopairs').setup({})";
-      type = "lua";
+      config = "lua require('nvim-autopairs').setup({})";
     }
     {
       plugin = nvim-notify;
-      config = " require('notify').setup({ background_colour = '#000000'}) ";
-      type = "lua";
+      config = "lua require('notify').setup({ background_colour = '#000000'}) ";
     }
     nvim-ts-autotag
     nvim-web-devicons
@@ -162,13 +150,11 @@ let
     noice-nvim
     {
       plugin = regexplainer;
-      config = "require('regexplainer').setup()";
-      type = "lua";
+      config = "lua require('regexplainer').setup()";
     }
     {
       plugin = statuscol-nvim;
-      config = "require('statuscol').setup({ setopt = true })";
-      type = "lua";
+      config = "lua require('statuscol').setup({ setopt = true })";
 
     }
     treesitter-just
@@ -176,8 +162,6 @@ let
     vim-just
     neotest-jest
     dap-vscode
-
-
   ];
 
 in

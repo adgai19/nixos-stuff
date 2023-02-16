@@ -17,6 +17,7 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -38,7 +39,7 @@
     };
 
     base16-tmux = {
-      url ="github:tinted-theming/base16-tmux";
+      url = "github:tinted-theming/base16-tmux";
       flake = false;
     };
 
@@ -149,7 +150,7 @@
     #   flake = false;
     # };
   };
-  outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, hyprland, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-stable, home-manager, neovim-nightly, sops-nix, hyprland, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

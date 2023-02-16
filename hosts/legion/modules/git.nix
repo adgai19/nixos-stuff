@@ -7,13 +7,15 @@
     diff-so-fancy = {
       enable = true;
     };
+    aliases = {
+      ds = "diff --staged";
+    };
     extraConfig = {
       init = {
         defaultBranch = "main";
       };
       pull = {
         rebase = true;
-
       };
     };
   };

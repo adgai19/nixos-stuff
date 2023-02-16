@@ -2,6 +2,8 @@
 {
   home.packages = with pkgs; [
     # hyperbeam
+    # wofi
+
     age
     age-plugin-yubikey
     arandr
@@ -11,8 +13,8 @@
     cachix
     diff-so-fancy
     discord
-    eww-wayland
     evince
+    eww-wayland
     fd
     feh
     filezilla
@@ -34,17 +36,17 @@
     nodejs-18_x
     pavucontrol
     poetry
+    progress
     pulseaudio
     ripgrep
     scrot
     stylua
+    traceroute
     transmission-gtk
     tree
-    # wofi
     xclip
     xsettingsd
     yubikey-manager
-
     # python310
     # python310Packages.adblock
     # python310Packages.netifaces
