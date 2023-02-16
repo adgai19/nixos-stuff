@@ -176,11 +176,11 @@
     "guihua-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1676379937,
-        "narHash": "sha256-J0M9vioj5X1lCg6vVshtM1dubXuiOeN+LG14OF2J+Ak=",
+        "lastModified": 1676543056,
+        "narHash": "sha256-ZFKkiIEe3n0ubTxUfCM6st5q30BJxBcB4Zm7Z4fPgk4=",
         "owner": "ray-x",
         "repo": "guihua.lua",
-        "rev": "ca33e21520da255dc97ecd40cdd7c3c454068979",
+        "rev": "a19ac4447021f21383fadd7a9e1fc150d0b67e1f",
         "type": "github"
       },
       "original": {
@@ -234,11 +234,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1676486723,
-        "narHash": "sha256-QLinOK1H0hUA9sDj2Hx97OfUE6IcXf071yx9uchmRPA=",
+        "lastModified": 1676554666,
+        "narHash": "sha256-W/Ao4b5MjWGRMdt6GVjfsQ+2aL2zCSGkQbhtSdQ2j78=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "ab6a092dbc99bfdb2cd40f46e2f34f74cce88c15",
+        "rev": "ff95721ad9dd51f51f84305746bb47593b9f4f76",
         "type": "github"
       },
       "original": {
