@@ -38,10 +38,10 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  # hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = false;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -95,6 +95,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.pcscd.enable = true;
+  services.blueman.enable = true;
   # for qmk and yubikey
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
 

@@ -21,6 +21,8 @@
   '';
 
   hardware.nvidia.modesetting.enable = true;
+  hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/fe4a2218-d9df-440a-92cd-57d272a5b501";
