@@ -106,6 +106,11 @@ inputs: self: super:
       name = "dap-vscode";
       src = inputs.dap-vscode;
     };
+
+    treesj = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "treesj";
+      src = inputs.treesj;
+    };
     # codeium-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     #   name = "codeium-vim";
     #   src = inputs.codeium-vim;

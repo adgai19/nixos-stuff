@@ -1,5 +1,4 @@
 local dap = require("dap")
-vim.notify("inside dap config")
 require("nvim-dap-virtual-text").setup({
 	enabled = true,
 
@@ -144,7 +143,6 @@ dap.adapters.node2 = {
 --   },
 -- }
 for _, language in ipairs({ "typescript", "javascript" }) do
-	print(language)
 	require("dap").configurations[language] = {
 		{
 			type = "pwa-node",

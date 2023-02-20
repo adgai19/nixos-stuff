@@ -51,6 +51,7 @@ let
     nvim-lsp-ts-utils
     nvim-lspconfig
     nvim-lsputils
+    friendly-snippets
     {
       plugin = nvim-surround;
       config = "lua require('nvim-surround').setup()";
@@ -139,15 +140,6 @@ let
       plugin = adgai-config;
       config = "lua require('adgai').init()";
     }
-    astro-vim
-    cyclist-nvim
-    go-nvim
-    guihua-lua
-    hover-nvim
-    inc-rename-nvim
-    jester
-    lspcontainers-nvim
-    noice-nvim
     {
       plugin = regexplainer;
       config = "lua require('regexplainer').setup()";
@@ -157,11 +149,21 @@ let
       config = "lua require('statuscol').setup({ setopt = true })";
 
     }
+    astro-vim
+    cyclist-nvim
+    dap-vscode
+    go-nvim
+    guihua-lua
+    hover-nvim
+    inc-rename-nvim
+    jester
+    lspcontainers-nvim
+    neotest-jest
+    noice-nvim
     treesitter-just
+    treesj
     typescript-nvim
     vim-just
-    neotest-jest
-    dap-vscode
   ];
 
 in

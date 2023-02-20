@@ -1,6 +1,6 @@
 local M = {}
 M.init = function()
-	require("adgai.dap")
+  require("adgai.dap")
 	require("adgai.cyclekeymaps")
 	require("adgai.input")
 	require("adgai.runner")

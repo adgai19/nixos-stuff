@@ -50,7 +50,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # some plugins that I track outside of nixpkgs and vim-extra-plugins
+    # some plugins that I track outside of nixpkgs
     inc-rename = {
       url = "github:smjonas/inc-rename.nvim";
       flake = false;
@@ -139,10 +139,17 @@
       url = "github:haydenmeade/neotest-jest";
       flake = false;
     };
+
     dap-vscode = {
       url = "github:mxsdev/nvim-dap-vscode-js";
       flake = false;
     };
+
+    treesj = {
+      url = "github:Wansmer/treesj";
+      flake = false;
+    };
+
 
 
     # codeium-vim = {
