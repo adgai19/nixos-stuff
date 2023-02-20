@@ -1,4 +1,3 @@
-vim.lsp.set_log_level(vim.log.levels.DEBUG)
 local lsp = require("lsp-zero").preset({
 	name = "minimal",
 	set_lsp_keymaps = true,
