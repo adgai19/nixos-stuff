@@ -1,24 +1,34 @@
 { pkgs, inputs, system, ... }:
 let
-  pkgs-stable = import inputs.nixpkgs-stable {
+  nixpkgs-patched-wezterm = (import inputs.nixpkgs {
+    inherit system;
+  }).applyPatches{
+    name = "wezterm-fix";
+    src = inputs.nixpkgs;
+    patches = [./nixpkgs-wezterm-fix.patch ];
+  };
 
+  pkgs-wezterm-patch = import nixpkgs-patched-wezterm{
     inherit system;
     config = { allowUnfree = true; };
   };
+
 in
 {
   programs.wezterm.enable = true;
   programs.kitty.enable = true;
-  programs.wezterm.package = pkgs-stable.wezterm;
+  programs.wezterm.package = pkgs-wezterm-patch.wezterm;
+
   programs.wezterm.extraConfig = ''
     local wezterm = require 'wezterm'
     return {
-     set_environment_variables = {
+      force_reverse_video_cursor = true,
+
+      set_environment_variables = {
         TERMINFO_DIRS = '/home/user/.nix-profile/share/terminfo',
         WSLENV = 'TERMINFO_DIRS',
       },
       term = 'wezterm',
-      force_reverse_video_cursor = true,
       colors = {
         foreground = "#dcd7ba",
         background = "#1f1f28",
