@@ -195,6 +195,17 @@
         legion = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            {
+              _module.args = {
+                inherit inputs system;
+
+                pkgs-stable = import inputs.nixpkgs-stable {
+
+                  inherit system;
+                  config = { allowUnfree = true; };
+                };
+              };
+            }
             ./system/legion/configuration.nix
             sops-nix.nixosModules.sops
             hyprland.nixosModules.default
