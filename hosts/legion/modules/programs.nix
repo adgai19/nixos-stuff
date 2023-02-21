@@ -21,7 +21,7 @@
     firefox-devedition-bin
     flameshot
     gcc
-    gh
+    # gh
     ghc
     htop
     hyp

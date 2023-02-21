@@ -2,17 +2,11 @@
 {
   programs.wezterm.enable = true;
   programs.kitty.enable = true;
-  programs.wezterm.package = (builtins.getFlake "github:SuperSandro2000/nixpkgs/ba948164d35d75e3ff107d90ca9e6cea77194118").legacyPackages.${pkgs.system}.wezterm;
   programs.wezterm.extraConfig = ''
     local wezterm = require("wezterm")
     return {
     	force_reverse_video_cursor = true,
 
-    	set_environment_variables = {
-    		TERMINFO_DIRS = "/home/user/.nix-profile/share/terminfo",
-    		WSLENV = "TERMINFO_DIRS",
-    	},
-    	term = "wezterm",
     	colors = {
     		foreground = "#dcd7ba",
     		background = "#1f1f28",
