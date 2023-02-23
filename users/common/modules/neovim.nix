@@ -164,6 +164,7 @@ let
     treesj
     typescript-nvim
     vim-just
+    codeium
   ];
 
 in

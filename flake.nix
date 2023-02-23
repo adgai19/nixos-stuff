@@ -152,10 +152,10 @@
 
 
 
-    # codeium-vim = {
-    #   url = "github:Exafunction/codeium.vim";
-    #   flake = false;
-    # };
+    codeium-vim = {
+      url = "github:jcdickinson/codeium.nvim";
+      flake = false;
+    };
   };
   outputs = inputs@{ nixpkgs, nixpkgs-stable, home-manager, neovim-nightly, sops-nix, hyprland, ... }:
     let

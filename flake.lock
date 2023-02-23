@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "codeium-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675904931,
+        "narHash": "sha256-Wnc3k1gHVC/QQp6aqasYW7ABc+Knr2IQ8U6Lm35c0vE=",
+        "owner": "jcdickinson",
+        "repo": "codeium.nvim",
+        "rev": "de7c4d17f5b10e6c38b3c68d3472fffca984acae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jcdickinson",
+        "repo": "codeium.nvim",
+        "type": "github"
+      }
+    },
     "cyclist-nvim": {
       "flake": false,
       "locked": {
@@ -530,6 +546,7 @@
         "astro-vim": "astro-vim",
         "autosave-nvim": "autosave-nvim",
         "base16-tmux": "base16-tmux",
+        "codeium-vim": "codeium-vim",
         "cyclist-nvim": "cyclist-nvim",
         "dap-vscode": "dap-vscode",
         "drop-nvim": "drop-nvim",

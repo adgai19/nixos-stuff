@@ -111,10 +111,10 @@ inputs: self: super:
       name = "treesj";
       src = inputs.treesj;
     };
-    # codeium-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    #   name = "codeium-vim";
-    #   src = inputs.codeium-vim;
-    # };
+    codeium = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "codeium-vim";
+      src = inputs.codeium-vim;
+    };
     adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";
       src = ./config/nvim-config;

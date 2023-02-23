@@ -27,5 +27,14 @@ lsp.setup_servers({
 
 -- lspcontainer servers with no special options
 
+lsp.setup_nvim_cmp({
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp', keyword_length = 1},
+    {name = 'buffer', keyword_length = 3},
+    {name = 'luasnip', keyword_length = 2},
+    {name = 'codeium', keyword_length = 2},
+  }
+})
 lsp.nvim_workspace()
 lsp.setup()

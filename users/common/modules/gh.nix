@@ -1,15 +1,11 @@
 { config, lib, ... }:
 let
-  cfg = config.programs.adgai.gh;
-  inherit (lib) mkOption mkIf types;
+  cfg = config.programs.adgai.cli.gh;
+  inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.programs.adgai.gh = {
-    enable = mkOption {
-      description = "gh module";
-      type = types.bool;
-      default = false;
-    };
+  options.programs.adgai.cli.gh = {
+    enable = mkEnableOption "github cli";
   };
   config = mkIf cfg.enable {
     programs.gh = {

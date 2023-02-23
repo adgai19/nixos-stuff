@@ -1,10 +1,10 @@
 { config, lib, ... }:
 let
-  cfg = config.programs.adgai.cli.zsh;
+  cfg = config.programs.adgai.cli.shellconfig;
   inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.programs.adgai.cli.zsh.enable = mkEnableOption "zsh";
+  options.programs.adgai.cli.shellconfig.enable = mkEnableOption "zsh";
 
   config = mkIf cfg.enable {
     programs.zsh = {
@@ -28,7 +28,6 @@ in
 
         lfcd() {
         	tmp="$(mktemp)"
-        	# `command` is needed in case `lfcd` is aliased to `lf`
         	command lf -last-dir-path="$tmp" "$@"
         	if [ -f "$tmp" ]; then
         		dir="$(cat "$tmp")"
@@ -40,7 +39,6 @@ in
         		fi
         	fi
         }
-
         bindkey -s "^F" "lfcd^M"
       '';
 
@@ -69,7 +67,5 @@ in
       enable = true;
       enableZshIntegration = true;
     };
-
-
   };
 }
