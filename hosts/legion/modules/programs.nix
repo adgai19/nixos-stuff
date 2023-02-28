@@ -40,6 +40,7 @@
     pulseaudio
     ripgrep
     scrot
+    statix
     stylua
     traceroute
     transmission-gtk

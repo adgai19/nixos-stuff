@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 let
 
-  cfg = config.programs.adgai.cli.tmux;
+  inherit (config.programs.adgai.cli.tmux) enable;
   inherit (lib) mkEnableOption mkIf;
   tmuxPlugin = with pkgs; [
     tmuxPlugins.cpu
@@ -25,10 +25,10 @@ in
   options.programs.adgai.cli.tmux = {
     enable = mkEnableOption "tmux";
   };
-  config = mkIf cfg.enable {
+  config = mkIf enable {
 
     programs.tmux = {
-      enable = cfg.enable;
+      inherit enable;
       plugins = tmuxPlugin;
       aggressiveResize = true;
       baseIndex = 0;

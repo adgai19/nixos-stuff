@@ -182,7 +182,7 @@
 
       packages."${system}" = import ./packages inputs;
 
-      overlays.default = final: prev: (import ./users/common/overlays.nix inputs) final prev;
+      overlays.default = import ./users/common/overlays.nix inputs;
 
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {

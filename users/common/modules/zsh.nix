@@ -1,14 +1,14 @@
 { config, lib, ... }:
 let
-  cfg = config.programs.adgai.cli.shellconfig;
   inherit (lib) mkEnableOption mkIf;
+  inherit (config.programs.adgai.cli.shellconfig) enable;
 in
 {
   options.programs.adgai.cli.shellconfig.enable = mkEnableOption "zsh";
 
-  config = mkIf cfg.enable {
+  config = mkIf enable {
     programs.zsh = {
-      enable = cfg.enable;
+      inherit enable;
       shellGlobalAliases = {
         ls = "exa";
         la = "exa -la";

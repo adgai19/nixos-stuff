@@ -176,8 +176,8 @@ in
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;
-    plugins = (vimPlugins)
-      ++ (customVimPlugins)
+    plugins = vimPlugins
+      ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
     ]);

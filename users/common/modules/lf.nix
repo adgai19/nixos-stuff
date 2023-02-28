@@ -1,16 +1,16 @@
 { pkgs, config, lib, ... }:
 let
-
-  cfg = config.programs.adgai.cli.lf;
   inherit (lib) mkEnableOption mkIf;
+  inherit (config.programs.adgai.cli.lf) enable;
 in
 {
   options.programs.adgai.cli.lf = {
     enable = mkEnableOption "lf";
   };
-  config = mkIf cfg.enable {
+  config = mkIf enable {
     programs.lf = {
-      enable = cfg.enable;
+
+      inherit enable;
       settings = {
         icons = true;
         shell = "sh";

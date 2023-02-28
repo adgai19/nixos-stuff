@@ -1,15 +1,15 @@
 { config, lib, ... }:
 let
-  cfg = config.programs.adgai.cli.gh;
   inherit (lib) mkEnableOption mkIf;
+  inherit (config.programs.adgai.cli.gh) enable;
 in
 {
   options.programs.adgai.cli.gh = {
     enable = mkEnableOption "github cli";
   };
-  config = mkIf cfg.enable {
+  config = mkIf enable {
     programs.gh = {
-      enable = cfg.enable;
+      inherit enable;
       settings = {
         editor = "nvim";
         git_protocol = "ssh";

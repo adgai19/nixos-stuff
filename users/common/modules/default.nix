@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  list = builtins.filter (p: !(pkgs.lib.hasPrefix "default.nix" p)) (builtins.filter (p: pkgs.lib.hasSuffix ".nix" p) (builtins.attrNames (builtins.readDir ./users/common/modules)));
+  list = builtins.filter (p: !(pkgs.lib.hasPrefix "default.nix" p)) (builtins.filter pkgs.lib.hasSuffix ".nix" (builtins.attrNames (builtins.readDir ./users/common/modules)));
 in
 {
 
