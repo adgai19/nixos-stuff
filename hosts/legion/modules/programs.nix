@@ -9,7 +9,7 @@
     arandr
     awscli2
     bottom
-    brave
+    # brave
     cachix
     diff-so-fancy
     discord

@@ -37,9 +37,12 @@ in
       keyMode = "vi";
       prefix = "C-t";
       extraConfig = ''
-        set -g @colors-base16 'kanagawa'
+        set -g @colors-base16 'tokyo-night'
         bind C-t send-prefix
         bind -n C-g send-prefix
+        set -g default-terminal "$\{TERM}"
+        set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
+        set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 
         set -g status-right-length 180
         set -s set-clipboard on
@@ -55,10 +58,8 @@ in
         set-option -gw xterm-keys on
         set-option -g status-position top
         set-option -g display-panes-time 1500
-
-          set-option -sa terminal-overrides ',alacritty:RGB'
-          set-option -ga terminal-overrides ',alacritty:Tc'
-         # copy 
+        set-option -sa terminal-features ',wezterm:RGB'
+        # copy
         setw -g mode-keys vi
         bind -T copy-mode    C-c send -X copy-pipe-no-clear "xsel -i --clipboard"
         bind -T copy-mode-vi C-c send -X copy-pipe-no-clear "xsel -i --clipboard"
@@ -67,7 +68,7 @@ in
         set -g message-command-style "fg=#7aa2f7,bg=#3b4261"
         set -g pane-border-style "fg=#3b4261"
         set -g pane-active-border-style "fg=#7aa2f7"
-        set-option -g focus-events on 
+        set-option -g focus-events on
 
         set -g status "on"
         set -g status-style "fg=#7aa2f7,bg=#1f2335"
@@ -92,17 +93,17 @@ in
         set -g window-status-current-format "#[fg=#1f2335,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#7aa2f7,bg=#3b4261,bold] #I  #W #F #[fg=#3b4261,bg=#1f2335,nobold,nounderscore,noitalics]"
 
 
-         #Mouse mode
+        #Mouse mode
         setw -g mouse on
         # Set easier window split keys
         bind-key v split-window -h  -c "#{pane_current_path}"
         bind-key h split-window -v -c "#{pane_current_path}"
         bind-key + split-window -h -p 20 -c "#{pane_current_path}"
         bind-key = split-window -v -p 20 -c "#{pane_current_path}"
-        bind-key c-h select-pane -L 
-        bind-key c-l select-pane -R 
-        bind-key c-k select-pane -U 
-        bind-key c-j select-pane -D 
+        bind-key c-h select-pane -L
+        bind-key c-l select-pane -R
+        bind-key c-k select-pane -U
+        bind-key c-j select-pane -D
         bind-key c-c send-keys Enter
 
         # move better bw panes

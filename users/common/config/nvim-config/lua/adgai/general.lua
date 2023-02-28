@@ -50,7 +50,6 @@ vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false
 -- vim.opt.shell = "/bin/zsh"
 -- vim.g["python3_host_prog"] = "/usr/bin/python3"
-vim.opt.termguicolors = true
 vim.opt.undodir = vim.fn.expand("~") .. "/.config/nvim/undodir/undo"
 vim.opt.undofile = true
 vim.opt.number = true

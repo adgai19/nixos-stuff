@@ -122,7 +122,7 @@ let
     }
     {
       plugin = nvim-notify;
-      config = "lua require('notify').setup({ background_colour = '#000000'}) ";
+      # config = "lua require('notify').setup({ background_colour = '#000000'}) ";
     }
     nvim-ts-autotag
     nvim-web-devicons
@@ -181,6 +181,10 @@ in
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
     ]);
+    extraConfig = ''
+    
+
+    '';
     extraPackages = with pkgs; [
 
       # ansible-lint

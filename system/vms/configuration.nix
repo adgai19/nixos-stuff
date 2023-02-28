@@ -110,6 +110,9 @@
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = "experimental-features = nix-command flakes";
   services.openssh.enable = true;
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hpli pkgs.epson-escpr ];
+
   services.openssh.passwordAuthentication = true;
   services.openssh.permitRootLogin = "yes";
   users.users.root.initialPassword = "root";

@@ -87,6 +87,7 @@
     lidSwitchDocked = "suspend";
   };
 
+  services.printing.drivers = [ pkgs.epson-escpr ];
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -98,6 +99,7 @@
   services.blueman.enable = true;
   # for qmk and yubikey
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
+  environment.enableAllTerminfo = true;
 
   networking.hostName = "legion"; # Define your hostname
 

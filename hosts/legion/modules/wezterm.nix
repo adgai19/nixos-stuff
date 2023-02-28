@@ -2,11 +2,18 @@
 {
   programs.wezterm.enable = true;
   programs.kitty.enable = true;
+
+  # set_environment_variables = {
+  #   TERMINFO_DIRS = '/home/user/.nix-profile/share/terminfo',
+  # },
   programs.wezterm.extraConfig = ''
+
+
     local wezterm = require("wezterm")
     return {
     	force_reverse_video_cursor = true,
 
+      term = 'wezterm',
     	colors = {
     		foreground = "#dcd7ba",
     		background = "#1f1f28",
