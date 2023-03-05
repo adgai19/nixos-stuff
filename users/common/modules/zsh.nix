@@ -10,9 +10,6 @@ in
     programs.zsh = {
       inherit enable;
       shellGlobalAliases = {
-        ls = "exa";
-        la = "exa -la";
-        l = "exa -l";
         cat = "bat";
         pg = "ping google.com";
         gs = "git status";
@@ -53,6 +50,8 @@ in
 
     programs.exa = {
       enable = true;
+      enableAliases = true;
+      icons = true;
     };
 
     programs.bat = {

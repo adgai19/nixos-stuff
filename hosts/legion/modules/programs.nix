@@ -7,7 +7,7 @@
     age
     age-plugin-yubikey
     arandr
-    awscli2
+    # awscli2
     bottom
     # brave
     cachix

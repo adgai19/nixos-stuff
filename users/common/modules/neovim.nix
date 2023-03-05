@@ -201,6 +201,7 @@ in
       shellcheck
       sumneko-lua-language-server
       terraform-ls
+      terraform-lsp
       haskell-language-server
 
       lua51Packages.sqlite
