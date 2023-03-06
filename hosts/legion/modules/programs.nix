@@ -4,13 +4,15 @@
     # hyperbeam
     # wofi
 
+    # awscli2
+    # brave
+
     age
     age-plugin-yubikey
     arandr
-    # awscli2
     bottom
-    # brave
     cachix
+    commitizen
     diff-so-fancy
     discord
     evince
@@ -21,7 +23,6 @@
     firefox-devedition-bin
     flameshot
     gcc
-    # gh
     ghc
     htop
     hyp
@@ -36,6 +37,7 @@
     nodejs-18_x
     pavucontrol
     poetry
+    pre-commit
     progress
     pulseaudio
     ripgrep

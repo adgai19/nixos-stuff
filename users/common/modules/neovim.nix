@@ -131,6 +131,7 @@ let
     tokyonight-nvim
     vim-numbertoggle
     vim-qf
+    vim-terraform
     # vim-startify
     neo-tree-nvim
   ];
