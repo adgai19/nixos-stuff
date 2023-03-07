@@ -1,12 +1,7 @@
 { pkgs, lib, inputs, ... }:
 {
   home.packages = with pkgs; [
-    # hyperbeam
-    # wofi
-
-    # awscli2
-    # brave
-
+    awscli2
     age
     age-plugin-yubikey
     arandr

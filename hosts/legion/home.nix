@@ -19,6 +19,7 @@
   # Let Home Manager install and manage itself.
 
   programs.adgai.cli.gh.enable = true;
+  programs.adgai.cli.git.enable = true;
   programs.adgai.cli.direnv.enable = true;
   programs.adgai.cli.lf.enable = true;
   programs.adgai.cli.tmux.enable = true;
