@@ -16,13 +16,14 @@
   # nixpkgs.overlays = [(import ./overlays.nix )];
 
   imports = [ ./modules ../../users/common ];
-  # Let Home Manager install and manage itself.
 
-  programs.adgai.cli.gh.enable = true;
-  programs.adgai.cli.git.enable = true;
-  programs.adgai.cli.direnv.enable = true;
-  programs.adgai.cli.lf.enable = true;
-  programs.adgai.cli.tmux.enable = true;
-  programs.adgai.cli.shellconfig.enable = true;
+  programs.adgai.cli = {
+    gh.enable = true;
+    git.enable = true;
+    direnv.enable = true;
+    lf.enable = true;
+    tmux.enable = true;
+    shellconfig.enable = true;
+  };
 
 }
