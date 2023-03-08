@@ -25,5 +25,6 @@
     tmux.enable = true;
     shellconfig.enable = true;
   };
+  programs.adgai.ui.rofi.enable = true;
 
 }
