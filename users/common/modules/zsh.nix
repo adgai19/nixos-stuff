@@ -15,6 +15,7 @@ in
         gs = "git status";
         nb = "newsboat";
         j = "just --choose";
+        c = "cz c";
       };
       defaultKeymap = "viins";
       initExtra = ''

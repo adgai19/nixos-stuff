@@ -22,6 +22,7 @@ in
       };
       aliases = {
         ds = "diff --staged";
+        ap = "add -p";
       };
       extraConfig = {
         init = {

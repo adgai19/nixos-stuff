@@ -3,7 +3,6 @@ update hostname:
   git add flake.lock
   just {{hostname}}
   cz c
-  # git commit -m "update dep"
 
 legion:
   sudo nixos-rebuild switch --flake .#legion --impure
