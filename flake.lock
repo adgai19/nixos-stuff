@@ -176,11 +176,11 @@
     "go-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1678405086,
-        "narHash": "sha256-Dm6CSWryct8P+BUAnOofFGzambgAr5P7wP3x4zMZRVw=",
+        "lastModified": 1678425478,
+        "narHash": "sha256-++SP9yzu8PxXjjpygiMd8SLihAgVQCZCOhcI/KC3X14=",
         "owner": "ray-x",
         "repo": "go.nvim",
-        "rev": "048bac60ac72636f7a13476174032b925b4a094c",
+        "rev": "a67b0120542224551bafa52a12a04cb2499f3d9f",
         "type": "github"
       },
       "original": {
@@ -512,11 +512,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1678135815,
-        "narHash": "sha256-U9rGLDafi7CcrNuYD1LkM3LSN2rZ5zgF0GeInrAihAE=",
+        "lastModified": 1678417456,
+        "narHash": "sha256-VGhQT2n9akowb03pHmKhxfiO9MBujpLoTv+SV8YT2po=",
         "owner": "nix-community",
         "repo": "poetry2nix",
-        "rev": "4c424edc8a546952e640f2a3017354b05bf15f0b",
+        "rev": "391224c48dea50ee2b1f889a989c7dbbbf93abe6",
         "type": "github"
       },
       "original": {
