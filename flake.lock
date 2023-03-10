@@ -176,11 +176,11 @@
     "go-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1678094663,
-        "narHash": "sha256-vzZ8ksyMuwpaKDk+KeUPpzzPz4ueW2S72endYm6XCPY=",
+        "lastModified": 1678405086,
+        "narHash": "sha256-Dm6CSWryct8P+BUAnOofFGzambgAr5P7wP3x4zMZRVw=",
         "owner": "ray-x",
         "repo": "go.nvim",
-        "rev": "1844fd11a143aba3eec644c2e2099a20f79c1ec1",
+        "rev": "048bac60ac72636f7a13476174032b925b4a094c",
         "type": "github"
       },
       "original": {
@@ -250,11 +250,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1678359340,
-        "narHash": "sha256-AWXedHxc5+fwiMiEyFCvgWkP7piHeK4cprBASe/JmJw=",
+        "lastModified": 1678371846,
+        "narHash": "sha256-fOFX0PASpIpU4NK9Wen9yJKwg5RYe5jFIu1H0OUzglE=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "878fe204096d08a4dc4fa359c19120720517cf2f",
+        "rev": "c9167d96467f0c1546f337828e874d7dd849f900",
         "type": "github"
       },
       "original": {
