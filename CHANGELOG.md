@@ -1,3 +1,10 @@
+## Unreleased
+
+### Feat
+
+- git workflow improvements
+- **justfile**: swapped update commit command with cz
+
 ## 1.0.0 (2023-03-08)
 
 ### Feat
