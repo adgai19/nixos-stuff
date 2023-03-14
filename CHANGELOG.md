@@ -1,7 +1,8 @@
-## Unreleased
+## 1.1.0 (2023-03-14)
 
 ### Feat
 
+- **zsh**: shell improvements
 - git workflow improvements
 - **justfile**: swapped update commit command with cz
 
