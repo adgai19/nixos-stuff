@@ -76,6 +76,7 @@
     yubioath-flutter
   ];
   programs.zsh.enable = true;
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

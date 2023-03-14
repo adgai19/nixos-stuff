@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib,pkgs, ... }:
 let
   inherit (lib) mkEnableOption mkIf;
   inherit (config.programs.adgai.cli.shellconfig) enable;
@@ -57,10 +57,12 @@ in
 
     programs.bat = {
       enable = true;
+      extraPackages = with pkgs.bat-extras; [prettybat batwatch batpipe batman batgrep batdiff];
     };
 
     programs.zoxide = {
       enable = true;
+      enableZshIntegration = true;
     };
 
     programs.starship = {
