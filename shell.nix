@@ -3,8 +3,9 @@ with pkgs;
 mkShell {
   buildInputs = [
     git
-    zsh
-    nixpkgs-fmt
     just
+    nixpkgs-fmt
+    statix
+    zsh
   ];
 }

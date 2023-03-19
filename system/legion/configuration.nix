@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, stylix, ... }:
+{ config, pkgs, ... }:
 {
   imports =
     [
@@ -65,23 +65,7 @@
   };
 
   services.xserver.dpi = 96;
-  # programs.hyprland = {
-  #   enable = true;
-  #   xwayland = {
-  #     enable = true;
-  #   };
-  #
-  #   nvidiaPatches = true;
-  # };
-  # programs.xwayland.enable = true;
 
-
-  # stylix = {
-  #   # image = /home/adgai/background-image;
-  #   base16Schemes = "${base16-schemes}/tokyo-night-storm.yaml";
-  # };
-  # programs.neovim.enable = true;
-  # programs.neovim.defaultEditor = true;
   services.logind = {
     lidSwitch = "suspend";
     lidSwitchDocked = "suspend";

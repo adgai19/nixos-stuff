@@ -7,6 +7,7 @@ local lsp = require("lsp-zero").preset({
 
 lsp.setup_servers({
 	"ansiblels",
+	"astro",
 	"clangd",
 	"eslint",
 	"rust_analyzer",

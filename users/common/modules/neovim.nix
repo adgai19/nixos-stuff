@@ -182,10 +182,6 @@ in
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
     ]);
-    extraConfig = ''
-    
-
-    '';
     extraPackages = with pkgs; [
 
       # ansible-lint
