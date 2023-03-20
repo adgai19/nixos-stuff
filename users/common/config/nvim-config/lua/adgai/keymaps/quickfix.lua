@@ -1,4 +1,4 @@
 local nnoremap = require("adgai.keymaps.helpers").nnoremap
 
-nnoremap("co", "<cmd>copen<cr>")
-nnoremap("cc", "<cmd>cclose<cr>")
+nnoremap("<leader>co", "<cmd>copen<cr>")
+nnoremap("<leader>cc", "<cmd>cclose<cr>")

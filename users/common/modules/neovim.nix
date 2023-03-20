@@ -187,11 +187,11 @@ in
       # ansible-lint
       # python310Packages.jedi-language-server
       ansible-language-server
-      ccls
       clang-tools
       fd
       git
       gopls
+      haskell-language-server
       nil
       rnix-lsp
       rust-analyzer
@@ -199,10 +199,10 @@ in
       sumneko-lua-language-server
       terraform-ls
       terraform-lsp
-      haskell-language-server
 
       lua51Packages.sqlite
 
+      nodePackages."@astrojs/language-server"
       nodePackages."@prisma/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
@@ -214,6 +214,7 @@ in
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.write-good
+
       nodePackages_latest.vim-language-server
       nodePackages_latest.vue-language-server
 
