@@ -5,13 +5,12 @@ local lsp = require("lsp-zero").preset({
 	suggest_lsp_servers = false,
 })
 
-
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr}
-  local bind = vim.keymap.set
+	local opts = { buffer = bufnr }
+	local bind = vim.keymap.set
 
-  bind('n', '<leader>rn', vim.lsp.buf.rename, opts)
-  bind('n','<leader><leader><leader>',vim.lsp.buf.code_action,opts)
+	bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
+	bind("n", "<leader><leader><leader>", vim.lsp.buf.code_action, opts)
 end)
 
 lsp.setup_servers({

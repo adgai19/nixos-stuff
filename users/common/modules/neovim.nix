@@ -86,7 +86,7 @@ let
     catppuccin-nvim
 
     kanagawa-nvim
-    diffview-nvim
+    # diffview-nvim
     fidget-nvim
     formatter-nvim
     git-blame-nvim

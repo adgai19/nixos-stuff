@@ -17,7 +17,7 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
+    # nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -155,7 +155,7 @@
       flake = false;
     };
   };
-  outputs = inputs@{ nixpkgs, nixpkgs-stable, home-manager, neovim-nightly, sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -197,11 +197,11 @@
               _module.args = {
                 inherit inputs system;
 
-                pkgs-stable = import inputs.nixpkgs-stable {
-
-                  inherit system;
-                  config = { allowUnfree = true; };
-                };
+                # pkgs-stable = import inputs.nixpkgs-stable {
+                #
+                #   inherit system;
+                #   config = { allowUnfree = true; };
+                # };
               };
             }
             ./system/legion/configuration.nix
