@@ -19,6 +19,9 @@ let
     lspkind-nvim
     luasnip
     nvim-cmp
+    # copilot
+    copilot-vim
+    cmp-copilot
 
     #Telescope
     telescope-dap-nvim
@@ -122,7 +125,6 @@ let
     }
     {
       plugin = nvim-notify;
-      # config = "lua require('notify').setup({ background_colour = '#000000'}) ";
     }
     nvim-ts-autotag
     nvim-web-devicons
@@ -134,6 +136,7 @@ let
     vim-terraform
     # vim-startify
     neo-tree-nvim
+
   ];
 
   customVimPlugins = with pkgs.customVimPlugins;[

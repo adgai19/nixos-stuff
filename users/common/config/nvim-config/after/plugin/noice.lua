@@ -5,6 +5,9 @@ require("noice").setup({
 		long_message_to_split = true, -- long messages will be sent to a split
 		lsp_doc_border = false, -- add a border to hover docs and signature help
 	},
+	notify = {
+		enable = false,
+	},
 	lsp = {
 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 		override = {
