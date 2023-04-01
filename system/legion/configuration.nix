@@ -17,7 +17,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.networkmanager.enable = true;
   services.xserver.enable = true;
 
   services.xserver.displayManager.defaultSession = "none+i3";
@@ -81,11 +80,16 @@
   services.openssh.enable = true;
   services.pcscd.enable = true;
   services.blueman.enable = true;
+  services.tailscale.enable = true;
   # for qmk and yubikey
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
   environment.enableAllTerminfo = true;
 
   networking.hostName = "legion"; # Define your hostname
+  networking.networkmanager.enable = true;
+
+  networking.nameservers = [ "172.20.0.165" "1.1.1.1" ];
+  # networking.search = [ "daggertooth-bangus.ts.net" ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
