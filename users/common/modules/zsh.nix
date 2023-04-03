@@ -19,6 +19,7 @@ in
       };
       defaultKeymap = "viins";
       initExtra = ''
+        any-nix-shell zsh --info-right | source /dev/stdin
         export DIRENV_LOG_FORMAT=
         bindkey "^P" up-line-or-search
         bindkey "^N" down-line-or-search
@@ -48,6 +49,7 @@ in
       enableZshIntegration = true;
       tmux.enableShellIntegration = true;
     };
+    home.packages = [pkgs.any-nix-shell];
 
     programs.exa = {
       enable = true;

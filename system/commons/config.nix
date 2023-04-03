@@ -26,7 +26,6 @@
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
-      # firefox
       latest.firefox-nightly-bin
       networkmanager
       kate
@@ -45,10 +44,6 @@
   virtualisation.libvirtd.enable = true;
   users.extraUsers.adgai.extraGroups = [ "libvirtd" ];
 
-  programs.zsh.promptInit = ''
-    any-nix-shell zsh --info-right | source /dev/stdin
-  '';
-
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "adgai";
@@ -64,7 +59,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    any-nix-shell
     git
     niv
     pamixer
