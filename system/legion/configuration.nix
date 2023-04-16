@@ -104,5 +104,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
-
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

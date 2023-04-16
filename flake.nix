@@ -19,6 +19,10 @@
     };
     # nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
 
+    # nixpkgs-small = {
+    #   url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    # };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -162,9 +166,13 @@
         inherit system;
         config = { allowUnfree = true; };
       };
+      # pkgs-small = import nixpkgs-small{
+      #   inherit system;
+      #   config = { allowUnfree = true; };
+      # };
 
       overlays = [
-        inputs.neovim-nightly.overlay
+        # inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
         inputs.firefox-overlay.overlay
         (import ./users/common/overlays.nix inputs)
@@ -197,7 +205,7 @@
               _module.args = {
                 inherit inputs system;
 
-                # pkgs-stable = import inputs.nixpkgs-stable {
+                # pkgs-small = import inputs.nixpkgs-small {
                 #
                 #   inherit system;
                 #   config = { allowUnfree = true; };

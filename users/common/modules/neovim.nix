@@ -110,7 +110,7 @@ let
     }
     {
       plugin = leap-nvim;
-      config = "lua require('statuscol').setup({ setopt = true })";
+      config = "lua require('leap').add_default_mappings()";
     }
     live-command-nvim
     lualine-lsp-progress
@@ -168,7 +168,6 @@ let
     treesj
     typescript-nvim
     vim-just
-    codeium
   ];
 
 in
@@ -176,7 +175,7 @@ in
   programs.neovim = {
     enable = true;
     viAlias = true;
-    package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
+    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;

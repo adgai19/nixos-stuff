@@ -49,7 +49,7 @@ in
       enableZshIntegration = true;
       tmux.enableShellIntegration = true;
     };
-    home.packages = [pkgs.any-nix-shell];
+    home.packages = [ pkgs.any-nix-shell ];
 
     programs.exa = {
       enable = true;

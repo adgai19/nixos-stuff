@@ -8,23 +8,25 @@ nnoremap(";", ":")
 nnoremap(":", ";")
 
 -- hjkl remaps
-nnoremap("j", "e")
-nnoremap("e", "j")
-nnoremap("k", "n")
-nnoremap("n", "k")
-vnoremap("j", "e")
-vnoremap("e", "j")
-vnoremap("k", "n")
-vnoremap("n", "k")
+-- nnoremap("j", "e")
+-- nnoremap("e", "j")
+-- nnoremap("k", "n")
+-- nnoremap("n", "k")
+-- vnoremap("j", "e")
+-- vnoremap("e", "j")
+-- vnoremap("k", "n")
+-- vnoremap("n", "k")
 
+nnoremap("<c-n>", "<c-n>zz")
+nnoremap("<c-p>", "<c-p>zz")
 -- quick quit
 nnoremap("<M-q>", "<cmd>q<CR>")
 
 -- inoremap(";;", "<esc>A;<CR>")
 
 -- move text up and down
-vnoremap("E", ":m '>+1<CR>gv=gv")
-vnoremap("N", ":m '<-2<CR>gv=gv")
+vnoremap("<C-S-n>", ":m '>+1<CR>gv=gv")
+vnoremap("<C-s-p>", ":m '<-2<CR>gv=gv")
 
 -- split and resize
 nnoremap("<Leader>=", ":vertical resize +5<CR>")
