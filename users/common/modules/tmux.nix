@@ -26,7 +26,7 @@ in
     enable = mkEnableOption "tmux";
   };
   config = mkIf enable {
-
+    home.packages = with pkgs;[ bc ];
     programs.tmux = {
       inherit enable;
       plugins = tmuxPlugin;
