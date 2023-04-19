@@ -37,7 +37,7 @@ nnoremap("<Leader>v", " :vsplit<cr>")
 -- quick source
 nnoremap("<Leader>s", " :w<cr>:so %<cr>")
 
-nnoremap("<space>ca", "require('code_action_menu').open_code_action_menu")
+nnoremap("<space>ca", "<cmd>lua require('code_action_menu').open_code_action_menu<cr>")
 
 -- dead reg keymaps
 xnoremap("<leader>p", '"_dP')

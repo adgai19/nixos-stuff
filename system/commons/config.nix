@@ -88,10 +88,6 @@
   # List services that you want to enable:
 
   nix = {
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-    '';
 
     settings = {
       auto-optimise-store = true;
