@@ -202,10 +202,12 @@ in
       terraform-ls
       terraform-lsp
 
+
       lua51Packages.sqlite
 
       nodePackages."@astrojs/language-server"
       nodePackages."@prisma/language-server"
+      nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"

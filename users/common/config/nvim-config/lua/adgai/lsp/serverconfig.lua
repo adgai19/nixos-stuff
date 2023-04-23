@@ -17,21 +17,22 @@ lsp.setup_servers({
 	"ansiblels",
 	"astro",
 	"clangd",
-	"eslint",
-	"rust_analyzer",
 	"cssls",
 	"dockerls",
+	"eslint",
 	"gopls",
-	"html",
 	"hls",
+	"html",
 	"jedi_language_server",
 	"nil_ls",
 	"rnix",
+	"rust_analyzer",
+	"terraform_lsp",
+	"terraformls",
 	"vimls",
 	"vuels",
 	"yamlls",
-	"terraformls",
-	"terraform_lsp",
+	"tailwindcss",
 })
 
 -- lspcontainer servers with no special options
@@ -40,10 +41,9 @@ lsp.setup_nvim_cmp({
 	sources = {
 		{ name = "path" },
 		{ name = "copilot" },
-		{ name = "nvim_lsp", keyword_length = 1 },
+		{ name = "nvim_lsp" },
 		{ name = "buffer", keyword_length = 3 },
 		{ name = "luasnip", keyword_length = 2 },
-		{ name = "codeium", keyword_length = 2 },
 	},
 })
 lsp.nvim_workspace()
