@@ -189,6 +189,7 @@ in
       # ansible-lint
       # python310Packages.jedi-language-server
       ansible-language-server
+      ansible-lint
       clang-tools
       fd
       git
