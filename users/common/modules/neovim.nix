@@ -19,9 +19,10 @@ let
     lspkind-nvim
     luasnip
     nvim-cmp
+
     # copilot
-    copilot-vim
     cmp-copilot
+    copilot-vim
 
     #Telescope
     telescope-dap-nvim
@@ -44,35 +45,35 @@ let
 
     # Lsp
     SchemaStore-nvim
-    {
-      plugin = comment-nvim;
-      config = "lua require('Comment').setup()";
-    }
+    friendly-snippets
+    lsp-zero-nvim
     neogit
     nvim-jdtls
     nvim-lint
     nvim-lsp-ts-utils
     nvim-lspconfig
     nvim-lsputils
-    friendly-snippets
-    {
-      plugin = nvim-surround;
-      config = "lua require('nvim-surround').setup()";
-    }
     nvim-ts-context-commentstring
-    lsp-zero-nvim
     popfix
     rust-tools-nvim
     symbols-outline-nvim
     vim-scriptease
     vim-signature
+    {
+      plugin = comment-nvim;
+      config = "lua require('Comment').setup()";
+    }
+    {
+      plugin = nvim-surround;
+      config = "lua require('nvim-surround').setup()";
+    }
 
     #DAP
-    nvim-dap
     neotest
-    nvim-dap-virtual-text
-    nvim-dap-ui
+    nvim-dap
     nvim-dap-go
+    nvim-dap-ui
+    nvim-dap-virtual-text
 
     # Treesitter
     cmp-treesitter
@@ -80,29 +81,46 @@ let
     nvim-treesitter-textobjects
 
     #Prime stuff
-    harpoon
     git-worktree-nvim
+    harpoon
 
     #Other stuff
-    #should move to format.nvim
+
+    # diffview-nvim
+    # lightspeed-nvim
     ansible-vim
     catppuccin-nvim
-
-    kanagawa-nvim
-    # diffview-nvim
+    dressing-nvim
     fidget-nvim
     formatter-nvim
     git-blame-nvim
-    {
-      plugin = gitsigns-nvim;
-      config = "lua require('gitsigns').setup()";
-    }
     hydra-nvim
     i3config-vim
     impatient-nvim
     indent-blankline-nvim
-    # lightspeed-nvim
+    kanagawa-nvim
+    live-command-nvim
+    lualine-lsp-progress
+    lualine-nvim
+    neo-tree-nvim
+    neoformat
+    neorg
+    null-ls-nvim
+    numb-nvim
+    nvim-notify
+    nvim-ts-autotag
+    nvim-web-devicons
+    playground
+    rainbow_parentheses-vim
+    tokyonight-nvim
+    vim-numbertoggle
+    vim-qf
+    vim-terraform
 
+    {
+      plugin = gitsigns-nvim;
+      config = "lua require('gitsigns').setup()";
+    }
     {
       plugin = flit-nvim;
       config = "lua require('flit').setup()";
@@ -112,31 +130,10 @@ let
       plugin = leap-nvim;
       config = "lua require('leap').add_default_mappings()";
     }
-    live-command-nvim
-    lualine-lsp-progress
-    lualine-nvim
-    neoformat
-    neorg
-    null-ls-nvim
-    numb-nvim
     {
       plugin = nvim-autopairs;
       config = "lua require('nvim-autopairs').setup({})";
     }
-    {
-      plugin = nvim-notify;
-    }
-    nvim-ts-autotag
-    nvim-web-devicons
-    playground
-    rainbow_parentheses-vim
-    tokyonight-nvim
-    vim-numbertoggle
-    vim-qf
-    vim-terraform
-    # vim-startify
-    neo-tree-nvim
-
   ];
 
   customVimPlugins = with pkgs.customVimPlugins;[
@@ -186,8 +183,6 @@ in
     ]);
     extraPackages = with pkgs; [
 
-      # ansible-lint
-      # python310Packages.jedi-language-server
       ansible-language-server
       ansible-lint
       clang-tools
@@ -202,7 +197,6 @@ in
       sumneko-lua-language-server
       terraform-ls
       terraform-lsp
-
 
       lua51Packages.sqlite
 

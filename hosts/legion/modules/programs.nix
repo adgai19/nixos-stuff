@@ -4,6 +4,7 @@
     awscli2
     age
     age-plugin-yubikey
+    ansible-lint
     arandr
     bottom
     cachix

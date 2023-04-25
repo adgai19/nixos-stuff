@@ -66,6 +66,6 @@ null_ls.setup({
 			prefer_local = "node_modules/.bin",
 		}),
 		null_ls.builtins.completion.spell,
-		null_ls.builtins.diagnostics.ansiblelint,
+		-- null_ls.builtins.diagnostics.ansiblelint,
 	},
 })
