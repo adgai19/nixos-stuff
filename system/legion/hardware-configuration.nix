@@ -13,7 +13,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages_latest.virtualbox ];
+  # boot.extraModulePackages = [ pkgs.linuxPackages_latest.virtualbox ];
   boot.extraModprobeConfig = ''
     options kvm_intel nested=1
     options kvm_intel emulate_invalid_guest_state=0

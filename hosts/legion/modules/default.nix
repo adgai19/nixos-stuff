@@ -5,6 +5,7 @@
     ./git.nix
     ./hyperland.nix
     ./i3.nix
+    ./kubernetes.nix
     ./programs.nix
     ./qmk.nix
     ./rofi.nix
