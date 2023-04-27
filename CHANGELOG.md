@@ -1,3 +1,29 @@
+## Unreleased
+
+### Feat
+
+- **kubernetes**: kubernetes setup
+- **neovim**: tailwind lsp
+- **neovim.nix**: move to nvim 0.9 stable
+- **zsh**: move any-nix-shell to home-manager
+- **legion/configuration.nix**: tailscale setup
+- **neovim**: copilot setup
+- **serverconfig**: changed lsp keybindings
+- **neovim.nix**: astro ls
+
+### Fix
+
+- update dep
+- **neovim**: fix code actions
+- **tmux.nix**: fix tmux-sessionizer dep
+- **flake.nix**: removed stable branch
+- **treesitter**: removed unused mappings
+- **treesitter**: remove unnecessary keymaps
+
+### Refactor
+
+- remove hyprland
+
 ## 1.1.0 (2023-03-14)
 
 ### Feat

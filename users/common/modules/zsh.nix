@@ -16,6 +16,8 @@ in
         nb = "newsboat";
         j = "just --choose";
         c = "cz c";
+        k3 = "kubectl --kubeconfig=$HOME/.kube/clusters/k3s.config";
+        ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
       };
       defaultKeymap = "viins";
       initExtra = ''
@@ -42,6 +44,7 @@ in
       '';
 
       enableAutosuggestions = true;
+      enableCompletion = true;
     };
 
     programs.fzf = {
