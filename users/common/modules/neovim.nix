@@ -64,6 +64,10 @@ let
       config = "lua require('Comment').setup()";
     }
     {
+      plugin = lsp_lines-nvim;
+      config= "lua require('lsp_lines').setup()";
+    }
+    {
       plugin = nvim-surround;
       config = "lua require('nvim-surround').setup()";
     }
