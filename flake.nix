@@ -19,10 +19,6 @@
     };
     # nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
 
-    # nixpkgs-small = {
-    #   url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    # };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -153,7 +149,6 @@
     };
 
 
-
     codeium-vim = {
       url = "github:jcdickinson/codeium.nvim";
       flake = false;
@@ -166,13 +161,10 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-      # pkgs-small = import nixpkgs-small{
-      #   inherit system;
-      #   config = { allowUnfree = true; };
-      # };
 
       overlays = [
         # inputs.neovim-nightly.overlay
+        (import (let rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7"; in builtins.getFlake "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz"))
         inputs.poetry2nix.overlay
         inputs.firefox-overlay.overlay
         (import ./users/common/overlays.nix inputs)
@@ -205,11 +197,6 @@
               _module.args = {
                 inherit inputs system;
 
-                # pkgs-small = import inputs.nixpkgs-small {
-                #
-                #   inherit system;
-                #   config = { allowUnfree = true; };
-                # };
               };
             }
             ./system/legion/configuration.nix
