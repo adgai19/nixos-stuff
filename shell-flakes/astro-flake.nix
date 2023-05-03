@@ -22,8 +22,8 @@
         devshells.default = {
           env = [
             # {
-              # name = "HTTP_PORT";
-              # value = 8080;
+            # name = "HTTP_PORT";
+            # value = 8080;
             # }
           ];
           commands = [

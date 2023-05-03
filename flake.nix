@@ -11,7 +11,6 @@
   inputs = {
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.url = "github:nixos/nixpkgs?rev=fad51abd42ca17a60fc1d4cb9382e2d79ae31836";
     };
 
     nixpkgs = {
@@ -148,12 +147,12 @@
       flake = false;
     };
 
-
     codeium-vim = {
       url = "github:jcdickinson/codeium.nvim";
       flake = false;
     };
   };
+
   outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
     let
       system = "x86_64-linux";
@@ -163,8 +162,7 @@
       };
 
       overlays = [
-        # inputs.neovim-nightly.overlay
-        (import (let rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7"; in builtins.getFlake "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz"))
+        inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
         inputs.firefox-overlay.overlay
         (import ./users/common/overlays.nix inputs)

@@ -65,7 +65,7 @@ let
     }
     {
       plugin = lsp_lines-nvim;
-      config= "lua require('lsp_lines').setup()";
+      config = "lua require('lsp_lines').setup()";
     }
     {
       plugin = nvim-surround;

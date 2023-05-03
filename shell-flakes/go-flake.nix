@@ -80,7 +80,7 @@
         proxyVendor = true;
         doCheck = false;
       };
-      cobra-cli = pkgs.buildGoModule  {
+      cobra-cli = pkgs.buildGoModule {
         pname = "cobra-cli";
         src = inputs.cobra-cli;
 
