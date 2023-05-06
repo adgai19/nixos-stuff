@@ -45,10 +45,7 @@ inputs: self: super:
       name = "vim-astro";
       src = inputs.astro-vim;
     };
-    drop-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "drop.nvim";
-      src = inputs.drop-nvim;
-    };
+
     go-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "go-nvim";
       src = inputs.go-nvim;
@@ -110,10 +107,6 @@ inputs: self: super:
     treesj = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "treesj";
       src = inputs.treesj;
-    };
-    codeium = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "codeium-vim";
-      src = inputs.codeium-vim;
     };
     adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";

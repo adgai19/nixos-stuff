@@ -77,11 +77,6 @@
       flake = false;
     };
 
-    drop-nvim = {
-      url = "github:folke/drop.nvim";
-      flake = false;
-    };
-
     astro-vim = {
       url = "github:wuelnerdotexe/vim-astro";
       flake = false;
@@ -147,10 +142,6 @@
       flake = false;
     };
 
-    codeium-vim = {
-      url = "github:jcdickinson/codeium.nvim";
-      flake = false;
-    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:

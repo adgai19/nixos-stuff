@@ -60,6 +60,3 @@ nnoremap([[\]], ":Rg<space>")
 nnoremap([[<leader><leader>]], ":nohl<cr>")
 nnoremap([[<Esc>]], [[<cmd>w<cr>]])
 
--- vim.keymap.set('i', '<C-g>', function ()
---       return vim.fn['codeium#Accept']()
---     end, { expr = true })

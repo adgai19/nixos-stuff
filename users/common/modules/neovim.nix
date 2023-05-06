@@ -176,7 +176,7 @@ in
   programs.neovim = {
     enable = true;
     viAlias = true;
-    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
+    package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;
