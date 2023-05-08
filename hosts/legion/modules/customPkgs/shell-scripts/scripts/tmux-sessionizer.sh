@@ -1,5 +1,5 @@
 #/bin/env bash
-    selected=$((find ~/  ~/Documents/ /mnt/data/  /home/ -mindepth 1 -maxdepth 1 -type d )| fzf-tmux -p 80%)
+    selected=$((find ~/  ~/Documents/ /mnt/data/  ~/code/ -mindepth 1 -maxdepth 2 -type d )| fzf-tmux -p 80%)
 
     if [[ -z $selected ]]; then
         exit 
