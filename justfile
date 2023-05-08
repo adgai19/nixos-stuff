@@ -8,6 +8,10 @@ legion:
   sudo nixos-rebuild switch --flake .#legion --impure
   rm -rf result
 
+legion-test:
+  sudo nixos-rebuild build --flake .#legion --impure
+  rm -rf result
+
 ubuntu-vm: 
   home-manager switch --flake .#ubuntu-vm
   rm -rf result
