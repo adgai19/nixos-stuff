@@ -1,6 +1,5 @@
 local nnoremap = require("adgai.keymaps.helpers").nnoremap
 local vnoremap = require("adgai.keymaps.helpers").vnoremap
-local inoremap = require("adgai.keymaps.helpers").inoremap
 local xnoremap = require("adgai.keymaps.helpers").xnoremap
 local tnoremap = require("adgai.keymaps.helpers").tnoremap
 
@@ -59,4 +58,3 @@ tnoremap([[<Esc>]], [[<C-\><C-n>]])
 nnoremap([[\]], ":Rg<space>")
 nnoremap([[<leader><leader>]], ":nohl<cr>")
 nnoremap([[<Esc>]], [[<cmd>w<cr>]])
-
