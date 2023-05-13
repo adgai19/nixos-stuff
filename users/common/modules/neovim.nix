@@ -106,6 +106,7 @@ let
     live-command-nvim
     lualine-lsp-progress
     lualine-nvim
+    mini-nvim
     neo-tree-nvim
     neoformat
     neorg
