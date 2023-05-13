@@ -6,16 +6,6 @@ local tnoremap = require("adgai.keymaps.helpers").tnoremap
 nnoremap(";", ":")
 nnoremap(":", ";")
 
--- hjkl remaps
--- nnoremap("j", "e")
--- nnoremap("e", "j")
--- nnoremap("k", "n")
--- nnoremap("n", "k")
--- vnoremap("j", "e")
--- vnoremap("e", "j")
--- vnoremap("k", "n")
--- vnoremap("n", "k")
-
 nnoremap("<c-n>", "<c-n>zz")
 nnoremap("<c-p>", "<c-p>zz")
 -- quick quit
