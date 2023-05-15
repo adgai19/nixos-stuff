@@ -2,7 +2,7 @@ update hostname:
   nix flake update
   git add flake.lock
   just {{hostname}}
-  cz c
+  git commit -m "build(flake.lock): update dep"
 
 legion:
   sudo nixos-rebuild switch --flake .#legion --impure
