@@ -16,15 +16,6 @@
     };
 
 
-    cobra-cli = {
-      url = "github:spf13/cobra-cli";
-      flake = false;
-    };
-
-    cobra = {
-      url = "github:spf13/cobra-cli";
-      flake = false;
-    };
 
     autorestart = {
       url = "github:githubnemo/CompileDaemon";
@@ -33,7 +24,7 @@
 
   };
 
-  outputs = { self, nixpkgs, golines, godlv, gotest-tools, autorestart, cobra, cobra-cli }@inputs:
+  outputs = { self, nixpkgs, golines, godlv, gotest-tools, autorestart }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -71,25 +62,6 @@
 
       };
 
-      cobra = pkgs.buildGoModule {
-        pname = "cobra-cli";
-        src = inputs.cobra;
-
-        vendorSha256 = "sha256-1LZKsvZcSgFYeXFqgJx6P3YG4H3mqyg5SLTZBye99bM=";
-        name = "cobra-cli";
-        proxyVendor = true;
-        doCheck = false;
-      };
-      cobra-cli = pkgs.buildGoModule {
-        pname = "cobra-cli";
-        src = inputs.cobra-cli;
-
-        vendorSha256 = "sha256-1LZKsvZcSgFYeXFqgJx6P3YG4H3mqyg5SLTZBye99bM=";
-        name = "cobra-cli";
-        proxyVendor = true;
-        doCheck = false;
-      };
-
     in
     {
       devShells.${system}.default = pkgs.mkShell {
@@ -112,8 +84,6 @@
           godlv
           gotest
           autorestart
-          cobra-cli
-          cobra
         ];
 
         buildInputs = [ ];

@@ -56,4 +56,5 @@
     nodePackages_latest.typescript
     nodePackages_latest.typescript-language-server
   ];
+  programs.go.enable = true;
 }
