@@ -205,7 +205,6 @@ in
 
       lua51Packages.sqlite
 
-      nodePackages."@astrojs/language-server"
       nodePackages."@prisma/language-server"
       nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"
@@ -219,6 +218,7 @@ in
       nodePackages.typescript-language-server
       nodePackages.write-good
 
+      nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
       nodePackages_latest.vue-language-server
 

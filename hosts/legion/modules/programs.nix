@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     awscli2
     age
-    age-plugin-yubikey
+    # age-plugin-yubikey
     ansible-lint
     arandr
     bottom
@@ -45,11 +45,7 @@
     tree
     xclip
     xsettingsd
-    yubikey-manager
-    # python310
-    # python310Packages.adblock
-    # python310Packages.netifaces
-    # python310Packages.tkinter
+    # yubikey-manager
 
     nodePackages.aws-cdk
 
