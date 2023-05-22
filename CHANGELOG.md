@@ -2,6 +2,15 @@
 
 ### Feat
 
+- **neovim**: trim neovim and bundles
+- **neovim**: more mini plugins
+- **neovim**: init mini.starter
+- **git**: new log format
+- **tmux-sessionizer**: go 2 levels deep and new directory
+- **justfile**: build command
+- **shell-flakes**: initial shell flakes for my devshells
+- **neovim**: lsp lines
+- **kubernetes**: two clusters setup
 - **kubernetes**: kubernetes setup
 - **neovim**: tailwind lsp
 - **neovim.nix**: move to nvim 0.9 stable
@@ -13,6 +22,11 @@
 
 ### Fix
 
+- **neovim**: move astro to latest
+- **go-flake.nix**: remove cobra stuff
+- **justfile**: changed commit command
+- **neovim**: fixed neovim overlay
+- **neovim**: unstable but fixed nvim
 - update dep
 - **neovim**: fix code actions
 - **tmux.nix**: fix tmux-sessionizer dep
@@ -22,6 +36,7 @@
 
 ### Refactor
 
+- **neovim**: cleanup derivations
 - remove hyprland
 
 ## 1.1.0 (2023-03-14)
