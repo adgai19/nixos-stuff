@@ -132,10 +132,10 @@ require("treesitter-context").setup({
 			"function",
 			"method",
 			"for", -- These won't appear in the context
-			-- 'while',
-			-- 'if',
-			-- 'switch',
-			-- 'case',
+			'while',
+			'if',
+			'switch',
+			'case',
 		},
 	},
 	zindex = 20, -- The Z-index of the context window

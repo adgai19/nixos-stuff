@@ -52,7 +52,7 @@ let
     nvim-lint
     nvim-lsp-ts-utils
     nvim-lspconfig
-    nvim-lsputils
+    # nvim-lsputils
     nvim-ts-context-commentstring
     popfix
     rust-tools-nvim
@@ -83,6 +83,7 @@ let
     cmp-treesitter
     nvim-treesitter-context
     nvim-treesitter-textobjects
+    nvim-treesitter
 
     #Prime stuff
     git-worktree-nvim
@@ -115,7 +116,7 @@ let
     nvim-notify
     nvim-ts-autotag
     nvim-web-devicons
-    playground
+    # playground
     rainbow_parentheses-vim
     tokyonight-nvim
     vim-numbertoggle
@@ -179,8 +180,8 @@ in
     viAlias = true;
     package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
-    withNodeJs = true;
-    withPython3 = true;
+    withNodeJs = false;
+    withPython3 = false;
     plugins = vimPlugins
       ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
@@ -194,10 +195,10 @@ in
       fd
       git
       gopls
-      haskell-language-server
+      # haskell-language-server
       nil
       rnix-lsp
-      rust-analyzer
+      # rust-analyzer
       shellcheck
       sumneko-lua-language-server
       terraform-ls
@@ -213,14 +214,14 @@ in
       nodePackages."yaml-language-server"
       nodePackages.eslint
       nodePackages.graphql-language-service-cli
-      nodePackages.pyright
+      # nodePackages.pyright
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.write-good
 
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
-      nodePackages_latest.vue-language-server
+      # nodePackages_latest.vue-language-server
 
       # python311Packages.python-lsp-server
     ];
