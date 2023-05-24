@@ -54,6 +54,7 @@ vim.opt.undodir = vim.fn.expand("~") .. "/.config/nvim/undodir/undo"
 vim.opt.undofile = true
 vim.opt.number = true
 vim.opt.cmdheight = 0
+vim.opt.smoothscroll = true
 vim.cmd([[
 set iskeyword-=_
 ]])
