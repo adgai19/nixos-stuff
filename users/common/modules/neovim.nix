@@ -171,6 +171,7 @@ let
     treesj
     typescript-nvim
     vim-just
+    qmk-nvim
   ];
 
 in

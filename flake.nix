@@ -142,6 +142,12 @@
       flake = false;
     };
 
+    qmk-nvim = {
+      url = "github:codethread/qmk.nvim";
+      flake = false;
+    };
+
+
   };
 
   outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:

@@ -108,6 +108,12 @@ inputs: self: super:
       name = "treesj";
       src = inputs.treesj;
     };
+
+    qmk-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "qmk-nvim";
+      src = inputs.qmk-nvim;
+    };
+
     adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "adgai";
       src = ./config/nvim-config;

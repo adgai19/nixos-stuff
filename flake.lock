@@ -699,6 +699,22 @@
         "type": "github"
       }
     },
+    "qmk-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1681932347,
+        "narHash": "sha256-QNVIrvczqKjubrhIrCVaQa+0ZNCStbuHPE3RwjLMP9E=",
+        "owner": "codethread",
+        "repo": "qmk.nvim",
+        "rev": "19e9924deea27a9ce2378c748e8cfc6077907dec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "codethread",
+        "repo": "qmk.nvim",
+        "type": "github"
+      }
+    },
     "regexplainer": {
       "flake": false,
       "locked": {
@@ -736,6 +752,7 @@
         "noice-nvim": "noice-nvim",
         "nvim-dap-go": "nvim-dap-go",
         "poetry2nix": "poetry2nix",
+        "qmk-nvim": "qmk-nvim",
         "regexplainer": "regexplainer",
         "sops-nix": "sops-nix",
         "statuscol-nvim": "statuscol-nvim",
