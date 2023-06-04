@@ -12,4 +12,4 @@ local conf = {
 		"_ _ _ _ x x x _ _ _ _ x x x _ _ _ _",
 	},
 }
-require("qmk").setup(conf)
+qmk.setup(conf)
