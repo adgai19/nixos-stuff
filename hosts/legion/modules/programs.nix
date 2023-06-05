@@ -51,6 +51,11 @@
 
     nodePackages_latest.typescript
     nodePackages_latest.typescript-language-server
+
+    kubernetes-helm
+    calicoctl
+    kubectl
+    kubeswitch
   ];
   programs.go.enable = true;
 }
