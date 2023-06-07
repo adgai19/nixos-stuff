@@ -52,7 +52,6 @@ let
     nvim-lint
     nvim-lsp-ts-utils
     nvim-lspconfig
-    # nvim-lsputils
     nvim-ts-context-commentstring
     popfix
     rust-tools-nvim
@@ -116,7 +115,6 @@ let
     nvim-notify
     nvim-ts-autotag
     nvim-web-devicons
-    # playground
     rainbow_parentheses-vim
     tokyonight-nvim
     vim-numbertoggle
@@ -190,41 +188,41 @@ in
     ]);
     extraPackages = with pkgs; [
 
-      ansible-language-server
-      ansible-lint
       clang-tools
       fd
       git
       gopls
-      # haskell-language-server
       nil
       rnix-lsp
-      # rust-analyzer
       shellcheck
       sumneko-lua-language-server
-      terraform-ls
-      terraform-lsp
 
       lua51Packages.sqlite
 
-      nodePackages."@prisma/language-server"
       nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
       nodePackages.eslint
-      nodePackages.graphql-language-service-cli
-      # nodePackages.pyright
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.write-good
 
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
-      # nodePackages_latest.vue-language-server
 
+      # ansible-language-server
+      # ansible-lint
+      # haskell-language-server
+      # nodePackages."@prisma/language-server"
+      # nodePackages.graphql-language-service-cli
+      # nodePackages.pyright
+      # nodePackages_latest.vue-language-server
       # python311Packages.python-lsp-server
+      # rust-analyzer
+      # terraform-ls
+      # terraform-lsp
     ];
   };
 }
