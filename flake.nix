@@ -150,7 +150,7 @@
 
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, neovim-nightly, sops-nix, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, self, sops-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -162,7 +162,7 @@
         inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
         inputs.firefox-overlay.overlay
-        (import ./users/common/overlays.nix inputs)
+        self.overlays.default
       ];
 
     in
