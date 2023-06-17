@@ -6,6 +6,7 @@ nnoremap("<leader>fb", require("telescope.builtin").buffers)
 nnoremap("<leader>fh", require("telescope.builtin").help_tags)
 nnoremap("<leader>fgi", require("telescope.builtin").git_files)
 nnoremap("<leader>gb", require("telescope.builtin").git_branches)
+nnoremap("<leader>fd", require('telescope.builtin').diagnostics)
 
 nnoremap("<leader>fc", require("plugins.telescope").search_dotfiles)
 nnoremap("<leader>fw", require("plugins.telescope").find_word)
