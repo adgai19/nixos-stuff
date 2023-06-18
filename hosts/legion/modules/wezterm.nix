@@ -34,7 +34,7 @@
     	},
     	enable_wayland = false,
     	window_background_opacity = 0.95,
-    	font = wezterm.font("Fira Code"),
+    	font = wezterm.font("Lilex"),
     	enable_tab_bar = false,
     	font_size = 9,
     	keys = {

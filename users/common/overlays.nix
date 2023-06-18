@@ -15,6 +15,24 @@ inputs: self: super:
       src = inputs.base16-tmux;
     };
   };
+  customFonts = {
+    Lilix = self.pkgs.stdenv.mkDerivation rec {
+      pname = "Lilex";
+      version = "2.200";
+
+      src = self.pkgs.fetchzip {
+        url = "https://github.com/mishamyrt/Lilex/releases/download/2.200/Lilex.zip";
+        sha256 = "sha256-MPQfqCMFMjcAlMos1o4bC+I+cvQYwr2TjI4Q03QeuaQ=";
+        stripRoot = false;
+      };
+
+      installPhase = ''
+        mkdir -p $out/share/fonts/ttf
+        mv ttf/*.ttf $out/share/fonts/ttf
+      '';
+    };
+  };
+
   customVimPlugins = with self;{
     lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "lspcontainers.nvim";
