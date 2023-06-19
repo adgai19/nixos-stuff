@@ -5,6 +5,7 @@ local lsp = require("lsp-zero").preset({
 	suggest_lsp_servers = false,
 })
 
+---@diagnostic disable-next-line: unused-local
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr }
 	local bind = vim.keymap.set
@@ -16,6 +17,7 @@ end)
 lsp.setup_servers({
 	"ansiblels",
 	"astro",
+	"bufls",
 	"clangd",
 	"cssls",
 	"dockerls",
@@ -34,8 +36,6 @@ lsp.setup_servers({
 	"yamlls",
 	"tailwindcss",
 })
-
--- lspcontainer servers with no special options
 
 lsp.setup_nvim_cmp({
 	sources = {

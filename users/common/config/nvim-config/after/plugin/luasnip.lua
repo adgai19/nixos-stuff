@@ -27,6 +27,7 @@ vim.keymap.set({ "i", "s" }, "<m-k>", function()
 	end
 end, { silent = true })
 
+require("luasnip.loaders.from_vscode").lazy_load()
 -- snippets
 -- local lua_snippets = require("adgai.snippets.lua").lua_snippets
 -- local all_snippets = require("adgai.snippets.all").snippets

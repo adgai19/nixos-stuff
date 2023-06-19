@@ -199,6 +199,8 @@ in
 
       lua51Packages.sqlite
 
+      buf-language-server
+
       nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
