@@ -28,10 +28,10 @@ M.change_mode_json = function()
 		M.mode = "json_traverse"
 		print("current mode", M.mode)
 	elseif M.mode == "json_traverse" then
-		nnoremap("n", "j")
-		nnoremap("e", "k")
-		nnoremap("k", "e")
-		nnoremap("l", "l")
+		vim.keymap.del("n", "j")
+		vim.keymap.del("e", "k")
+		vim.keymap.del("k", "e")
+		vim.keymap.del("l", "l")
 		M.mode = "normal"
 		print("current mode", M.mode)
 	elseif M.mode == "ll" then
