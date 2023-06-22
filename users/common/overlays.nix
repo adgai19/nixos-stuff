@@ -54,7 +54,7 @@ inputs: self: super:
 
     gotest = self.pkgs.buildGoModule rec{
       pname = "gotest.tools";
-      src = inputs.gotest-tools;
+      src = inputs.gotest;
       vendorSha256 = null;
       name = pname;
       proxyVendor = true;

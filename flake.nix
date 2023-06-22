@@ -147,7 +147,6 @@
       flake = false;
     };
 
-
     godlv = {
       url = "github:go-delve/delve";
       flake = false;
@@ -155,6 +154,11 @@
 
     golines = {
       url = "github:segmentio/golines";
+      flake = false;
+    };
+
+    gotest = {
+      url = "github:gotestyourself/gotest.tools";
       flake = false;
     };
   };
