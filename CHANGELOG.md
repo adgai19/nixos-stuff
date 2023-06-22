@@ -2,6 +2,15 @@
 
 ### Feat
 
+- **overlays**: golines,gotest and godlv packaging
+- **overlays**: godlv pkg
+- **neovim**: buf lsp
+- **wezterm+configuration.nix**: change to Lilex font
+- **neovim**: telescope diagnostics mapping
+- **neovim**: trim neovim
+- **programs-legion**: kubernetes helpers
+- **neovim**: qmk-nvim
+- **neovim**: moving to new api
 - **neovim**: trim neovim and bundles
 - **neovim**: more mini plugins
 - **neovim**: init mini.starter
@@ -22,6 +31,9 @@
 
 ### Fix
 
+- **neovim**: fix cyclekeymap keymaps(json traverse)
+- **neovim**: fix cyclekeymaps
+- **neovim**: clangd filetypes
 - **neovim**: move astro to latest
 - **go-flake.nix**: remove cobra stuff
 - **justfile**: changed commit command
