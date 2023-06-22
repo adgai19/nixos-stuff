@@ -52,14 +52,14 @@ inputs: self: super:
       proxyVendor = true;
     };
 
-    gotest = self.pkgs.buildGoModule rec{
-      pname = "gotest.tools";
-      src = inputs.gotest;
-      vendorSha256 = null;
-      name = pname;
-      proxyVendor = true;
-      doCheck = false;
-    };
+    # gotest = self.pkgs.buildGoModule rec{
+    #   pname = "gotest.tools";
+    #   src = inputs.gotest;
+    #   vendorSha256 = null;
+    #   name = pname;
+    #   proxyVendor = true;
+    #   doCheck = false;
+    # };
   };
 
   customVimPlugins = with self;{
