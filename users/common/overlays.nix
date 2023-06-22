@@ -16,7 +16,7 @@ inputs: self: super:
     };
   };
   customFonts = {
-    Lilix = self.pkgs.stdenv.mkDerivation rec {
+    Lilix = self.pkgs.stdenv.mkDerivation {
       pname = "Lilex";
       version = "2.200";
 
@@ -34,15 +34,32 @@ inputs: self: super:
   };
 
   customPkgs = {
-          gotest = self.pkgs.buildGoModule {
-            pname = "gotest.tools";
-            src = inputs.godlv;
-            vendorSha256 = null;
-            name = "gotest-tools";
-            proxyVendor = true;
-            doCheck = false;
+    godlv = self.pkgs.buildGoModule rec{
+      pname = "godlv";
+      src = inputs.godlv;
+      vendorSha256 = null;
+      name = pname;
+      proxyVendor = true;
+      doCheck = false;
 
-          };
+    };
+
+    golines = self.pkgs.buildGoModule rec{
+      pname = "golines";
+      src = inputs.golines;
+      vendorSha256 = "sha256-It7lD8Ix9oX8xXILCnWUfit9ZlPJ4zjMElNa14mCkGI=";
+      name = pname;
+      proxyVendor = true;
+    };
+
+    gotest = self.pkgs.buildGoModule rec{
+      pname = "gotest.tools";
+      src = inputs.gotest-tools;
+      vendorSha256 = null;
+      name = pname;
+      proxyVendor = true;
+      doCheck = false;
+    };
   };
 
   customVimPlugins = with self;{

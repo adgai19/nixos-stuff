@@ -153,6 +153,10 @@
       flake = false;
     };
 
+    golines = {
+      url = "github:segmentio/golines";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, self, sops-nix, ... }:

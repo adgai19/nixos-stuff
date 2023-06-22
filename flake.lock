@@ -224,6 +224,38 @@
         "type": "github"
       }
     },
+    "godlv": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1687280130,
+        "narHash": "sha256-R4ZjjJh/U45B1bO3xh+ssM4TwgrsG3VNlPEWTIorQf4=",
+        "owner": "go-delve",
+        "repo": "delve",
+        "rev": "afef1aec605eb605a27f780dc68a492a0fdd1352",
+        "type": "github"
+      },
+      "original": {
+        "owner": "go-delve",
+        "repo": "delve",
+        "type": "github"
+      }
+    },
+    "golines": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1664217450,
+        "narHash": "sha256-Zq2Qhqdwyw9SgRpKO1WeewSU2K81uWqTICzUKyYts1U=",
+        "owner": "segmentio",
+        "repo": "golines",
+        "rev": "d7d11e6ae11721865229b1d55b8862c8bd4ca719",
+        "type": "github"
+      },
+      "original": {
+        "owner": "segmentio",
+        "repo": "golines",
+        "type": "github"
+      }
+    },
     "guihua-nvim": {
       "flake": false,
       "locked": {
@@ -620,6 +652,8 @@
         "dap-vscode": "dap-vscode",
         "firefox-overlay": "firefox-overlay",
         "go-nvim": "go-nvim",
+        "godlv": "godlv",
+        "golines": "golines",
         "guihua-nvim": "guihua-nvim",
         "home-manager": "home-manager",
         "hover-nvim": "hover-nvim",

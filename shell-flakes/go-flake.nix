@@ -25,7 +25,7 @@
       imports = [
         inputs.devshell.flakeModule
       ];
-      systems = [ "x86_64-linux"  ];
+      systems = [ "x86_64-linux" ];
       perSystem = { config, self', inputs', pkgs, system, ... }:
         let
           golines = pkgs.buildGoModule {
