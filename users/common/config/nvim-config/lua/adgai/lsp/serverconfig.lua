@@ -29,18 +29,18 @@ lsp.setup_servers({
 	"nil_ls",
 	"rnix",
 	"rust_analyzer",
+	"tailwindcss",
 	"terraform_lsp",
 	"terraformls",
 	"vimls",
 	"vuels",
 	"yamlls",
-	"tailwindcss",
 })
 
 local lspconfig = require("lspconfig")
 
 lspconfig.clangd.setup({
-    filetypes = { "c", "cpp", "objc", "objcpp", "cuda"  }
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 })
 lsp.setup_nvim_cmp({
 	sources = {

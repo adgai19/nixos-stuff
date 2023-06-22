@@ -12,8 +12,8 @@ M.change_mode_qf = function()
 		M.mode = "qf"
 		print("current mode", M.mode)
 	elseif M.mode == "qf" then
-    vim.keymap.del("n","n")
-    vim.keymap.del("n","e")
+		vim.keymap.del("n", "n")
+		vim.keymap.del("n", "e")
 		M.mode = "normal"
 		print("current mode", M.mode)
 	end
