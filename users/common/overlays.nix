@@ -33,6 +33,18 @@ inputs: self: super:
     };
   };
 
+  customPkgs = {
+          gotest = self.pkgs.buildGoModule {
+            pname = "gotest.tools";
+            src = inputs.godlv;
+            vendorSha256 = null;
+            name = "gotest-tools";
+            proxyVendor = true;
+            doCheck = false;
+
+          };
+  };
+
   customVimPlugins = with self;{
     lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "lspcontainers.nvim";

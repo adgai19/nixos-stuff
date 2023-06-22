@@ -1,7 +1,11 @@
 {
-  description = "go env flake";
+  description = "Description for the project";
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    devshell.url = "github:numtide/devshell";
+
     golines = {
       url = "github:segmentio/golines";
       flake = false;
@@ -14,80 +18,68 @@
       url = "github:go-delve/delve";
       flake = false;
     };
-
-
-
-    autorestart = {
-      url = "github:githubnemo/CompileDaemon";
-      flake = false;
-    };
-
   };
 
-  outputs = { self, nixpkgs, golines, godlv, gotest-tools, autorestart }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      golines = pkgs.buildGoModule {
-        pname = "golines";
-        src = inputs.golines;
-        vendorSha256 = "sha256-It7lD8Ix9oX8xXILCnWUfit9ZlPJ4zjMElNa14mCkGI=";
-        name = "golines";
-        proxyVendor = true;
-      };
-      godlv = pkgs.buildGoModule {
-        pname = "dlv";
-        src = inputs.godlv;
-        vendorSha256 = null;
-        name = "dlv";
-        proxyVendor = true;
-        doCheck = false;
-      };
-      autorestart = pkgs.buildGoModule {
-        pname = "autorestart";
-        src = inputs.autorestart;
-        vendorSha256 = "sha256-vRJg+G7VwGqevW9okE/7p/0kp5pb4NAS4eklq83ZQSQ=";
-        name = "autorestart";
-        proxyVendor = true;
-        doCheck = false;
-        subPackages = [ "." ];
-      };
-      gotest = pkgs.buildGoModule {
-        pname = "gotest.tools";
-        src = inputs.godlv;
-        vendorSha256 = null;
-        name = "gotest-tools";
-        proxyVendor = true;
-        doCheck = false;
+  outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.devshell.flakeModule
+      ];
+      systems = [ "x86_64-linux"  ];
+      perSystem = { config, self', inputs', pkgs, system, ... }:
+        let
+          golines = pkgs.buildGoModule {
+            pname = "golines";
+            src = inputs.golines;
+            vendorSha256 = "sha256-It7lD8Ix9oX8xXILCnWUfit9ZlPJ4zjMElNa14mCkGI=";
+            name = "golines";
+            proxyVendor = true;
+          };
+          godlv = pkgs.buildGoModule {
+            pname = "dlv";
+            src = inputs.godlv;
+            vendorSha256 = null;
+            name = "dlv";
+            proxyVendor = true;
+            doCheck = false;
+          };
+          gotest = pkgs.buildGoModule {
+            pname = "gotest.tools";
+            src = inputs.godlv;
+            vendorSha256 = null;
+            name = "gotest-tools";
+            proxyVendor = true;
+            doCheck = false;
 
-      };
+          };
+        in
+        {
+          devshells.default = {
+            packages = [
+              pkgs.bashInteractive
+              pkgs.go
+              pkgs.gofumpt
+              pkgs.golangci-lint
+              pkgs.gomodifytags
+              pkgs.protoc-gen-go-grpc
+              pkgs.gotests
+              pkgs.gotestsum
+              pkgs.gotools
+              pkgs.protoc-gen-go
+              pkgs.iferr
+              pkgs.impl
+              pkgs.mockgen
+              pkgs.reftools
+              pkgs.richgo
+              pkgs.buf
+              godlv
+              golines
+              gotest
+            ];
 
-    in
-    {
-      devShells.${system}.default = pkgs.mkShell {
-        nativeBuildInputs = [
-          pkgs.bashInteractive
-          pkgs.go
-          pkgs.golangci-lint
-          pkgs.gofumpt
-          pkgs.iferr
-          pkgs.impl
-          pkgs.gotestsum
-          pkgs.gomodifytags
-          pkgs.mockgen
-          pkgs.richgo
-          pkgs.gotools
-          pkgs.gotests
-          pkgs.reftools
-          pkgs.nodePackages.nodemon
-          golines
-          godlv
-          gotest
-          autorestart
-        ];
+          };
 
-        buildInputs = [ ];
-        PATH = "$PATH:$(go env GOPATH)/bin";
-      };
+        };
+      flake = { };
     };
 }

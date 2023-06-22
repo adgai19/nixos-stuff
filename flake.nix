@@ -148,6 +148,11 @@
     };
 
 
+    godlv = {
+      url = "github:go-delve/delve";
+      flake = false;
+    };
+
   };
 
   outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, self, sops-nix, ... }:
