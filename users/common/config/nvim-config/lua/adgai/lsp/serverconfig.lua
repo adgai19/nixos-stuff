@@ -37,6 +37,11 @@ lsp.setup_servers({
 	"tailwindcss",
 })
 
+local lspconfig = require("lspconfig")
+
+lspconfig.clangd.setup({
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda"  }
+})
 lsp.setup_nvim_cmp({
 	sources = {
 		{ name = "path" },
