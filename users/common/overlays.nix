@@ -44,22 +44,6 @@ inputs: self: super:
 
     };
 
-    golines = self.pkgs.buildGoModule rec{
-      pname = "golines";
-      src = inputs.golines;
-      vendorSha256 = "sha256-It7lD8Ix9oX8xXILCnWUfit9ZlPJ4zjMElNa14mCkGI=";
-      name = pname;
-      proxyVendor = true;
-    };
-
-    # gotest = self.pkgs.buildGoModule rec{
-    #   pname = "gotest.tools";
-    #   src = inputs.gotest;
-    #   vendorSha256 = null;
-    #   name = pname;
-    #   proxyVendor = true;
-    #   doCheck = false;
-    # };
   };
 
   customVimPlugins = with self;{

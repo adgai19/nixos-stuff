@@ -152,15 +152,6 @@
       flake = false;
     };
 
-    golines = {
-      url = "github:segmentio/golines";
-      flake = false;
-    };
-
-    gotest = {
-      url = "github:gotestyourself/gotest.tools";
-      flake = false;
-    };
   };
 
   outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, self, sops-nix, ... }:
