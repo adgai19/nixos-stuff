@@ -87,8 +87,18 @@
 
   networking.hostName = "legion"; # Define your hostname
   networking.networkmanager.enable = true;
+  networking.networkmanager.unmanaged = [ "wlp0s20f3" ];
 
   networking.nameservers = [ "172.20.0.165" "1.1.1.1" ];
+  networking.wireless = {
+    enable = true;
+    networks = {
+      "ADDN-20" = {
+        pskRaw = "ac67aa719a92f7b3ca8a4cf388825c0c4123a036d6531fc2f18755623ab2a847";
+      };
+    };
+  };
+
   # networking.search = [ "daggertooth-bangus.ts.net" ];
 
   # Open ports in the firewall.
