@@ -38,9 +38,12 @@ lsp.setup_servers({
 })
 
 local lspconfig = require("lspconfig")
+lsp.configure("clangd", {
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+  -- cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=iwyu" },
+})
 
 lspconfig.clangd.setup({
-	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 })
 lsp.setup_nvim_cmp({
 	sources = {

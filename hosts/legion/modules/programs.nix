@@ -12,7 +12,7 @@
     diff-so-fancy
     discord
     evince
-    eww-wayland
+    # eww-wayland
     fd
     feh
     filezilla
@@ -51,6 +51,10 @@
 
     nodePackages_latest.typescript
     nodePackages_latest.typescript-language-server
+
+    alacritty
+
+    xfce.thunar
 
     kubernetes-helm
     calicoctl
