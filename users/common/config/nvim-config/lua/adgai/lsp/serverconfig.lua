@@ -37,7 +37,6 @@ lsp.setup_servers({
 	"yamlls",
 })
 
-local lspconfig = require("lspconfig")
 lsp.configure("clangd", {
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 	-- cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=iwyu" },
@@ -45,9 +44,9 @@ lsp.configure("clangd", {
 
 lsp.setup_nvim_cmp({
 	sources = {
+		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "copilot" },
-		{ name = "nvim_lsp" },
 		{ name = "buffer", keyword_length = 3 },
 		{ name = "luasnip", keyword_length = 2 },
 	},
