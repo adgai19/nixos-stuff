@@ -6,6 +6,6 @@
   home.packages = with pkgs; [
     rofi-wayland
     wallutils
-    waybar
+    # waybar
   ];
 }

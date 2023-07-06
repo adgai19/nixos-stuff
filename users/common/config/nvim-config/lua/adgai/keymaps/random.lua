@@ -6,8 +6,6 @@ local tnoremap = require("adgai.keymaps.helpers").tnoremap
 nnoremap(";", ":")
 nnoremap(":", ";")
 
-nnoremap("<c-n>", "<c-n>zz")
-nnoremap("<c-p>", "<c-p>zz")
 -- quick quit
 nnoremap("<M-q>", "<cmd>q<CR>")
 

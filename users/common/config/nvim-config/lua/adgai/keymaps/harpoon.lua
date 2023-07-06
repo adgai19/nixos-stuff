@@ -32,4 +32,3 @@ nnoremap(
 
 nnoremap("<M-,>", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>a<CR>')
 nnoremap("<M-m>", '<cmd>lua require("harpoon.term").gotoTerminal(2)<CR>a<CR>')
-print("foo")
