@@ -102,8 +102,8 @@
   # networking.search = [ "daggertooth-bangus.ts.net" ];
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8802 ];
+  networking.firewall.allowedUDPPorts = [ 8802 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
