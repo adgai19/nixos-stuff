@@ -60,6 +60,9 @@
     calicoctl
     kubectl
     kubeswitch
+
+    jetbrains.idea-community
+    maven
   ];
   programs.go.enable = true;
 }
