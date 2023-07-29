@@ -19,6 +19,5 @@ require("typescript").setup({
 		before_init = function(params)
 			params.processId = vim.NIL
 		end,
-		cmd = require("lspcontainers").command("tsserver"),
 	},
 })
