@@ -162,7 +162,6 @@ let
     hover-nvim
     inc-rename-nvim
     jester
-    lspcontainers-nvim
     neotest-jest
     noice-nvim
     treesitter-just

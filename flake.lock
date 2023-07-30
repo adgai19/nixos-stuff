@@ -382,22 +382,6 @@
         "type": "github"
       }
     },
-    "lspcontainers-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1685822401,
-        "narHash": "sha256-qUMM8I8qnR/FtZUWfPDAhQ6WkT2niPupbJ7ROTm8d18=",
-        "owner": "lspcontainers",
-        "repo": "lspcontainers.nvim",
-        "rev": "593b6655edc3ff7caaa89cac1ba9b27695b7fa09",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lspcontainers",
-        "repo": "lspcontainers.nvim",
-        "type": "github"
-      }
-    },
     "neotest-jest": {
       "flake": false,
       "locked": {
@@ -664,7 +648,6 @@
         "hover-nvim": "hover-nvim",
         "inc-rename": "inc-rename",
         "jester": "jester",
-        "lspcontainers-nvim": "lspcontainers-nvim",
         "neotest-jest": "neotest-jest",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_3",

@@ -47,11 +47,6 @@ inputs: self: super:
   };
 
   customVimPlugins = with self;{
-    lspcontainers-nvim = pkgs.vimUtils.buildVimPlugin {
-      name = "lspcontainers.nvim";
-      src = inputs.lspcontainers-nvim;
-    };
-
     inc-rename-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "inc-rename.nvim";
       src = inputs.inc-rename;

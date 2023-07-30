@@ -97,11 +97,6 @@
       flake = false;
     };
 
-    lspcontainers-nvim = {
-      url = "github:lspcontainers/lspcontainers.nvim";
-      flake = false;
-    };
-
     noice-nvim = {
       url = "github:folke/noice.nvim";
       flake = false;
