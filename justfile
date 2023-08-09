@@ -8,6 +8,9 @@ legion:
   sudo nixos-rebuild switch --flake .#legion --impure
   rm -rf result
 
+old:
+  sudo nixos-rebuild switch --flake .#old --impure
+  rm -rf result
 legion-test:
   sudo nixos-rebuild build --flake .#legion --impure
   rm -rf result

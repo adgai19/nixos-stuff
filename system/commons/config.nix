@@ -36,6 +36,9 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
+  virtualisation.podman.dockerCompat = true;
+  virtualisation.containers.users = [ "adgai" ];
 
   # virtualisation.virtualbox.host.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;

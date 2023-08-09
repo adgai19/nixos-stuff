@@ -184,6 +184,30 @@
       };
 
       nixosConfigurations = {
+        old = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            {
+              _module.args = {
+                inherit inputs system;
+
+              };
+            }
+            ./system/old/configuration.nix
+            sops-nix.nixosModules.sops
+            home-manager.nixosModules.home-manager
+            {
+
+              nixpkgs.overlays = overlays;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              # the magic keywords LUL
+              home-manager.extraSpecialArgs = { inherit system inputs; };
+              home-manager.users.adgai = import ./hosts/old-laptop/home.nix;
+            }
+          ];
+
+        };
         legion = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
