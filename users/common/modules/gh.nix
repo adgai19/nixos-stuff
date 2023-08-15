@@ -10,13 +10,13 @@ in
   config = mkIf enable {
     programs.gh = {
       inherit enable;
-#      settings = {
- #       editor = "nvim";
- #       git_protocol = "ssh";
- #       alias = {
- #         co = "pr checkout";
- #       };
-  #    };
+      #      settings = {
+      #       editor = "nvim";
+      #       git_protocol = "ssh";
+      #       alias = {
+      #         co = "pr checkout";
+      #       };
+      #    };
     };
   };
 

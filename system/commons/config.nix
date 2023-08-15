@@ -117,8 +117,7 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
-  services.cachix-agent.enable = true;
+  # services.cachix-agent.enable = true;
 
-  system.stateVersion = "22.05";
 }
 

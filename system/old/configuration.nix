@@ -25,16 +25,17 @@
 
   services.xserver = {
     layout = "us";
-#    videoDrivers = [ "nvidia" ];
+    #    videoDrivers = [ "nvidia" ];
   };
 
   hardware.opengl.enable = true;
   hardware.pulseaudio.enable = false;
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  programs.dconf.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -43,12 +44,15 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     # media-session.enable = true;
   };
+
+  systemd.user.services.pipewire-pulse.path = [ pkgs.pulseaudio ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
@@ -111,6 +115,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
   systemd.services.NetworkManager-wait-online.enable = false;
 }
