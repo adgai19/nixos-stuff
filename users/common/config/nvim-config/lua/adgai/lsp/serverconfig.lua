@@ -31,6 +31,7 @@ lsp.setup_servers({
 	"rust_analyzer",
 	"tailwindcss",
 	"terraform_lsp",
+	"lemmix",
 	"terraformls",
 	"vimls",
 	"vuels",
