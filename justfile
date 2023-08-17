@@ -1,3 +1,7 @@
+old:
+  sudo nixos-rebuild switch --flake .#old --impure
+  rm -rf result
+
 update hostname:
   nix flake update
   git add flake.lock

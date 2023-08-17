@@ -35,7 +35,9 @@
     ];
   };
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
+  virtualisation.podman.dockerCompat = true;
 
   # virtualisation.virtualbox.host.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;
@@ -115,8 +117,7 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
-  services.cachix-agent.enable = true;
+  # services.cachix-agent.enable = true;
 
-  system.stateVersion = "22.05";
 }
 
