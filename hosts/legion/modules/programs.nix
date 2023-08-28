@@ -1,11 +1,12 @@
 { pkgs, lib, inputs, ... }:
 {
   home.packages = with pkgs; [
-    awscli2
-    age
     # age-plugin-yubikey
+    age
     ansible-lint
     arandr
+    autorandr
+    awscli2
     bottom
     cachix
     commitizen
