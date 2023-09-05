@@ -6,6 +6,7 @@
     # age-plugin-yubikey
     ansible-lint
     arandr
+    bashmount
     bottom
     cachix
     commitizen
