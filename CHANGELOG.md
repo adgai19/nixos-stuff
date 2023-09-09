@@ -1,7 +1,18 @@
-## Unreleased
+## 1.2.0 (2023-09-09)
 
 ### Feat
 
+- **legion**: added bashmount
+- moving to 23.05 for now
+- regen hardware config
+- **neovim**: remove lspcontainers
+- java stuff
+- **legion.configuration.nix**: exposed 8802 port for packer
+- **neovim**: remove mini animate
+- **nvim**: reorder cmp sources
+- **legion/configuration.nix**: autoconnection of home wifi
+- **i3wsr**: thunar icon
+- thudar file manager
 - **overlays**: golines,gotest and godlv packaging
 - **overlays**: godlv pkg
 - **neovim**: buf lsp
@@ -31,6 +42,16 @@
 
 ### Fix
 
+- **neovim**: move to version 9
+- **configuration.nix**: fonts.fonts-> fonts.packages
+- **neovim**: remove lspcontainers command
+- **neovim**: change keymaps and cleanup
+- **neovim**: remove clangd from proto files
+- **overlays**: remove golines
+- **overlays**: remove gotest
+- **overlays**: fix
+- **overlays**: fix source
+- **overlays**: fix source
 - **neovim**: fix cyclekeymap keymaps(json traverse)
 - **neovim**: fix cyclekeymaps
 - **neovim**: clangd filetypes
