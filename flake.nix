@@ -158,7 +158,7 @@
       };
 
       overlays = [
-        inputs.neovim-nightly.overlay
+        # inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlay
         inputs.firefox-overlay.overlay
         self.overlays.default
