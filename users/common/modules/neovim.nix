@@ -110,7 +110,7 @@ let
     neo-tree-nvim
     neoformat
     neorg
-    null-ls-nvim
+    # null-ls-nvim
     numb-nvim
     nvim-notify
     nvim-ts-autotag
