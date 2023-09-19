@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, inputs, pkgs-unstable, ... }:
 {
   home.packages = with pkgs; [
     awscli2
@@ -66,4 +66,5 @@
     maven
   ];
   programs.go.enable = true;
+  programs.go.package = pkgs-unstable.go_1_21;
 }
