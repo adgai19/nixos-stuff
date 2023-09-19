@@ -12,6 +12,7 @@
     commitizen
     diff-so-fancy
     discord
+    doppler
     evince
     # eww-wayland
     fd
@@ -27,6 +28,7 @@
     jq
     just
     lazydocker
+
     lazygit
     librewolf
     newsboat
