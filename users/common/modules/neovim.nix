@@ -200,6 +200,10 @@ in
 
       buf-language-server
 
+      python311Packages.jedi-language-server
+      python311Packages.python-lsp-server
+      nodePackages_latest.pyright
+
       nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"

@@ -21,6 +21,8 @@ lsp.setup_servers({
 	"clangd",
 	"cssls",
 	"dockerls",
+	"pylsp",
+	-- "pyright",
 	"eslint",
 	"gopls",
 	"hls",

@@ -28,7 +28,6 @@
     jq
     just
     lazydocker
-
     lazygit
     librewolf
     newsboat
@@ -46,6 +45,7 @@
     traceroute
     transmission-gtk
     tree
+    via
     xclip
     xsettingsd
     # yubikey-manager
