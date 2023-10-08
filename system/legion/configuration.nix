@@ -83,6 +83,11 @@
   services.tailscale.enable = true;
   # for qmk and yubikey
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
+  services.udev.extraRules = ''
+    ## Raspberry Pi Pico
+    ## RP2040 bootloader
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", TAG+="uaccess"
+  '';
   environment.enableAllTerminfo = true;
 
   networking.hostName = "legion"; # Define your hostname
@@ -109,6 +114,8 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 8802 ];
   networking.firewall.allowedUDPPorts = [ 8802 ];
+
+  services.devmon.enable = true;
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

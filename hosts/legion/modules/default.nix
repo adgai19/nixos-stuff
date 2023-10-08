@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./dconf.nix
     ./git.nix
     ./hyperland.nix
     ./i3.nix
@@ -10,7 +11,6 @@
     ./qmk.nix
     ./rofi.nix
     ./wezterm.nix
-
     # ./customPkgs/python/bumblebee-status
     ./customPkgs/shell-scripts
   ];

@@ -24,7 +24,7 @@
     isNormalUser = true;
     description = "adgai";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd"];
     packages = with pkgs; [
       latest.firefox-nightly-bin
       networkmanager
@@ -36,7 +36,7 @@
   };
 
   virtualisation.docker.enable = true;
-
+programs.dconf.enable = true;
   # virtualisation.virtualbox.host.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;
   # users.extraGroups.vboxusers.members = [ "adgai" ];
@@ -61,10 +61,11 @@
   environment.systemPackages = with pkgs; [
     git
     niv
-    pamixer
+    pamixer 
     pinentry-curses
     rofi
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    virt-manager 
     wget
     xorg.xmodmap
     # yubioath-flutter
