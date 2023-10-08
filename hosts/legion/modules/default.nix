@@ -2,7 +2,7 @@
 {
   imports = [
     ./alacritty.nix
-    ./dconf.nix
+    # ./dconf.nix
     ./git.nix
     ./hyperland.nix
     ./i3.nix

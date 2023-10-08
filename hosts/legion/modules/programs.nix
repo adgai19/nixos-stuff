@@ -45,7 +45,7 @@
     traceroute
     transmission-gtk
     tree
-    via
+    vial
     xclip
     xsettingsd
     # yubikey-manager
