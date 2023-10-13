@@ -36,12 +36,26 @@ lsp.setup_servers({
 	"terraformls",
 	"vimls",
 	"vuels",
-	"yamlls",
+	-- "yamlls",
 })
 
 lsp.configure("clangd", {
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 	-- cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=iwyu" },
+})
+require("lspconfig").yamlls.setup({
+	filetypes = { "yaml", "yaml.docker-compose", "yml" },
+	settings = {
+		yaml = {
+			schemaStore = {
+				enable = true,
+			},
+			schemas = {
+				["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+			},
+		},
+	},
 })
 
 lsp.setup_nvim_cmp({
