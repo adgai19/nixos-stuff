@@ -90,7 +90,7 @@ let
 
     #Other stuff
 
-    # diffview-nvim
+    diffview-nvim
     # lightspeed-nvim
     ansible-vim
     catppuccin-nvim

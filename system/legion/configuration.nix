@@ -8,6 +8,7 @@
     [
       # Include the results of the hardware scan.
       ../commons/config.nix
+      ../commons/kafka.nix
 
       ./hardware-configuration.nix
     ];
