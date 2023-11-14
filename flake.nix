@@ -164,7 +164,7 @@
       overlays = [
         # inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlays.default
-        inputs.firefox-overlay.overlay
+        # inputs.firefox-overlay.overlay
         self.overlays.default
       ];
 

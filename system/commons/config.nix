@@ -26,8 +26,9 @@
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [
-      latest.firefox-nightly-bin
+      # latest.firefox-nightly-bin
       networkmanager
+      firefox
       kate
       chromium
       vlc

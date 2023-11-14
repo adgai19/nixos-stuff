@@ -1,6 +1,6 @@
 {...}:
 
 {
-  services.apache-kafka.enable=true;
-  services.zookeeper.enable=true;
+  services.apache-kafka.enable=false;
+  services.zookeeper.enable=false;
   }
