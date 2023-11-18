@@ -1,6 +1,6 @@
-{...}:
+{ pkgs, ... }:
 
 {
-  services.apache-kafka.enable=false;
-  services.zookeeper.enable=false;
-  }
+  services.apache-kafka.enable = false;
+  services.zookeeper.enable = false;
+}

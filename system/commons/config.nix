@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
@@ -28,7 +28,7 @@
     packages = with pkgs; [
       # latest.firefox-nightly-bin
       networkmanager
-      firefox
+      # firefox
       kate
       chromium
       vlc
@@ -70,7 +70,8 @@
     wget
     xorg.xmodmap
     # yubioath-flutter
-  ];
+  ] ++ [ inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin ];
+
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
 

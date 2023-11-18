@@ -31,6 +31,9 @@
     firefox-overlay = {
       url = "github:mozilla/nixpkgs-mozilla";
     };
+    firefox-nightly = {
+      url = "github:nix-community/flake-firefox-nightly";
+    };
 
     tokyonight-tmux = {
       url = "github:janoamaral/tokyo-night-tmux";
@@ -149,7 +152,7 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

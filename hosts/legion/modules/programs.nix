@@ -11,7 +11,7 @@
     cachix
     commitizen
     diff-so-fancy
-    discord
+    discord-canary
     doppler
     evince
     # eww-wayland
