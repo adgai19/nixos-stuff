@@ -84,7 +84,7 @@
     pinentryFlavor = "qt";
   };
   services.picom.enable = true;
-  fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix ];
+  fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix  maple-mono];
 
 
   security.sudo.wheelNeedsPassword = false;
