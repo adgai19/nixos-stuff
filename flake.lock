@@ -105,11 +105,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1701177535,
-        "narHash": "sha256-aZxVgF8BeEptnSSEX21jwHb6tObSVbhL5XPwE3eHpLo=",
+        "lastModified": 1701213317,
+        "narHash": "sha256-SSxC3fom4dvF5L5vhB+3IuATb0Xr64goIQDr3IuT9i4=",
         "owner": "nix-community",
         "repo": "flake-firefox-nightly",
-        "rev": "83ccb2555653b81a05a9d8eae8e629eed0f1ecc9",
+        "rev": "17f899de6682c97895ef880718276e8d440a97d4",
         "type": "github"
       },
       "original": {
@@ -279,11 +279,11 @@
     "godlv": {
       "flake": false,
       "locked": {
-        "lastModified": 1701125995,
-        "narHash": "sha256-IEaSdjEQzLNWKG2G0To7gsHhqAO5aQLJL2poYKK+NGk=",
+        "lastModified": 1701219716,
+        "narHash": "sha256-OQ4hIXLfEAYE3JivdN+JMyZyTL53OW5su65hiHadqEQ=",
         "owner": "go-delve",
         "repo": "delve",
-        "rev": "c4a10ecb167219f9a02d8b0ab07a780fc8508e62",
+        "rev": "d8ed28ff35d6b23c222e6e0fc11bb61f153786db",
         "type": "github"
       },
       "original": {
@@ -566,11 +566,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1700794826,
-        "narHash": "sha256-RyJTnTNKhO0yqRpDISk03I/4A67/dp96YRxc86YOPgU=",
+        "lastModified": 1701068326,
+        "narHash": "sha256-vmMceA+q6hG1yrjb+MP8T0YFDQIrW3bl45e7z24IEts=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5a09cb4b393d58f9ed0d9ca1555016a8543c2ac8",
+        "rev": "8cfef6986adfb599ba379ae53c9f5631ecd2fd9c",
         "type": "github"
       },
       "original": {
