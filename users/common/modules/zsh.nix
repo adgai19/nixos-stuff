@@ -54,7 +54,7 @@ in
     };
     home.packages = [ pkgs.any-nix-shell ];
 
-    programs.exa = {
+    programs.eza = {
       enable = true;
       enableAliases = true;
       icons = true;

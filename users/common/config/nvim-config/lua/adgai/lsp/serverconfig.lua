@@ -4,6 +4,8 @@ local lsp = require("lsp-zero").preset({
 	manage_nvim_cmp = true,
 	suggest_lsp_servers = false,
 })
+local cmp = require("cmp")
+local cmp_action = require("lsp-zero").cmp_action()
 
 ---@diagnostic disable-next-line: unused-local
 lsp.on_attach(function(client, bufnr)
@@ -58,7 +60,27 @@ require("lspconfig").yamlls.setup({
 	},
 })
 
-lsp.setup_nvim_cmp({
+-- lsp.setup_nvim_cmp({
+-- 	sources = {
+-- 		{ name = "nvim_lsp" },
+-- 		{ name = "path" },
+-- 		{ name = "copilot" },
+-- 		{ name = "buffer", keyword_length = 3 },
+-- 		{ name = "luasnip", keyword_length = 2 },
+-- 	},
+-- })
+cmp.setup({
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
+	mapping = cmp.mapping.preset.insert({
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-f>"] = cmp_action.luasnip_jump_forward(),
+		["<C-b>"] = cmp_action.luasnip_jump_backward(),
+		["<C-u>"] = cmp.mapping.scroll_docs(-4),
+		["<C-d>"] = cmp.mapping.scroll_docs(4),
+	}),
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "path" },
@@ -67,5 +89,18 @@ lsp.setup_nvim_cmp({
 		{ name = "luasnip", keyword_length = 2 },
 	},
 })
-lsp.nvim_workspace()
-lsp.setup()
+-- Fix lua lsp
+-- {
+--   "runtime.version": "LuaJIT",
+--   "runtime.path": [
+--     "lua/?.lua",
+--     "lua/?/init.lua"
+--   ],
+--   "diagnostics.globals": ["vim"],
+--   "workspace.checkThirdParty": false,
+--   "workspace.library": [
+--     "$VIMRUNTIME",
+--     "./lua"
+--   ]
+-- }
+--

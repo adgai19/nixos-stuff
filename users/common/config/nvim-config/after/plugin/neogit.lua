@@ -53,9 +53,11 @@ neogit.setup({
 		},
 		unpulled = {
 			folded = true,
+			hidden = false,
 		},
 		unmerged = {
 			folded = false,
+			hidden = false,
 		},
 		recent = {
 			folded = true,
@@ -66,7 +68,6 @@ neogit.setup({
 		-- modify status buffer mappings
 		status = {
 			-- Adds a mapping with "B" as key that does the "BranchPopup" command
-			["B"] = "BranchPopup",
 			["q"] = "Close",
 			-- Removes the default mapping of "s"
 			["T"] = "Toggle",

@@ -5,7 +5,7 @@
   i18n.defaultLocale = "en_US.utf8";
 
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -14,7 +14,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     TERMINFO_DIRS = "/home/adgai/.nix-profile/share/terminfo";
     LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
+    # XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
@@ -84,7 +84,8 @@
     pinentryFlavor = "qt";
   };
   services.picom.enable = true;
-  fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix maple-mono ];
+  # fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix maple-mono ];
+  fonts.packages = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix maple-mono ];
 
 
   security.sudo.wheelNeedsPassword = false;
