@@ -1,3 +1,26 @@
+## Unreleased
+
+### Feat
+
+- *****: upgrade everything for new laptop
+- **i3**: add bumblebee status
+- **wezterm**: change font to Maple Mono
+- added kafka and diffview-nvim
+- **legion**: reinstall virtualbox
+- **libvertd**: libvertd setup
+- **neovim**: add python setup
+- **programs/legion**: add doppler
+- **neovim**: remove null-ls
+- **git**: set up autoSetupRemote
+
+### Fix
+
+- **firefox**: swap firefox overlay
+- **configuration.nix**: fix firefox and nvidia driver sources
+- **flake.nix**: fix poetry overlay
+- **neovim**: fix yamlls
+- **go**: change to go 1.21
+
 ## 1.2.0 (2023-09-09)
 
 ### Feat
