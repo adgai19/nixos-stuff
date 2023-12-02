@@ -9,7 +9,7 @@ in
   config = mkIf enable {
 
     programs.rofi = {
-      package = pkgs.rofi-wayland;
+      # package = pkgs.rofi-wayland;
       extraConfig = {
         modi = "run,drun,ssh,combi";
       };

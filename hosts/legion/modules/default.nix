@@ -4,7 +4,7 @@
     ./alacritty.nix
     # ./dconf.nix
     ./git.nix
-    ./hyperland.nix
+    # ./hyperland.nix
     ./i3.nix
     ./kubernetes.nix
     ./programs.nix

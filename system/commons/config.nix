@@ -11,7 +11,7 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
   environment.variables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+    # WLR_NO_HARDWARE_CURSORS = "1";
     TERMINFO_DIRS = "/home/adgai/.nix-profile/share/terminfo";
     LIBVA_DRIVER_NAME = "nvidia";
     # XDG_SESSION_TYPE = "wayland";

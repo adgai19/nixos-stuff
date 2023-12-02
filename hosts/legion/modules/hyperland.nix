@@ -4,8 +4,8 @@
   #   nvidiaPatches = true;
   # };
   home.packages = with pkgs; [
-    rofi-wayland
-    wallutils
+    # rofi-wayland
+    # wallutils
     # waybar
   ];
 }

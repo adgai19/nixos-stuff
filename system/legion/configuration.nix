@@ -29,8 +29,10 @@
     layout = "us";
     videoDrivers = [ "nvidia" ];
   };
+  nixpkgs.config.cudasupport = true;
 
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   # Enable CUPS to print documents.
