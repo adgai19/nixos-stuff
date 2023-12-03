@@ -21,6 +21,9 @@ parser_configs.norg_table = {
 
 -- In your treesitter config,
 
+require("ts_context_commentstring").setup({})
+vim.g.ts_context_commentstring_module = true
+
 require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true, -- false will disable the whole extension
@@ -38,10 +41,6 @@ require("nvim-treesitter.configs").setup({
 			scope_incremental = "<S-CR>",
 			node_decremental = "<BS>",
 		},
-	},
-
-	context_commentstring = {
-		enable = true,
 	},
 
 	indent = { enable = false },
