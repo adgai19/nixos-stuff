@@ -12,14 +12,19 @@
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+    rustaceanvim = {
+      url = "github:mrcjkb/rustaceanvim/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-23.05";
+      # url = "github:NixOS/nixpkgs/nixos-23.05";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    # nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
+    nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -30,6 +35,9 @@
 
     firefox-overlay = {
       url = "github:mozilla/nixpkgs-mozilla";
+    };
+    firefox-nightly = {
+      url = "github:nix-community/flake-firefox-nightly";
     };
 
     tokyonight-tmux = {
@@ -149,18 +157,21 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, self, sops-nix, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
       };
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
 
       overlays = [
-        # inputs.neovim-nightly.overlay
-        inputs.poetry2nix.overlay
-        inputs.firefox-overlay.overlay
+        inputs.neovim-nightly.overlay
+        inputs.poetry2nix.overlays.default
         self.overlays.default
       ];
 
@@ -202,7 +213,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL
-              home-manager.extraSpecialArgs = { inherit system inputs; };
+              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable; };
               home-manager.users.adgai = import ./hosts/legion/home.nix;
             }
           ];

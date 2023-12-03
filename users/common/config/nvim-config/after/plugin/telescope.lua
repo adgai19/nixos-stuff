@@ -21,7 +21,7 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 		},
-		file_ignore_patterns = { "build/", "bin/", "target/", "node_modules" },
+		file_ignore_patterns = { "build/", "target/", "node_modules" },
 		prompt_prefix = ">",
 		selection_strategy = "reset",
 		sorting_strategy = "descending",

@@ -9,14 +9,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 local markdownSpell = vim.api.nvim_create_augroup("markdownSpell", { clear = true })
 vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", group = markdownSpell, command = "setlocal spell" })
 vim.api.nvim_create_autocmd(
-	{ "Bufread", "BufNewFile " },
+	{ "Bufread", "BufNewFile" },
 	{ command = "setlocal spell", pattern = "*.md", group = markdownSpell }
 )
 
 local texSpell = vim.api.nvim_create_augroup("markdownSpell", { clear = true })
 vim.api.nvim_create_autocmd("FileType", { pattern = "latex", group = markdownSpell, command = "setlocal spell" })
 vim.api.nvim_create_autocmd(
-	{ "Bufread", "BufNewFile " },
+	{ "Bufread", "BufNewFile" },
 	{ command = "setlocal spell", pattern = "*.tex", group = texSpell }
 )
 

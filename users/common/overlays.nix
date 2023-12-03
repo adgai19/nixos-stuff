@@ -56,91 +56,91 @@ inputs: self: super:
       name = "cyclist.vim";
       src = inputs.cyclist-nvim;
     };
-    typescript-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    typescript-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "typescript.nvim";
       doCheck = false;
       doInstallCheck = false;
       src = inputs.typescript-nvim;
     };
-    autosave-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    autosave-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "autosave.nvim";
       src = inputs.autosave-nvim;
     };
 
-    astro-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    astro-vim = pkgs.vimUtils.buildVimPlugin {
       name = "vim-astro";
       src = inputs.astro-vim;
     };
 
-    go-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    go-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "go-nvim";
       src = inputs.go-nvim;
     };
 
-    regexplainer = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    regexplainer = pkgs.vimUtils.buildVimPlugin {
       name = "nvim-regexplainer";
       src = inputs.regexplainer;
     };
-    guihua-lua = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    guihua-lua = pkgs.vimUtils.buildVimPlugin {
       name = "guihua-lua";
       src = inputs.guihua-nvim;
     };
-    nvim-dap-go = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
       name = "nvim-dap-go";
       src = inputs.nvim-dap-go;
     };
 
-    vim-just = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    vim-just = pkgs.vimUtils.buildVimPlugin {
       name = "vim-just";
       src = inputs.vim-just;
     };
 
-    noice-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    noice-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "noice-nvim";
       src = inputs.noice-nvim;
     };
 
-    statuscol-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    statuscol-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "statuscol-nvim";
       src = inputs.statuscol-nvim;
     };
 
-    treesitter-just = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    treesitter-just = pkgs.vimUtils.buildVimPlugin {
       name = "treesitter-just";
       src = inputs.treesitter-just;
     };
 
-    hover-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    hover-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "hover-nvim";
       src = inputs.hover-nvim;
     };
 
-    jester = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    jester = pkgs.vimUtils.buildVimPlugin {
       name = "jester";
       src = inputs.jester;
     };
 
-    neotest-jest = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    neotest-jest = pkgs.vimUtils.buildVimPlugin {
       name = "neotest-jest";
       src = inputs.neotest-jest;
     };
 
-    dap-vscode = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    dap-vscode = pkgs.vimUtils.buildVimPlugin {
       name = "dap-vscode";
       src = inputs.dap-vscode;
     };
 
-    treesj = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    treesj = pkgs.vimUtils.buildVimPlugin {
       name = "treesj";
       src = inputs.treesj;
     };
 
-    qmk-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    qmk-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "qmk-nvim";
       src = inputs.qmk-nvim;
     };
 
-    adgai-config = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    adgai-config = pkgs.vimUtils.buildVimPlugin {
       name = "adgai";
       src = ./config/nvim-config;
     };

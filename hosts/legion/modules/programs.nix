@@ -1,6 +1,6 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, inputs, pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     awscli2
     age
     # age-plugin-yubikey
@@ -11,7 +11,8 @@
     cachix
     commitizen
     diff-so-fancy
-    discord
+    discord-canary
+    doppler
     evince
     # eww-wayland
     fd
@@ -44,6 +45,7 @@
     traceroute
     transmission-gtk
     tree
+    vial
     xclip
     xsettingsd
     # yubikey-manager
@@ -64,6 +66,9 @@
 
     jetbrains.idea-community
     maven
-  ];
+  ]) ++ (with pkgs-unstable; [
+    (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
+  ]);
   programs.go.enable = true;
+  programs.go.package = pkgs-unstable.go_1_21;
 }

@@ -54,7 +54,7 @@ let
     nvim-lspconfig
     nvim-ts-context-commentstring
     popfix
-    rust-tools-nvim
+    # rust-tools-nvim
     symbols-outline-nvim
     vim-scriptease
     vim-signature
@@ -90,7 +90,7 @@ let
 
     #Other stuff
 
-    # diffview-nvim
+    diffview-nvim
     # lightspeed-nvim
     ansible-vim
     catppuccin-nvim
@@ -110,7 +110,7 @@ let
     neo-tree-nvim
     neoformat
     neorg
-    null-ls-nvim
+    # null-ls-nvim
     numb-nvim
     nvim-notify
     nvim-ts-autotag
@@ -120,6 +120,7 @@ let
     vim-numbertoggle
     vim-qf
     vim-terraform
+
 
     {
       plugin = gitsigns-nvim;
@@ -169,14 +170,14 @@ let
     typescript-nvim
     vim-just
     qmk-nvim
-  ];
+  ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim ];
 
 in
 {
   programs.neovim = {
     enable = true;
     viAlias = true;
-    # package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
+    package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
     vimAlias = true;
     withNodeJs = false;
     withPython3 = false;
@@ -197,8 +198,13 @@ in
       sumneko-lua-language-server
 
       lua51Packages.sqlite
+      rust-analyzer
 
       buf-language-server
+
+      python311Packages.jedi-language-server
+      python311Packages.python-lsp-server
+      nodePackages_latest.pyright
 
       nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"

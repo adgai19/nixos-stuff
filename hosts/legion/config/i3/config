@@ -1,0 +1,340 @@
+# Should you change your keyboard layout some time, delete
+# this file and re-run i3-config-wizard(1).
+#
+
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Fira Code 0
+
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+#set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2 && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Use Mouse+$mod to drag floating windows to their wanted position
+#floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Shift+Return exec gnome-terminal
+bindsym $mod+Return exec wezterm
+bindsym $mod+Ctrl+Return exec alacritty
+#
+# kill focused window
+bindsym $mod+d exec rofi -show combi
+bindsym $mod+Ctrl+d exec dmenu_run
+
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+z fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+Shift+e layout toggle split
+
+# toggle tiling / floating
+# bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+# bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws0 "0"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+grave workspace number $ws0
+bindsym $mod+c workspace number $ws0
+
+
+bindsym $mod+Shift+1 move container to workspace number $ws1;workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2;workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3;workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4;workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5;workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6;workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7;workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8;workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9;workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10;workspace number $ws10
+bindsym $mod+Shift+grave move container to workspace number $ws0;workspace number $ws0
+
+# move focused container to workspace
+bindsym $mod+Ctrl+Shift+2 move container to workspace number $ws2
+bindsym $mod+Ctrl+Shift+3 move container to workspace number $ws3
+bindsym $mod+Ctrl+Shift+4 move container to workspace number $ws4
+bindsym $mod+Ctrl+Shift+5 move container to workspace number $ws5
+bindsym $mod+Ctrl+Shift+6 move container to workspace number $ws6
+bindsym $mod+Ctrl+Shift+7 move container to workspace number $ws7
+bindsym $mod+Ctrl+Shift+8 move container to workspace number $ws8
+bindsym $mod+Ctrl+Shift+9 move container to workspace number $ws9
+bindsym $mod+Ctrl+Shift+0 move container to workspace number $ws10
+bindsym $mod+Ctrl+Shift+grave move container to workspace number $ws0
+
+
+# reload the configuration file
+# bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+q kill
+
+bar {
+  font pango:Fira Code 7
+    status_command bumblebee-status  -m  speedtest disk load cpu memory battery date time pasink system  -p interval=1 time.format="%H:%M IST " date.format="%a, %b %d %Y" home.path=/home system.lock="i3lock && xset dpms 5" system.logout="i3 msg exit" -t iceberg-contrast
+    colors {
+      background #000000
+        statusline #ffffff
+        focused_workspace #551a8b #551a8b #ffffff #282828
+        active_workspace #333333 #5f676a #ffffff #928374
+        inactive_workspace #000000 #000000 #888888 #928374
+        urgent_workspace #2f343a #900000 #ffffff #ebdbb2
+        separator #666666
+    }
+}
+bar {
+  font pango:Fira Code 7
+    position top
+    tray_output none
+    workspace_buttons no
+    status_command bumblebee-status  -m xrandr amixer brightness time nic indicator -p xrandr.autotoggle=true interval=1 nic.left-click="nmcli device wifi rescan" -t iceberg-contrast
+    colors {
+      background #000000
+      statusline #ffffff
+      focused_workspace #551a8b #551a8b #ffffff #282828
+      active_workspace #333333 #5f676a #ffffff #928374
+      inactive_workspace #000000 #000000 #888888 #928374
+      urgent_workspace #2f343a #900000 #ffffff #ebdbb2
+
+      separator #666666
+    }
+}
+
+
+# bar {
+#   font pango:Fira Code 7
+#   # status_command bumblebee-status -m  speedtest disk load cpu2 memory battery date time pasink system  -p interval=1 time.format="%H:%M IST " date.format="%a, %b %d %Y" home.path=/home system.lock="i3lock && xset dpms 5" system.logout="i3 msg exit" -t night-powerline
+#   status_command bumblebee-status -m cpu memory battery time pasink pasource
+#   # status_command i3status
+#   colors {
+#     background #000000
+#     statusline #ffffff
+#     focused_workspace #551a8b #551a8b #ffffff #282828
+#     active_workspace #333333 #5f676a #ffffff #928374
+#     inactive_workspace #000000 #000000 #888888 #928374
+#     urgent_workspace #2f343a #900000 #ffffff #ebdbb2
+#     separator #666666
+#   }
+# }
+# Moving workspaces between screens
+bindsym $mod+x move workspace to output right
+# bindsym button8 move workspace to output left
+bindsym $mod+Shift+x move workspace to output left
+
+#numlock on startup
+exec_always --no-startup-id numlockx on #numlock setting
+
+
+#ss commands
+bindsym Print exec flameshot gui
+bindsym $mod+s exec flameshot gui
+
+# general theme for gruvbox
+client.focused #3b1261 #3b1261 #ffffff #662b9c
+client.unfocused #222222 #222222 #888888 #292d2e
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.urgent #2f343a #900000 #ffffff #900000
+client.placeholder  #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+
+# music shortcuts
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+#quick navigation
+bindsym $mod++Tab workspace back_and_forth
+bindsym $mod+t workspace back_and_forth
+bindsym --whole-window button7 workspace back_and_forth
+bindsym --whole-window button6 workspace back_and_forth
+bindsym $mod+Ctrl+Tab workspace next
+# bindsym --whole-window button9 workspace next
+bindsym $mod+Shift+Tab workspace prev
+# bindsym --whole-window button8 workspace prev
+#startup applications
+exec_always --no-startup-id picom -e 0.1
+#exec_always --no-startup-id nitrogen --restore
+exec --no-startup-id wezterm
+exec --no-startup-id google-chrome-stable
+#exec --no-startup-id notion-app-enhanced
+exec_always --no-startup-id /etc/profiles/per-user/adgai/bin/i3wsr
+
+#pulseeffect shourcuts. useful for hiding and showing pulseeffect
+bindsym $mod+Shift+minus [class="Pulseeffect"] move scratchpad
+bindsym $mod+minus [class="Pulseeffect"] scratchpad show
+
+#common settings
+for_window [class=".*"] title_format " "
+exec --no-startup-id i3-msg workspace 0
+bindsym $mod+y exec --no-startup-id /home/adgai/.screenlayout/dual.sh
+
+#remapping brightness controls
+bindsym $mod+F5 exec brightness.sh - DP-4
+bindsym $mod+F6 exec brightness.sh + DP-4
+
+# bindings to start applications that I do not always but on fairly regular basis 
+bindsym $mod+e exec thunar; workspace number $ws6
+bindsym $mod+p exec evince; workspace number $ws3
+bindsym $mod+Shift+v exec vlc; workspace number $ws5
+bindsym $mod+Ctrl+a exec pavucontrol
+bindsym $mod+Shift+p exec gnome-screenshot --window
+bindsym $mod+Ctrl+p exec gnome-screenshot --area
+
+#####################
+# assign workspaces #
+#####################
+# terminals
+assign [class="Alacritty"]  number 0
+assign [class="kitty"]  number 0
+
+# secondary browser
+assign [class="qutebrowser"]  number 1
+assign [class="Chromium"]  number 1
+assign [class="Google-chrome"]  number 1
+
+# primary browser
+assign [class="firefox"]  number 2
+
+# secondary tools
+assign [class="Code"]  number 3
+assign [class="MATLAB R2018"]  number 3
+assign [class="neovide"]  number 3
+assign [class="Code - Insider"]  number 3
+assign [class="Acroread"]  number 3
+assign [class="Evince"]  number 3
+
+# extra applications
+assign [class="PacketTracer7"]  number 4
+assign [class="notion-app-enhanced"]  number 4
+
+assign [class="vlc"]  number 5
+assign [class="Transmission"]  number 5
+assign [class="openSCAD"]  number 5
+
+assign [class="Steam"]  number 6
+assign [class="Thunar"]  number 6
+assign [class="Bitwarden"]  number 6
+
+# screen recording
+assign [class="SimpleScreenRecorder"]  number 8
+assign [class="obs"]  number 8
+
+# social
+assign [class="Slack"]  number 9
+assign [class="Signal"]  number 9
+assign [class="discord"]  number 9
+assign [class="TelegramDesktop"]  number 9
+for_window [class="telegram-desktop"] move to workspace number 9
+assign [class="Microsoft Teams - Preview"]  number 8
+# extra  unnecessary apps
+assign [class="Vmplayer"]  number 10
+assign [class="Micro:q"]  number 10
+assign [class="VirtualBox Manager"]  number 10
+assign [class="VirtualBox Machine"]  number 10
+for_window [class="Spotify"] move to workspace number 10
+
+#setting properties for some windows
+for_window [class="matplotlib"] floating enable
+for_window [class="Signal"] floating enable
+for_window [class="Blueman-manager"] floating enable
+for_window [class="VirtualBox Machine"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Xclock"] floating enable
+for_window [class="Pulseeffect"] floating enable
+for_window [class="Cheese"] floating enable
+for_window [class="*.py"] floating enable
+
+for_window [class="^.*"] border pixel 0

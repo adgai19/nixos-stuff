@@ -1,20 +1,20 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.utf8";
 
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
   };
 
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
   environment.variables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+    # WLR_NO_HARDWARE_CURSORS = "1";
     TERMINFO_DIRS = "/home/adgai/.nix-profile/share/terminfo";
     LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
+    # XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
@@ -24,10 +24,11 @@
     isNormalUser = true;
     description = "adgai";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [
-      latest.firefox-nightly-bin
+      # latest.firefox-nightly-bin
       networkmanager
+      # firefox
       kate
       chromium
       vlc
@@ -36,10 +37,10 @@
   };
 
   virtualisation.docker.enable = true;
-
-  # virtualisation.virtualbox.host.enable = true;
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
-  # users.extraGroups.vboxusers.members = [ "adgai" ];
+  programs.dconf.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  users.extraGroups.vboxusers.members = [ "adgai" ];
 
   virtualisation.libvirtd.enable = true;
   users.extraUsers.adgai.extraGroups = [ "libvirtd" ];
@@ -65,10 +66,12 @@
     pinentry-curses
     rofi
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    virt-manager
     wget
     xorg.xmodmap
     # yubioath-flutter
-  ];
+  ] ++ [ inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin ];
+
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
 
@@ -81,7 +84,8 @@
     pinentryFlavor = "qt";
   };
   services.picom.enable = true;
-  fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix ];
+  # fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix maple-mono ];
+  fonts.packages = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix maple-mono ];
 
 
   security.sudo.wheelNeedsPassword = false;

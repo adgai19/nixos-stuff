@@ -2,12 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports =
     [
       # Include the results of the hardware scan.
       ../commons/config.nix
+      ../commons/kafka.nix
 
       ./hardware-configuration.nix
     ];
@@ -28,8 +29,10 @@
     layout = "us";
     videoDrivers = [ "nvidia" ];
   };
+  nixpkgs.config.cudasupport = true;
 
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   # Enable CUPS to print documents.
@@ -83,11 +86,18 @@
   services.tailscale.enable = true;
   # for qmk and yubikey
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.yubikey-personalization ];
+  services.udev.extraRules = ''
+    ## Raspberry Pi Pico
+    ## RP2040 bootloader
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", TAG+="uaccess"
+  '';
   environment.enableAllTerminfo = true;
 
   networking.hostName = "legion"; # Define your hostname
   networking.networkmanager.enable = true;
-  networking.networkmanager.unmanaged = [ "wlp0s20f3" ];
+  networking.networkmanager.unmanaged = [
+    "wlp0s20f3"
+  ];
 
   networking.nameservers = [ "172.20.0.165" "1.1.1.1" ];
   networking.wireless = {
@@ -95,6 +105,9 @@
     networks = {
       "ADDN-20" = {
         pskRaw = "ac67aa719a92f7b3ca8a4cf388825c0c4123a036d6531fc2f18755623ab2a847";
+      };
+      "Adgai" = {
+        pskRaw = "f7336918c2c9de9724d0ed05f3f3853e5326698eb436a84dcc7c923d333d7552";
       };
     };
   };
@@ -104,6 +117,8 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 8802 ];
   networking.firewall.allowedUDPPorts = [ 8802 ];
+
+  services.devmon.enable = true;
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

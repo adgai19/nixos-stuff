@@ -5,7 +5,7 @@ update hostname:
   git commit -m "build(flake.lock): update dep"
 
 legion:
-  sudo nixos-rebuild switch --flake .#legion --impure
+  sudo nixos-rebuild switch --flake .#legion 
   rm -rf result
 
 legion-test:

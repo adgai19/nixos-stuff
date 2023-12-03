@@ -36,6 +36,7 @@
   #   # load-module module-bluez5-discover
   # '';
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.settings.General.Experimental = true;
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/fe4a2218-d9df-440a-92cd-57d272a5b501";
