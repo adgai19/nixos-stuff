@@ -54,7 +54,7 @@ let
     nvim-lspconfig
     nvim-ts-context-commentstring
     popfix
-    rust-tools-nvim
+    # rust-tools-nvim
     symbols-outline-nvim
     vim-scriptease
     vim-signature
@@ -121,6 +121,7 @@ let
     vim-qf
     vim-terraform
 
+
     {
       plugin = gitsigns-nvim;
       config = "lua require('gitsigns').setup()";
@@ -169,7 +170,7 @@ let
     typescript-nvim
     vim-just
     qmk-nvim
-  ];
+  ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim ];
 
 in
 {
@@ -197,6 +198,7 @@ in
       sumneko-lua-language-server
 
       lua51Packages.sqlite
+      rust-analyzer
 
       buf-language-server
 

@@ -12,6 +12,10 @@
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+    rustaceanvim = {
+      url = "github:mrcjkb/rustaceanvim/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-23.05";

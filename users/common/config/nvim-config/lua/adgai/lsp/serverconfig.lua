@@ -32,7 +32,6 @@ lsp.setup_servers({
 	"jedi_language_server",
 	"nil_ls",
 	"rnix",
-	"rust_analyzer",
 	"tailwindcss",
 	"terraform_lsp",
 	"terraformls",
