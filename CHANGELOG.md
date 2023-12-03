@@ -1,4 +1,4 @@
-## Unreleased
+## 1.2.0 (2023-09-09)
 
 ### Feat
 
@@ -24,7 +24,6 @@
 ## 1.2.0 (2023-09-09)
 
 ### Feat
-
 - **legion**: added bashmount
 - moving to 23.05 for now
 - regen hardware config
