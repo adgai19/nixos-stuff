@@ -4,5 +4,9 @@
     source = ../config/i3wsr/config.toml;
     target = "/home/adgai/.config/i3wsr/config.toml";
   };
+  home.file."i3config" = {
+    source = ../config/i3/config;
+    target = "/home/adgai/.config/i3/config";
+  };
 
 }
