@@ -14,6 +14,7 @@ lsp.on_attach(function(client, bufnr)
 
 	bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
 	bind("n", "<leader><leader><leader>", vim.lsp.buf.code_action, opts)
+	lsp.default_keymaps({ to_bufnr = bufnr })
 end)
 
 lsp.setup_servers({
@@ -26,7 +27,7 @@ lsp.setup_servers({
 	"pylsp",
 	-- "pyright",
 	"eslint",
-	"gopls",
+	-- "gopls",
 	"hls",
 	"html",
 	"jedi_language_server",
