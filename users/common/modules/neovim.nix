@@ -219,6 +219,7 @@ in
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
 
+      delve
       # ansible-language-server
       # ansible-lint
       # haskell-language-server
