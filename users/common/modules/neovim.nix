@@ -163,6 +163,7 @@ let
     hover-nvim
     inc-rename-nvim
     jester
+    vim-sops
     neotest-jest
     noice-nvim
     treesitter-just

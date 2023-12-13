@@ -1,5 +1,5 @@
 local dap = require("dap")
-require('dap-go').setup()
+require("dap-go").setup()
 --
 --
 -- dap.adapters.go = function(callback, config)

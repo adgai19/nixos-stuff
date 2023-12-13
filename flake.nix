@@ -16,6 +16,10 @@
       url = "github:mrcjkb/rustaceanvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vim-sops = {
+      url = "https://github.com/jsecchiero/vim-sops";
+      flake = false;
+    };
 
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-23.05";
