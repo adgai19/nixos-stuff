@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vim-sops = {
-      url = "https://github.com/jsecchiero/vim-sops";
+      url = "github:jsecchiero/vim-sops";
       flake = false;
     };
 

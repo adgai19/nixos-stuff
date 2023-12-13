@@ -89,7 +89,7 @@ inputs: self: super:
       name = "nvim-dap-go";
       src = inputs.nvim-dap-go;
     };
-    vim-sops = pkgs.vimIUtils.buildVimPlugin {
+    vim-sops = pkgs.vimUtils.buildVimPlugin {
       name = "vim-sops";
       src = inputs.vim-sops;
     };

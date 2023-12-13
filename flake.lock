@@ -1107,7 +1107,8 @@
         "treesitter-just": "treesitter-just",
         "treesj": "treesj",
         "typescript-nvim": "typescript-nvim",
-        "vim-just": "vim-just"
+        "vim-just": "vim-just",
+        "vim-sops": "vim-sops"
       }
     },
     "rustaceanvim": {
@@ -1388,6 +1389,22 @@
       "original": {
         "owner": "NoahTheDuke",
         "repo": "vim-just",
+        "type": "github"
+      }
+    },
+    "vim-sops": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1671308945,
+        "narHash": "sha256-oBK+Nmc3unPMi6/0LIzSV8dPE1YG6qxG45qWZNuDjks=",
+        "owner": "jsecchiero",
+        "repo": "vim-sops",
+        "rev": "1e4d497d1da5de6edc920bfb95c842947b140f26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jsecchiero",
+        "repo": "vim-sops",
         "type": "github"
       }
     }
