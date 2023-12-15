@@ -42,6 +42,11 @@ let
       plugin = trouble-nvim;
       config = "lua require('trouble').setup()";
     }
+    {
+      plugin = neodev-nvim;
+      config = "lua require('neodev').setup()";
+    }
+
 
     # Lsp
     SchemaStore-nvim
