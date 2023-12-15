@@ -14,7 +14,7 @@ let
     cmp-nvim-lsp
     cmp-nvim-lua
     cmp-path
-    cmp-tabnine
+    # cmp-tabnine
     cmp_luasnip
     lspkind-nvim
     luasnip
@@ -220,6 +220,7 @@ in
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
 
+      luajitPackages.lua-lsp
       delve
       # ansible-language-server
       # ansible-lint

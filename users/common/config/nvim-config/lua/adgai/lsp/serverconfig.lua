@@ -30,6 +30,7 @@ lsp.setup_servers({
 	-- "gopls",
 	"hls",
 	"html",
+	"lua_ls",
 	"jedi_language_server",
 	"nil_ls",
 	"rnix",
