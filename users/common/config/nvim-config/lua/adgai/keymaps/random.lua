@@ -46,3 +46,28 @@ tnoremap([[<Esc>]], [[<C-\><C-n>]])
 nnoremap([[\]], ":Rg<space>")
 nnoremap([[<leader><leader>]], ":nohl<cr>")
 nnoremap([[<Esc>]], [[<cmd>w<cr>]])
+local M = {}
+function M.base64()
+	local line = vim.api.nvim_get_current_line()
+	local left, right = unpack(vim.split(line, "="))
+	local output = io.popen("echo " .. right .. "|base64 -w 0")
+	local result = output:read("*a")
+	vim.api.nvim_set_current_line(left .. "=" .. result)
+end
+
+function M.base64d()
+	local line = vim.api.nvim_get_current_line()
+	local left, right = unpack(vim.split(line, "="))
+	local output = io.popen("echo " .. right .. "|base64 -d -w 0")
+	local result = output:read("*a")
+	vim.api.nvim_set_current_line(left .. "=" .. result)
+end
+
+nnoremap("<leader>en", function()
+	M.base64()
+end)
+nnoremap("<leader>ed", function()
+	M.base64d()
+end)
+vim.api.nvim_create_user_command("Base64Encode", M.base64)
+vim.api.nvim_create_user_command("Base64Decode", M.base64d)
