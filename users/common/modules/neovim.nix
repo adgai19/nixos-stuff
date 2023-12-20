@@ -229,6 +229,8 @@ in
 
       luajitPackages.lua-lsp
       delve
+
+      postgres-lsp
       # ansible-language-server
       # ansible-lint
       # haskell-language-server

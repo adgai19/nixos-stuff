@@ -1,22 +1,37 @@
 local nnoremap = require("adgai.keymaps.helpers").nnoremap
-local harpoon=require("harpoon")
+local harpoon = require("harpoon")
 
 harpoon:setup()
 
-nnoremap("<leader>na", function() harpoon:list():append() end)
-nnoremap("<leader>ni", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+nnoremap("<leader>na", function()
+	harpoon:list():append()
+end)
+nnoremap("<leader>ni", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
 -- nnoremap("<leader>np", require("harpoon.cmd-ui").toggle_quick_menu)
 --
 
-
-nnoremap("<M-t>",function() harpoon:list():select(1) end)--)
-nnoremap("<M-n>",function() harpoon:list():select(2) end)--)
-nnoremap("<M-h>",function() harpoon:list():select(3) end)--)
-nnoremap("<M-e>",function() harpoon:list():select(4) end)--)
+nnoremap("<M-t>", function()
+	harpoon:list():select(1)
+end) --)
+nnoremap("<M-n>", function()
+	harpoon:list():select(2)
+end) --)
+nnoremap("<M-h>", function()
+	harpoon:list():select(3)
+end) --)
+nnoremap("<M-e>", function()
+	harpoon:list():select(4)
+end) --)
 --
 --
-nnoremap("<M-l>", function() harpoon:list():append() end)
-nnoremap("<M-c>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+nnoremap("<M-l>", function()
+	harpoon:list():append()
+end)
+nnoremap("<M-c>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
 --
 -- nnoremap(
 -- 	"<M-w>",
