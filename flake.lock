@@ -491,6 +491,23 @@
         "type": "github"
       }
     },
+    "harpoon-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702766421,
+        "narHash": "sha256-oWsdmXEFtHe01gbqnpw/h2gMucrrz3wXluqt9l8JQF8=",
+        "owner": "ThePrimeagen",
+        "repo": "harpoon",
+        "rev": "9031087ff1b18d0a34bd664719ec66cc8be1efd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThePrimeagen",
+        "ref": "harpoon2",
+        "repo": "harpoon",
+        "type": "github"
+      }
+    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -1087,6 +1104,7 @@
         "go-nvim": "go-nvim",
         "godlv": "godlv",
         "guihua-nvim": "guihua-nvim",
+        "harpoon-nvim": "harpoon-nvim",
         "home-manager": "home-manager",
         "hover-nvim": "hover-nvim",
         "inc-rename": "inc-rename",

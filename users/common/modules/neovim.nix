@@ -91,7 +91,8 @@ let
 
     #Prime stuff
     git-worktree-nvim
-    harpoon
+    # harpoon
+
 
     #Other stuff
 
@@ -165,6 +166,7 @@ let
     dap-vscode
     go-nvim
     guihua-lua
+    harpoon-nvim
     hover-nvim
     inc-rename-nvim
     jester

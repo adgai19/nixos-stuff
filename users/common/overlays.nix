@@ -51,6 +51,10 @@ inputs: self: super:
       name = "inc-rename.nvim";
       src = inputs.inc-rename;
     };
+    harpoon-nvim = pkgs.vimUtils.buildVimPlugin {
+      name = "harpoon-nvim";
+      src = inputs.harpoon-nvim;
+    };
 
     cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "cyclist.vim";

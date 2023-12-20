@@ -20,6 +20,10 @@
       url = "github:jsecchiero/vim-sops";
       flake = false;
     };
+    harpoon-nvim = {
+      url = "github:ThePrimeagen/harpoon?ref=harpoon2";
+      flake = false;
+    };
 
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-23.05";
