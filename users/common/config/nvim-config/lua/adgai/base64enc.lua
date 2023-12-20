@@ -37,7 +37,6 @@ end)
 nnoremap("<leader>ed", function()
 	M.base64d()
 end)
-vim.notify("hello world")
 vim.api.nvim_create_user_command("Base64Encode", M.base64,{})
 vim.api.nvim_create_user_command("Base64Decode", M.base64d,{})
 
