@@ -33,7 +33,7 @@ inputs: packages: self: super:
     };
   };
 
-  customPkgs = {
+  customPkgs = with self;{
     godlv = self.pkgs.buildGoModule rec{
       pname = "godlv";
       src = inputs.godlv;
@@ -43,9 +43,7 @@ inputs: packages: self: super:
       doCheck = false;
 
     };
-    # ageEnc = packages.${self.system}.ageEnc;
-    # ageDec = packages.${self.system}.ageDec;
-    inherit (packages.${self.system}) ageEnc ageDec;
+    inherit (packages.${system}) ageEnc ageDec;
 
   };
 
