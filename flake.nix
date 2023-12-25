@@ -191,9 +191,9 @@
         shellHook = ''echo Inside nix dev shell'';
       };
 
-      packages."${system}" = import ./packages inputs;
+      packages."${system}" = import ./packages inputs pkgs;
 
-      overlays.default = import ./users/common/overlays.nix inputs;
+      overlays.default = import ./users/common/overlays.nix inputs self.packages;
 
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {

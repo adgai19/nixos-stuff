@@ -1,4 +1,4 @@
-inputs: self: super:
+inputs: packages: self: super:
 {
 
   customTmuxPlugins = with self ;{
@@ -43,6 +43,9 @@ inputs: self: super:
       doCheck = false;
 
     };
+    # ageEnc = packages.${self.system}.ageEnc;
+    # ageDec = packages.${self.system}.ageDec;
+    inherit (packages.${self.system}) ageEnc ageDec;
 
   };
 

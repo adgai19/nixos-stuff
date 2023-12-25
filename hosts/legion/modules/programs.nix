@@ -3,13 +3,14 @@
   home.packages = (with pkgs; [
     awscli2
     age
-    # age-plugin-yubikey
+    age-plugin-yubikey
     ansible-lint
     arandr
     bashmount
     bottom
     cachix
     commitizen
+    dbeaver
     diff-so-fancy
     discord-canary
     doppler
@@ -69,7 +70,7 @@
     maven
   ]) ++ (with pkgs-unstable; [
     (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
-  ]);
+  ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ]);
   programs.go.enable = true;
   programs.go.package = pkgs-unstable.go_1_21;
 }
