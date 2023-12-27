@@ -43,7 +43,7 @@ inputs: packages: self: super:
       doCheck = false;
 
     };
-    inherit (packages.${system}) ageEnc ageDec;
+    inherit (packages.${system}) ageEnc ageDec ageFile;
 
   };
 
