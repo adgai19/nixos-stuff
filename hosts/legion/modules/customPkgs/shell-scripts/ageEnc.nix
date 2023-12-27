@@ -16,6 +16,4 @@
 
     age -R ~/.age/recipients/rec.txt -o "$dirpath""/""$filename_without_extension"".enc.""$file_extension" "$file_path"
   '';
-
-
 }
