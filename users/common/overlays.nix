@@ -34,15 +34,6 @@ inputs: packages: self: super:
   };
 
   customPkgs = with self;{
-    godlv = self.pkgs.buildGoModule rec{
-      pname = "godlv";
-      src = inputs.godlv;
-      vendorSha256 = null;
-      name = pname;
-      proxyVendor = true;
-      doCheck = false;
-
-    };
     inherit (packages.${system}) ageEnc ageDec ageFile;
 
   };

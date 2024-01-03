@@ -158,10 +158,6 @@
       flake = false;
     };
 
-    godlv = {
-      url = "github:go-delve/delve";
-      flake = false;
-    };
 
   };
 
