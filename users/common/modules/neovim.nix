@@ -91,13 +91,11 @@ let
 
     #Prime stuff
     git-worktree-nvim
-    # harpoon
 
 
     #Other stuff
 
     diffview-nvim
-    # lightspeed-nvim
     ansible-vim
     catppuccin-nvim
     dressing-nvim
