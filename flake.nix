@@ -103,6 +103,7 @@
       flake = false;
     };
 
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
     autosave-nvim = {
       url = "github:Pocco81/auto-save.nvim";
       flake = false;
@@ -161,7 +162,7 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, neorg-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -177,6 +178,7 @@
         inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlays.default
         self.overlays.default
+        neorg-overlay.overlays.default
       ];
 
     in
