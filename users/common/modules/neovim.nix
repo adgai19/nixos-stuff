@@ -114,6 +114,7 @@ let
     neo-tree-nvim
     neoformat
     neorg
+    neorg-telescope
     # null-ls-nvim
     numb-nvim
     nvim-notify
@@ -191,6 +192,9 @@ in
       ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
+      nvim-treesitter.builtGrammars.tree-sitter-norg
+      nvim-treesitter.builtGrammars.tree-sitter-norg-meta
+
     ]);
     extraPackages = with pkgs; [
 
