@@ -47,6 +47,10 @@ inputs: packages: self: super:
       name = "harpoon-nvim";
       src = inputs.harpoon-nvim;
     };
+    vim-base64 = pkgs.vimUtils.buildVimPlugin {
+      name = "vim-base64";
+      src = inputs.vim-base64;
+    };
 
     cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "cyclist.vim";

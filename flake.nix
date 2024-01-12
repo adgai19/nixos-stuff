@@ -153,6 +153,10 @@
       url = "github:Wansmer/treesj";
       flake = false;
     };
+    vim-base64 = {
+      url = "github:christianrondeau/vim-base64";
+      flake = false;
+    };
 
     qmk-nvim = {
       url = "github:codethread/qmk.nvim";

@@ -177,6 +177,7 @@ let
     typescript-nvim
     vim-just
     qmk-nvim
+    vim-base64
   ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim ];
 
 in

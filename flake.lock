@@ -1333,6 +1333,7 @@
         "treesitter-just": "treesitter-just",
         "treesj": "treesj",
         "typescript-nvim": "typescript-nvim",
+        "vim-base64": "vim-base64",
         "vim-just": "vim-just",
         "vim-sops": "vim-sops"
       }
@@ -1614,6 +1615,22 @@
       "original": {
         "owner": "jose-elias-alvarez",
         "repo": "typescript.nvim",
+        "type": "github"
+      }
+    },
+    "vim-base64": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612302420,
+        "narHash": "sha256-b60Cs24yxSYlZikEqukJ6m/l6XEUhCIqNW1JWXkbo0Y=",
+        "owner": "christianrondeau",
+        "repo": "vim-base64",
+        "rev": "d15253105f6a329cd0632bf9dcbf2591fb5944b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "christianrondeau",
+        "repo": "vim-base64",
         "type": "github"
       }
     },
