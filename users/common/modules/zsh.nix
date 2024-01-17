@@ -21,26 +21,27 @@ in
       };
       defaultKeymap = "viins";
       initExtra = ''
-        any-nix-shell zsh --info-right | source /dev/stdin
-        export DIRENV_LOG_FORMAT=
-        bindkey "^P" up-line-or-search
-        bindkey "^N" down-line-or-search
-        bindkey -s "^o" "tmux-sessionizer^M"
+        zmodload zsh/zprof
+          any-nix-shell zsh --info-right | source /dev/stdin
+          export DIRENV_LOG_FORMAT=
+          bindkey "^P" up-line-or-search
+          bindkey "^N" down-line-or-search
+          bindkey -s "^o" "tmux-sessionizer^M"
 
-        lfcd() {
-        	tmp="$(mktemp)"
-        	command lf -last-dir-path="$tmp" "$@"
-        	if [ -f "$tmp" ]; then
-        		dir="$(cat "$tmp")"
-        		rm -f "$tmp"
-        		if [ -d "$dir" ]; then
-        			if [ "$dir" != "$(pwd)" ]; then
-        				cd "$dir"
-        			fi
-        		fi
-        	fi
-        }
-        bindkey -s "^F" "lfcd^M"
+          lfcd() {
+          	tmp="$(mktemp)"
+          	command lf -last-dir-path="$tmp" "$@"
+          	if [ -f "$tmp" ]; then
+          		dir="$(cat "$tmp")"
+          		rm -f "$tmp"
+          		if [ -d "$dir" ]; then
+          			if [ "$dir" != "$(pwd)" ]; then
+          				cd "$dir"
+          			fi
+          		fi
+          	fi
+          }
+          bindkey -s "^F" "lfcd^M"
       '';
 
       enableAutosuggestions = true;

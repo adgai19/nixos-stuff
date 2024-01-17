@@ -36,7 +36,7 @@
     nixpkgs-fmt
     nodejs-18_x
     pavucontrol
-    poetry
+    # poetry
     pre-commit
     progress
     pulseaudio
