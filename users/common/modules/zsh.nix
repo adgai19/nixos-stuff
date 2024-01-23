@@ -27,6 +27,7 @@ in
         save = 500000;
         size = 500000;
       };
+      syntaxHighlighting.enable = true;
       initExtra = ''
         zmodload zsh/zprof
         any-nix-shell zsh --info-right | source /dev/stdin
