@@ -47,6 +47,7 @@
     traceroute
     transmission-gtk
     tree
+    unzip
     vial
     xclip
     xsettingsd
