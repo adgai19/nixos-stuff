@@ -38,7 +38,7 @@
 
   virtualisation.docker.enable = true;
   programs.dconf.enable = true;
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = false;
   virtualisation.virtualbox.host.enableExtensionPack = true;
   users.extraGroups.vboxusers.members = [ "adgai" ];
 
