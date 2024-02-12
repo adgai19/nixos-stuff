@@ -34,7 +34,7 @@ inputs: packages: self: super:
   };
 
   customPkgs = with self;{
-    inherit (packages.${system}) ageEnc ageDec ageFile;
+    inherit (packages.${system}) ageEnc ageDec ageFile battery;
 
   };
 
