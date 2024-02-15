@@ -91,6 +91,8 @@ cmp.setup({
 		{ name = "luasnip", keyword_length = 2 },
 	},
 })
+--
+require("go").setup()
 -- Fix lua lsp
 -- {
 --   "runtime.version": "LuaJIT",
