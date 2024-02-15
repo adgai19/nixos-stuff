@@ -92,7 +92,6 @@ cmp.setup({
 	},
 })
 --
-require("go").setup()
 -- Fix lua lsp
 -- {
 --   "runtime.version": "LuaJIT",
