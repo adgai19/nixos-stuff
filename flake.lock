@@ -1327,6 +1327,7 @@
         "qmk-nvim": "qmk-nvim",
         "regexplainer": "regexplainer",
         "rustaceanvim": "rustaceanvim",
+        "sesh-tmux": "sesh-tmux",
         "sops-nix": "sops-nix",
         "statuscol-nvim": "statuscol-nvim",
         "tokyonight-tmux": "tokyonight-tmux",
@@ -1359,6 +1360,22 @@
       "original": {
         "owner": "mrcjkb",
         "repo": "rustaceanvim",
+        "type": "github"
+      }
+    },
+    "sesh-tmux": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707334455,
+        "narHash": "sha256-8gn4YdKHurPbPuJ+AeCB7x9IDxTtHGpYUZCKlSdujcs=",
+        "owner": "joshmedeski",
+        "repo": "sesh",
+        "rev": "be2badd29206f66803b76b62b23f6f5e05befe08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "joshmedeski",
+        "repo": "sesh",
         "type": "github"
       }
     },

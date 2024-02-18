@@ -35,7 +35,11 @@ inputs: packages: self: super:
 
   customPkgs = with self;{
     inherit (packages.${system}) ageEnc ageDec ageFile battery;
-
+    sesh = pkgs.buildGoModule {
+      name = "sesh";
+      vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
+      src = inputs.sesh-tmux;
+    };
   };
 
   customVimPlugins = with self;{
