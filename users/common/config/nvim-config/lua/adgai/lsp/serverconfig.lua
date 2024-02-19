@@ -25,6 +25,7 @@ lsp.setup_servers({
 	"cssls",
 	"dockerls",
 	"eslint",
+
 	"hls",
 	"html",
 	"jedi_language_server",

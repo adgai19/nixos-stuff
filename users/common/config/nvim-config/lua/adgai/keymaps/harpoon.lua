@@ -32,6 +32,7 @@ end)
 nnoremap("<M-c>", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
+
 --
 -- nnoremap(
 -- 	"<M-w>",
