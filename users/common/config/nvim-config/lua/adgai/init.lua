@@ -9,5 +9,6 @@ M.init = function()
 	require("adgai.general")
 	require("adgai.autocmds")
 	require("adgai.keymaps")
+	require("adgai.base64enc")
 end
 return M

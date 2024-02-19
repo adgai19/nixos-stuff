@@ -1,4 +1,4 @@
-inputs: self: super:
+inputs: packages: self: super:
 {
 
   customTmuxPlugins = with self ;{
@@ -33,23 +33,27 @@ inputs: self: super:
     };
   };
 
-  customPkgs = {
-    godlv = self.pkgs.buildGoModule rec{
-      pname = "godlv";
-      src = inputs.godlv;
-      vendorSha256 = null;
-      name = pname;
-      proxyVendor = true;
-      doCheck = false;
-
+  customPkgs = with self;{
+    inherit (packages.${system}) ageEnc ageDec ageFile battery;
+    sesh = pkgs.buildGoModule {
+      name = "sesh";
+      vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
+      src = inputs.sesh-tmux;
     };
-
   };
 
   customVimPlugins = with self;{
     inc-rename-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "inc-rename.nvim";
       src = inputs.inc-rename;
+    };
+    harpoon-nvim = pkgs.vimUtils.buildVimPlugin {
+      name = "harpoon-nvim";
+      src = inputs.harpoon-nvim;
+    };
+    vim-base64 = pkgs.vimUtils.buildVimPlugin {
+      name = "vim-base64";
+      src = inputs.vim-base64;
     };
 
     cyclist-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -88,6 +92,10 @@ inputs: self: super:
     nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
       name = "nvim-dap-go";
       src = inputs.nvim-dap-go;
+    };
+    vim-sops = pkgs.vimUtils.buildVimPlugin {
+      name = "vim-sops";
+      src = inputs.vim-sops;
     };
 
     vim-just = pkgs.vimUtils.buildVimPlugin {

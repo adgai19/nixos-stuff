@@ -16,6 +16,18 @@
       url = "github:mrcjkb/rustaceanvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vim-sops = {
+      url = "github:jsecchiero/vim-sops";
+      flake = false;
+    };
+    harpoon-nvim = {
+      url = "github:ThePrimeagen/harpoon?ref=harpoon2";
+      flake = false;
+    };
+    sesh-tmux = {
+      url = "github:joshmedeski/sesh";
+      flake = false;
+    };
 
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-23.05";
@@ -95,6 +107,7 @@
       flake = false;
     };
 
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
     autosave-nvim = {
       url = "github:Pocco81/auto-save.nvim";
       flake = false;
@@ -144,20 +157,20 @@
       url = "github:Wansmer/treesj";
       flake = false;
     };
+    vim-base64 = {
+      url = "github:christianrondeau/vim-base64";
+      flake = false;
+    };
 
     qmk-nvim = {
       url = "github:codethread/qmk.nvim";
       flake = false;
     };
 
-    godlv = {
-      url = "github:go-delve/delve";
-      flake = false;
-    };
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, neorg-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -173,6 +186,7 @@
         inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlays.default
         self.overlays.default
+        neorg-overlay.overlays.default
       ];
 
     in
@@ -183,9 +197,9 @@
         shellHook = ''echo Inside nix dev shell'';
       };
 
-      packages."${system}" = import ./packages inputs;
+      packages."${system}" = import ./packages inputs pkgs;
 
-      overlays.default = import ./users/common/overlays.nix inputs;
+      overlays.default = import ./users/common/overlays.nix inputs self.packages;
 
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {

@@ -3,13 +3,14 @@
   home.packages = (with pkgs; [
     awscli2
     age
-    # age-plugin-yubikey
+    age-plugin-yubikey
     ansible-lint
     arandr
     bashmount
     bottom
     cachix
     commitizen
+    dbeaver
     diff-so-fancy
     discord-canary
     doppler
@@ -21,6 +22,7 @@
     firefox-devedition-bin
     flameshot
     gcc
+    gh
     ghc
     htop
     hyp
@@ -34,7 +36,7 @@
     nixpkgs-fmt
     nodejs-18_x
     pavucontrol
-    poetry
+    # poetry
     pre-commit
     progress
     pulseaudio
@@ -45,6 +47,7 @@
     traceroute
     transmission-gtk
     tree
+    unzip
     vial
     xclip
     xsettingsd
@@ -68,7 +71,7 @@
     maven
   ]) ++ (with pkgs-unstable; [
     (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
-  ]);
+  ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery sesh ]);
   programs.go.enable = true;
   programs.go.package = pkgs-unstable.go_1_21;
 }

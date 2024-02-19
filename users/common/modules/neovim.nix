@@ -14,7 +14,7 @@ let
     cmp-nvim-lsp
     cmp-nvim-lua
     cmp-path
-    cmp-tabnine
+    # cmp-tabnine
     cmp_luasnip
     lspkind-nvim
     luasnip
@@ -42,6 +42,11 @@ let
       plugin = trouble-nvim;
       config = "lua require('trouble').setup()";
     }
+    {
+      plugin = neodev-nvim;
+      config = "lua require('neodev').setup()";
+    }
+
 
     # Lsp
     SchemaStore-nvim
@@ -86,12 +91,11 @@ let
 
     #Prime stuff
     git-worktree-nvim
-    harpoon
+
 
     #Other stuff
 
     diffview-nvim
-    # lightspeed-nvim
     ansible-vim
     catppuccin-nvim
     dressing-nvim
@@ -110,6 +114,7 @@ let
     neo-tree-nvim
     neoformat
     neorg
+    neorg-telescope
     # null-ls-nvim
     numb-nvim
     nvim-notify
@@ -160,9 +165,11 @@ let
     dap-vscode
     go-nvim
     guihua-lua
+    harpoon-nvim
     hover-nvim
     inc-rename-nvim
     jester
+    vim-sops
     neotest-jest
     noice-nvim
     treesitter-just
@@ -170,6 +177,7 @@ let
     typescript-nvim
     vim-just
     qmk-nvim
+    vim-base64
   ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim ];
 
 in
@@ -185,6 +193,9 @@ in
       ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
+      nvim-treesitter.builtGrammars.tree-sitter-norg
+      nvim-treesitter.builtGrammars.tree-sitter-norg-meta
+
     ]);
     extraPackages = with pkgs; [
 
@@ -219,6 +230,10 @@ in
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
 
+      luajitPackages.lua-lsp
+      delve
+
+      postgres-lsp
       # ansible-language-server
       # ansible-lint
       # haskell-language-server

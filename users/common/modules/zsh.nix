@@ -20,8 +20,24 @@ in
         ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
       };
       defaultKeymap = "viins";
+      history = {
+        expireDuplicatesFirst = true;
+        extended = true;
+        ignoreAllDups = true;
+        save = 500000;
+        size = 500000;
+      };
+      syntaxHighlighting.enable = true;
       initExtra = ''
+        zmodload zsh/zprof
         any-nix-shell zsh --info-right | source /dev/stdin
+
+        setopt INC_APPEND_HISTORY
+        setopt HIST_IGNORE_DUPS
+        setopt HIST_FIND_NO_DUPS
+        setopt HIST_IGNORE_SPACE
+        setopt HIST_SAVE_NO_DUPS
+        unsetopt HIST_VERIFY
         export DIRENV_LOG_FORMAT=
         bindkey "^P" up-line-or-search
         bindkey "^N" down-line-or-search
@@ -67,12 +83,23 @@ in
 
     programs.zoxide = {
       enable = true;
+      options = [ "--cmd cd" ];
       enableZshIntegration = true;
     };
 
     programs.starship = {
       enable = true;
       enableZshIntegration = true;
+    };
+    programs.atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        auto_sync = true;
+        sync_frequency = "5m";
+        sync_address = "https://api.atuin.sh";
+        search_mode = "prefix";
+      };
     };
   };
 }

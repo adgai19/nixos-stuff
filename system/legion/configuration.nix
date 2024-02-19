@@ -26,7 +26,7 @@
   };
 
   services.xserver = {
-    layout = "us";
+    xkb.layout = "us";
     videoDrivers = [ "nvidia" ];
   };
   nixpkgs.config.cudasupport = true;

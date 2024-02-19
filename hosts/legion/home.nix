@@ -9,7 +9,7 @@
     kubernetes.enable = true;
     ui.rofi.enable = true;
     cli = {
-      gh.enable = true;
+      gh.enable = false;
       git.enable = true;
       direnv.enable = true;
       lf.enable = true;

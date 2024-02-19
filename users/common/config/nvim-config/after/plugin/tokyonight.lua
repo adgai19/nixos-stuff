@@ -20,4 +20,4 @@ vim.cmd([[colorscheme tokyonight]])
 vim.cmd([[
 hi Normal guibg=NONE ctermbg=NONE
 ]])
-require("notify").setup({ background_colour = "#000000" })
+require("notify").setup({ background_colour = "#000000", stages = "static" })

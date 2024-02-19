@@ -24,21 +24,24 @@ lsp.setup_servers({
 	"clangd",
 	"cssls",
 	"dockerls",
-	"pylsp",
-	-- "pyright",
 	"eslint",
-	-- "gopls",
+
 	"hls",
 	"html",
 	"jedi_language_server",
+	"lua_ls",
 	"nil_ls",
+	"pylsp",
 	"rnix",
 	"tailwindcss",
 	"terraform_lsp",
 	"terraformls",
 	"vimls",
 	"vuels",
+	-- "gopls",
+	-- "pyright",
 	-- "yamlls",
+	"postgres_lsp",
 })
 
 lsp.configure("clangd", {
@@ -89,6 +92,7 @@ cmp.setup({
 		{ name = "luasnip", keyword_length = 2 },
 	},
 })
+--
 -- Fix lua lsp
 -- {
 --   "runtime.version": "LuaJIT",
