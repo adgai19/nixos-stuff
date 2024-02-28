@@ -27,32 +27,6 @@
       ];
       systems = [ "x86_64-linux" ];
       perSystem = { config, self', inputs', pkgs, system, ... }:
-        let
-          golines = pkgs.buildGoModule {
-            pname = "golines";
-            src = inputs.golines;
-            vendorSha256 = "sha256-It7lD8Ix9oX8xXILCnWUfit9ZlPJ4zjMElNa14mCkGI=";
-            name = "golines";
-            proxyVendor = true;
-          };
-          godlv = pkgs.buildGoModule {
-            pname = "dlv";
-            src = inputs.godlv;
-            vendorSha256 = null;
-            name = "dlv";
-            proxyVendor = true;
-            doCheck = false;
-          };
-          gotest = pkgs.buildGoModule {
-            pname = "gotest.tools";
-            src = inputs.godlv;
-            vendorSha256 = null;
-            name = "gotest-tools";
-            proxyVendor = true;
-            doCheck = false;
-
-          };
-        in
         {
           devshells.default = {
             packages = [
@@ -72,9 +46,9 @@
               pkgs.reftools
               pkgs.richgo
               pkgs.buf
-              godlv
-              golines
-              gotest
+              pkgs.delve
+              pkgs.golines
+              pkgs.gotest
             ];
 
           };

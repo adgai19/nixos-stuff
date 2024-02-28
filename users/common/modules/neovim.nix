@@ -11,7 +11,6 @@ let
     # completion
     cmp-buffer
     cmp-nvim-lsp
-    cmp-nvim-lsp
     cmp-nvim-lua
     cmp-path
     # cmp-tabnine
