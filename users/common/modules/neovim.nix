@@ -25,7 +25,7 @@ let
 
     #Telescope
     telescope-dap-nvim
-    telescope-frecency-nvim
+    # telescope-frecency-nvim
     telescope-fzf-native-nvim
     telescope-nvim
     telescope-project-nvim
@@ -207,7 +207,7 @@ in
       shellcheck
       sumneko-lua-language-server
 
-      lua51Packages.sqlite
+      # lua51Packages.sqlite
       rust-analyzer
 
       buf-language-server
