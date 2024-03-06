@@ -48,15 +48,15 @@ telescope.setup({
 			override_generic_sorter = true,
 			override_file_sorter = true,
 		},
-		frecency = {
-			show_scores = false,
-			show_unindexed = true,
-			ignore_patterns = { "*.git/*", "*/tmp/*" },
-			workspaces = {
-				["conf"] = "/home/adgai/.config",
-				["project"] = "/home/adgai/projects",
-			},
-		},
+		-- frecency = {
+		-- 	show_scores = false,
+		-- 	show_unindexed = true,
+		-- 	ignore_patterns = { "*.git/*", "*/tmp/*" },
+		-- 	workspaces = {
+		-- 		["conf"] = "/home/adgai/.config",
+		-- 		["project"] = "/home/adgai/projects",
+		-- 	},
+		-- },
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
 			override_generic_sorter = true, -- override the generic sorter

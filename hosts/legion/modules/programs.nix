@@ -3,6 +3,7 @@
   home.packages = (with pkgs; [
     awscli2
     age
+    jetbrains.datagrip
     age-plugin-yubikey
     ansible-lint
     arandr
