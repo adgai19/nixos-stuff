@@ -30,6 +30,7 @@
       networkmanager
       # firefox
       kate
+      # cachix
       chromium
       vlc
       gpg-tui

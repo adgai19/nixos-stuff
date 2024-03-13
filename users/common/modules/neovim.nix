@@ -203,7 +203,7 @@ in
       git
       gopls
       nil
-      rnix-lsp
+      # rnix-lsp
       shellcheck
       sumneko-lua-language-server
 

@@ -1,12 +1,14 @@
 { pkgs, lib, inputs, pkgs-unstable, ... }:
 {
   home.packages = (with pkgs; [
-    awscli2
+    # eww-wayland
+    # poetry
     age
-    jetbrains.datagrip
     age-plugin-yubikey
+    alacritty
     ansible-lint
     arandr
+    awscli2
     bashmount
     bottom
     cachix
@@ -16,7 +18,6 @@
     discord-canary
     doppler
     evince
-    # eww-wayland
     fd
     feh
     filezilla
@@ -28,6 +29,7 @@
     htop
     hyp
     iw
+    jetbrains.datagrip
     jq
     just
     lazydocker
@@ -37,7 +39,6 @@
     nixpkgs-fmt
     nodejs-18_x
     pavucontrol
-    # poetry
     pre-commit
     progress
     pulseaudio
@@ -59,13 +60,13 @@
     nodePackages_latest.typescript
     nodePackages_latest.typescript-language-server
 
-    alacritty
 
     xfce.thunar
 
-    kubernetes-helm
     calicoctl
+    kind
     kubectl
+    kubernetes-helm
     kubeswitch
 
     jetbrains.idea-community
@@ -73,6 +74,6 @@
   ]) ++ (with pkgs-unstable; [
     (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
   ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery sesh ]);
-  programs.go.enable = true;
-  programs.go.package = pkgs-unstable.go_1_21;
+  # programs.go.enable = true;
+  # programs.go.package = pkgs-unstable.go_1_21;
 }
