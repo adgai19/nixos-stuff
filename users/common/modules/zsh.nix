@@ -59,7 +59,7 @@ in
         bindkey -s "^F" "lfcd^M"
       '';
 
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
     };
 
@@ -72,7 +72,7 @@ in
 
     programs.eza = {
       enable = true;
-      enableAliases = true;
+      enableZshIntegration = true;
       icons = true;
     };
 

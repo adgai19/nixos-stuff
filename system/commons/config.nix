@@ -82,7 +82,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryFlavor = "qt";
   };
   services.picom.enable = true;
   # fonts.fonts = with pkgs;[ fira-code fira-code-symbols font-awesome customFonts.Lilix maple-mono ];
