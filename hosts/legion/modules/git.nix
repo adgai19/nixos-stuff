@@ -30,6 +30,7 @@ in
         init = {
           defaultBranch = "main";
         };
+        rerere.enabled = true;
         push = {
           autoSetupRemote = true;
         };
