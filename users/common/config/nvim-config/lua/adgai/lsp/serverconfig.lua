@@ -32,7 +32,6 @@ lsp.setup_servers({
 	"lua_ls",
 	"nil_ls",
 	"pylsp",
-	"rnix",
 	"tailwindcss",
 	"terraform_lsp",
 	"terraformls",
