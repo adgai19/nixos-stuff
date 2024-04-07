@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-unstable-small, inputs, ... }:
 let
   vimPlugins = with pkgs.vimPlugins; [
     nui-nvim
@@ -79,7 +79,7 @@ let
     neotest
     nvim-dap
     nvim-dap-go
-    nvim-dap-ui
+    # nvim-dap-ui
     nvim-dap-virtual-text
 
     # Treesitter
@@ -112,7 +112,7 @@ let
     mini-nvim
     neo-tree-nvim
     neoformat
-    neorg
+
     neorg-telescope
     # null-ls-nvim
     numb-nvim
@@ -177,7 +177,8 @@ let
     vim-just
     qmk-nvim
     vim-base64
-  ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim ];
+  ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim pkgs.lua51Packages.nvim-nio ];
+  unstableSmallPlugins = with pkgs-unstable-small.vimPlugins;[ nvim-dap-ui neorg ];
 
 in
 {
@@ -195,7 +196,7 @@ in
       nvim-treesitter.builtGrammars.tree-sitter-norg
       nvim-treesitter.builtGrammars.tree-sitter-norg-meta
 
-    ]);
+    ]) ++ unstableSmallPlugins;
     extraPackages = with pkgs; [
 
       clang-tools
@@ -230,6 +231,8 @@ in
       nodePackages_latest.vim-language-server
 
       luajitPackages.lua-lsp
+
+
       delve
 
       postgres-lsp

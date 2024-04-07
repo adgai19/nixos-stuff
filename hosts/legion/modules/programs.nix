@@ -38,6 +38,7 @@
     nixpkgs-fmt
     nodejs-18_x
     pavucontrol
+    pgcli
     pre-commit
     progress
     pulseaudio

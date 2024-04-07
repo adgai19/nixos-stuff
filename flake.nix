@@ -34,6 +34,7 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
     nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs-unstable-small = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -170,7 +171,7 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, neorg-overlay, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -178,6 +179,11 @@
         config = { allowUnfree = true; };
       };
       pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+
+      pkgs-unstable-small = import nixpkgs-unstable-small {
         inherit system;
         config = { allowUnfree = true; };
       };
@@ -227,7 +233,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL
-              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable; };
+              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable pkgs-unstable-small; };
               home-manager.users.adgai = import ./hosts/legion/home.nix;
             }
           ];
