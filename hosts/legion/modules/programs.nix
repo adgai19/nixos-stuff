@@ -51,6 +51,7 @@
     tree
     unzip
     vial
+    vault
     xclip
     xsettingsd
     # yubikey-manager

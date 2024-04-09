@@ -49,6 +49,7 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "adgai";
+  services.auto-cpufreq.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
