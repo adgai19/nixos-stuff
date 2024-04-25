@@ -17,6 +17,7 @@
     diff-so-fancy
     discord-canary
     doppler
+    emacs
     evince
     fd
     feh
