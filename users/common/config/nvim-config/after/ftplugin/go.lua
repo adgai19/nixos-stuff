@@ -3,10 +3,10 @@ require("go").setup({
 	disable_defaults = false, -- true|false when true set false to all boolean settings and replace all table
 	-- settings with {}
 	go = "go", -- go command, can be go[default] or go1.18beta1
-	goimport = "gopls", -- goimport command, can be gopls[default] or either goimport or golines if need to split long lines
-	fillstruct = "gopls", -- default, can also use fillstruct
-	gofmt = "gofumpt", --gofmt cmd,
-	max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
+	goimports = "gopls", -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
+	gofmt = "gofumpt", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
+	fillstruct = "gopls", -- set to fillstruct if gopls fails to fill struct
+	max_line_len = 0, -- max line length in golines format, Target maximum line length for golines
 	tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
 	tag_options = "json=omitempty", -- sets options sent to gomodifytags, i.e., json=omitempty
 	gotests_template = "", -- sets gotests -template parameter (check gotests for details)
@@ -18,7 +18,8 @@ require("go").setup({
 	-- false: do nothing
 	-- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
 	--   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
-	lsp_gofumpt = false, -- true: set default gofmt in gopls format to gofumpt
+	lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
+	-- false: do not set default gofmt in gopls format to gofumpt
 	lsp_on_attach = nil, -- nil: use on_attach function defined in go/lsp.lua,
 	--      when lsp_cfg is true
 	-- if lsp_on_attach is a function: use this function as on_attach function for gopls
@@ -29,13 +30,16 @@ require("go").setup({
 	-- end
 	-- to setup a table of codelens
 	diagnostic = { -- set diagnostic to false to disable vim.diagnostic setup
-		hdlr = true, -- hook lsp diag handler and send diag to quickfix
+		hdlr = false, -- hook lsp diag handler and send diag to quickfix
 		underline = true,
 		-- virtual text setup
 		virtual_text = { spacing = 0, prefix = "■" },
 		signs = true,
 		update_in_insert = false,
 	},
+	-- if you need to setup your ui for input and select, you can do it here
+	-- go_input = require('guihua.input').input -- set to vim.ui.input to disable guihua input
+	-- go_select = require('guihua.select').select -- vim.ui.select to disable guihua select
 	lsp_document_formatting = true,
 	-- set to true: use gopls to format
 	-- false if you want to use other formatter tool(e.g. efm, nulls)
@@ -88,10 +92,10 @@ require("go").setup({
 	dap_retries = 20, -- see dap option max_retries
 	build_tags = "tag1,tag2", -- set default build tags
 	textobjects = true, -- enable default text objects through treesittter-text-objects
-	test_runner = "go", -- one of {`go`, `richgo`, `dlv`, `ginkgo`, `gotestsum`}
+	test_runner = "go", -- one of {`go`,  `dlv`, `ginkgo`, `gotestsum`}
 	verbose_tests = true, -- set to add verbose flag to tests deprecated, see '-v' option
 	run_in_floaterm = false, -- set to true to run in a float window. :GoTermClose closes the floatterm
-	-- float term recommend if you use richgo/ginkgo with terminal color
+	-- float term recommend if you use gotestsum ginkgo with terminal color
 
 	floaterm = { -- position
 		posititon = "auto", -- one of {`top`, `bottom`, `left`, `right`, `center`, `auto`}
