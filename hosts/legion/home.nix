@@ -4,6 +4,7 @@
 
   home.username = "adgai";
   home.homeDirectory = "/home/adgai";
+  stylix.image  = ./background.png;
 
   programs.adgai = {
     kubernetes.enable = true;

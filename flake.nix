@@ -29,6 +29,7 @@
       # url = "github:NixOS/nixpkgs/nixos-23.05";
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    stylix.url = "github:danth/stylix";
     nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nixpkgs-unstable-small = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
 
@@ -167,7 +168,7 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay,stylix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -222,10 +223,14 @@
             }
             ./system/legion/configuration.nix
             sops-nix.nixosModules.sops
+stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
 
+  stylix.image  = ./hosts/legion/background.png;
+  # stylix.targets.alacritty.enable = false;
               nixpkgs.overlays = overlays;
+home-manager.backupFileExtension="bak";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL
