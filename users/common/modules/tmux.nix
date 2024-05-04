@@ -46,6 +46,7 @@ in
 
         set -g status-right-length 180
         set -s set-clipboard on
+        
 
         bind -n C-Left  previous-window
         bind -n C-Right next-window
@@ -127,7 +128,19 @@ in
         bind s choose-session -swZ
         # terminal session management
         bind C-g popup -E -c "#{pane_current_path}" #"zsh"
-        bind -n C-s neww "tmux-sessionizer" 
+        # bind -n C-s neww "tmux-sessionizer" 
+        bind-key -n "C-s" run-shell "sesh connect \"$(
+          sesh list | fzf-tmux -p 55%,60% \
+            --no-sort --border-label ' sesh ' --prompt '⚡  ' \
+            --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+            --bind 'tab:down,btab:up' \
+            --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
+            --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
+            --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c)' \
+            --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
+            --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+            --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
+        )\""
 
         set-window-option -g automatic-rename
         set -g default-terminal 'screen-256color'

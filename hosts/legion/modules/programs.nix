@@ -45,14 +45,15 @@
     pulseaudio
     ripgrep
     scrot
+    sesh
     statix
     stylua
     traceroute
     transmission-gtk
     tree
     unzip
-    vial
     vault
+    vial
     xclip
     xsettingsd
     # yubikey-manager
@@ -76,7 +77,7 @@
     maven
   ]) ++ (with pkgs-unstable; [
     (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
-  ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery sesh ]);
+  ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery ]);
   # programs.go.enable = true;
   # programs.go.package = pkgs-unstable.go_1_21;
 }

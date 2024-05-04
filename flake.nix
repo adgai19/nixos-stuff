@@ -24,10 +24,6 @@
       url = "github:ThePrimeagen/harpoon?ref=harpoon2";
       flake = false;
     };
-    sesh-tmux = {
-      url = "github:joshmedeski/sesh";
-      flake = false;
-    };
 
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-23.05";
