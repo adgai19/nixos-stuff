@@ -124,6 +124,7 @@ let
     vim-numbertoggle
     vim-qf
     vim-terraform
+    vim-dispatch
 
 
     {
@@ -198,55 +199,25 @@ in
 
     ]) ++ unstableSmallPlugins;
     extraPackages = with pkgs; [
-
-      clang-tools
       fd
       git
-      gopls
+      gnumake
+      luajitPackages.lua-lsp
       nil
-      # rnix-lsp
-      shellcheck
-      sumneko-lua-language-server
-
-      # lua51Packages.sqlite
-      rust-analyzer
-
-      buf-language-server
-
-      python311Packages.jedi-language-server
-      python311Packages.python-lsp-server
-      nodePackages_latest.pyright
-
-      nodePackages."@tailwindcss/language-server"
-      nodePackages."bash-language-server"
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
       nodePackages.eslint
       nodePackages.typescript
       nodePackages.typescript-language-server
-      nodePackages.write-good
-
       nodePackages_latest."@astrojs/language-server"
+      nodePackages_latest.pyright
       nodePackages_latest.vim-language-server
-
-      luajitPackages.lua-lsp
-
-
-      delve
-
       postgres-lsp
-      # ansible-language-server
-      # ansible-lint
-      # haskell-language-server
-      # nodePackages."@prisma/language-server"
-      # nodePackages.graphql-language-service-cli
-      # nodePackages.pyright
-      # nodePackages_latest.vue-language-server
-      # python311Packages.python-lsp-server
-      # rust-analyzer
-      # terraform-ls
-      # terraform-lsp
+      python311Packages.jedi-language-server
+      python311Packages.python-lsp-server
+      shellcheck
+      sumneko-lua-language-server
     ];
   };
 }

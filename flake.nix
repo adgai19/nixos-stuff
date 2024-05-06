@@ -168,7 +168,7 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay,stylix, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -223,14 +223,15 @@
             }
             ./system/legion/configuration.nix
             sops-nix.nixosModules.sops
-stylix.nixosModules.stylix
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
 
-  stylix.image  = ./hosts/legion/background.png;
-  # stylix.targets.alacritty.enable = false;
+              stylix.image = ./hosts/legion/background.png;
+              # stylix.targets.alacritty.enable = false;
               nixpkgs.overlays = overlays;
-home-manager.backupFileExtension="bak";
+              home-manager.backupFileExtension = "bak";
+              stylix.fonts.sizes.applications = 10;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL

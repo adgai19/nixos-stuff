@@ -1,4 +1,4 @@
-{ system,lib, ... }:
+{ system, lib, ... }:
 {
   programs.alacritty = {
     enable = true;
@@ -46,14 +46,14 @@
 
       cursor.style = "Block";
 
-      font = lib.mkForce{
+      font = lib.mkForce {
         size = 8;
         normal = {
-          family =  "Fira Code";
+          family = "Fira Code";
         };
       };
 
-      window = lib.mkForce{ opacity = 0.90; };
+      window = lib.mkForce { opacity = 0.90; };
     };
   };
 
