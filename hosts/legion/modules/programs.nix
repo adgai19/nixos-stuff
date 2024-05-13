@@ -3,6 +3,7 @@
   home.packages = (with pkgs; [
     # eww-wayland
     # poetry
+    talosctl
     age
     age-plugin-yubikey
     alacritty
