@@ -35,6 +35,14 @@ inputs: packages: self: super:
 
   customPkgs = with self;{
     inherit (packages.${system}) ageEnc ageDec ageFile battery;
+    json2struct = pkgs.buildGoModule {
+      name = "json2struct";
+      vendorHash = "sha256-rkjGULrInNsEcq89dDDG9l1iqIIz/U3ox0MXUq8NCXg=";
+      src = inputs.json2struct;
+      buildInputs = with pkgs;[
+        xorg.libX11.dev
+      ];
+    };
   };
 
   customVimPlugins = with self;{

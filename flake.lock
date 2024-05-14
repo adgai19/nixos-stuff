@@ -883,6 +883,22 @@
         "type": "github"
       }
     },
+    "json2struct": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670677066,
+        "narHash": "sha256-t2i3tKhEEDLa5kBD59OyvgPsOLBmwalMKTltho4x48A=",
+        "owner": "marhaupe",
+        "repo": "json2struct",
+        "rev": "f00e44c610dca2e498143e55a46579d7bf964041",
+        "type": "github"
+      },
+      "original": {
+        "owner": "marhaupe",
+        "repo": "json2struct",
+        "type": "github"
+      }
+    },
     "lib-aggregate": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -1587,6 +1603,7 @@
         "hover-nvim": "hover-nvim",
         "inc-rename": "inc-rename",
         "jester": "jester",
+        "json2struct": "json2struct",
         "neorg-overlay": "neorg-overlay",
         "neotest-jest": "neotest-jest",
         "neovim-nightly": "neovim-nightly",

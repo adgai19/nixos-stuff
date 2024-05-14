@@ -28,8 +28,8 @@ in
     enable = mkEnableOption "tmux";
   };
   config = mkIf enable {
-    home.packages = with pkgs;[ bc  gitmux];
-    
+    home.packages = with pkgs;[ bc gitmux ];
+
     programs.tmux = {
       inherit enable;
       plugins = tmuxPlugin;

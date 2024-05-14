@@ -165,6 +165,11 @@
       flake = false;
     };
 
+    json2struct = {
+      url = "github:marhaupe/json2struct";
+      flake = false;
+    };
+
 
   };
 

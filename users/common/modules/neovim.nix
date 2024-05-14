@@ -218,6 +218,6 @@ in
       python311Packages.python-lsp-server
       shellcheck
       sumneko-lua-language-server
-    ];
+    ] ++ (with pkgs.customPkgs;[ json2struct ]);
   };
 }
