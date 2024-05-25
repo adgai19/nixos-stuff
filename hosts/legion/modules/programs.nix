@@ -14,7 +14,6 @@
     bottom
     cachix
     commitizen
-    dbeaver
     diff-so-fancy
     discord-canary
     doppler

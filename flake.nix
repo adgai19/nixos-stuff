@@ -191,7 +191,7 @@
       };
 
       overlays = [
-        inputs.neovim-nightly.overlay
+        # inputs.neovim-nightly.overlay
         inputs.poetry2nix.overlays.default
         self.overlays.default
         neorg-overlay.overlays.default
