@@ -17,7 +17,6 @@ let
     cmp_luasnip
     lspkind-nvim
     luasnip
-    nvim-cmp
 
     # copilot
     cmp-copilot
@@ -113,7 +112,7 @@ let
     neo-tree-nvim
     neoformat
 
-    neorg-telescope
+    # neorg-telescope
     # null-ls-nvim
     numb-nvim
     nvim-notify
@@ -178,8 +177,9 @@ let
     vim-just
     qmk-nvim
     vim-base64
+    nvim-cmp
   ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim pkgs.lua51Packages.nvim-nio ];
-  unstableSmallPlugins = with pkgs-unstable-small.vimPlugins;[ nvim-dap-ui neorg ];
+  unstableSmallPlugins = with pkgs-unstable-small.vimPlugins;[ ];
 
 in
 {

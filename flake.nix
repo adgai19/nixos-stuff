@@ -85,6 +85,11 @@
       flake = false;
     };
 
+    nvim-cmp = {
+      url = "github:hrsh7th/nvim-cmp";
+      flake = false;
+    };
+
     go-nvim = {
       url = "github:ray-x/go.nvim";
       flake = false;
@@ -191,7 +196,7 @@
       };
 
       overlays = [
-        # inputs.neovim-nightly.overlay
+        inputs.neovim-nightly.overlays.default
         inputs.poetry2nix.overlays.default
         self.overlays.default
         neorg-overlay.overlays.default

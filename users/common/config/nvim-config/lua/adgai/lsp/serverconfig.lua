@@ -31,6 +31,7 @@ lsp.setup_servers({
 	"lua_ls",
 	"nil_ls",
 	"postgres_lsp",
+	"nixd",
 	"pylsp",
 	"pyright",
 	"tailwindcss",

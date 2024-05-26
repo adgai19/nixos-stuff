@@ -151,6 +151,11 @@ inputs: packages: self: super:
       src = inputs.qmk-nvim;
     };
 
+    nvim-cmp = pkgs.vimUtils.buildVimPlugin {
+      name = "nvim-cmp";
+      src = inputs.nvim-cmp;
+    };
+
     adgai-config = pkgs.vimUtils.buildVimPlugin {
       name = "adgai";
       src = ./config/nvim-config;
