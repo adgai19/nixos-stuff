@@ -3,7 +3,6 @@
   home.packages = (with pkgs; [
     # eww-wayland
     # poetry
-    talosctl
     age
     age-plugin-yubikey
     alacritty
@@ -48,6 +47,7 @@
     sesh
     statix
     stylua
+    talosctl
     traceroute
     transmission-gtk
     tree
@@ -56,6 +56,7 @@
     vial
     xclip
     xsettingsd
+    yazi
     # yubikey-manager
 
     nodePackages.aws-cdk
