@@ -203,6 +203,8 @@ in
       git
       gnumake
       luajitPackages.lua-lsp
+      markdown-oxide
+      pyright
       nil
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"
@@ -211,7 +213,6 @@ in
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages_latest."@astrojs/language-server"
-      nodePackages_latest.pyright
       nodePackages_latest.vim-language-server
       postgres-lsp
       python311Packages.jedi-language-server
