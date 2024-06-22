@@ -74,7 +74,7 @@
     kubeswitch
 
     jetbrains.datagrip
-    jetbrains.idea-community
+    # jetbrains.idea-community
     maven
   ]) ++ (with pkgs-unstable; [
     (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
