@@ -34,6 +34,7 @@
       chromium
       vlc
       gpg-tui
+      qpaeq
     ];
   };
 
