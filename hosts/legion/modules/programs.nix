@@ -38,7 +38,7 @@
     nixpkgs-fmt
     nodejs-18_x
     pavucontrol
-    pgcli
+    # pgcli
     pre-commit
     progress
     pulseaudio
@@ -57,6 +57,7 @@
     xclip
     xsettingsd
     yazi
+    kicad
     # yubikey-manager
 
     nodePackages.aws-cdk
