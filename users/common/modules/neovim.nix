@@ -212,7 +212,7 @@ in
       nodePackages.eslint
       nodePackages.typescript
       nodePackages.typescript-language-server
-      nodePackages_latest."@astrojs/language-server"
+      # nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
       postgres-lsp
       python311Packages.jedi-language-server
