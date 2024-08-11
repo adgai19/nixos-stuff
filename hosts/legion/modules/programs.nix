@@ -1,4 +1,6 @@
-{ pkgs, lib, inputs, pkgs-unstable, ... }:
+{ pkgs, lib, inputs, pkgs-unstable,pkgs-stable, ... }:
+let bumblebee-status = pkgs-stable.bumblebee-status;
+in
 {
   home.packages = (with pkgs; [
     # eww-wayland
@@ -7,6 +9,7 @@
     age-plugin-yubikey
     alacritty
     ansible-lint
+    gitkraken
     arandr
     awscli2
     bashmount
@@ -15,7 +18,7 @@
     commitizen
     diff-so-fancy
     discord-canary
-    doppler
+    # doppler
     emacs
     evince
     fd
@@ -38,7 +41,7 @@
     nixpkgs-fmt
     nodejs-18_x
     pavucontrol
-    # pgcli
+    pgcli
     pre-commit
     progress
     pulseaudio
@@ -49,7 +52,7 @@
     stylua
     talosctl
     traceroute
-    transmission-gtk
+    transmission_4-gtk
     tree
     unzip
     vault
@@ -57,7 +60,7 @@
     xclip
     xsettingsd
     yazi
-    kicad
+    # kicad
     # yubikey-manager
 
     nodePackages.aws-cdk
@@ -77,9 +80,11 @@
     jetbrains.datagrip
     # jetbrains.idea-community
     maven
-  ]) ++ (with pkgs-unstable; [
-    (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
-  ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery ]);
+  ]) ++ 
+[
+  (bumblebee-status.override {    plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
+]
+ ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery ]);
   # programs.go.enable = true;
   # programs.go.package = pkgs-unstable.go_1_21;
 }

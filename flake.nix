@@ -3,7 +3,7 @@
   description = "Random nix stuff. Nixos+home-manager+neovim";
 
   nixConfig = {
-    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org ";
+    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org";
     extra-trusted-public-keys = " nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= adgai19.cachix.org-1:AkyyWarR6y2bfy3YPYLrKjjoLlzUvyKNhvflZ+eW3tk=";
     extra-experimental-features = "nix-command flakes";
   };
@@ -26,12 +26,14 @@
     };
 
     nixpkgs = {
-      # url = "github:NixOS/nixpkgs/nixos-23.05";
+      # url = "github:NixOS/nixpkgs/nixos-24.05";
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
     stylix.url = "github:danth/stylix";
     nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nixpkgs-unstable-small = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
+
+    nixpkgs-stable = {url = "github:NixOS/nixpkgs/nixos-24.05";};
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -175,10 +177,14 @@
       flake = false;
     };
 
+    bumblebee-status = {
+      url = "github:tobi-wan-kenobi/bumblebee-status";
+      flake = false;
+    };
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix,nixpkgs-stable, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -186,6 +192,11 @@
         config = { allowUnfree = true; };
       };
       pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+
+      pkgs-stable = import nixpkgs-stable {
         inherit system;
         config = { allowUnfree = true; };
       };
@@ -245,7 +256,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL
-              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable pkgs-unstable-small; };
+              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable pkgs-stable pkgs-unstable-small; };
               home-manager.users.adgai = import ./hosts/legion/home.nix;
             }
           ];
