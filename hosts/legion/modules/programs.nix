@@ -14,12 +14,12 @@ in
     awscli2
     bashmount
     bottom
+    broot
     cachix
     commitizen
     diff-so-fancy
     discord-canary
     # doppler
-    emacs
     evince
     fd
     feh
