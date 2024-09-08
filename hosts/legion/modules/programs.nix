@@ -78,6 +78,7 @@ in
     kubeswitch
 
     jetbrains.datagrip
+    # jetbrains.rust-rover
     # jetbrains.idea-community
     maven
   ]) ++ 

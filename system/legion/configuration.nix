@@ -33,6 +33,7 @@
 
   hardware.graphics.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.open = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

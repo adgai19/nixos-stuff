@@ -193,7 +193,7 @@ in
     plugins = vimPlugins
       ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
+      # nvim-treesitter.withAllGrammars
       nvim-treesitter.builtGrammars.tree-sitter-norg
       nvim-treesitter.builtGrammars.tree-sitter-norg-meta
 
@@ -209,7 +209,7 @@ in
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
-      nodePackages.eslint
+      # nodePackages.eslint
       nodePackages.typescript
       nodePackages.typescript-language-server
       # nodePackages_latest."@astrojs/language-server"
