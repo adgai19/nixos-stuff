@@ -1,6 +1,4 @@
-{ pkgs, lib, inputs, pkgs-unstable,pkgs-stable, ... }:
-let bumblebee-status = pkgs-stable.bumblebee-status;
-in
+{ pkgs, lib, inputs, pkgs-unstable, pkgs-stable, ... }:
 {
   home.packages = (with pkgs; [
     # eww-wayland
@@ -81,11 +79,11 @@ in
     # jetbrains.rust-rover
     # jetbrains.idea-community
     maven
-  ]) ++ 
-[
-  (bumblebee-status.override {    plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
-]
- ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery ]);
+  ]) ++
+  [
+    (pkgs-stable.bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
+  ]
+  ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery ]);
   # programs.go.enable = true;
   # programs.go.package = pkgs-unstable.go_1_21;
 }

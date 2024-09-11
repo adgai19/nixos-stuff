@@ -33,7 +33,7 @@
     nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nixpkgs-unstable-small = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
 
-    nixpkgs-stable = {url = "github:NixOS/nixpkgs/nixos-24.05";};
+    nixpkgs-stable = { url = "github:NixOS/nixpkgs/nixos-24.05"; };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -189,7 +189,7 @@
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix,nixpkgs-stable,wezterm, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, nixpkgs-stable, wezterm, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
