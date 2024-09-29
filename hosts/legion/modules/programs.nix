@@ -58,6 +58,7 @@
     xclip
     xsettingsd
     yazi
+    zed-editor
     # kicad
     # yubikey-manager
 
