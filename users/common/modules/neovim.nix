@@ -193,7 +193,7 @@ in
     plugins = vimPlugins
       ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
-      # nvim-treesitter.withAllGrammars
+      nvim-treesitter.withAllGrammars
       nvim-treesitter.builtGrammars.tree-sitter-norg
       nvim-treesitter.builtGrammars.tree-sitter-norg-meta
 
