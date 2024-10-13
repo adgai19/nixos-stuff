@@ -84,7 +84,7 @@
   [
     (pkgs-stable.bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
   ]
-  ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery ]);
+  ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery json2struct ]);
   # programs.go.enable = true;
   # programs.go.package = pkgs-unstable.go_1_21;
 }
