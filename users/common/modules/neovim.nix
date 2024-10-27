@@ -17,7 +17,6 @@ let
     cmp_luasnip
     lspkind-nvim
     luasnip
-    nvim-cmp
 
     # copilot
     cmp-copilot
@@ -113,7 +112,7 @@ let
     neo-tree-nvim
     neoformat
 
-    neorg-telescope
+    # neorg-telescope
     # null-ls-nvim
     numb-nvim
     nvim-notify
@@ -124,6 +123,7 @@ let
     vim-numbertoggle
     vim-qf
     vim-terraform
+    vim-dispatch
 
 
     {
@@ -177,8 +177,9 @@ let
     vim-just
     qmk-nvim
     vim-base64
+    nvim-cmp
   ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim pkgs.lua51Packages.nvim-nio ];
-  unstableSmallPlugins = with pkgs-unstable-small.vimPlugins;[ nvim-dap-ui neorg ];
+  unstableSmallPlugins = with pkgs-unstable-small.vimPlugins;[ ];
 
 in
 {
@@ -198,55 +199,27 @@ in
 
     ]) ++ unstableSmallPlugins;
     extraPackages = with pkgs; [
-
-      clang-tools
       fd
       git
-      gopls
+      gnumake
+      luajitPackages.lua-lsp
+      markdown-oxide
+      pyright
       nil
-      # rnix-lsp
-      shellcheck
-      sumneko-lua-language-server
-
-      # lua51Packages.sqlite
-      rust-analyzer
-
-      buf-language-server
-
-      python311Packages.jedi-language-server
-      python311Packages.python-lsp-server
-      nodePackages_latest.pyright
-
-      nodePackages."@tailwindcss/language-server"
-      nodePackages."bash-language-server"
+      nixd
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
-      nodePackages.eslint
+      # nodePackages.eslint
       nodePackages.typescript
       nodePackages.typescript-language-server
-      nodePackages.write-good
-
-      nodePackages_latest."@astrojs/language-server"
+      # nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.vim-language-server
-
-      luajitPackages.lua-lsp
-
-
-      delve
-
       postgres-lsp
-      # ansible-language-server
-      # ansible-lint
-      # haskell-language-server
-      # nodePackages."@prisma/language-server"
-      # nodePackages.graphql-language-service-cli
-      # nodePackages.pyright
-      # nodePackages_latest.vue-language-server
-      # python311Packages.python-lsp-server
-      # rust-analyzer
-      # terraform-ls
-      # terraform-lsp
-    ];
+      python311Packages.jedi-language-server
+      python311Packages.python-lsp-server
+      shellcheck
+      sumneko-lua-language-server
+    ] ++ (with pkgs.customPkgs;[ json2struct ]);
   };
 }

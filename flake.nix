@@ -3,7 +3,7 @@
   description = "Random nix stuff. Nixos+home-manager+neovim";
 
   nixConfig = {
-    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org ";
+    extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org";
     extra-trusted-public-keys = " nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= adgai19.cachix.org-1:AkyyWarR6y2bfy3YPYLrKjjoLlzUvyKNhvflZ+eW3tk=";
     extra-experimental-features = "nix-command flakes";
   };
@@ -24,16 +24,15 @@
       url = "github:ThePrimeagen/harpoon?ref=harpoon2";
       flake = false;
     };
-    sesh-tmux = {
-      url = "github:joshmedeski/sesh";
-      flake = false;
-    };
 
     nixpkgs = {
-      # url = "github:NixOS/nixpkgs/nixos-23.05";
+      # url = "github:NixOS/nixpkgs/nixos-24.05";
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    stylix.url = "github:danth/stylix";
     nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+
+    nixpkgs-stable = { url = "github:NixOS/nixpkgs/nixos-24.05"; };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -84,6 +83,11 @@
     };
     regexplainer = {
       url = "github:bennypowers/nvim-regexplainer";
+      flake = false;
+    };
+
+    nvim-cmp = {
+      url = "github:hrsh7th/nvim-cmp";
       flake = false;
     };
 
@@ -167,10 +171,24 @@
       flake = false;
     };
 
+    json2struct = {
+      url = "github:marhaupe/json2struct";
+      flake = false;
+    };
+
+    bumblebee-status = {
+      url = "github:tobi-wan-kenobi/bumblebee-status";
+      flake = false;
+    };
+
+    wezterm = {
+      url = "github:wez/wezterm/main?dir=nix";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, self, sops-nix, firefox-nightly, neorg-overlay, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, nixpkgs-stable, wezterm, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -182,8 +200,18 @@
         config = { allowUnfree = true; };
       };
 
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+
+      pkgs-unstable-small = import nixpkgs-unstable-small {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+
       overlays = [
-        inputs.neovim-nightly.overlay
+        inputs.neovim-nightly.overlays.default
         inputs.poetry2nix.overlays.default
         self.overlays.default
         neorg-overlay.overlays.default
@@ -197,7 +225,10 @@
         shellHook = ''echo Inside nix dev shell'';
       };
 
+      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
       packages."${system}" = import ./packages inputs pkgs;
+
 
       overlays.default = import ./users/common/overlays.nix inputs self.packages;
 
@@ -220,14 +251,19 @@
             }
             ./system/legion/configuration.nix
             sops-nix.nixosModules.sops
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
 
+              stylix.image = ./hosts/legion/background.png;
+              # stylix.targets.alacritty.enable = false;
               nixpkgs.overlays = overlays;
+              home-manager.backupFileExtension = "bak";
+              stylix.fonts.sizes.applications = 10;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL
-              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable; };
+              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable pkgs-stable pkgs-unstable-small; };
               home-manager.users.adgai = import ./hosts/legion/home.nix;
             }
           ];

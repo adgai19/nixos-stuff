@@ -25,28 +25,40 @@ lsp.setup_servers({
 	"cssls",
 	"dockerls",
 	"eslint",
-
 	"hls",
 	"html",
 	"jedi_language_server",
 	"lua_ls",
 	"nil_ls",
+	"postgres_lsp",
+	"nixd",
 	"pylsp",
+	"pyright",
 	"tailwindcss",
 	"terraform_lsp",
 	"terraformls",
 	"vimls",
 	"vuels",
-	-- "gopls",
-	-- "pyright",
-	-- "yamlls",
-	"postgres_lsp",
 })
 
 lsp.configure("clangd", {
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
-	-- cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=iwyu" },
 })
+-- An example nvim-lspconfig capabilities setting
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- Ensure that dynamicRegistration is enabled! This allows the LS to take into account actions like the
+-- Create Unresolved File code action, resolving completions for unindexed code blocks, ...
+capabilities.workspace = {
+	didChangeWatchedFiles = {
+		dynamicRegistration = true,
+	},
+}
+
+require("lspconfig").markdown_oxide.setup({
+	capabilities = capabilities, -- again, ensure that capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+})
+
 require("lspconfig").yamlls.setup({
 	filetypes = { "yaml", "yaml.docker-compose", "yml" },
 	settings = {
@@ -62,15 +74,6 @@ require("lspconfig").yamlls.setup({
 	},
 })
 
--- lsp.setup_nvim_cmp({
--- 	sources = {
--- 		{ name = "nvim_lsp" },
--- 		{ name = "path" },
--- 		{ name = "copilot" },
--- 		{ name = "buffer", keyword_length = 3 },
--- 		{ name = "luasnip", keyword_length = 2 },
--- 	},
--- })
 cmp.setup({
 	window = {
 		completion = cmp.config.window.bordered(),
@@ -88,7 +91,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "copilot" },
 		{ name = "buffer", keyword_length = 3 },
-		{ name = "luasnip", keyword_length = 2 },
+		{ name = "luasnip", keyword_length = 5 },
 	},
 })
 --

@@ -34,6 +34,7 @@
       chromium
       vlc
       gpg-tui
+      qpaeq
     ];
   };
 
@@ -47,8 +48,8 @@
   users.extraUsers.adgai.extraGroups = [ "libvirtd" ];
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "adgai";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "adgai";
   services.auto-cpufreq.enable = true;
 
   # Allow unfree packages

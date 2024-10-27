@@ -1,4 +1,4 @@
-{ pkgs, ... }: pkgs.writers.writePython3Bin "battery" { libraries = with pkgs;[ python311Packages.dbus-next python311Packages.anyio ]; }
+{ pkgs, ... }: pkgs.writers.writePython3Bin "battery" { libraries = with pkgs;[ python3Packages.dbus-next python3Packages.anyio ]; }
   ''
     # flake8: noqa
     from dbus_next.aio import MessageBus

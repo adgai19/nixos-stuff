@@ -2,6 +2,7 @@
 {
   programs.wezterm.enable = true;
   programs.kitty.enable = true;
+  programs.wezterm.package = inputs.wezterm.packages.${pkgs.system}.default;
 
   # set_environment_variables = {
   #   TERMINFO_DIRS = '/home/user/.nix-profile/share/terminfo',

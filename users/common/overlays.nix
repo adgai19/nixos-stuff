@@ -35,10 +35,13 @@ inputs: packages: self: super:
 
   customPkgs = with self;{
     inherit (packages.${system}) ageEnc ageDec ageFile battery;
-    sesh = pkgs.buildGoModule {
-      name = "sesh";
-      vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
-      src = inputs.sesh-tmux;
+    json2struct = pkgs.buildGoModule {
+      name = "json2struct";
+      vendorHash = "sha256-rkjGULrInNsEcq89dDDG9l1iqIIz/U3ox0MXUq8NCXg=";
+      src = inputs.json2struct;
+      buildInputs = with pkgs;[
+        xorg.libX11.dev
+      ];
     };
   };
 
@@ -146,6 +149,11 @@ inputs: packages: self: super:
     qmk-nvim = pkgs.vimUtils.buildVimPlugin {
       name = "qmk-nvim";
       src = inputs.qmk-nvim;
+    };
+
+    nvim-cmp = pkgs.vimUtils.buildVimPlugin {
+      name = "nvim-cmp";
+      src = inputs.nvim-cmp;
     };
 
     adgai-config = pkgs.vimUtils.buildVimPlugin {

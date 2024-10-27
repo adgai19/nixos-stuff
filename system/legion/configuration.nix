@@ -19,8 +19,9 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   services.xserver.enable = true;
+  programs.hyprland.enable = true;
 
-  services.xserver.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "none+i3";
   services.xserver.windowManager.i3 = {
     enable = true;
   };
@@ -31,15 +32,13 @@
   };
   nixpkgs.config.cudasupport = true;
 
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
+  hardware.graphics.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.open = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
   # hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -56,7 +55,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput = {
+  services.libinput = {
     enable = true;
     touchpad.tapping = true;
     mouse = {
@@ -75,7 +74,7 @@
 
   services.printing.drivers = [ pkgs.epson-escpr ];
   programs.steam = {
-    enable = true;
+    enable = false;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
@@ -96,12 +95,12 @@
   networking.hostName = "legion"; # Define your hostname
   networking.networkmanager.enable = true;
   networking.networkmanager.unmanaged = [
-    # "wlp0s20f3"
+    "wlp0s20f3"
   ];
 
   networking.nameservers = [ "172.20.0.165" "1.1.1.1" ];
   networking.wireless = {
-    enable = false;
+    enable = true;
     networks = {
       "ADDN-20" = {
         pskRaw = "ac67aa719a92f7b3ca8a4cf388825c0c4123a036d6531fc2f18755623ab2a847";

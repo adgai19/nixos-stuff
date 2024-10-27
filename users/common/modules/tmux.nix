@@ -17,8 +17,10 @@ let
     tmuxPlugins.tmux-fzf
     tmuxPlugins.fzf-tmux-url
     tmuxPlugins.yank
+    tmuxPlugins.catppuccin
 
-    customTmuxPlugins.base16-tmux
+
+    # customTmuxPlugins.base16-tmux
   ];
 in
 {
@@ -26,7 +28,8 @@ in
     enable = mkEnableOption "tmux";
   };
   config = mkIf enable {
-    home.packages = with pkgs;[ bc ];
+    home.packages = with pkgs;[ bc gitmux ];
+
     programs.tmux = {
       inherit enable;
       plugins = tmuxPlugin;
@@ -37,7 +40,7 @@ in
       keyMode = "vi";
       prefix = "C-t";
       extraConfig = ''
-        set -g @colors-base16 'tokyo-night'
+        # set -g @colors-base16 'tokyo-night'
         bind C-t send-prefix
         bind -n C-g send-prefix
         set -g default-terminal "$\{TERM}"
@@ -46,6 +49,8 @@ in
 
         set -g status-right-length 180
         set -s set-clipboard on
+        # set -g @catppuccin_status_modules_right "battery cpu gitmux"       
+        set -g @catppuccin_status_modules_right "application session user host date_time"
 
         bind -n C-Left  previous-window
         bind -n C-Right next-window
@@ -86,11 +91,11 @@ in
         #|#[fg=#15161E,bg=#7aa2f7,bold] #h "
 
         # Continuum status: #{continuum_status}'
-        set -g window-status-activity-style "underscore,fg=#a9b1d6,bg=#1f2335"
-        set -g window-status-separator ""
-        set -g window-status-style "NONE,fg=#a9b1d6,bg=#1f2335"
-        set -g window-status-format "#[fg=#1f2335,bg=#1f2335,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#1f2335,bg=#1f2335,nobold,nounderscore,noitalics]"
-        set -g window-status-current-format "#[fg=#1f2335,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#7aa2f7,bg=#3b4261,bold] #I  #W #F #[fg=#3b4261,bg=#1f2335,nobold,nounderscore,noitalics]"
+        # set -g window-status-activity-style "underscore,fg=#a9b1d6,bg=#1f2335"
+        # set -g window-status-separator ""
+        # set -g window-status-style "NONE,fg=#a9b1d6,bg=#1f2335"
+        # set -g window-status-format "#[fg=#1f2335,bg=#1f2335,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#1f2335,bg=#1f2335,nobold,nounderscore,noitalics]"
+        # set -g window-status-current-format "#[fg=#1f2335,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#7aa2f7,bg=#3b4261,bold] #I  #W #F #[fg=#3b4261,bg=#1f2335,nobold,nounderscore,noitalics]"
 
 
         #Mouse mode
@@ -127,7 +132,19 @@ in
         bind s choose-session -swZ
         # terminal session management
         bind C-g popup -E -c "#{pane_current_path}" #"zsh"
-        bind -n C-s neww "tmux-sessionizer" 
+        # bind -n C-s neww "tmux-sessionizer" 
+        bind-key -n "C-s" run-shell "sesh connect \"$(
+          sesh list | fzf-tmux -p 55%,60% \
+            --no-sort --border-label ' sesh ' --prompt '⚡  ' \
+            --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+            --bind 'tab:down,btab:up' \
+            --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
+            --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
+            --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c)' \
+            --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
+            --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+            --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
+        )\""
 
         set-window-option -g automatic-rename
         set -g default-terminal 'screen-256color'

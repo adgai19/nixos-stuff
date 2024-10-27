@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, pkgs-unstable, ... }:
+{ pkgs, lib, inputs, pkgs-unstable, pkgs-stable, ... }:
 {
   home.packages = (with pkgs; [
     # eww-wayland
@@ -7,16 +7,17 @@
     age-plugin-yubikey
     alacritty
     ansible-lint
+    gitkraken
     arandr
     awscli2
     bashmount
     bottom
+    broot
     cachix
     commitizen
-    dbeaver
     diff-so-fancy
     discord-canary
-    doppler
+    # doppler
     evince
     fd
     feh
@@ -44,16 +45,21 @@
     pulseaudio
     ripgrep
     scrot
+    sesh
     statix
     stylua
+    talosctl
     traceroute
-    transmission-gtk
+    transmission_4-gtk
     tree
     unzip
-    vial
     vault
+    vial
     xclip
     xsettingsd
+    yazi
+    zed-editor
+    # kicad
     # yubikey-manager
 
     nodePackages.aws-cdk
@@ -71,11 +77,14 @@
     kubeswitch
 
     jetbrains.datagrip
-    jetbrains.idea-community
+    # jetbrains.rust-rover
+    # jetbrains.idea-community
     maven
-  ]) ++ (with pkgs-unstable; [
-    (bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
-  ]) ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery sesh ]);
+  ]) ++
+  [
+    (pkgs-stable.bumblebee-status.override { plugins = p: [ p.cpu p.system p.speedtest p.nic ]; })
+  ]
+  ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery json2struct ]);
   # programs.go.enable = true;
   # programs.go.package = pkgs-unstable.go_1_21;
 }

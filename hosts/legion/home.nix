@@ -4,7 +4,9 @@
 
   home.username = "adgai";
   home.homeDirectory = "/home/adgai";
+  stylix.image = ./background.png;
 
+  stylix.targets.wezterm.enable = false;
   programs.adgai = {
     kubernetes.enable = true;
     ui.rofi.enable = true;
