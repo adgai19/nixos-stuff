@@ -184,7 +184,7 @@
 
     wezterm = {
       url = "github:wez/wezterm/main?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -226,7 +226,10 @@
         shellHook = ''echo Inside nix dev shell'';
       };
 
+      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
       packages."${system}" = import ./packages inputs pkgs;
+
 
       overlays.default = import ./users/common/overlays.nix inputs self.packages;
 

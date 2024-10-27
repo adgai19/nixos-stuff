@@ -206,6 +206,7 @@ in
       markdown-oxide
       pyright
       nil
+      nixd
       nodePackages."dockerfile-language-server-nodejs"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"

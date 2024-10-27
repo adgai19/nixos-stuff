@@ -45,7 +45,7 @@ in
 
       };
     };
-    home.packages = [ pkgs.perl536Packages.FileMimeInfo ];
+    home.packages = [ pkgs.perl540Packages.FileMimeInfo ];
     home.file."lf-config" =
       {
         source = ../config/lf/icons;

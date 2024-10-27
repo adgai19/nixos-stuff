@@ -19,6 +19,7 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   services.xserver.enable = true;
+  programs.hyprland.enable = true;
 
   services.displayManager.defaultSession = "none+i3";
   services.xserver.windowManager.i3 = {
