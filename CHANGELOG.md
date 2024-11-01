@@ -1,4 +1,85 @@
-## 1.2.0 (2023-09-09)
+## 1.4.0 (2024-10-31)
+
+### Feat
+
+- **programs**: add json2struct
+- added zed editor
+- **neovim**: added json2struct
+- **neovim**: go
+- Added stylix
+- **go.lua**: go-nvim updates
+- **neovim/go**: enable luasnip integration
+- added cpufreq and vault
+- **programs.nix**: added idea community and enabled rerere
+- *****: updates
+- system updates and upgrades
+- **programs.nix**: added datagrip
+- **go-flake.nix**: updated delve, golines and gotest packages to use packages from nixpkgs
+- **programs.nix**: Added sesh
+- **filetype/go.lua**: going for default go-nvim config
+- **programs.nix**: Add battery reader for corne
+- **battery.nix**: Added battery checking script
+- **programs.nix**: Added unzip
+- **zsh**: enable syntax Highlighting
+- **zsh**: add atuin
+- **flake.lock**: update dep
+- **neovim**: vim-base64
+- **neovim**: update neorg (#7)
+- **neovim**: neorg config
+- **wezterm**: Add all font styles for wezterm
+- **flake.nix**: removed godlv custom package
+- **ageFile**: add filetype support
+- **ageFile**: add ageFile
+- **shell-scripts**: Age encryption and decryption
+- **neovim**: postgres-lsp
+- **neovim-&-gh**: base64 improvement and disable GH modules
+- **neovim**: base64 encode and decode
+- **neovim**: neodev setup
+- **neovim**: lua lsp
+- **neovim**: vim-sops init
+- **neovim**: dap
+- **shell-flakes**: kafka flake init
+- **neovim**: rust toolchatin
+- **neovim**: moving to nightly and fixing treesitter context commentstring
+- **i3**: added config
+
+### Fix
+
+- **pre-commit-config**: migrate config
+- **neovim**: enable treesitter again
+- **configuration.nix**: network change
+- **neovim**: remove astro ls
+- move bumblebee-status to stable
+- **neovim**: add markdown_oxide
+- network
+- Add yazi
+- **neovim**: remove some plugins
+- updates
+- **tmux**: sesh updates
+- **tmux**: move to nixpkgs sesh and improve setup
+- **zsh**: change atuin search mode
+- **neovim**: move neorg and nvim-dap-ui to unstable-small for nvim-nio
+- **serverconfig.lua**: remove rnix lsp
+- **neovim**: remove telescope frequency
+- **neovim**: change notify to static
+- **go.lua**: fix go lsp
+- **serverconfig.lua**: add go lsp
+- **neovim**: Fix max lines in treesitter context
+- **programs.nix**: remove poetry
+- **neovim**: update harpoon and associated keymaps
+- **neovim**: fix base64enc
+- **neovim**: fix vim-sops package
+- **flake.lock**: regen flake.lock
+- **neovim**: fix go.nvim
+- **neovim**: disable harpoon
+- **kafka.nix**: working kafka flake (#5)
+
+### Refactor
+
+- updates
+- **overlays**: relocated self
+
+## 1.3.0 (2023-12-03)
 
 ### Feat
 
@@ -15,6 +96,7 @@
 
 ### Fix
 
+- *****: system fixes
 - **firefox**: swap firefox overlay
 - **configuration.nix**: fix firefox and nvidia driver sources
 - **flake.nix**: fix poetry overlay
@@ -24,6 +106,7 @@
 ## 1.2.0 (2023-09-09)
 
 ### Feat
+
 - **legion**: added bashmount
 - moving to 23.05 for now
 - regen hardware config
