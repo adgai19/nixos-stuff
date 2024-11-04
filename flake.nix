@@ -212,7 +212,7 @@
       };
 
       overlays = [
-        inputs.neovim-nightly.overlays.default
+        neovim-nightly.overlays.default
         inputs.poetry2nix.overlays.default
         self.overlays.default
         neorg-overlay.overlays.default
@@ -256,14 +256,11 @@
             home-manager.nixosModules.home-manager
             {
 
-              stylix.image = ./hosts/legion/background.png;
-              # stylix.targets.alacritty.enable = false;
               nixpkgs.overlays = overlays;
               home-manager.backupFileExtension = "bak";
               stylix.fonts.sizes.applications = 10;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              # the magic keywords LUL
               home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable pkgs-stable pkgs-unstable-small; };
               home-manager.users.adgai = import ./hosts/legion/home.nix;
             }

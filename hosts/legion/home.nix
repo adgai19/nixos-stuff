@@ -4,7 +4,7 @@
 
   home.username = "adgai";
   home.homeDirectory = "/home/adgai";
-  stylix.image = ./background.png;
+  stylix.image = ./forrest.png;
 
   stylix.targets.wezterm.enable = false;
   programs.adgai = {
