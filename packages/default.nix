@@ -6,4 +6,5 @@ inputs: pkgs:
   ageDec = pkgs.callPackage ../hosts/legion/modules/customPkgs/shell-scripts/ageDec.nix { };
   ageFile = pkgs.callPackage ../hosts/legion/modules/customPkgs/shell-scripts/ageFile.nix { };
   battery = pkgs.callPackage ../hosts/legion/modules/customPkgs/python/corne-battery/battery.nix { };
+  json2struct = pkgs.callPackage ../hosts/legion/modules/customPkgs/gopkgs/json2struct.nix {inputs=inputs;};
 }
