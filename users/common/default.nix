@@ -4,6 +4,12 @@
   imports = [ ./modules ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
+
+  home.file."ghostty" = {
+    source = ./config/ghostty/config;
+    target = "/home/adgai/.config/ghostty/config";
+  };
+
   home.sessionVariables = {
 
     EDITOR = "nvim";

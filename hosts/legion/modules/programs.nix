@@ -48,6 +48,7 @@
     sesh
     statix
     stylua
+    sops
     talosctl
     traceroute
     transmission_4-gtk
