@@ -11,7 +11,8 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
   boot.kernelModules = [ "kvm-intel" ];
   # boot.extraModulePackages = [ pkgs.linuxPackages_latest.virtualbox ];
   boot.extraModprobeConfig = ''
