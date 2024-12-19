@@ -40,8 +40,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # start a terminal
 bindsym $mod+Shift+Return exec gnome-terminal
-bindsym $mod+Return exec wezterm
-bindsym $mod+Ctrl+Return exec alacritty
+bindsym $mod+Return exec ghostty
+bindsym $mod+Ctrl+Return exec wezterm
 #
 # kill focused window
 bindsym $mod+d exec rofi -show combi
@@ -247,7 +247,7 @@ bindsym $mod+Shift+Tab workspace prev
 #startup applications
 exec_always --no-startup-id picom -e 0.1
 #exec_always --no-startup-id nitrogen --restore
-exec --no-startup-id wezterm
+exec --no-startup-id ghostty
 exec --no-startup-id google-chrome-stable
 #exec --no-startup-id notion-app-enhanced
 exec_always --no-startup-id /etc/profiles/per-user/adgai/bin/i3wsr
