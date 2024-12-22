@@ -195,9 +195,12 @@
       inputs.nixpkgs-stable.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs";
     };
+
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, nixpkgs-stable, wezterm, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, nixpkgs-stable, wezterm, nix-darwin, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -280,6 +283,26 @@
           inherit system;
         };
 
+      };
+
+
+      darwinConfigurations = {
+        Adityas-MacBook-Pro =nix-darwin.lib.darwinSystem {
+         modules = [
+         ./system/darwin/configuration.nix 
+
+             inputs.home-manager.darwinModule.home-manager
+             {
+              nixpkgs.overlays = overlays;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              # the magic keywords LUL
+              # home-manager.extraSpecialArgs = { inherit  inputs pkgs-unstable;
+              # system = "aarch64-darwin"; };
+              home-manager.users.adgai = import ./hosts/legion/home.nix ;
+            }
+         ];
+      };
       };
     };
 }
