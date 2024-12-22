@@ -204,18 +204,18 @@ in
       git
       gopls
       nil
-      rnix-lsp
+      # rnix-lsp
       shellcheck
       sumneko-lua-language-server
 
       lua51Packages.sqlite
       rust-analyzer
 
-      buf-language-server
+      buf
 
       python311Packages.jedi-language-server
       python311Packages.python-lsp-server
-      nodePackages_latest.pyright
+      # nodePackages_latest.pyright
 
       nodePackages."@tailwindcss/language-server"
       nodePackages."bash-language-server"
