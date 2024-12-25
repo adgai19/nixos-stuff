@@ -788,17 +788,17 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1734225091,
-        "narHash": "sha256-JJ8CXJMshD606vL8YGQ1k0UTZDGPS4kcgQhQ1FRQ04A=",
+        "lastModified": 1734829870,
+        "narHash": "sha256-fP2xP5iWsqYzJXN6pwAknsYmCKZrlj85N+eT2MJs0RU=",
         "ref": "refs/heads/main",
-        "rev": "de3674ff39dc22869737c5f80527e0199dd2b5c6",
-        "revCount": 8269,
+        "rev": "e97ebc5f7d4ba729d814d028e6b2ce59cedb3b3d",
+        "revCount": 8365,
         "type": "git",
-        "url": "ssh://git@github.com/ghostty-org/ghostty"
+        "url": "ssh://git@github-personal/ghostty-org/ghostty"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/ghostty-org/ghostty"
+        "url": "ssh://git@github-personal/ghostty-org/ghostty"
       }
     },
     "git-hooks": {
@@ -1543,6 +1543,26 @@
         "type": "github"
       }
     },
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733570843,
+        "narHash": "sha256-sQJAxY1TYWD1UyibN/FnN97paTFuwBw3Vp3DNCyKsMk=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "a35b08d09efda83625bef267eb24347b446c80b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -2151,6 +2171,7 @@
         "neorg-overlay": "neorg-overlay",
         "neotest-jest": "neotest-jest",
         "neovim-nightly": "neovim-nightly",
+        "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_6",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",

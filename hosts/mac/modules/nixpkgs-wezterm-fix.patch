@@ -1,0 +1,116 @@
+From 561edf3189624e67c529c6cda3d2ef9e19db8133 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sandro=20J=C3=A4ckel?= <sandro.jaeckel@gmail.com>
+Date: Sun, 19 Feb 2023 23:50:55 +0100
+Subject: [PATCH 1/3] wezterm: fix build against rust 1.67, remove outdated
+ checkFlags
+
+---
+ .../terminal-emulators/wezterm/default.nix          | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/pkgs/applications/terminal-emulators/wezterm/default.nix b/pkgs/applications/terminal-emulators/wezterm/default.nix
+index cece7cb8a01e6..88120c26a1783 100644
+--- a/pkgs/applications/terminal-emulators/wezterm/default.nix
++++ b/pkgs/applications/terminal-emulators/wezterm/default.nix
+@@ -2,6 +2,7 @@
+ , rustPlatform
+ , lib
+ , fetchFromGitHub
++, fetchpatch
+ , ncurses
+ , perl
+ , pkg-config
+@@ -40,12 +41,12 @@ rustPlatform.buildRustPackage rec {
+     sha256 = "sha256-1gnP2Dn4nkhxelUsXMay2VGvgvMjkdEKhFK5AAST++s=";
+   };
+ 
+-  # Rust 1.65 does better at enum packing (according to
+-  # 40e08fafe2f6e5b0c70d55996a0814d6813442ef), but Nixpkgs doesn't have 1.65
+-  # yet (still in staging), so skip these tests for now.
+-  checkFlags = [
+-    "--skip=escape::action_size"
+-    "--skip=surface::line::storage::test::memory_usage"
++  patches = [
++    # fix build with rust 1.67
++    (fetchpatch {
++      url = "https://github.com/wez/wezterm/commit/36519f0d90e1875fb4b3f11f6cbf94c7d716ef78.patch";
++      sha256 = "sha256-sOGFmDan1uO1xOBCpvlGrSotjfw01MjRg0KVqa5omig=";
++    })
+   ];
+ 
+   postPatch = ''
+
+From cc839e6b983c3d30801170674ab3b7e70a102e61 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sandro=20J=C3=A4ckel?= <sandro.jaeckel@gmail.com>
+Date: Sat, 18 Feb 2023 16:08:57 +0100
+Subject: [PATCH 2/3] rustc: add ripgrep and wezterm to passthru.tests
+
+ripgrep is a very popular grep replacement (similar to fd and find)
+and wezterm is a popular terminal emulator which has a big codebase with
+lots of features tested (it also broke in the past multiple times on
+rustc upgrades.).
+---
+ pkgs/development/compilers/rust/rustc.nix | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/pkgs/development/compilers/rust/rustc.nix b/pkgs/development/compilers/rust/rustc.nix
+index 60f07a64299ab..130cb8326115b 100644
+--- a/pkgs/development/compilers/rust/rustc.nix
++++ b/pkgs/development/compilers/rust/rustc.nix
+@@ -11,6 +11,8 @@
+ , sha256
+ , patches ? []
+ , fd
++, ripgrep
++, wezterm
+ , firefox
+ , thunderbird
+ }:
+@@ -204,7 +206,9 @@ in stdenv.mkDerivation rec {
+   passthru = {
+     llvm = llvmShared;
+     inherit llvmPackages;
+-    tests = { inherit fd; } // lib.optionalAttrs stdenv.hostPlatform.isLinux { inherit firefox thunderbird; };
++    tests = {
++      inherit fd ripgrep wezterm;
++    } // lib.optionalAttrs stdenv.hostPlatform.isLinux { inherit firefox thunderbird; };
+   };
+ 
+   meta = with lib; {
+
+From ba948164d35d75e3ff107d90ca9e6cea77194118 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sandro=20J=C3=A4ckel?= <sandro.jaeckel@gmail.com>
+Date: Sun, 19 Feb 2023 23:51:05 +0100
+Subject: [PATCH 3/3] wezterm: cleanup meta, format
+
+---
+ pkgs/applications/terminal-emulators/wezterm/default.nix | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/pkgs/applications/terminal-emulators/wezterm/default.nix b/pkgs/applications/terminal-emulators/wezterm/default.nix
+index 88120c26a1783..74de8d0707501 100644
+--- a/pkgs/applications/terminal-emulators/wezterm/default.nix
++++ b/pkgs/applications/terminal-emulators/wezterm/default.nix
+@@ -123,9 +123,7 @@ rustPlatform.buildRustPackage rec {
+     };
+     terminfo = runCommand "wezterm-terminfo"
+       {
+-        nativeBuildInputs = [
+-          ncurses
+-        ];
++        nativeBuildInputs = [ ncurses ];
+       } ''
+       mkdir -p $out/share/terminfo $out/nix-support
+       tic -x -o $out/share/terminfo ${src}/termwiz/data/wezterm.terminfo
+@@ -133,10 +131,9 @@ rustPlatform.buildRustPackage rec {
+   };
+ 
+   meta = with lib; {
+-    description = "A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust";
++    description = "GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust";
+     homepage = "https://wezfurlong.org/wezterm";
+     license = licenses.mit;
+     maintainers = with maintainers; [ SuperSandro2000 ];
+-    platforms = platforms.unix;
+   };
+ }

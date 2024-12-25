@@ -188,7 +188,7 @@
     };
 
     ghostty = {
-      url = "git+ssh://git@github.com/ghostty-org/ghostty";
+      url = "git+ssh://git@github-personal/ghostty-org/ghostty";
 
       # NOTE: The below 2 lines are only required on nixos-unstable,
       # if you're on stable, they may break your build
@@ -203,22 +203,54 @@
   outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, nixpkgs-stable, wezterm, nix-darwin, ... }:
     let
       system = "x86_64-linux";
+        linuxSystem = "x86_64-linux";
+  macSystem = "aarch64-darwin";
+
+   pkgsLinux = import nixpkgs {
+    system = linuxSystem;
+    config = { allowUnfree = true; };
+  };
+
+  pkgsMac = import nixpkgs {
+    system = macSystem;
+    config = { allowUnfree = true; };
+  };
+
       pkgs = import nixpkgs {
-        inherit system;
+        inherit linuxSystem;
         config = { allowUnfree = true; };
       };
       pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
+        inherit linuxSystem;
         config = { allowUnfree = true; };
       };
 
       pkgs-stable = import nixpkgs-stable {
-        inherit system;
+        inherit linuxSystem;
         config = { allowUnfree = true; };
       };
 
       pkgs-unstable-small = import nixpkgs-unstable-small {
-        inherit system;
+        inherit linuxSystem;
+        config = { allowUnfree = true; };
+      };
+
+     pkgs-mac = import nixpkgs {
+        inherit macSystem;
+        config = { allowUnfree = true; };
+      };
+      pkgs-unstable-mac = import nixpkgs-unstable {
+        inherit macSystem;
+        config = { allowUnfree = true; };
+      };
+
+      pkgs-stable-mac = import nixpkgs-stable {
+        inherit macSystem;
+        config = { allowUnfree = true; };
+      };
+
+      pkgs-unstable-small-mac = import nixpkgs-unstable-small {
+        inherit macSystem;
         config = { allowUnfree = true; };
       };
 
@@ -226,6 +258,13 @@
         neovim-nightly.overlays.default
         inputs.poetry2nix.overlays.default
         self.overlays.default
+        neorg-overlay.overlays.default
+      ];
+
+      overlays-mac = [
+        neovim-nightly.overlays.default
+        inputs.poetry2nix.overlays.default
+        self.overlays-mac.default
         neorg-overlay.overlays.default
       ];
 
@@ -239,10 +278,19 @@
 
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-      packages."${system}" = import ./packages inputs pkgs;
+      # packages."${system}" = import ./packages inputs pkgs;
 
+      packages = {
+        "x86_64-linux" = import ./packages.nix inputs pkgs;
+      };
 
-      overlays.default = import ./users/common/overlays.nix inputs self.packages;
+      packages-mac = {
+        "aarch64-darwin" = import ./packages.nix inputs pkgs-mac;
+      };
+
+      overlays = import ./users/common/overlays.nix inputs self.packages;
+
+      # overlays-mac = import ./users/common/overlays.nix inputs self.packages-mac;
 
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {
@@ -291,15 +339,24 @@
          modules = [
          ./system/darwin/configuration.nix 
 
-             inputs.home-manager.darwinModule.home-manager
+ {
+              # _module.args = {
+              #   inherit inputs ;
+              #   system = "aarch64-darwin";
+              #   pkgs = pkgs-mac;
+
+              # };
+            }
+             home-manager.darwinModules.home-manager
              {
-              nixpkgs.overlays = overlays;
+              # nixpkgs.overlays = overlays-mac;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # the magic keywords LUL
-              # home-manager.extraSpecialArgs = { inherit  inputs pkgs-unstable;
+              home-manager.extraSpecialArgs = { inherit  inputs pkgs-unstable-mac pkgs-stable-mac; 
+              system = "aarch64-darwin"; };
               # system = "aarch64-darwin"; };
-              home-manager.users.adgai = import ./hosts/legion/home.nix ;
+              home-manager.users.adgai = import ./hosts/mac/home.nix ;
             }
          ];
       };

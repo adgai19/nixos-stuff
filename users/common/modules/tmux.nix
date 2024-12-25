@@ -32,6 +32,7 @@ in
 
     programs.tmux = {
       inherit enable;
+      shell = "${pkgs.zsh}/bin/zsh";
       plugins = tmuxPlugin;
       aggressiveResize = true;
       baseIndex = 0;
@@ -64,6 +65,8 @@ in
         set-option -g status-position top
         set-option -g display-panes-time 1500
         set-option -sa terminal-features ',wezterm:RGB'
+        set-option -g default-shell $SHELL
+
         # copy
         setw -g mode-keys vi
         bind -T copy-mode    C-c send -X copy-pipe-no-clear "xsel -i --clipboard"

@@ -1,19 +1,19 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  # imports = [ ./modules ../../users/common ];
+  imports = [ ./modules ../../users/common ];
 
   home.username = "adgai";
-  home.homeDirectory = "/home/adgai";
-  # programs.adgai = {
+  home.stateVersion = "23.11";
+  programs.adgai = {
   #   kubernetes.enable = true;
-  #   cli = {
+    cli = {
   #     gh.enable = false;
   #     git.enable = true;
-  #     direnv.enable = true;
+      direnv.enable = true;
   #     lf.enable = true;
-  #     tmux.enable = true;
-  #     shellconfig.enable = true;
-  #   };
-  # };
+      tmux.enable = true;
+      shellconfig.enable = true;
+    };
+  };
 
 }

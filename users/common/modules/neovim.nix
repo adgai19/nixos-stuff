@@ -82,6 +82,7 @@ let
     nvim-dap-virtual-text
 
     # Treesitter
+        nvim-cmp
     cmp-treesitter
     nvim-treesitter-context
     nvim-treesitter-textobjects
@@ -177,7 +178,6 @@ let
     vim-just
     qmk-nvim
     vim-base64
-    nvim-cmp
   ] ++ [ inputs.rustaceanvim.packages.${pkgs.system}.rustaceanvim pkgs.lua51Packages.nvim-nio ];
   unstableSmallPlugins = with pkgs-unstable-small.vimPlugins;[ ];
 
@@ -191,11 +191,11 @@ in
     withNodeJs = false;
     withPython3 = false;
     plugins = vimPlugins
-      ++ customVimPlugins
+      # ++ customVimPlugins
       ++ (with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
-      nvim-treesitter.builtGrammars.tree-sitter-norg
-      nvim-treesitter.builtGrammars.tree-sitter-norg-meta
+      # nvim-treesitter.builtGrammars.tree-sitter-norg
+      # nvim-treesitter.builtGrammars.tree-sitter-norg-meta
 
     ]) ++ unstableSmallPlugins;
     extraPackages = with pkgs; [
@@ -220,6 +220,8 @@ in
       python311Packages.python-lsp-server
       shellcheck
       sumneko-lua-language-server
-    ] ++ (with pkgs.customPkgs;[ json2struct ]);
+    ] 
+    # ++ (with pkgs.customPkgs;[ json2struct ])
+    ;
   };
 }
