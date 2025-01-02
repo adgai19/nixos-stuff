@@ -32,7 +32,7 @@ in
 
     programs.tmux = {
       inherit enable;
-      shell = "${pkgs.zsh}/bin/zsh";
+      shell = "/etc/profiles/per-user/adgai/bin/zsh";
       plugins = tmuxPlugin;
       aggressiveResize = true;
       baseIndex = 0;
@@ -82,6 +82,8 @@ in
         set -g status-style "fg=#7aa2f7,bg=#1f2335"
 
         set -g status-left-length "100"
+
+set-option -g default-command "zsh -l"
 
         set -g @fzf-url-bind 'u'
 

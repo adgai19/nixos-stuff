@@ -20,6 +20,7 @@ in
       diff-so-fancy = {
         enable = true;
       };
+      ignores = [".direnv" ".envrc"];
       aliases = {
         ds = "diff --staged";
         ap = "add -p";

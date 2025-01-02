@@ -340,22 +340,13 @@
          ./system/darwin/configuration.nix 
 
  {
-              # _module.args = {
-              #   inherit inputs ;
-              #   system = "aarch64-darwin";
-              #   pkgs = pkgs-mac;
-
-              # };
             }
              home-manager.darwinModules.home-manager
              {
-              # nixpkgs.overlays = overlays-mac;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              # the magic keywords LUL
               home-manager.extraSpecialArgs = { inherit  inputs pkgs-unstable-mac pkgs-stable-mac; 
               system = "aarch64-darwin"; };
-              # system = "aarch64-darwin"; };
               home-manager.users.adgai = import ./hosts/mac/home.nix ;
             }
          ];

@@ -46,3 +46,6 @@ neovim-cachix:
   nix build --json .#neovim\
     | jq -r '.[].outputs | to_entries[].value' \
     | cachix push adgai19
+
+darwin:
+  darwin-rebuild switch --flake ./

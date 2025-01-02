@@ -190,36 +190,36 @@ in
     vimAlias = true;
     withNodeJs = false;
     withPython3 = false;
-    plugins = vimPlugins
-      # ++ customVimPlugins
-      ++ (with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
-      # nvim-treesitter.builtGrammars.tree-sitter-norg
-      # nvim-treesitter.builtGrammars.tree-sitter-norg-meta
-
-    ]) ++ unstableSmallPlugins;
+    # plugins = vimPlugins
+    #   # ++ customVimPlugins
+    #   ++ (with pkgs.vimPlugins; [
+    #   nvim-treesitter.withAllGrammars
+    #   # nvim-treesitter.builtGrammars.tree-sitter-norg
+    #   # nvim-treesitter.builtGrammars.tree-sitter-norg-meta
+    #
+    # ]) ++ unstableSmallPlugins;
     extraPackages = with pkgs; [
-      fd
-      git
-      gnumake
-      luajitPackages.lua-lsp
-      markdown-oxide
-      pyright
-      nil
-      nixd
-      nodePackages."dockerfile-language-server-nodejs"
-      nodePackages."vscode-langservers-extracted"
-      nodePackages."yaml-language-server"
-      # nodePackages.eslint
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      # nodePackages_latest."@astrojs/language-server"
-      nodePackages_latest.vim-language-server
-      postgres-lsp
-      python311Packages.jedi-language-server
-      python311Packages.python-lsp-server
-      shellcheck
-      sumneko-lua-language-server
+    fd
+    git
+    gnumake
+    luajitPackages.lua-lsp
+    markdown-oxide
+    pyright
+    nil
+    nixd
+    nodePackages."dockerfile-language-server-nodejs"
+    nodePackages."vscode-langservers-extracted"
+    nodePackages."yaml-language-server"
+    # nodePackages.eslint
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    # nodePackages_latest."@astrojs/language-server"
+    nodePackages_latest.vim-language-server
+    postgres-lsp
+    python311Packages.jedi-language-server
+    python311Packages.python-lsp-server
+    shellcheck
+    sumneko-lua-language-server
     ] 
     # ++ (with pkgs.customPkgs;[ json2struct ])
     ;

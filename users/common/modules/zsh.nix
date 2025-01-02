@@ -15,7 +15,7 @@ in
         gs = "git status";
         nb = "newsboat";
         j = "just --choose";
-        c = "cz c";
+        c = "code-insiders .";
         ta = "tmux a";
         k3 = "kubectl --kubeconfig=$HOME/.kube/clusters/k3s.config";
         ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
