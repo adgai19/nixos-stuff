@@ -17,10 +17,16 @@ in
     programs.git = {
       inherit enable userEmail;
       userName = "Aditya Gaitonde";
-      diff-so-fancy = {
+ diff-so-fancy = {
         enable = true;
       };
-      ignores = [".direnv" ".envrc"];
+      ignores = [
+        ".direnv/*"
+        ".env"
+        ".envrc"
+        ".vscode"
+        ".decrypted.*.ini"
+      ];
       aliases = {
         ds = "diff --staged";
         ap = "add -p";
@@ -31,10 +37,10 @@ in
         init = {
           defaultBranch = "main";
         };
-        rerere.enabled = true;
         push = {
           autoSetupRemote = true;
         };
+        rerere.enabled = true;
         pull = {
           rebase = true;
         };
