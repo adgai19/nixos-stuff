@@ -1,6 +1,6 @@
 { pkgs, inputs, system, ... }:
 {
-  programs.wezterm.enable = true;
+  programs.wezterm.enable = false;
   programs.kitty.enable = true;
   programs.wezterm.package = inputs.wezterm.packages.${pkgs.system}.default;
 

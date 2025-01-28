@@ -58,6 +58,18 @@ in
         	fi
         }
         bindkey -s "^F" "lfcd^M"
+
+      __conda_setup="$('/Users/adgai/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+      if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+      else
+          if [ -f "/Users/adgai/miniconda3/etc/profile.d/conda.sh" ]; then
+              . "/Users/adgai/miniconda3/etc/profile.d/conda.sh"
+          else
+              export PATH="/Users/adgai/miniconda3/bin:$PATH"
+          fi
+      fi
+      unset __conda_setup
       '';
 
       autosuggestion.enable = true;
@@ -79,7 +91,7 @@ in
 
     programs.bat = {
       enable = true;
-      extraPackages = with pkgs.bat-extras; [ prettybat batwatch batpipe batman batgrep batdiff ];
+      # extraPackages = with pkgs.bat-extras; [   batman batgrep batdiff ];
     };
 
     programs.zoxide = {

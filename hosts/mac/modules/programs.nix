@@ -41,6 +41,8 @@
     unzip
     yazi
     zed-editor
+    nodejs_23
+    go-migrate
 
     nodePackages.aws-cdk
 

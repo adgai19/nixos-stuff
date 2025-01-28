@@ -12,7 +12,7 @@
     # ./rofi.nix
     ./wezterm.nix
     # ./customPkgs/python/bumblebee-status
-    ./customPkgs/shell-scripts
+    # ./customPkgs/shell-scripts
   ];
 
 }

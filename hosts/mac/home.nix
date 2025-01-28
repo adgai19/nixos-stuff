@@ -16,4 +16,6 @@
     };
   };
 
+  # home.packages = [./modules/customPkgs/shell-scripts/ageDec.nix ./modules/customPkgs/shell-scripts/ageEnc.nix];
+
 }
