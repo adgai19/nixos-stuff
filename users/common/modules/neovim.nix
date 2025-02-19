@@ -214,7 +214,7 @@ in
     nodePackages.typescript
     nodePackages.typescript-language-server
     # nodePackages_latest."@astrojs/language-server"
-    nodePackages_latest.vim-language-server
+    # nodePackages_latest.vim-language-server
     postgres-lsp
     python311Packages.jedi-language-server
     python311Packages.python-lsp-server

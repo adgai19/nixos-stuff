@@ -56,7 +56,7 @@
     kubernetes-helm
     kubeswitch
 
-    jetbrains.datagrip
+    # jetbrains.datagrip
     jetbrains.rust-rover
     # jetbrains.idea-community
   ]);

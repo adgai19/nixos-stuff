@@ -8,7 +8,7 @@ let
     tmuxPlugins.prefix-highlight
     tmuxPlugins.online-status
     tmuxPlugins.fpp
-    tmuxPlugins.resurrect
+    # tmuxPlugins.resurrect
     tmuxPlugins.net-speed
     tmuxPlugins.continuum
     tmuxPlugins.sensible
