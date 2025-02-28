@@ -30,6 +30,8 @@ in
       };
       syntaxHighlighting.enable = true;
       initExtra = ''
+
+        fpath+=("$HOME/.zsh/completions")
         zmodload zsh/zprof
         any-nix-shell zsh --info-right | source /dev/stdin
 
