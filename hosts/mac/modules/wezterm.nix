@@ -1,7 +1,7 @@
 { pkgs, inputs, system, ... }:
 {
   programs.wezterm.enable = false;
-  programs.kitty.enable = true;
+  programs.kitty.enable = false;
   programs.wezterm.package = inputs.wezterm.packages.${pkgs.system}.default;
 
   # set_environment_variables = {
