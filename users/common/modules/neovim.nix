@@ -216,8 +216,8 @@ in
     # nodePackages_latest."@astrojs/language-server"
     # nodePackages_latest.vim-language-server
     postgres-lsp
-    python311Packages.jedi-language-server
-    python311Packages.python-lsp-server
+    python312Packages.jedi-language-server
+    python312Packages.python-lsp-server
     shellcheck
     sumneko-lua-language-server
     ] 

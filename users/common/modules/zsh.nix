@@ -45,6 +45,7 @@ in
         # bindkey "^P" up-line-or-search
         # bindkey "^N" down-line-or-search
         bindkey -s "^o" "tmux-sessionizer^M"
+        # PATH='$PATH:/Users/adgai/.local/bin'
 
         lfcd() {
         	tmp="$(mktemp)"

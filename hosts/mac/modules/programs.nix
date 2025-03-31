@@ -1,16 +1,12 @@
 { pkgs, lib, inputs, pkgs-unstable, pkgs-stable, ... }:
 {
   home.packages = (with pkgs; [
-    # eww-wayland
-    # poetry
+
     age
     age-plugin-yubikey
-    # alacritty
     ansible-lint
-    gitkraken
     arandr
     awscli2
-    # bashmount
     bottom
     broot
     cachix
@@ -22,6 +18,8 @@
     gcc
     gh
     ghc
+    gitkraken
+    go-migrate
     htop
     hyp
     jq
@@ -30,19 +28,19 @@
     lazygit
     newsboat
     nixpkgs-fmt
+    nodejs_23
     pgcli
     pre-commit
     ripgrep
     sesh
+    sops
     statix
     stylua
-    sops
     tree
+    unixtools.ping
     unzip
     yazi
     zed-editor
-    nodejs_23
-    go-migrate
 
     nodePackages.aws-cdk
 
@@ -56,9 +54,7 @@
     kubernetes-helm
     kubeswitch
 
-    # jetbrains.datagrip
     jetbrains.rust-rover
-    # jetbrains.idea-community
   ]);
   # ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery json2struct ])
   # programs.go.enable = true;
