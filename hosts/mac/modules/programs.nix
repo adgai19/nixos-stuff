@@ -39,6 +39,7 @@
     tree
     unixtools.ping
     unzip
+    uv
     yazi
     zed-editor
 
