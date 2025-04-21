@@ -19,6 +19,7 @@ in
         ta = "tmux a";
         k3 = "kubectl --kubeconfig=$HOME/.kube/clusters/k3s.config";
         ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
+        base64d = "base64 --decode | pbcopy";
       };
       defaultKeymap = "emacs";
       history = {
