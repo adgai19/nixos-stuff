@@ -1,6 +1,6 @@
 { pkgs, lib, inputs, pkgs-unstable, pkgs-stable, ... }:
 {
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
 
     age
     age-plugin-yubikey
@@ -56,7 +56,7 @@
     kubeswitch
 
     jetbrains.rust-rover
-  ]);
+  ];
   # ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery json2struct ])
   # programs.go.enable = true;
   # programs.go.package = pkgs-unstable.go_1_21;
