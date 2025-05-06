@@ -44,7 +44,7 @@ in
         setopt HIST_IGNORE_SPACE
         setopt HIST_SAVE_NO_DUPS
         unsetopt HIST_VERIFY
-        export DIRENV_LOG_FORMAT=
+        export DIRENV_LOG_FORMAT=""
         # bindkey "^P" up-line-or-search
         # bindkey "^N" down-line-or-search
         bindkey -s "^o" "tmux-sessionizer^M"
