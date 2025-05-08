@@ -9,7 +9,7 @@
     awscli2
     bottom
     broot
-    cachix
+    # cachix
     commitizen
     diff-so-fancy
     discord-canary
@@ -19,7 +19,7 @@
     gh
     ghc
     gitkraken
-    go-migrate
+    # go-migrate
     htop
     hyp
     jq
@@ -28,7 +28,7 @@
     lazygit
     newsboat
     nixpkgs-fmt
-    nodejs_23
+    # nodejs_23
     pgcli
     pre-commit
     ripgrep
