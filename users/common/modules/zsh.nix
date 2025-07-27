@@ -17,11 +17,12 @@ in
         j = "just --choose";
         c = "code-insiders .";
         ta = "tmux a";
-        k3 = "kubectl --kubeconfig=$HOME/.kube/clusters/k3s.config";
+        k = "kubectl --kubeconfig=$HOME/.kube/config";
         ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
         base64d = "base64 --decode | pbcopy";
         agedec="age -d -i  ~/.age/identities/identities.txt";
         ageenc="age -r age1yubikey1q2xqk42vclfcvuwwcslu2z2jsk6mkd5kf6l2ms8cfgmcfpjc3lrfj24zj7x -r age1yubikey1q22t4dl57x24eqqvnja6um5uc5qe7fgf07s2xtg2g6a8lcs3l7jh6w3uy0d -r age1se1qdlg2e3pgsu2dnw247qezznhqapat65sp5cy0h997qtvlu8zhkfy5k6u2aj -o";
+        getsec="openssl rand -base64 24 | tr -dc 'A-Za-z0-9' | head -c 24 | pbcopy";
       };
       defaultKeymap = "emacs";
       history = {

@@ -41,7 +41,7 @@
     unzip
     uv
     yazi
-    zed-editor
+    # zed-editor
 
     nodePackages.aws-cdk
 
@@ -50,12 +50,12 @@
 
     android-tools
 
-    kind
+    # kind
     kubectl
     kubernetes-helm
     kubeswitch
 
-    jetbrains.rust-rover
+    # jetbrains.rust-rover
   ];
   # ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery json2struct ])
   # programs.go.enable = true;

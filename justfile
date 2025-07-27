@@ -48,10 +48,10 @@ neovim-cachix:
     | cachix push adgai19
 
 darwin:
-  darwin-rebuild switch --flake ./
+  sudo  darwin-rebuild switch --flake ./
 
 darwin-update:
   nix flake update
   git add flake.lock
-  darwin-rebuild switch --flake ./
+  sudo darwin-rebuild switch --flake ./
   git commit -m "build(flake.lock): update dep"

@@ -192,8 +192,8 @@
 
       # NOTE: The below 2 lines are only required on nixos-unstable,
       # if you're on stable, they may break your build
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
+      # inputs.nixpkgs-stable.follows = "nixpkgs";
+      # inputs.nixpkgs-unstable.follows = "nixpkgs";
     };
 
     nix-darwin.url = "github:LnL7/nix-darwin";
