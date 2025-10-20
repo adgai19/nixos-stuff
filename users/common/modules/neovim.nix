@@ -207,7 +207,7 @@ in
     pyright
     nil
     nixd
-    nodePackages."dockerfile-language-server-nodejs"
+    nodePackages."dockerfile-language-server"
     nodePackages."vscode-langservers-extracted"
     nodePackages."yaml-language-server"
     # nodePackages.eslint
@@ -215,7 +215,7 @@ in
     nodePackages.typescript-language-server
     # nodePackages_latest."@astrojs/language-server"
     # nodePackages_latest.vim-language-server
-    postgres-lsp
+    # postgres-lsp
     python312Packages.jedi-language-server
     python312Packages.python-lsp-server
     shellcheck
