@@ -9,6 +9,6 @@
     w3m
   ];
   programs.newsboat = {
-    enable = true;
+    enable = false;
   };
 }

@@ -199,23 +199,23 @@ in
     #
     # ]) ++ unstableSmallPlugins;
     extraPackages = with pkgs; [
+    # nodePackages."dockerfile-language-server"
+    # nodePackages.eslint
+    # nodePackages_latest."@astrojs/language-server"
+    # nodePackages_latest.vim-language-server
+    # postgres-lsp
     fd
     git
     gnumake
     luajitPackages.lua-lsp
     markdown-oxide
-    pyright
     nil
     nixd
-    nodePackages."dockerfile-language-server"
     nodePackages."vscode-langservers-extracted"
     nodePackages."yaml-language-server"
-    # nodePackages.eslint
     nodePackages.typescript
     nodePackages.typescript-language-server
-    # nodePackages_latest."@astrojs/language-server"
-    # nodePackages_latest.vim-language-server
-    # postgres-lsp
+    pyright
     python312Packages.jedi-language-server
     python312Packages.python-lsp-server
     shellcheck
