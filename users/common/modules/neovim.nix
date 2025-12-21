@@ -219,7 +219,7 @@ in
     python312Packages.jedi-language-server
     python312Packages.python-lsp-server
     shellcheck
-    sumneko-lua-language-server
+    lua-language-server
     ] 
     # ++ (with pkgs.customPkgs;[ json2struct ])
     ;
