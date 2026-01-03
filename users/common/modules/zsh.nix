@@ -17,7 +17,7 @@ in
         j = "just --choose";
         c = "code-insiders .";
         ta = "tmux a";
-        k = "kubectl --kubeconfig=$HOME/.kube/config";
+        k = "kubectl";
         ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
         base64d = "base64 --decode | pbcopy";
         agedec="age -d -i  ~/.age/identities/identities.txt";
