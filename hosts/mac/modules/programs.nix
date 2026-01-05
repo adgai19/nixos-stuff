@@ -5,6 +5,7 @@
     age
     age-plugin-yubikey
     ansible-lint
+    yq
     arandr
     awscli2
     bottom
