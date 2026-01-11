@@ -216,7 +216,7 @@ in
     nodePackages.typescript
     nodePackages.typescript-language-server
     pyright
-    python312Packages.jedi-language-server
+    # python312Packages.jedi-language-server
     python312Packages.python-lsp-server
     shellcheck
     lua-language-server
