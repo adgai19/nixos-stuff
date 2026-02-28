@@ -12,18 +12,18 @@
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
-    rustaceanvim = {
-      url = "github:mrcjkb/rustaceanvim/";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    vim-sops = {
-      url = "github:jsecchiero/vim-sops";
-      flake = false;
-    };
-    harpoon-nvim = {
-      url = "github:ThePrimeagen/harpoon?ref=harpoon2";
-      flake = false;
-    };
+    # rustaceanvim = {
+    #   url = "github:mrcjkb/rustaceanvim/";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # vim-sops = {
+    #   url = "github:jsecchiero/vim-sops";
+    #   flake = false;
+    # };
+    # harpoon-nvim = {
+    #   url = "github:ThePrimeagen/harpoon?ref=harpoon2";
+    #   flake = false;
+    # };
 
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -45,18 +45,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    firefox-overlay = {
-      url = "github:mozilla/nixpkgs-mozilla";
-    };
-    firefox-nightly = {
-      url = "github:nix-community/flake-firefox-nightly";
-    };
-
-    tokyonight-tmux = {
-      url = "github:janoamaral/tokyo-night-tmux";
-      flake = false;
-    };
-
+    # firefox-overlay = {
+    #   url = "github:mozilla/nixpkgs-mozilla";
+    # };
+    # firefox-nightly = {
+    #   url = "github:nix-community/flake-firefox-nightly";
+    # };
+    #
+    # tokyonight-tmux = {
+    #   url = "github:janoamaral/tokyo-night-tmux";
+    #   flake = false;
+    # };
+    #
     base16-tmux = {
       url = "github:tinted-theming/base16-tmux";
       flake = false;
@@ -68,125 +68,125 @@
     };
 
     # some plugins that I track outside of nixpkgs
-    inc-rename = {
-      url = "github:smjonas/inc-rename.nvim";
-      flake = false;
-    };
-
-    vim-just = {
-      url = "github:NoahTheDuke/vim-just";
-      flake = false;
-    };
-
-    treesitter-just = {
-      url = "github:IndianBoy42/tree-sitter-just";
-      flake = false;
-    };
-    regexplainer = {
-      url = "github:bennypowers/nvim-regexplainer";
-      flake = false;
-    };
-
-    nvim-cmp = {
-      url = "github:hrsh7th/nvim-cmp";
-      flake = false;
-    };
-
-    go-nvim = {
-      url = "github:ray-x/go.nvim";
-      flake = false;
-    };
-
-    guihua-nvim = {
-      url = "github:ray-x/guihua.lua";
-      flake = false;
-    };
-
-    astro-vim = {
-      url = "github:wuelnerdotexe/vim-astro";
-      flake = false;
-    };
-
-    cyclist-nvim = {
-      url = "github:tjdevries/cyclist.vim";
-      flake = false;
-    };
-
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
-    autosave-nvim = {
-      url = "github:Pocco81/auto-save.nvim";
-      flake = false;
-    };
-
-    typescript-nvim = {
-      url = "github:jose-elias-alvarez/typescript.nvim";
-      flake = false;
-    };
-
-    noice-nvim = {
-      url = "github:folke/noice.nvim";
-      flake = false;
-    };
-
-    nvim-dap-go = {
-      url = "github:leoluz/nvim-dap-go";
-      flake = false;
-    };
-
-    statuscol-nvim = {
-      url = "github:luukvbaal/statuscol.nvim";
-      flake = false;
-    };
-
-    hover-nvim = {
-      url = "github:lewis6991/hover.nvim";
-      flake = false;
-    };
-
-    jester = {
-      url = "github:David-Kunz/jester";
-      flake = false;
-    };
-
-    neotest-jest = {
-      url = "github:haydenmeade/neotest-jest";
-      flake = false;
-    };
-
-    dap-vscode = {
-      url = "github:mxsdev/nvim-dap-vscode-js";
-      flake = false;
-    };
-
-    treesj = {
-      url = "github:Wansmer/treesj";
-      flake = false;
-    };
-    vim-base64 = {
-      url = "github:christianrondeau/vim-base64";
-      flake = false;
-    };
-
-    qmk-nvim = {
-      url = "github:codethread/qmk.nvim";
-      flake = false;
-    };
-
-    json2struct = {
-      url = "github:marhaupe/json2struct";
-      flake = false;
-    };
-
-    bumblebee-status = {
-      url = "github:tobi-wan-kenobi/bumblebee-status";
-      flake = false;
-    };
-
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # inc-rename = {
+    #   url = "github:smjonas/inc-rename.nvim";
+    #   flake = false;
+    # };
+    #
+    # vim-just = {
+    #   url = "github:NoahTheDuke/vim-just";
+    #   flake = false;
+    # };
+    #
+    # treesitter-just = {
+    #   url = "github:IndianBoy42/tree-sitter-just";
+    #   flake = false;
+    # };
+    # regexplainer = {
+    #   url = "github:bennypowers/nvim-regexplainer";
+    #   flake = false;
+    # };
+    #
+    # nvim-cmp = {
+    #   url = "github:hrsh7th/nvim-cmp";
+    #   flake = false;
+    # };
+    #
+    # go-nvim = {
+    #   url = "github:ray-x/go.nvim";
+    #   flake = false;
+    # };
+    #
+    # guihua-nvim = {
+    #   url = "github:ray-x/guihua.lua";
+    #   flake = false;
+    # };
+    #
+    # astro-vim = {
+    #   url = "github:wuelnerdotexe/vim-astro";
+    #   flake = false;
+    # };
+    #
+    # cyclist-nvim = {
+    #   url = "github:tjdevries/cyclist.vim";
+    #   flake = false;
+    # };
+    #
+    # neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    # autosave-nvim = {
+    #   url = "github:Pocco81/auto-save.nvim";
+    #   flake = false;
+    # };
+    #
+    # typescript-nvim = {
+    #   url = "github:jose-elias-alvarez/typescript.nvim";
+    #   flake = false;
+    # };
+    #
+    # noice-nvim = {
+    #   url = "github:folke/noice.nvim";
+    #   flake = false;
+    # };
+    #
+    # nvim-dap-go = {
+    #   url = "github:leoluz/nvim-dap-go";
+    #   flake = false;
+    # };
+    #
+    # statuscol-nvim = {
+    #   url = "github:luukvbaal/statuscol.nvim";
+    #   flake = false;
+    # };
+    #
+    # hover-nvim = {
+    #   url = "github:lewis6991/hover.nvim";
+    #   flake = false;
+    # };
+    #
+    # jester = {
+    #   url = "github:David-Kunz/jester";
+    #   flake = false;
+    # };
+    #
+    # neotest-jest = {
+    #   url = "github:haydenmeade/neotest-jest";
+    #   flake = false;
+    # };
+    #
+    # dap-vscode = {
+    #   url = "github:mxsdev/nvim-dap-vscode-js";
+    #   flake = false;
+    # };
+    #
+    # treesj = {
+    #   url = "github:Wansmer/treesj";
+    #   flake = false;
+    # };
+    # vim-base64 = {
+    #   url = "github:christianrondeau/vim-base64";
+    #   flake = false;
+    # };
+    #
+    # qmk-nvim = {
+    #   url = "github:codethread/qmk.nvim";
+    #   flake = false;
+    # };
+    #
+    # json2struct = {
+    #   url = "github:marhaupe/json2struct";
+    #   flake = false;
+    # };
+    #
+    # bumblebee-status = {
+    #   url = "github:tobi-wan-kenobi/bumblebee-status";
+    #   flake = false;
+    # };
+    #
+    # wezterm = {
+    #   url = "github:wez/wezterm/main?dir=nix";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
     ghostty = {
       url = "git+ssh://git@github-personal/ghostty-org/ghostty";
 
@@ -200,7 +200,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, firefox-nightly, neorg-overlay, stylix, nixpkgs-stable, wezterm, nix-darwin, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix,  stylix, nixpkgs-stable,  nix-darwin, ... }:
     let
       system = "x86_64-linux";
         linuxSystem = "x86_64-linux";
@@ -258,14 +258,14 @@
         neovim-nightly.overlays.default
         inputs.poetry2nix.overlays.default
         self.overlays.default
-        neorg-overlay.overlays.default
+        # neorg-overlay.overlays.default
       ];
 
       overlays-mac = [
         neovim-nightly.overlays.default
         inputs.poetry2nix.overlays.default
         self.overlays-mac.default
-        neorg-overlay.overlays.default
+        # neorg-overlay.overlays.default
       ];
 
     in
