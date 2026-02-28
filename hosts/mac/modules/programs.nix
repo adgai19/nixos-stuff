@@ -27,7 +27,7 @@
     just
     lazydocker
     lazygit
-    newsboat
+    # newsboat
     nixpkgs-fmt
     # nodejs_23
     pgcli
