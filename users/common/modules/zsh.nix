@@ -25,6 +25,7 @@ in
         getsec="openssl rand -base64 24 | tr -dc 'A-Za-z0-9' | head -c 24 | pbcopy";
 	miUp="migrate -database $DB_URL -path database/migrations -verbose up";
 	mic="migrate create -ext sql -dir database/migrations -seq";
+        claude = "~/.local/bin/claude";
 
       };
       defaultKeymap = "emacs";

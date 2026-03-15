@@ -5,7 +5,7 @@
     age
     age-plugin-yubikey
     ansible-lint
-    yq
+    # yq
     arandr
     awscli2
     bottom
@@ -35,6 +35,7 @@
     ripgrep
     sesh
     sops
+litellm
     statix
     stylua
     tree

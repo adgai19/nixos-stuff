@@ -84,6 +84,7 @@ in
         set -g status-left-length "100"
 
 set-option -g default-command "zsh -l"
+set-option -g update-environment "TERM_PROGRAM"
 
         set -g @fzf-url-bind 'u'
 
