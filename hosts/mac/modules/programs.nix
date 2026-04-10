@@ -45,10 +45,10 @@ litellm
     yazi
     # zed-editor
 
-    nodePackages.aws-cdk
-
-    nodePackages_latest.typescript
-    nodePackages_latest.typescript-language-server
+    # nodePackages.aws-cdk
+    #
+    # nodePackages_latest.typescript
+    # nodePackages_latest.typescript-language-server
 
     android-tools
 

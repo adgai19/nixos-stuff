@@ -77,7 +77,7 @@
     kubernetes-helm
     kubeswitch
 
-    jetbrains.datagrip
+    # jetbrains.datagrip
     # jetbrains.rust-rover
     inputs.ghostty.packages.x86_64-linux.default
     # jetbrains.idea-community

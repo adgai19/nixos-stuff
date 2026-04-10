@@ -211,10 +211,10 @@ in
     markdown-oxide
     nil
     nixd
-    nodePackages."vscode-langservers-extracted"
-    nodePackages."yaml-language-server"
-    nodePackages.typescript
-    nodePackages.typescript-language-server
+    # nodePackages."vscode-langservers-extracted"
+    # nodePackages."yaml-language-server"
+    # nodePackages.typescript
+    # nodePackages.typescript-language-server
     pyright
     # python312Packages.jedi-language-server
     python313Packages.python-lsp-server
