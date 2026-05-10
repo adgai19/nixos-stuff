@@ -183,27 +183,9 @@ let
 
 in
 {
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    package = inputs.neovim-nightly.packages.${pkgs.system}.neovim;
-    vimAlias = true;
-    withNodeJs = false;
-    withPython3 = false;
-    # plugins = vimPlugins
-    #   # ++ customVimPlugins
-    #   ++ (with pkgs.vimPlugins; [
-    #   nvim-treesitter.withAllGrammars
-    #   # nvim-treesitter.builtGrammars.tree-sitter-norg
-    #   # nvim-treesitter.builtGrammars.tree-sitter-norg-meta
-    #
-    # ]) ++ unstableSmallPlugins;
-    extraPackages = with pkgs; [
-    # nodePackages."dockerfile-language-server"
-    # nodePackages.eslint
-    # nodePackages_latest."@astrojs/language-server"
-    # nodePackages_latest.vim-language-server
-    # postgres-lsp
+  home.packages = [
+    inputs.neovim-nightly.packages.${pkgs.system}.neovim
+  ] ++ (with pkgs; [
     fd
     git
     gnumake
@@ -211,17 +193,9 @@ in
     markdown-oxide
     nil
     nixd
-    # nodePackages."vscode-langservers-extracted"
-    # nodePackages."yaml-language-server"
-    # nodePackages.typescript
-    # nodePackages.typescript-language-server
     pyright
-    # python312Packages.jedi-language-server
     python313Packages.python-lsp-server
     shellcheck
     lua-language-server
-    ] 
-    # ++ (with pkgs.customPkgs;[ json2struct ])
-    ;
-  };
+  ]);
 }

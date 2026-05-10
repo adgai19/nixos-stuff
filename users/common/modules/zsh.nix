@@ -18,6 +18,8 @@ in
         c = "code-insiders .";
         ta = "tmux a";
         k = "kubectl";
+        vi = "nvim";
+        vim = "nvim";
         ki = "kubectl --kubeconfig=$HOME/.kube/clusters/kind.config";
         base64d = "base64 --decode | pbcopy";
         agedec="age -d -i  ~/.age/identities/identities.txt";
