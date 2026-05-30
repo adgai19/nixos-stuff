@@ -75,7 +75,12 @@
     # yubioath-flutter
   ] ++ [ inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin ];
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+    enableBashCompletion = false;
+    promptInit = "";
+  };
   environment.pathsToLink = [ "/share/zsh" ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -125,4 +130,3 @@
 
   # system.stateVersion = "22.05";
 }
-

@@ -38,24 +38,66 @@ in
         save = 500000;
         size = 500000;
       };
-      syntaxHighlighting.enable = true;
+      syntaxHighlighting.enable = false;
       initContent = ''
-
         fpath+=("$HOME/.zsh/completions")
-        zmodload zsh/zprof
-        any-nix-shell zsh --info-right | source /dev/stdin
+        _adgai_zle_tty() {
+          [[ -o interactive && -t 0 && -t 1 && $TERM != dumb ]]
+        }
 
-        setopt INC_APPEND_HISTORY
-        setopt HIST_IGNORE_DUPS
-        setopt HIST_FIND_NO_DUPS
-        setopt HIST_IGNORE_SPACE
-        setopt HIST_SAVE_NO_DUPS
-        unsetopt HIST_VERIFY
+        # resolve symlinks + drop missing dirs — collapses 3 identical Nix store
+        # paths (1204 files each) into 1 and removes 7 phantom entries
+        () {
+          local -aU _fp
+          local _d _r
+          for _d in $fpath; do
+            _r=$(cd "$_d" 2>/dev/null && pwd -P) && _fp+=($_r)
+          done
+          fpath=($_fp)
+        }
+
+        _adgai_after_prompt_init() {
+          setopt local_options extended_glob
+
+          add-zle-hook-widget -d zle-line-init _adgai_after_prompt_init
+
+          source <(${pkgs.fzf}/bin/fzf --zsh)
+
+          eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
+          (( $+functions[_direnv_hook] )) && _direnv_hook
+
+          eval "$(${pkgs.atuin}/bin/atuin init zsh)"
+
+          if (( $+commands[any-nix-shell] )); then
+            any-nix-shell zsh --info-right | source /dev/stdin
+          fi
+
+          source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+          ZSH_AUTOSUGGEST_STRATEGY=(history)
+
+          if [[ -n ''${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+            compinit -u
+            zcompile -R ''${ZDOTDIR:-$HOME}/.zcompdump &!
+          else
+            compinit -uC
+          fi
+
+          source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+          ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+
+          zle reset-prompt
+        }
+
+        if _adgai_zle_tty; then
+          eval "$(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)"
+          eval "$(${pkgs.starship}/bin/starship init zsh)"
+
+          autoload -Uz compinit add-zle-hook-widget
+          add-zle-hook-widget zle-line-init _adgai_after_prompt_init
+        fi
+
         export DIRENV_LOG_FORMAT=""
-        # bindkey "^P" up-line-or-search
-        # bindkey "^N" down-line-or-search
         bindkey -s "^o" "tmux-sessionizer^M"
-        # PATH='$PATH:/Users/adgai/.local/bin'
 
         lfcd() {
         	tmp="$(mktemp)"
@@ -72,26 +114,15 @@ in
         }
         bindkey -s "^F" "lfcd^M"
 
-      __conda_setup="$('/Users/adgai/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-      if [ $? -eq 0 ]; then
-          eval "$__conda_setup"
-      else
-          if [ -f "/Users/adgai/miniconda3/etc/profile.d/conda.sh" ]; then
-              . "/Users/adgai/miniconda3/etc/profile.d/conda.sh"
-          else
-              export PATH="/Users/adgai/miniconda3/bin:$PATH"
-          fi
-      fi
-      unset __conda_setup
       '';
 
-      autosuggestion.enable = true;
-      enableCompletion = true;
+      autosuggestion.enable = false;
+      enableCompletion = false;
     };
 
     programs.fzf = {
       enable = true;
-      enableZshIntegration = true;
+      enableZshIntegration = false;
       tmux.enableShellIntegration = true;
     };
     home.packages = [ pkgs.any-nix-shell ];
@@ -110,16 +141,16 @@ in
     programs.zoxide = {
       enable = true;
       options = [ "--cmd cd" ];
-      enableZshIntegration = true;
+      enableZshIntegration = false;
     };
 
     programs.starship = {
       enable = true;
-      enableZshIntegration = true;
+      enableZshIntegration = false;
     };
     programs.atuin = {
       enable = true;
-      enableZshIntegration = true;
+      enableZshIntegration = false;
       settings = {
         auto_sync = true;
         sync_frequency = "5m";

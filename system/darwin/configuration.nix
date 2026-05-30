@@ -16,6 +16,13 @@
           shell = pkgs.zsh;
         };
 
+        programs.zsh = {
+          enable = true;
+          enableCompletion = false;
+          enableBashCompletion = false;
+          promptInit = "";
+        };
+
  nix = {
   optimise.automatic = true;
     settings = {

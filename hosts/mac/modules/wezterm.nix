@@ -1,4 +1,4 @@
-{ pkgs, inputs, system, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.wezterm.enable = false;
   programs.kitty.enable = false;

@@ -9,6 +9,7 @@ in
   };
   config = mkIf cfg.enable {
     programs.direnv.enable = true;
+    programs.direnv.enableZshIntegration = false;
     programs.direnv.nix-direnv.enable = true;
 
   };
