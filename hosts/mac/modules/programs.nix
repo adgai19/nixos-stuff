@@ -34,7 +34,7 @@
     pre-commit
     ripgrep
     sesh
-    sops
+    # sops
 litellm
     statix
     stylua
@@ -54,7 +54,7 @@ litellm
 
     # kind
     kubectl
-    kubernetes-helm
+    # kubernetes-helm
     kubeswitch
 
     # jetbrains.rust-rover
