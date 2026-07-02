@@ -12,6 +12,7 @@
     broot
     # cachix
     commitizen
+    caddy
     diff-so-fancy
     discord-canary
     fd

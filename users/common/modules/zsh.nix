@@ -40,6 +40,12 @@ in
       };
       syntaxHighlighting.enable = false;
       initContent = ''
+        if [[ -x /opt/homebrew/bin/brew ]]; then
+          eval "$(/opt/homebrew/bin/brew shellenv)"
+        elif [[ -x /usr/local/bin/brew ]]; then
+          eval "$(/usr/local/bin/brew shellenv)"
+        fi
+
         fpath+=("$HOME/.zsh/completions")
         _adgai_zle_tty() {
           [[ -o interactive && -t 0 && -t 1 && $TERM != dumb ]]
@@ -113,6 +119,32 @@ in
         	fi
         }
         bindkey -s "^F" "lfcd^M"
+
+   tgz() {
+      emulate -L zsh
+      setopt local_options err_return pipefail
+
+      local verbose=""
+      if [[ $1 == "-v" ]]; then
+        verbose="v"
+        shift
+      fi
+
+      if [[ $# -lt 2 ]]; then
+        print -u2 "Usage: tgz [-v] <archive.tar.gz> <path> [more paths...]"
+        return 1
+      fi
+
+      local archive=$1
+      shift
+
+      COPYFILE_DISABLE=1 tar "c''${verbose}zf" "$archive" \
+        --exclude='.DS_Store' \
+        --exclude='._*' \
+        "$@"
+
+      print "Created $archive ($(du -h "$archive" | cut -f1))"
+    }
 
       '';
 
