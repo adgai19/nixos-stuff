@@ -134,14 +134,12 @@
 
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-      # packages."${system}" = import ./packages inputs pkgs;
-
       packages = {
-        "x86_64-linux" = import ./packages.nix inputs pkgs;
+        "x86_64-linux" = import ./packages inputs pkgs;
       };
 
       packages-mac = {
-        "aarch64-darwin" = import ./packages.nix inputs pkgs-mac;
+        "aarch64-darwin" = import ./packages inputs pkgs-mac;
       };
 
       overlays = import ./users/common/overlays.nix inputs self.packages;
@@ -151,7 +149,7 @@
       homeConfigurations = {
         ubuntu-vm = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./hosts/ubunbu-vm/home.nix ];
+          modules = [ ./hosts/ubuntu-vm/home.nix ];
         };
       };
 

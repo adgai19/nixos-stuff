@@ -4,26 +4,26 @@
 
     age
     age-plugin-yubikey
-    ansible-lint
+    # ansible-lint
     # yq
-    arandr
+    # arandr
     awscli2
     bottom
-    broot
+    # broot
     # cachix
     commitizen
     caddy
     diff-so-fancy
-    discord-canary
+    # discord-canary
     fd
-    feh
+    # feh
     gcc
     gh
-    ghc
-    gitkraken
+    # ghc
+    # gitkraken
     # go-migrate
     htop
-    hyp
+    # hyp
     jq
     just
     lazydocker
@@ -36,7 +36,7 @@
     ripgrep
     sesh
     # sops
-litellm
+# litellm
     statix
     stylua
     tree
