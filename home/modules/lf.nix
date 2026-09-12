@@ -49,8 +49,7 @@ in
     home.file."lf-config" =
       {
         source = ../config/lf/icons;
-        target = "/home/adgai/.config/lf/icons";
-
+        target = ".config/lf/icons";
       };
   };
 }

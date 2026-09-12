@@ -75,7 +75,7 @@
       darwinConfigurations = {
         Adityas-MacBook-Pro = nix-darwin.lib.darwinSystem {
           modules = [
-            ./system/darwin/configuration.nix
+            ./darwin.nix
 
             { }
             home-manager.darwinModules.home-manager
@@ -101,7 +101,7 @@
                 inherit inputs pkgs-unstable-mac pkgs-stable-mac;
                 system = macSystem;
               };
-              home-manager.users.adgai = import ./hosts/mac/home.nix;
+              home-manager.users.adgai = import ./home.nix;
             }
           ];
         };
