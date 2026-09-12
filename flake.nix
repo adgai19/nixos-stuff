@@ -1,6 +1,6 @@
 {
 
-  description = "Random nix stuff. Nixos+home-manager+neovim";
+  description = "Aditya's nix-darwin + home-manager config";
 
   nixConfig = {
     extra-substituters = " https://nix-community.cachix.org https://adgai19.cachix.org";
@@ -16,7 +16,6 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    stylix.url = "github:danth/stylix";
     nixpkgs-unstable.follows = "nixpkgs";
     nixpkgs-unstable-small = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
 
@@ -29,17 +28,6 @@
 
     poetry2nix = {
       url = "github:nix-community/poetry2nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    #
-    base16-tmux = {
-      url = "github:tinted-theming/base16-tmux";
-      flake = false;
-    };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -56,137 +44,38 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, sops-nix, stylix, nixpkgs-stable, nix-darwin, ... }:
+  outputs = inputs@{ home-manager, neovim-nightly, nixpkgs, nixpkgs-unstable, nixpkgs-unstable-small, self, nixpkgs-stable, nix-darwin, ... }:
     let
-      system = "x86_64-linux";
-      linuxSystem = "x86_64-linux";
       macSystem = "aarch64-darwin";
 
-      pkgsLinux = import nixpkgs {
-        system = linuxSystem;
+      pkgs-mac = import nixpkgs {
+        system = macSystem;
         config = { allowUnfree = true; };
       };
-
-      pkgsMac = import nixpkgs {
+      pkgs-unstable-mac = import nixpkgs-unstable {
         system = macSystem;
         config = { allowUnfree = true; };
       };
 
-      pkgs = import nixpkgs {
-        inherit linuxSystem;
-        config = { allowUnfree = true; };
-      };
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit linuxSystem;
-        config = { allowUnfree = true; };
-      };
-
-      pkgs-stable = import nixpkgs-stable {
-        inherit linuxSystem;
-        config = { allowUnfree = true; };
-      };
-
-      pkgs-unstable-small = import nixpkgs-unstable-small {
-        inherit linuxSystem;
-        config = { allowUnfree = true; };
-      };
-
-      pkgs-mac = import nixpkgs {
-        inherit macSystem;
-        config = { allowUnfree = true; };
-      };
-      pkgs-unstable-mac = import nixpkgs-unstable {
-        inherit macSystem;
-        config = { allowUnfree = true; };
-      };
-
       pkgs-stable-mac = import nixpkgs-stable {
-        inherit macSystem;
+        system = macSystem;
         config = { allowUnfree = true; };
       };
 
       pkgs-unstable-small-mac = import nixpkgs-unstable-small {
-        inherit macSystem;
+        system = macSystem;
         config = { allowUnfree = true; };
       };
-
-      overlays = [
-        neovim-nightly.overlays.default
-        inputs.poetry2nix.overlays.default
-        self.overlays.default
-        # neorg-overlay.overlays.default
-      ];
-
-      overlays-mac = [
-        neovim-nightly.overlays.default
-        inputs.poetry2nix.overlays.default
-        self.overlays-mac.default
-        # neorg-overlay.overlays.default
-      ];
 
     in
     {
 
-      devShells."${system}".default = pkgs.mkShellNoCC {
-        packages = with pkgs;[ git zsh nixpkgs-fmt just ];
+      devShells."${macSystem}".default = pkgs-mac.mkShellNoCC {
+        packages = with pkgs-mac; [ git zsh nixpkgs-fmt just ];
         shellHook = ''echo Inside nix dev shell'';
       };
 
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-
-      packages = {
-        "x86_64-linux" = import ./packages inputs pkgs;
-      };
-
-      packages-mac = {
-        "aarch64-darwin" = import ./packages inputs pkgs-mac;
-      };
-
-      overlays = import ./users/common/overlays.nix inputs self.packages;
-
-      # overlays-mac = import ./users/common/overlays.nix inputs self.packages-mac;
-
-      homeConfigurations = {
-        ubuntu-vm = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./hosts/ubuntu-vm/home.nix ];
-        };
-      };
-
-      nixosConfigurations = {
-        legion = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            {
-              _module.args = {
-                inherit inputs system;
-
-              };
-            }
-            ./system/legion/configuration.nix
-            sops-nix.nixosModules.sops
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-
-              nixpkgs.overlays = overlays;
-              home-manager.backupFileExtension = "bak";
-              stylix.fonts.sizes.applications = 10;
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit system inputs pkgs-unstable pkgs-stable pkgs-unstable-small; };
-              home-manager.users.adgai = import ./hosts/legion/home.nix;
-            }
-          ];
-
-        };
-
-        vms = nixpkgs.lib.nixosSystem {
-          inherit system;
-        };
-
-      };
-
 
       darwinConfigurations = {
         Adityas-MacBook-Pro = nix-darwin.lib.darwinSystem {
@@ -215,7 +104,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 inherit inputs pkgs-unstable-mac pkgs-stable-mac;
-                system = "aarch64-darwin";
+                system = macSystem;
               };
               home-manager.users.adgai = import ./hosts/mac/home.nix;
             }

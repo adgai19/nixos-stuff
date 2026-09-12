@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, pkgs-unstable, pkgs-stable, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   home.packages = with pkgs; [
 
@@ -60,7 +60,4 @@
 
     # jetbrains.rust-rover
   ];
-  # ++ (with pkgs.customPkgs;[ ageEnc ageDec ageFile battery json2struct ])
-  # programs.go.enable = true;
-  # programs.go.package = pkgs-unstable.go_1_21;
 }
