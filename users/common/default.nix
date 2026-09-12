@@ -7,7 +7,7 @@
 
   home.file."ghostty" = {
     source = ./config/ghostty/config;
-    target = "/home/adgai/.config/ghostty/config";
+    target = ".config/ghostty/config";
   };
 
   home.sessionVariables = {

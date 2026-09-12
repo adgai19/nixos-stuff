@@ -18,9 +18,6 @@ let
     tmuxPlugins.fzf-tmux-url
     tmuxPlugins.yank
     tmuxPlugins.catppuccin
-
-
-    # customTmuxPlugins.base16-tmux
   ];
 in
 {
