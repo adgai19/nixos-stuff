@@ -5,8 +5,6 @@
     ./kubernetes.nix
     ./programs.nix
     ./qmk.nix
-    # ./customPkgs/python/bumblebee-status
-    # ./customPkgs/shell-scripts
   ];
 
 }
