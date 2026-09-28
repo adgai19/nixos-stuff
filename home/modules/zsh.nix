@@ -146,6 +146,11 @@ in
       print "Created $archive ($(du -h "$archive" | cut -f1))"
     }
 
+        # dynamic version managers (nvm, gvm, etc) and anything else that
+        # self-installs by appending to a shell rc file — home-manager's
+        # zshrc is a read-only nix-store symlink, so it can't be written to
+        # directly. Put that stuff in ~/.zshrc.local instead.
+        [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
       '';
 
       autosuggestion.enable = false;
