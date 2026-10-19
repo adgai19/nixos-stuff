@@ -26,7 +26,7 @@ window-padding-y = 2
 window-decoration = true
 macos-titlebar-style = hidden
 macos-window-buttons = hidden
-macos-non-native-fullscreen = true
+macos-non-native-fullscreen = false
 macos-window-shadow = true
 
 # tmux is the persistence/workspace layer.
@@ -78,7 +78,7 @@ shell-integration-features = cursor,title,ssh-env,ssh-terminfo
 # -----------------------------------------------------------------------------
 
 # New windows are not fullscreen by default.
-fullscreen = false
+fullscreen = true
 
 # Your existing custom fullscreen shortcut.
 keybind = ctrl+enter=toggle_fullscreen

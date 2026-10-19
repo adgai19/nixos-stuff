@@ -2,6 +2,10 @@
 let
   inherit (lib) mkEnableOption mkIf;
   inherit (config.programs.adgai.cli.shellconfig) enable;
+
+  # atuin's e2e_capture PTY tests are timing-sensitive and fail in the darwin
+  # build sandbox (nixpkgs atuin 18.23.0). Skip the check phase; runtime is unaffected.
+  atuin = pkgs.atuin.overrideAttrs { doCheck = false; };
 in
 {
   options.programs.adgai.cli.shellconfig.enable = mkEnableOption "zsh";
@@ -72,7 +76,7 @@ in
           eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
           (( $+functions[_direnv_hook] )) && _direnv_hook
 
-          eval "$(${pkgs.atuin}/bin/atuin init zsh)"
+          eval "$(${atuin}/bin/atuin init zsh)"
 
           if (( $+commands[any-nix-shell] )); then
             any-nix-shell zsh --info-right | source /dev/stdin
@@ -187,6 +191,7 @@ in
     };
     programs.atuin = {
       enable = true;
+      package = atuin;
       enableZshIntegration = false;
       settings = {
         auto_sync = true;
