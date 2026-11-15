@@ -155,6 +155,9 @@ in
         # zshrc is a read-only nix-store symlink, so it can't be written to
         # directly. Put that stuff in ~/.zshrc.local instead.
         [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+        # hand-edited, unmanaged by nix: extra PATH entries, env vars, etc.
+        [[ -f ~/.zshrc.editable ]] && source ~/.zshrc.editable
       '';
 
       autosuggestion.enable = false;
